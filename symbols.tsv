@@ -112912,7 +112912,7 @@ EXTERNAL:000000d3	Function	EXT-MS-WIN-NTOS-GLOBMERGER-L1-1-0.DLL	EXT-MS-WIN-NTOS
 140456fb4	Label	Global	LAB_140456fb4
 140456fb9	Label	Global	LAB_140456fb9
 140456fde	Label	Global	LAB_140456fde
-140456ffa	Label	FUN_1406e3124::override	FUN_1406e3124::override::prt_140456ffa_b0b998c3
+140456ffa	Label	RtlIpv6AddressToStringA::override	RtlIpv6AddressToStringA::override::prt_140456ffa_b0b998c3
 140456fff	Label	Global	LAB_140456fff
 14045700d	Label	Global	LAB_14045700d
 140457016	Label	Global	LAB_140457016
@@ -112922,7 +112922,7 @@ EXTERNAL:000000d3	Function	EXT-MS-WIN-NTOS-GLOBMERGER-L1-1-0.DLL	EXT-MS-WIN-NTOS
 140457080	Label	Global	LAB_140457080
 140457096	Label	Global	LAB_140457096
 1404570c7	Label	Global	LAB_1404570c7
-1404570f6	Label	FUN_1406e3124::override	FUN_1406e3124::override::prt_1404570f6_bcb88bc7
+1404570f6	Label	RtlIpv6AddressToStringA::override	RtlIpv6AddressToStringA::override::prt_1404570f6_bcb88bc7
 140457106	Label	Global	LAB_140457106
 14045710c	Function	Global	RtlpCSparseBitmapPageDecommit
 1404571be	Label	Global	LAB_1404571be
