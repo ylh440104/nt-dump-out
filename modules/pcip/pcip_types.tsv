@@ -1,0 +1,2187 @@
+kind	owner	name	field	offset	length	type
+STRUCT	/pcip.pdb/<unnamed-tag_000010AB>	<unnamed-tag_000010AB>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_000010AB>	<unnamed-tag_000010AB>	LowPart	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000010AB>	<unnamed-tag_000010AB>	HighPart	4	4	long
+STRUCT	/pcip.pdb/<unnamed-tag_000010B0>	<unnamed-tag_000010B0>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_000010B0>	<unnamed-tag_000010B0>	LowPart	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000010B0>	<unnamed-tag_000010B0>	HighPart	4	4	ulong
+UNION	/pcip.pdb/<unnamed-tag_00001112>	<unnamed-tag_00001112>		0	8	
+UFIELD	/pcip.pdb/<unnamed-tag_00001112>	<unnamed-tag_00001112>	MasterIrp	0	8	_IRP *
+UFIELD	/pcip.pdb/<unnamed-tag_00001112>	<unnamed-tag_00001112>	IrpCount	0	4	long
+UFIELD	/pcip.pdb/<unnamed-tag_00001112>	<unnamed-tag_00001112>	SystemBuffer	0	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_0000111B>	<unnamed-tag_0000111B>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000111B>	<unnamed-tag_0000111B>		0	8	<unnamed-tag_0000111B>_u_0
+FIELD	/pcip.pdb/<unnamed-tag_0000111B>	<unnamed-tag_0000111B>		8	8	<unnamed-tag_0000111B>_u_8
+UNION	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_0	<unnamed-tag_0000111B>_u_0		0	8	
+UFIELD	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_0	<unnamed-tag_0000111B>_u_0	UserApcRoutine	0	8	_func___cdecl_void_void_ptr__IO_STATUS_BLOCK_ptr_ulong *
+UFIELD	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_0	<unnamed-tag_0000111B>_u_0	IssuingProcess	0	8	void *
+UNION	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_8	<unnamed-tag_0000111B>_u_8		0	8	
+UFIELD	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_8	<unnamed-tag_0000111B>_u_8	UserApcContext	0	8	void *
+UFIELD	/pcip.pdb/<unnamed-tag_0000111B>/<unnamed-tag_0000111B>_u_8	<unnamed-tag_0000111B>_u_8	IoRing	0	8	_IORING_OBJECT *
+UNION	/pcip.pdb/<unnamed-tag_0000111D>	<unnamed-tag_0000111D>		0	16	
+UFIELD	/pcip.pdb/<unnamed-tag_0000111D>	<unnamed-tag_0000111D>	AsynchronousParameters	0	16	<unnamed-tag_0000111B>
+UFIELD	/pcip.pdb/<unnamed-tag_0000111D>	<unnamed-tag_0000111D>	AllocationSize	0	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>		0	80	
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>		0	32	<unnamed-tag_0000112A>_u_0
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>	Thread	32	8	_ETHREAD *
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>	AuxiliaryBuffer	40	8	char *
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>	ListEntry	48	16	_LIST_ENTRY
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>		64	8	<unnamed-tag_0000112A>_u_64
+FIELD	/pcip.pdb/<unnamed-tag_0000112A>	<unnamed-tag_0000112A>	OriginalFileObject	72	8	_FILE_OBJECT *
+UNION	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_0	<unnamed-tag_0000112A>_u_0		0	32	
+UFIELD	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_0	<unnamed-tag_0000112A>_u_0	DeviceQueueEntry	0	24	_KDEVICE_QUEUE_ENTRY
+UFIELD	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_0	<unnamed-tag_0000112A>_u_0	DriverContext	0	32	void *[4]
+UNION	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_64	<unnamed-tag_0000112A>_u_64		0	8	
+UFIELD	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_64	<unnamed-tag_0000112A>_u_64	CurrentStackLocation	0	8	_IO_STACK_LOCATION *
+UFIELD	/pcip.pdb/<unnamed-tag_0000112A>/<unnamed-tag_0000112A>_u_64	<unnamed-tag_0000112A>_u_64	PacketType	0	4	ulong
+UNION	/pcip.pdb/<unnamed-tag_0000112D>	<unnamed-tag_0000112D>		0	88	
+UFIELD	/pcip.pdb/<unnamed-tag_0000112D>	<unnamed-tag_0000112D>	Overlay	0	80	<unnamed-tag_0000112A>
+UFIELD	/pcip.pdb/<unnamed-tag_0000112D>	<unnamed-tag_0000112D>	Apc	0	88	_KAPC
+UFIELD	/pcip.pdb/<unnamed-tag_0000112D>	<unnamed-tag_0000112D>	CompletionKey	0	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	SecurityContext	0	8	_IO_SECURITY_CONTEXT *
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	Options	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	_padding_	12	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	FileAttributes	16	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	ShareAccess	18	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	_padding_	20	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001134>	<unnamed-tag_00001134>	EaLength	24	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	SecurityContext	0	8	_IO_SECURITY_CONTEXT *
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	Options	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	_padding_	12	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	Reserved	16	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	ShareAccess	18	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001138>	<unnamed-tag_00001138>	Parameters	24	8	_NAMED_PIPE_CREATE_PARAMETERS *
+STRUCT	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	SecurityContext	0	8	_IO_SECURITY_CONTEXT *
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	Options	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	_padding_	12	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	Reserved	16	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	ShareAccess	18	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_0000113C>	<unnamed-tag_0000113C>	Parameters	24	8	_MAILSLOT_CREATE_PARAMETERS *
+STRUCT	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>	_padding_	4	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>	Key	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>	Flags	12	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000113E>	<unnamed-tag_0000113E>	ByteOffset	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>	FileName	8	8	_UNICODE_STRING *
+FIELD	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>	FileInformationClass	16	4	_FILE_INFORMATION_CLASS
+FIELD	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>	_padding_	20	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001142>	<unnamed-tag_00001142>	FileIndex	24	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>	CompletionFilter	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001144>	<unnamed-tag_00001144>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>	CompletionFilter	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		15	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>	DirectoryNotifyInformationClass	16	4	_DIRECTORY_NOTIFY_INFORMATION_CLASS
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		20	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		21	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		22	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001148>	<unnamed-tag_00001148>		23	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>	FileInformationClass	8	4	_FILE_INFORMATION_CLASS
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000114A>	<unnamed-tag_0000114A>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>	_padding_	4	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>	FileInformationClass	8	4	_FILE_INFORMATION_CLASS
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>	FileObject	16	8	_FILE_OBJECT *
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>	<unnamed-tag_0000114C>		24	8	<unnamed-tag_0000114C>_u_24
+UNION	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24	<unnamed-tag_0000114C>_u_24		0	8	
+UFIELD	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24	<unnamed-tag_0000114C>_u_24	_s_0	0	2	<unnamed-tag_0000114C>_u_24_s_0
+UFIELD	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24	<unnamed-tag_0000114C>_u_24	ClusterCount	0	4	ulong
+UFIELD	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24	<unnamed-tag_0000114C>_u_24	DeleteHandle	0	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24/<unnamed-tag_0000114C>_u_24_s_0	<unnamed-tag_0000114C>_u_24_s_0		0	2	
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24/<unnamed-tag_0000114C>_u_24_s_0	<unnamed-tag_0000114C>_u_24_s_0	ReplaceIfExists	0	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_0000114C>/<unnamed-tag_0000114C>_u_24/<unnamed-tag_0000114C>_u_24_s_0	<unnamed-tag_0000114C>_u_24_s_0	AdvanceOnly	1	1	uchar
+STRUCT	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>	EaList	8	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>	EaListLength	16	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>	_padding_	20	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000114E>	<unnamed-tag_0000114E>	EaIndex	24	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001150>	<unnamed-tag_00001150>		0	4	
+FIELD	/pcip.pdb/<unnamed-tag_00001150>	<unnamed-tag_00001150>	Length	0	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>	FsInformationClass	8	4	_FSINFOCLASS
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001154>	<unnamed-tag_00001154>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	OutputBufferLength	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	_padding_	4	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	InputBufferLength	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	_padding_	12	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	FsControlCode	16	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001156>	<unnamed-tag_00001156>	Type3InputBuffer	24	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_00001159>	<unnamed-tag_00001159>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_00001159>	<unnamed-tag_00001159>	Length	0	8	_LARGE_INTEGER *
+FIELD	/pcip.pdb/<unnamed-tag_00001159>	<unnamed-tag_00001159>	Key	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001159>	<unnamed-tag_00001159>	ByteOffset	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	OutputBufferLength	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	_padding_	4	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	InputBufferLength	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	_padding_	12	4	int
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	IoControlCode	16	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115B>	<unnamed-tag_0000115B>	Type3InputBuffer	24	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>	SecurityInformation	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>	Length	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000115D>	<unnamed-tag_0000115D>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_0000115F>	<unnamed-tag_0000115F>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000115F>	<unnamed-tag_0000115F>	SecurityInformation	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000115F>	<unnamed-tag_0000115F>	SecurityDescriptor	8	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_00001163>	<unnamed-tag_00001163>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_00001163>	<unnamed-tag_00001163>	Vpb	0	8	_VPB *
+FIELD	/pcip.pdb/<unnamed-tag_00001163>	<unnamed-tag_00001163>	DeviceObject	8	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/<unnamed-tag_00001163>	<unnamed-tag_00001163>	OutputBufferLength	16	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001165>	<unnamed-tag_00001165>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001165>	<unnamed-tag_00001165>	Vpb	0	8	_VPB *
+FIELD	/pcip.pdb/<unnamed-tag_00001165>	<unnamed-tag_00001165>	DeviceObject	8	8	_DEVICE_OBJECT *
+STRUCT	/pcip.pdb/<unnamed-tag_00001169>	<unnamed-tag_00001169>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_00001169>	<unnamed-tag_00001169>	Srb	0	8	_SCSI_REQUEST_BLOCK *
+STRUCT	/pcip.pdb/<unnamed-tag_0000116D>	<unnamed-tag_0000116D>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_0000116D>	<unnamed-tag_0000116D>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000116D>	<unnamed-tag_0000116D>	StartSid	8	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_0000116D>	<unnamed-tag_0000116D>	SidList	16	8	_FILE_GET_QUOTA_INFORMATION *
+FIELD	/pcip.pdb/<unnamed-tag_0000116D>	<unnamed-tag_0000116D>	SidListLength	24	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001171>	<unnamed-tag_00001171>		0	4	
+FIELD	/pcip.pdb/<unnamed-tag_00001171>	<unnamed-tag_00001171>	Type	0	4	_DEVICE_RELATION_TYPE
+STRUCT	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>	InterfaceType	0	8	_GUID *
+FIELD	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>	Size	8	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>	Version	10	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>	Interface	16	8	_INTERFACE *
+FIELD	/pcip.pdb/<unnamed-tag_00001178>	<unnamed-tag_00001178>	InterfaceSpecificData	24	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_0000117C>	<unnamed-tag_0000117C>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_0000117C>	<unnamed-tag_0000117C>	Capabilities	0	8	_DEVICE_CAPABILITIES *
+STRUCT	/pcip.pdb/<unnamed-tag_00001180>	<unnamed-tag_00001180>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_00001180>	<unnamed-tag_00001180>	IoResourceRequirementList	0	8	_IO_RESOURCE_REQUIREMENTS_LIST *
+STRUCT	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>	WhichSpace	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>	Buffer	8	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>	Offset	16	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>	_padding_	20	4	int
+FIELD	/pcip.pdb/<unnamed-tag_00001182>	<unnamed-tag_00001182>	Length	24	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001184>	<unnamed-tag_00001184>		0	1	
+FIELD	/pcip.pdb/<unnamed-tag_00001184>	<unnamed-tag_00001184>	Lock	0	1	uchar
+STRUCT	/pcip.pdb/<unnamed-tag_00001188>	<unnamed-tag_00001188>		0	4	
+FIELD	/pcip.pdb/<unnamed-tag_00001188>	<unnamed-tag_00001188>	IdType	0	4	BUS_QUERY_ID_TYPE
+STRUCT	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>	DeviceTextType	0	4	DEVICE_TEXT_TYPE
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>	LocaleId	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_0000118C>	<unnamed-tag_0000118C>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>	InPath	0	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>	Reserved	1	3	uchar[3]
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>	Type	8	4	_DEVICE_USAGE_NOTIFICATION_TYPE
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_00001191>	<unnamed-tag_00001191>		15	1	undefined
+STRUCT	/pcip.pdb/<unnamed-tag_00001195>	<unnamed-tag_00001195>		0	4	
+FIELD	/pcip.pdb/<unnamed-tag_00001195>	<unnamed-tag_00001195>	PowerState	0	4	_SYSTEM_POWER_STATE
+STRUCT	/pcip.pdb/<unnamed-tag_00001199>	<unnamed-tag_00001199>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_00001199>	<unnamed-tag_00001199>	PowerSequence	0	8	_POWER_SEQUENCE *
+STRUCT	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		0	4	<unnamed-tag_000011A1>_u_0
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		4	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		5	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		6	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		7	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>	Type	8	4	_POWER_STATE_TYPE
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		12	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		13	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		14	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		15	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>	State	16	4	_POWER_STATE
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		20	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		21	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		22	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		23	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>	ShutdownType	24	4	POWER_ACTION
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		28	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		29	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		30	1	undefined
+FIELD	/pcip.pdb/<unnamed-tag_000011A1>	<unnamed-tag_000011A1>		31	1	undefined
+UNION	/pcip.pdb/<unnamed-tag_000011A1>/<unnamed-tag_000011A1>_u_0	<unnamed-tag_000011A1>_u_0		0	4	
+UFIELD	/pcip.pdb/<unnamed-tag_000011A1>/<unnamed-tag_000011A1>_u_0	<unnamed-tag_000011A1>_u_0	SystemContext	0	4	ulong
+UFIELD	/pcip.pdb/<unnamed-tag_000011A1>/<unnamed-tag_000011A1>_u_0	<unnamed-tag_000011A1>_u_0	SystemPowerStateContext	0	4	_SYSTEM_POWER_STATE_CONTEXT
+STRUCT	/pcip.pdb/<unnamed-tag_000011A5>	<unnamed-tag_000011A5>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_000011A5>	<unnamed-tag_000011A5>	AllocatedResources	0	8	_CM_RESOURCE_LIST *
+FIELD	/pcip.pdb/<unnamed-tag_000011A5>	<unnamed-tag_000011A5>	AllocatedResourcesTranslated	8	8	_CM_RESOURCE_LIST *
+STRUCT	/pcip.pdb/<unnamed-tag_000011A7>	<unnamed-tag_000011A7>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_000011A7>	<unnamed-tag_000011A7>	ProviderId	0	8	ulong64
+FIELD	/pcip.pdb/<unnamed-tag_000011A7>	<unnamed-tag_000011A7>	DataPath	8	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_000011A7>	<unnamed-tag_000011A7>	BufferSize	16	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000011A7>	<unnamed-tag_000011A7>	Buffer	24	8	void *
+STRUCT	/pcip.pdb/<unnamed-tag_000011A9>	<unnamed-tag_000011A9>		0	32	
+FIELD	/pcip.pdb/<unnamed-tag_000011A9>	<unnamed-tag_000011A9>	Argument1	0	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_000011A9>	<unnamed-tag_000011A9>	Argument2	8	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_000011A9>	<unnamed-tag_000011A9>	Argument3	16	8	void *
+FIELD	/pcip.pdb/<unnamed-tag_000011A9>	<unnamed-tag_000011A9>	Argument4	24	8	void *
+UNION	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>		0	32	
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Create	0	32	<unnamed-tag_00001134>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	CreatePipe	0	32	<unnamed-tag_00001138>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	CreateMailslot	0	32	<unnamed-tag_0000113C>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Read	0	24	<unnamed-tag_0000113E>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Write	0	24	<unnamed-tag_0000113E>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryDirectory	0	32	<unnamed-tag_00001142>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	NotifyDirectory	0	16	<unnamed-tag_00001144>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	NotifyDirectoryEx	0	24	<unnamed-tag_00001148>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryFile	0	16	<unnamed-tag_0000114A>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetFile	0	32	<unnamed-tag_0000114C>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryEa	0	32	<unnamed-tag_0000114E>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetEa	0	4	<unnamed-tag_00001150>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryVolume	0	16	<unnamed-tag_00001154>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetVolume	0	16	<unnamed-tag_00001154>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	FileSystemControl	0	32	<unnamed-tag_00001156>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	LockControl	0	24	<unnamed-tag_00001159>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	DeviceIoControl	0	32	<unnamed-tag_0000115B>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QuerySecurity	0	16	<unnamed-tag_0000115D>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetSecurity	0	16	<unnamed-tag_0000115F>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	MountVolume	0	24	<unnamed-tag_00001163>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	VerifyVolume	0	16	<unnamed-tag_00001165>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Scsi	0	8	<unnamed-tag_00001169>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryQuota	0	32	<unnamed-tag_0000116D>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetQuota	0	4	<unnamed-tag_00001150>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryDeviceRelations	0	4	<unnamed-tag_00001171>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryInterface	0	32	<unnamed-tag_00001178>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	DeviceCapabilities	0	8	<unnamed-tag_0000117C>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	FilterResourceRequirements	0	8	<unnamed-tag_00001180>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	ReadWriteConfig	0	32	<unnamed-tag_00001182>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	SetLock	0	1	<unnamed-tag_00001184>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryId	0	4	<unnamed-tag_00001188>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	QueryDeviceText	0	16	<unnamed-tag_0000118C>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	UsageNotification	0	16	<unnamed-tag_00001191>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	WaitWake	0	4	<unnamed-tag_00001195>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	PowerSequence	0	8	<unnamed-tag_00001199>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Power	0	32	<unnamed-tag_000011A1>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	StartDevice	0	16	<unnamed-tag_000011A5>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	WMI	0	32	<unnamed-tag_000011A7>
+UFIELD	/pcip.pdb/<unnamed-tag_000011AB>	<unnamed-tag_000011AB>	Others	0	32	<unnamed-tag_000011A9>
+UNION	/pcip.pdb/<unnamed-tag_000011C2>	<unnamed-tag_000011C2>		0	72	
+UFIELD	/pcip.pdb/<unnamed-tag_000011C2>	<unnamed-tag_000011C2>	ListEntry	0	16	_LIST_ENTRY
+UFIELD	/pcip.pdb/<unnamed-tag_000011C2>	<unnamed-tag_000011C2>	Wcb	0	72	_WAIT_CONTEXT_BLOCK
+STRUCT	/pcip.pdb/<unnamed-tag_00001317>	<unnamed-tag_00001317>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001317>	<unnamed-tag_00001317>	MinimumAddress	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_00001317>	<unnamed-tag_00001317>	MaximumAddress	8	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_00001319>	<unnamed-tag_00001319>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001319>	<unnamed-tag_00001319>	Offset	0	8	ulong64
+FIELD	/pcip.pdb/<unnamed-tag_00001319>	<unnamed-tag_00001319>	Length	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001399>	<unnamed-tag_00001399>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_00001399>	<unnamed-tag_00001399>	Depth	0	2	ulong64:16
+FIELD	/pcip.pdb/<unnamed-tag_00001399>	<unnamed-tag_00001399>	Sequence	2	6	ulong64:48
+FIELD	/pcip.pdb/<unnamed-tag_00001399>	<unnamed-tag_00001399>	Reserved	8	1	ulong64:4
+FIELD	/pcip.pdb/<unnamed-tag_00001399>	<unnamed-tag_00001399>	NextEntry	8	8	ulong64:60
+STRUCT	/pcip.pdb/<unnamed-tag_000013C1>	<unnamed-tag_000013C1>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_000013C1>	<unnamed-tag_000013C1>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013C1>	<unnamed-tag_000013C1>	Alignment	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013C1>	<unnamed-tag_000013C1>	MinimumAddress	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_000013C1>	<unnamed-tag_000013C1>	MaximumAddress	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>	MinimumVector	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>	MaximumVector	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>	AffinityPolicy	8	4	_IRQ_DEVICE_POLICY
+FIELD	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>	PriorityPolicy	12	4	_IRQ_PRIORITY
+FIELD	/pcip.pdb/<unnamed-tag_000013C7>	<unnamed-tag_000013C7>	TargetedProcessors	16	8	ulong64
+STRUCT	/pcip.pdb/<unnamed-tag_000013C9>	<unnamed-tag_000013C9>		0	8	
+FIELD	/pcip.pdb/<unnamed-tag_000013C9>	<unnamed-tag_000013C9>	MinimumChannel	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013C9>	<unnamed-tag_000013C9>	MaximumChannel	4	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_000013CB>	<unnamed-tag_000013CB>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_000013CB>	<unnamed-tag_000013CB>	RequestLine	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CB>	<unnamed-tag_000013CB>	Reserved	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CB>	<unnamed-tag_000013CB>	Channel	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CB>	<unnamed-tag_000013CB>	TransferWidth	12	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_000013CD>	<unnamed-tag_000013CD>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_000013CD>	<unnamed-tag_000013CD>	Data	0	12	ulong[3]
+STRUCT	/pcip.pdb/<unnamed-tag_000013CF>	<unnamed-tag_000013CF>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_000013CF>	<unnamed-tag_000013CF>	Length	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CF>	<unnamed-tag_000013CF>	MinBusNumber	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CF>	<unnamed-tag_000013CF>	MaxBusNumber	8	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013CF>	<unnamed-tag_000013CF>	Reserved	12	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_000013D1>	<unnamed-tag_000013D1>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_000013D1>	<unnamed-tag_000013D1>	Priority	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D1>	<unnamed-tag_000013D1>	Reserved1	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D1>	<unnamed-tag_000013D1>	Reserved2	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_000013D3>	<unnamed-tag_000013D3>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_000013D3>	<unnamed-tag_000013D3>	Length40	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D3>	<unnamed-tag_000013D3>	Alignment40	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D3>	<unnamed-tag_000013D3>	MinimumAddress	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_000013D3>	<unnamed-tag_000013D3>	MaximumAddress	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_000013D5>	<unnamed-tag_000013D5>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_000013D5>	<unnamed-tag_000013D5>	Length48	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D5>	<unnamed-tag_000013D5>	Alignment48	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D5>	<unnamed-tag_000013D5>	MinimumAddress	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_000013D5>	<unnamed-tag_000013D5>	MaximumAddress	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_000013D7>	<unnamed-tag_000013D7>		0	24	
+FIELD	/pcip.pdb/<unnamed-tag_000013D7>	<unnamed-tag_000013D7>	Length64	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D7>	<unnamed-tag_000013D7>	Alignment64	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D7>	<unnamed-tag_000013D7>	MinimumAddress	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_000013D7>	<unnamed-tag_000013D7>	MaximumAddress	16	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	Class	0	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	Type	1	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	Reserved1	2	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	Reserved2	3	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	IdLowPart	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_000013D9>	<unnamed-tag_000013D9>	IdHighPart	8	4	ulong
+UNION	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>		0	24	
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Port	0	24	<unnamed-tag_000013C1>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Memory	0	24	<unnamed-tag_000013C1>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Interrupt	0	24	<unnamed-tag_000013C7>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Dma	0	8	<unnamed-tag_000013C9>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	DmaV3	0	16	<unnamed-tag_000013CB>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Generic	0	24	<unnamed-tag_000013C1>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	DevicePrivate	0	12	<unnamed-tag_000013CD>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	BusNumber	0	16	<unnamed-tag_000013CF>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	ConfigData	0	12	<unnamed-tag_000013D1>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Memory40	0	24	<unnamed-tag_000013D3>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Memory48	0	24	<unnamed-tag_000013D5>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Memory64	0	24	<unnamed-tag_000013D7>
+UFIELD	/pcip.pdb/<unnamed-tag_000013DB>	<unnamed-tag_000013DB>	Connection	0	12	<unnamed-tag_000013D9>
+UNION	/pcip.pdb/<unnamed-tag_000013E5>	<unnamed-tag_000013E5>		0	44	
+UFIELD	/pcip.pdb/<unnamed-tag_000013E5>	<unnamed-tag_000013E5>	InitialPrivilegeSet	0	44	_INITIAL_PRIVILEGE_SET
+UFIELD	/pcip.pdb/<unnamed-tag_000013E5>	<unnamed-tag_000013E5>	PrivilegeSet	0	20	_PRIVILEGE_SET
+STRUCT	/pcip.pdb/<unnamed-tag_00001459>	<unnamed-tag_00001459>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001459>	<unnamed-tag_00001459>	Start	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_00001459>	<unnamed-tag_00001459>	Length	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_0000145B>	<unnamed-tag_0000145B>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000145B>	<unnamed-tag_0000145B>	Level	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000145B>	<unnamed-tag_0000145B>	Vector	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000145B>	<unnamed-tag_0000145B>	Affinity	8	8	ulong64
+STRUCT	/pcip.pdb/<unnamed-tag_0000145D>	<unnamed-tag_0000145D>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000145D>	<unnamed-tag_0000145D>	Reserved	0	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_0000145D>	<unnamed-tag_0000145D>	MessageCount	2	2	ushort
+FIELD	/pcip.pdb/<unnamed-tag_0000145D>	<unnamed-tag_0000145D>	Vector	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_0000145D>	<unnamed-tag_0000145D>	Affinity	8	8	ulong64
+STRUCT	/pcip.pdb/<unnamed-tag_0000145F>	<unnamed-tag_0000145F>		0	16	
+FIELD	/pcip.pdb/<unnamed-tag_0000145F>	<unnamed-tag_0000145F>		0	16	<unnamed-tag_0000145F>_u_0
+UNION	/pcip.pdb/<unnamed-tag_0000145F>/<unnamed-tag_0000145F>_u_0	<unnamed-tag_0000145F>_u_0		0	16	
+UFIELD	/pcip.pdb/<unnamed-tag_0000145F>/<unnamed-tag_0000145F>_u_0	<unnamed-tag_0000145F>_u_0	Raw	0	16	<unnamed-tag_0000145D>
+UFIELD	/pcip.pdb/<unnamed-tag_0000145F>/<unnamed-tag_0000145F>_u_0	<unnamed-tag_0000145F>_u_0	Translated	0	16	<unnamed-tag_0000145B>
+STRUCT	/pcip.pdb/<unnamed-tag_00001461>	<unnamed-tag_00001461>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001461>	<unnamed-tag_00001461>	Channel	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001461>	<unnamed-tag_00001461>	Port	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001461>	<unnamed-tag_00001461>	Reserved1	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	Channel	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	RequestLine	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	TransferWidth	8	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	Reserved1	9	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	Reserved2	10	1	uchar
+FIELD	/pcip.pdb/<unnamed-tag_00001463>	<unnamed-tag_00001463>	Reserved3	11	1	uchar
+STRUCT	/pcip.pdb/<unnamed-tag_00001465>	<unnamed-tag_00001465>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001465>	<unnamed-tag_00001465>	Start	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001465>	<unnamed-tag_00001465>	Length	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001465>	<unnamed-tag_00001465>	Reserved	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001467>	<unnamed-tag_00001467>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001467>	<unnamed-tag_00001467>	DataSize	0	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001467>	<unnamed-tag_00001467>	Reserved1	4	4	ulong
+FIELD	/pcip.pdb/<unnamed-tag_00001467>	<unnamed-tag_00001467>	Reserved2	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_00001469>	<unnamed-tag_00001469>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_00001469>	<unnamed-tag_00001469>	Start	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_00001469>	<unnamed-tag_00001469>	Length40	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_0000146B>	<unnamed-tag_0000146B>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_0000146B>	<unnamed-tag_0000146B>	Start	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_0000146B>	<unnamed-tag_0000146B>	Length48	8	4	ulong
+STRUCT	/pcip.pdb/<unnamed-tag_0000146D>	<unnamed-tag_0000146D>		0	12	
+FIELD	/pcip.pdb/<unnamed-tag_0000146D>	<unnamed-tag_0000146D>	Start	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/<unnamed-tag_0000146D>	<unnamed-tag_0000146D>	Length64	8	4	ulong
+UNION	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>		0	16	
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Generic	0	12	<unnamed-tag_00001459>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Port	0	12	<unnamed-tag_00001459>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Interrupt	0	16	<unnamed-tag_0000145B>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	MessageInterrupt	0	16	<unnamed-tag_0000145F>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Memory	0	12	<unnamed-tag_00001459>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Dma	0	12	<unnamed-tag_00001461>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	DmaV3	0	12	<unnamed-tag_00001463>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	DevicePrivate	0	12	<unnamed-tag_000013CD>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	BusNumber	0	12	<unnamed-tag_00001465>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	DeviceSpecificData	0	12	<unnamed-tag_00001467>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Memory40	0	12	<unnamed-tag_00001469>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Memory48	0	12	<unnamed-tag_0000146B>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Memory64	0	12	<unnamed-tag_0000146D>
+UFIELD	/pcip.pdb/<unnamed-tag_0000146F>	<unnamed-tag_0000146F>	Connection	0	12	<unnamed-tag_000013D9>
+STRUCT	/crtdefs.h/__lc_time_data	__lc_time_data		0	704	
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	wday_abbr	0	56	char *[7]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	wday	56	56	char *[7]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	month_abbr	112	96	char *[12]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	month	208	96	char *[12]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	ampm	304	16	char *[2]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	ww_sdatefmt	320	8	char *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	ww_ldatefmt	328	8	char *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	ww_timefmt	336	8	char *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	ww_caltype	344	4	int
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	refcount	348	4	int
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_wday_abbr	352	56	wchar_t *[7]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_wday	408	56	wchar_t *[7]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_month_abbr	464	96	wchar_t *[12]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_month	560	96	wchar_t *[12]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_ampm	656	16	wchar_t *[2]
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_ww_sdatefmt	672	8	wchar_t *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_ww_ldatefmt	680	8	wchar_t *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_ww_timefmt	688	8	wchar_t *
+FIELD	/crtdefs.h/__lc_time_data	__lc_time_data	_W_ww_locale_name	696	8	wchar_t *
+STRUCT	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE		0	160	
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	OperationID	0	8	_LUID
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	SecurityEvaluated	8	1	uchar
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	GenerateAudit	9	1	uchar
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	GenerateOnClose	10	1	uchar
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	PrivilegesAllocated	11	1	uchar
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	Flags	12	4	ulong
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	RemainingDesiredAccess	16	4	ulong
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	PreviouslyGrantedAccess	20	4	ulong
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	OriginalDesiredAccess	24	4	ulong
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	SubjectSecurityContext	32	32	_SECURITY_SUBJECT_CONTEXT
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	SecurityDescriptor	64	8	void *
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	AuxData	72	8	void *
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	Privileges	80	44	<unnamed-tag_000013E5>
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	AuditPrivileges	124	1	uchar
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	ObjectName	128	16	_UNICODE_STRING
+FIELD	/pcip.pdb/_ACCESS_STATE	_ACCESS_STATE	ObjectTypeName	144	16	_UNICODE_STRING
+STRUCT	/pcip.pdb/_CM_FULL_RESOURCE_DESCRIPTOR	_CM_FULL_RESOURCE_DESCRIPTOR		0	36	
+FIELD	/pcip.pdb/_CM_FULL_RESOURCE_DESCRIPTOR	_CM_FULL_RESOURCE_DESCRIPTOR	InterfaceType	0	4	_INTERFACE_TYPE
+FIELD	/pcip.pdb/_CM_FULL_RESOURCE_DESCRIPTOR	_CM_FULL_RESOURCE_DESCRIPTOR	BusNumber	4	4	ulong
+FIELD	/pcip.pdb/_CM_FULL_RESOURCE_DESCRIPTOR	_CM_FULL_RESOURCE_DESCRIPTOR	PartialResourceList	8	28	_CM_PARTIAL_RESOURCE_LIST
+STRUCT	/pcip.pdb/_CM_PARTIAL_RESOURCE_DESCRIPTOR	_CM_PARTIAL_RESOURCE_DESCRIPTOR		0	20	
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_DESCRIPTOR	_CM_PARTIAL_RESOURCE_DESCRIPTOR	Type	0	1	uchar
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_DESCRIPTOR	_CM_PARTIAL_RESOURCE_DESCRIPTOR	ShareDisposition	1	1	uchar
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_DESCRIPTOR	_CM_PARTIAL_RESOURCE_DESCRIPTOR	Flags	2	2	ushort
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_DESCRIPTOR	_CM_PARTIAL_RESOURCE_DESCRIPTOR	u	4	16	<unnamed-tag_0000146F>
+STRUCT	/pcip.pdb/_CM_PARTIAL_RESOURCE_LIST	_CM_PARTIAL_RESOURCE_LIST		0	28	
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_LIST	_CM_PARTIAL_RESOURCE_LIST	Version	0	2	ushort
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_LIST	_CM_PARTIAL_RESOURCE_LIST	Revision	2	2	ushort
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_LIST	_CM_PARTIAL_RESOURCE_LIST	Count	4	4	ulong
+FIELD	/pcip.pdb/_CM_PARTIAL_RESOURCE_LIST	_CM_PARTIAL_RESOURCE_LIST	PartialDescriptors	8	20	_CM_PARTIAL_RESOURCE_DESCRIPTOR[1]
+STRUCT	/pcip.pdb/_CM_RESOURCE_LIST	_CM_RESOURCE_LIST		0	40	
+FIELD	/pcip.pdb/_CM_RESOURCE_LIST	_CM_RESOURCE_LIST	Count	0	4	ulong
+FIELD	/pcip.pdb/_CM_RESOURCE_LIST	_CM_RESOURCE_LIST	List	4	36	_CM_FULL_RESOURCE_DESCRIPTOR[1]
+STRUCT	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES		0	64	
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Size	0	2	ushort
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Version	2	2	ushort
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DeviceD1	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DeviceD2	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	LockSupported	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	EjectSupported	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Removable	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DockDevice	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	UniqueID	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	SilentInstall	4	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	RawDeviceOK	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	SurpriseRemovalOK	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WakeFromD0	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WakeFromD1	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WakeFromD2	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WakeFromD3	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	HardwareDisabled	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	NonDynamic	5	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WarmEjectSupported	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	NoDisplayInUI	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Reserved1	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	WakeFromInterrupt	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	SecureDevice	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	ChildOfVgaEnabledBridge	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DecodeIoOnBoot	6	1	ulong:1
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Reserved	6	2	ulong:9
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	Address	8	4	ulong
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	UINumber	12	4	ulong
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DeviceState	16	28	_DEVICE_POWER_STATE[7]
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	SystemWake	44	4	_SYSTEM_POWER_STATE
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	DeviceWake	48	4	_DEVICE_POWER_STATE
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	D1Latency	52	4	ulong
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	D2Latency	56	4	ulong
+FIELD	/pcip.pdb/_DEVICE_CAPABILITIES	_DEVICE_CAPABILITIES	D3Latency	60	4	ulong
+STRUCT	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION		0	64	
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	Version	0	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	Master	4	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	ScatterGather	5	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DemandMode	6	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	AutoInitialize	7	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	Dma32BitAddresses	8	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	IgnoreCount	9	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	Reserved1	10	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	Dma64BitAddresses	11	1	uchar
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	BusNumber	12	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaChannel	16	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	InterfaceType	20	4	_INTERFACE_TYPE
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaWidth	24	4	_DMA_WIDTH
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaSpeed	28	4	_DMA_SPEED
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	MaximumLength	32	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaPort	36	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaAddressWidth	40	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaControllerInstance	44	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DmaRequestLine	48	4	ulong
+FIELD	/pcip.pdb/_DEVICE_DESCRIPTION	_DEVICE_DESCRIPTION	DeviceAddress	56	8	_LARGE_INTEGER
+STRUCT	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		0	336	
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Type	0	2	short
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Size	2	2	ushort
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	ReferenceCount	4	4	long
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DriverObject	8	8	_DRIVER_OBJECT *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	NextDevice	16	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	AttachedDevice	24	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	CurrentIrp	32	8	_IRP *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Timer	40	8	_IO_TIMER *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Flags	48	4	ulong
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Characteristics	52	4	ulong
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Vpb	56	8	_VPB *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DeviceExtension	64	8	void *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DeviceType	72	4	ulong
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	StackSize	76	1	char
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		77	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		78	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		79	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Queue	80	72	<unnamed-tag_000011C2>
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	AlignmentRequirement	152	4	ulong
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		156	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		157	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		158	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		159	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DeviceQueue	160	40	_KDEVICE_QUEUE
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Dpc	200	64	_KDPC
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	ActiveThreadCount	264	4	ulong
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		268	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		269	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		270	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		271	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	SecurityDescriptor	272	8	void *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DeviceLock	280	24	_KEVENT
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	SectorSize	304	2	ushort
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Spare1	306	2	ushort
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		308	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		309	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		310	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		311	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	DeviceObjectExtension	312	8	_DEVOBJ_EXTENSION *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT	Reserved	320	8	void *
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		328	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		329	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		330	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		331	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		332	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		333	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		334	1	undefined
+FIELD	/pcip.pdb/_DEVICE_OBJECT	_DEVICE_OBJECT		335	1	undefined
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceUnspecified	0	4	
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceD0	1	4	
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceD1	2	4	
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceD2	3	4	
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceD3	4	4	
+ENUM	/pcip.pdb/_DEVICE_POWER_STATE	_DEVICE_POWER_STATE	PowerDeviceMaximum	5	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	BusRelations	0	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	EjectionRelations	1	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	PowerRelations	2	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	RemovalRelations	3	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	TargetDeviceRelation	4	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	SingleBusRelations	5	4	
+ENUM	/pcip.pdb/_DEVICE_RELATION_TYPE	_DEVICE_RELATION_TYPE	TransportRelations	6	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeUndefined	0	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypePaging	1	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeHibernation	2	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeDumpFile	3	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeBoot	4	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypePostDisplay	5	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeGuestAssigned	6	4	
+ENUM	/pcip.pdb/_DEVICE_USAGE_NOTIFICATION_TYPE	_DEVICE_USAGE_NOTIFICATION_TYPE	DeviceUsageTypeInlineCryptoEngine	7	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthNotWakeable	0	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthD0	1	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthD1	2	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthD2	3	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthD3hot	4	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthD3cold	5	4	
+ENUM	/pcip.pdb/_DEVICE_WAKE_DEPTH	_DEVICE_WAKE_DEPTH	DeviceWakeDepthMaximum	6	4	
+STRUCT	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION		0	112	
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	Type	0	2	short
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	Size	2	2	ushort
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	DeviceObject	8	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	PowerFlags	16	4	ulong
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	Dope	24	8	_DEVICE_OBJECT_POWER_EXTENSION *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	ExtensionFlags	32	4	ulong
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	DeviceNode	40	8	void *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	AttachedTo	48	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	StartIoCount	56	4	long
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	StartIoKey	60	4	long
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	StartIoFlags	64	4	ulong
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	Vpb	72	8	_VPB *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	DependencyNode	80	8	void *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	InterruptContext	88	8	void *
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	InterruptCount	96	4	long
+FIELD	/pcip.pdb/_DEVOBJ_EXTENSION	_DEVOBJ_EXTENSION	VerifierContext	104	8	void *
+ENUM	/pcip.pdb/_DIRECTORY_NOTIFY_INFORMATION_CLASS	_DIRECTORY_NOTIFY_INFORMATION_CLASS	DirectoryNotifyInformation	1	4	
+ENUM	/pcip.pdb/_DIRECTORY_NOTIFY_INFORMATION_CLASS	_DIRECTORY_NOTIFY_INFORMATION_CLASS	DirectoryNotifyExtendedInformation	2	4	
+ENUM	/pcip.pdb/_DIRECTORY_NOTIFY_INFORMATION_CLASS	_DIRECTORY_NOTIFY_INFORMATION_CLASS	DirectoryNotifyFullInformation	3	4	
+ENUM	/pcip.pdb/_DIRECTORY_NOTIFY_INFORMATION_CLASS	_DIRECTORY_NOTIFY_INFORMATION_CLASS	DirectoryNotifyMaximumInformation	4	4	
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER	_DISPATCHER_HEADER		0	24	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER	_DISPATCHER_HEADER		0	4	_DISPATCHER_HEADER_u_0
+FIELD	/pcip.pdb/_DISPATCHER_HEADER	_DISPATCHER_HEADER	SignalState	4	4	long
+FIELD	/pcip.pdb/_DISPATCHER_HEADER	_DISPATCHER_HEADER	WaitListHead	8	16	_LIST_ENTRY
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0		0	4	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	Lock	0	4	long
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	LockNV	0	4	long
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_2	0	4	_DISPATCHER_HEADER_u_0_s_2
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_3	0	4	_DISPATCHER_HEADER_u_0_s_3
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_4	0	4	_DISPATCHER_HEADER_u_0_s_4
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_5	0	4	_DISPATCHER_HEADER_u_0_s_5
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_6	0	4	_DISPATCHER_HEADER_u_0_s_6
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0	_DISPATCHER_HEADER_u_0	_s_7	0	4	_DISPATCHER_HEADER_u_0_s_7
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_2	_DISPATCHER_HEADER_u_0_s_2		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_2	_DISPATCHER_HEADER_u_0_s_2	Type	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_2	_DISPATCHER_HEADER_u_0_s_2	Signalling	1	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_2	_DISPATCHER_HEADER_u_0_s_2	Size	2	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_2	_DISPATCHER_HEADER_u_0_s_2	Reserved1	3	1	uchar
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3	_DISPATCHER_HEADER_u_0_s_3		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3	_DISPATCHER_HEADER_u_0_s_3	TimerType	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3	_DISPATCHER_HEADER_u_0_s_3		1	1	_DISPATCHER_HEADER_u_0_s_3_u_1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3	_DISPATCHER_HEADER_u_0_s_3	Hand	2	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3	_DISPATCHER_HEADER_u_0_s_3		3	1	_DISPATCHER_HEADER_u_0_s_3_u_3
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1	_DISPATCHER_HEADER_u_0_s_3_u_1		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1	_DISPATCHER_HEADER_u_0_s_3_u_1	TimerControlFlags	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1	_DISPATCHER_HEADER_u_0_s_3_u_1	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_3_u_1_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1/_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	_DISPATCHER_HEADER_u_0_s_3_u_1_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1/_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	Absolute	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1/_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	Wake	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_1/_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	_DISPATCHER_HEADER_u_0_s_3_u_1_s_1	EncodedTolerableDelay	0	1	uchar:6
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3	_DISPATCHER_HEADER_u_0_s_3_u_3		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3	_DISPATCHER_HEADER_u_0_s_3_u_3	TimerMiscFlags	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3	_DISPATCHER_HEADER_u_0_s_3_u_3	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_3_u_3_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3/_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	_DISPATCHER_HEADER_u_0_s_3_u_3_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3/_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	Index	0	1	uchar:6
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3/_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	Inserted	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_3/_DISPATCHER_HEADER_u_0_s_3_u_3/_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	_DISPATCHER_HEADER_u_0_s_3_u_3_s_1	Expired	0	1	uchar:1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4	_DISPATCHER_HEADER_u_0_s_4		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4	_DISPATCHER_HEADER_u_0_s_4	Timer2Type	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4	_DISPATCHER_HEADER_u_0_s_4		1	1	_DISPATCHER_HEADER_u_0_s_4_u_1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4	_DISPATCHER_HEADER_u_0_s_4	Timer2ComponentId	2	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4	_DISPATCHER_HEADER_u_0_s_4	Timer2RelativeId	3	1	uchar
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1	_DISPATCHER_HEADER_u_0_s_4_u_1		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1	_DISPATCHER_HEADER_u_0_s_4_u_1	Timer2Flags	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1	_DISPATCHER_HEADER_u_0_s_4_u_1	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2Inserted	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2Expiring	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2CancelPending	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2SetPending	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2Running	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2Disabled	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_4/_DISPATCHER_HEADER_u_0_s_4_u_1/_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	_DISPATCHER_HEADER_u_0_s_4_u_1_s_1	Timer2ReservedFlags	0	1	uchar:2
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5	_DISPATCHER_HEADER_u_0_s_5		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5	_DISPATCHER_HEADER_u_0_s_5	QueueType	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5	_DISPATCHER_HEADER_u_0_s_5		1	1	_DISPATCHER_HEADER_u_0_s_5_u_1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5	_DISPATCHER_HEADER_u_0_s_5	QueueSize	2	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5	_DISPATCHER_HEADER_u_0_s_5	QueueReserved	3	1	uchar
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1	_DISPATCHER_HEADER_u_0_s_5_u_1		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1	_DISPATCHER_HEADER_u_0_s_5_u_1	QueueControlFlags	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1	_DISPATCHER_HEADER_u_0_s_5_u_1	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_5_u_1_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1/_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	_DISPATCHER_HEADER_u_0_s_5_u_1_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1/_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	Abandoned	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1/_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	DisableIncrement	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_5/_DISPATCHER_HEADER_u_0_s_5_u_1/_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	_DISPATCHER_HEADER_u_0_s_5_u_1_s_1	QueueReservedControlFlags	0	1	uchar:6
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6	_DISPATCHER_HEADER_u_0_s_6		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6	_DISPATCHER_HEADER_u_0_s_6	ThreadType	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6	_DISPATCHER_HEADER_u_0_s_6	ThreadReserved	1	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6	_DISPATCHER_HEADER_u_0_s_6		2	1	_DISPATCHER_HEADER_u_0_s_6_u_2
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6	_DISPATCHER_HEADER_u_0_s_6		3	1	_DISPATCHER_HEADER_u_0_s_6_u_3
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2	_DISPATCHER_HEADER_u_0_s_6_u_2		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2	_DISPATCHER_HEADER_u_0_s_6_u_2	ThreadControlFlags	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2	_DISPATCHER_HEADER_u_0_s_6_u_2	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	CycleProfiling	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	CounterProfiling	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	GroupScheduling	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	AffinitySet	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	Tagged	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	EnergyProfiling	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	SchedulerAssist	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_2/_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	_DISPATCHER_HEADER_u_0_s_6_u_2_s_1	ThreadReservedControlFlags	0	1	uchar:1
+UNION	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3	_DISPATCHER_HEADER_u_0_s_6_u_3		0	1	
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3	_DISPATCHER_HEADER_u_0_s_6_u_3	DebugActive	0	1	uchar
+UFIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3	_DISPATCHER_HEADER_u_0_s_6_u_3	_s_1	0	1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1		0	1	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	ActiveDR7	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	Instrumented	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	Minimal	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	Reserved4	0	1	uchar:2
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	AltSyscall	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	Emulation	0	1	uchar:1
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_6/_DISPATCHER_HEADER_u_0_s_6_u_3/_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	_DISPATCHER_HEADER_u_0_s_6_u_3_s_1	Reserved5	0	1	uchar:1
+STRUCT	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_7	_DISPATCHER_HEADER_u_0_s_7		0	4	
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_7	_DISPATCHER_HEADER_u_0_s_7	MutantType	0	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_7	_DISPATCHER_HEADER_u_0_s_7	MutantSize	1	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_7	_DISPATCHER_HEADER_u_0_s_7	DpcActive	2	1	uchar
+FIELD	/pcip.pdb/_DISPATCHER_HEADER/_DISPATCHER_HEADER_u_0/_DISPATCHER_HEADER_u_0_s_7	_DISPATCHER_HEADER_u_0_s_7	MutantReserved	3	1	uchar
+STRUCT	/pcip.pdb/_DMA_ADAPTER	_DMA_ADAPTER		0	16	
+FIELD	/pcip.pdb/_DMA_ADAPTER	_DMA_ADAPTER	Version	0	2	ushort
+FIELD	/pcip.pdb/_DMA_ADAPTER	_DMA_ADAPTER	Size	2	2	ushort
+FIELD	/pcip.pdb/_DMA_ADAPTER	_DMA_ADAPTER	DmaOperations	8	8	_DMA_OPERATIONS *
+UNION	/pcip.pdb/_DMA_ADAPTER_INFO	_DMA_ADAPTER_INFO		0	88	
+UFIELD	/pcip.pdb/_DMA_ADAPTER_INFO	_DMA_ADAPTER_INFO	_s_0	0	24	_DMA_ADAPTER_INFO_s_0
+UFIELD	/pcip.pdb/_DMA_ADAPTER_INFO	_DMA_ADAPTER_INFO	_s_1	0	88	_DMA_ADAPTER_INFO_s_1
+STRUCT	/pcip.pdb/_DMA_ADAPTER_INFO_CRASHDUMP	_DMA_ADAPTER_INFO_CRASHDUMP		0	80	
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_CRASHDUMP	_DMA_ADAPTER_INFO_CRASHDUMP	DeviceDescription	0	64	_DEVICE_DESCRIPTION
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_CRASHDUMP	_DMA_ADAPTER_INFO_CRASHDUMP	DeviceIdSize	64	8	ulong64
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_CRASHDUMP	_DMA_ADAPTER_INFO_CRASHDUMP	DeviceId	72	8	void *
+STRUCT	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_0	_DMA_ADAPTER_INFO_s_0		0	24	
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_0	_DMA_ADAPTER_INFO_s_0	Version	0	4	ulong
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_0	_DMA_ADAPTER_INFO_s_0	V1	4	20	_DMA_ADAPTER_INFO_V1
+STRUCT	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_1	_DMA_ADAPTER_INFO_s_1		0	88	
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_1	_DMA_ADAPTER_INFO_s_1	Reserved	0	8	ulong64
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO/_DMA_ADAPTER_INFO_s_1	_DMA_ADAPTER_INFO_s_1	Crashdump	8	80	_DMA_ADAPTER_INFO_CRASHDUMP
+STRUCT	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1		0	20	
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1	ReadDmaCounterAvailable	0	4	ulong
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1	ScatterGatherLimit	4	4	ulong
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1	DmaAddressWidth	8	4	ulong
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1	Flags	12	4	ulong
+FIELD	/pcip.pdb/_DMA_ADAPTER_INFO_V1	_DMA_ADAPTER_INFO_V1	MinimumTransferUnit	16	4	ulong
+STRUCT	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION		0	40	
+FIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION	ConfigType	0	4	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE
+FIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION		8	32	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	CommonBufferHardwareAccessReadOnly	0	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	CommonBufferHardwareAccessWriteOnly	1	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	CommonBufferHardwareAccessReadWrite	2	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE	CommonBufferHardwareAccessMax	3	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	CommonBufferConfigTypeLogicalAddressLimits	0	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	CommonBufferConfigTypeSubSection	1	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	CommonBufferConfigTypeHardwareAccessPermissions	2	4	
+ENUM	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE	CommonBufferConfigTypeMax	3	4	
+UNION	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8		0	32	
+UFIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	LogicalAddressLimits	0	16	<unnamed-tag_00001317>
+UFIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	SubSection	0	16	<unnamed-tag_00001319>
+UFIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	HardwareAccessType	0	4	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE
+UFIELD	/pcip.pdb/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION/_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	_DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_u_8	Reserved	0	32	ulong64[4]
+STRUCT	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS		0	320	
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	Size	0	4	ulong
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	PutDmaAdapter	8	8	_func___cdecl_void__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateCommonBuffer	16	8	_func___cdecl_void_ptr__DMA_ADAPTER_ptr_ulong__LARGE_INTEGER_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeCommonBuffer	24	8	_func___cdecl_void__DMA_ADAPTER_ptr_ulong__LARGE_INTEGER_void_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateAdapterChannel	32	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_ulong__func___cdecl__IO_ALLOCATION_ACTION__DEVICE_OBJECT_ptr__IRP_ptr_void_ptr_void_ptr_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FlushAdapterBuffers	40	8	_func___cdecl_uchar__DMA_ADAPTER_ptr__MDL_ptr_void_ptr_void_ptr_ulong_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeAdapterChannel	48	8	_func___cdecl_void__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeMapRegisters	56	8	_func___cdecl_void__DMA_ADAPTER_ptr_void_ptr_ulong *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	MapTransfer	64	8	_func___cdecl__LARGE_INTEGER__DMA_ADAPTER_ptr__MDL_ptr_void_ptr_void_ptr_ulong_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetDmaAlignment	72	8	_func___cdecl_ulong__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	ReadDmaCounter	80	8	_func___cdecl_ulong__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetScatterGatherList	88	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr__MDL_ptr_void_ptr_ulong__func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr__SCATTER_GATHER_LIST_ptr_void_ptr_ptr_void_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	PutScatterGatherList	96	8	_func___cdecl_void__DMA_ADAPTER_ptr__SCATTER_GATHER_LIST_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	CalculateScatterGatherList	104	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr_void_ptr_ulong_ulong_ptr_ulong_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	BuildScatterGatherList	112	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr__MDL_ptr_void_ptr_ulong__func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr__SCATTER_GATHER_LIST_ptr_void_ptr_ptr_void_ptr_uchar_void_ptr_ulong *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	BuildMdlFromScatterGatherList	120	8	_func___cdecl_long__DMA_ADAPTER_ptr__SCATTER_GATHER_LIST_ptr__MDL_ptr__MDL_ptr_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetDmaAdapterInfo	128	8	_func___cdecl_long__DMA_ADAPTER_ptr__DMA_ADAPTER_INFO_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetDmaTransferInfo	136	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr_ulong64_ulong_uchar__DMA_TRANSFER_INFO_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	InitializeDmaTransferContext	144	8	_func___cdecl_long__DMA_ADAPTER_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateCommonBufferEx	152	8	_func___cdecl_void_ptr__DMA_ADAPTER_ptr__LARGE_INTEGER_ptr_ulong__LARGE_INTEGER_ptr_uchar_ulong *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateAdapterChannelEx	160	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr_ulong_ulong__func___cdecl__IO_ALLOCATION_ACTION__DEVICE_OBJECT_ptr__IRP_ptr_void_ptr_void_ptr_ptr_void_ptr_void_ptr_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	ConfigureAdapterChannel	168	8	_func___cdecl_long__DMA_ADAPTER_ptr_ulong_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	CancelAdapterChannel	176	8	_func___cdecl_uchar__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	MapTransferEx	184	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr_void_ptr_ulong64_ulong_ulong_ptr_uchar__SCATTER_GATHER_LIST_ptr_ulong__func___cdecl_void__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr_DMA_COMPLETION_STATUS_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetScatterGatherListEx	192	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr__MDL_ptr_ulong64_ulong_ulong__func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr__SCATTER_GATHER_LIST_ptr_void_ptr_ptr_void_ptr_uchar__func___cdecl_void__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr_DMA_COMPLETION_STATUS_ptr_void_ptr__SCATTER_GATHER_LIST_ptr_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	BuildScatterGatherListEx	200	8	_func___cdecl_long__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr__MDL_ptr_ulong64_ulong_ulong__func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr__SCATTER_GATHER_LIST_ptr_void_ptr_ptr_void_ptr_uchar_void_ptr_ulong__func___cdecl_void__DMA_ADAPTER_ptr__DEVICE_OBJECT_ptr_void_ptr_DMA_COMPLETION_STATUS_ptr_void_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FlushAdapterBuffersEx	208	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr_void_ptr_ulong64_ulong_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeAdapterObject	216	8	_func___cdecl_void__DMA_ADAPTER_ptr__IO_ALLOCATION_ACTION *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	CancelMappedTransfer	224	8	_func___cdecl_long__DMA_ADAPTER_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateDomainCommonBuffer	232	8	_func___cdecl_long__DMA_ADAPTER_ptr_void_ptr__LARGE_INTEGER_ptr_ulong_ulong__MEMORY_CACHING_TYPE_ptr_ulong__LARGE_INTEGER_ptr_void_ptr_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FlushDmaBuffer	240	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr_uchar *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	JoinDmaDomain	248	8	_func___cdecl_long__DMA_ADAPTER_ptr_void_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	LeaveDmaDomain	256	8	_func___cdecl_long__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetDmaDomain	264	8	_func___cdecl_void_ptr__DMA_ADAPTER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateCommonBufferWithBounds	272	8	_func___cdecl_void_ptr__DMA_ADAPTER_ptr__LARGE_INTEGER_ptr__LARGE_INTEGER_ptr_ulong_ulong__MEMORY_CACHING_TYPE_ptr_ulong__LARGE_INTEGER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	AllocateCommonBufferVector	280	8	_func___cdecl_long__DMA_ADAPTER_ptr__LARGE_INTEGER__LARGE_INTEGER__MEMORY_CACHING_TYPE_ulong_ulong_ulong_ulong64__DMA_COMMON_BUFFER_VECTOR_ptr_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	GetCommonBufferFromVectorByIndex	288	8	_func___cdecl_void__DMA_ADAPTER_ptr__DMA_COMMON_BUFFER_VECTOR_ptr_ulong_void_ptr_ptr__LARGE_INTEGER_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeCommonBufferFromVector	296	8	_func___cdecl_void__DMA_ADAPTER_ptr__DMA_COMMON_BUFFER_VECTOR_ptr_ulong *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	FreeCommonBufferVector	304	8	_func___cdecl_void__DMA_ADAPTER_ptr__DMA_COMMON_BUFFER_VECTOR_ptr *
+FIELD	/pcip.pdb/_DMA_OPERATIONS	_DMA_OPERATIONS	CreateCommonBufferFromMdl	312	8	_func___cdecl_long__DMA_ADAPTER_ptr__MDL_ptr__DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ptr_ulong__LARGE_INTEGER_ptr *
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	Compatible	0	4	
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	TypeA	1	4	
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	TypeB	2	4	
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	TypeC	3	4	
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	TypeF	4	4	
+ENUM	/pcip.pdb/_DMA_SPEED	_DMA_SPEED	MaximumDmaSpeed	5	4	
+STRUCT	/pcip.pdb/_DMA_TRANSFER_INFO	_DMA_TRANSFER_INFO		0	20	
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO	_DMA_TRANSFER_INFO	Version	0	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO	_DMA_TRANSFER_INFO		4	16	_DMA_TRANSFER_INFO_u_4
+UNION	/pcip.pdb/_DMA_TRANSFER_INFO/_DMA_TRANSFER_INFO_u_4	_DMA_TRANSFER_INFO_u_4		0	16	
+UFIELD	/pcip.pdb/_DMA_TRANSFER_INFO/_DMA_TRANSFER_INFO_u_4	_DMA_TRANSFER_INFO_u_4	V1	0	12	_DMA_TRANSFER_INFO_V1
+UFIELD	/pcip.pdb/_DMA_TRANSFER_INFO/_DMA_TRANSFER_INFO_u_4	_DMA_TRANSFER_INFO_u_4	V2	0	16	_DMA_TRANSFER_INFO_V2
+STRUCT	/pcip.pdb/_DMA_TRANSFER_INFO_V1	_DMA_TRANSFER_INFO_V1		0	12	
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V1	_DMA_TRANSFER_INFO_V1	MapRegisterCount	0	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V1	_DMA_TRANSFER_INFO_V1	ScatterGatherElementCount	4	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V1	_DMA_TRANSFER_INFO_V1	ScatterGatherListSize	8	4	ulong
+STRUCT	/pcip.pdb/_DMA_TRANSFER_INFO_V2	_DMA_TRANSFER_INFO_V2		0	16	
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V2	_DMA_TRANSFER_INFO_V2	MapRegisterCount	0	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V2	_DMA_TRANSFER_INFO_V2	ScatterGatherElementCount	4	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V2	_DMA_TRANSFER_INFO_V2	ScatterGatherListSize	8	4	ulong
+FIELD	/pcip.pdb/_DMA_TRANSFER_INFO_V2	_DMA_TRANSFER_INFO_V2	LogicalPageCount	12	4	ulong
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	Width8Bits	0	4	
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	Width16Bits	1	4	
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	Width32Bits	2	4	
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	Width64Bits	3	4	
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	WidthNoWrap	4	4	
+ENUM	/pcip.pdb/_DMA_WIDTH	_DMA_WIDTH	MaximumDmaWidth	5	4	
+STRUCT	/pcip.pdb/_DRIVER_EXTENSION	_DRIVER_EXTENSION		0	40	
+FIELD	/pcip.pdb/_DRIVER_EXTENSION	_DRIVER_EXTENSION	DriverObject	0	8	_DRIVER_OBJECT *
+FIELD	/pcip.pdb/_DRIVER_EXTENSION	_DRIVER_EXTENSION	AddDevice	8	8	_func___cdecl_long__DRIVER_OBJECT_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_DRIVER_EXTENSION	_DRIVER_EXTENSION	Count	16	4	ulong
+FIELD	/pcip.pdb/_DRIVER_EXTENSION	_DRIVER_EXTENSION	ServiceKeyName	24	16	_UNICODE_STRING
+STRUCT	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT		0	336	
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	Type	0	2	short
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	Size	2	2	short
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DeviceObject	8	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	Flags	16	4	ulong
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverStart	24	8	void *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverSize	32	4	ulong
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverSection	40	8	void *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverExtension	48	8	_DRIVER_EXTENSION *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverName	56	16	_UNICODE_STRING
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	HardwareDatabase	72	8	_UNICODE_STRING *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	FastIoDispatch	80	8	_FAST_IO_DISPATCH *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverInit	88	8	_func___cdecl_long__DRIVER_OBJECT_ptr__UNICODE_STRING_ptr *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverStartIo	96	8	_func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	DriverUnload	104	8	_func___cdecl_void__DRIVER_OBJECT_ptr *
+FIELD	/pcip.pdb/_DRIVER_OBJECT	_DRIVER_OBJECT	MajorFunction	112	224	_func___cdecl_long__DEVICE_OBJECT_ptr__IRP_ptr *[28]
+STRUCT	/pcip.pdb/_ERESOURCE	_ERESOURCE		0	104	
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	SystemResourcesList	0	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	OwnerTable	16	8	_OWNER_ENTRY *
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	ActiveCount	24	2	short
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE		26	2	_ERESOURCE_u_26
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	SharedWaiters	32	8	void *
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	ExclusiveWaiters	40	8	void *
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	OwnerEntry	48	16	_OWNER_ENTRY
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	ActiveEntries	64	4	ulong
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	ContentionCount	68	4	ulong
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	NumberOfSharedWaiters	72	4	ulong
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	NumberOfExclusiveWaiters	76	4	ulong
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	MiscFlags	80	1	char
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	Reserved1	81	3	uchar[3]
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	ResourceTimeoutCount	84	4	ulong
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE		88	8	_ERESOURCE_u_88
+FIELD	/pcip.pdb/_ERESOURCE	_ERESOURCE	SpinLock	96	8	ulong64
+UNION	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26	_ERESOURCE_u_26		0	2	
+UFIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26	_ERESOURCE_u_26	Flag	0	2	ushort
+UFIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26	_ERESOURCE_u_26	_s_1	0	2	_ERESOURCE_u_26_s_1
+STRUCT	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26/_ERESOURCE_u_26_s_1	_ERESOURCE_u_26_s_1		0	2	
+FIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26/_ERESOURCE_u_26_s_1	_ERESOURCE_u_26_s_1	ReservedLowFlags	0	1	uchar
+FIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_26/_ERESOURCE_u_26_s_1	_ERESOURCE_u_26_s_1	WaiterPriority	1	1	uchar
+UNION	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_88	_ERESOURCE_u_88		0	8	
+UFIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_88	_ERESOURCE_u_88	Address	0	8	void *
+UFIELD	/pcip.pdb/_ERESOURCE/_ERESOURCE_u_88	_ERESOURCE_u_88	CreatorBackTraceIndex	0	8	ulong64
+STRUCT	/pcip.pdb/_EVENT_DATA_DESCRIPTOR	_EVENT_DATA_DESCRIPTOR		0	16	
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR	_EVENT_DATA_DESCRIPTOR	Ptr	0	8	ulong64
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR	_EVENT_DATA_DESCRIPTOR	Size	8	4	ulong
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR	_EVENT_DATA_DESCRIPTOR		12	4	_EVENT_DATA_DESCRIPTOR_u_12
+UNION	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12	_EVENT_DATA_DESCRIPTOR_u_12		0	4	
+UFIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12	_EVENT_DATA_DESCRIPTOR_u_12	Reserved	0	4	ulong
+UFIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12	_EVENT_DATA_DESCRIPTOR_u_12	_s_1	0	4	_EVENT_DATA_DESCRIPTOR_u_12_s_1
+STRUCT	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12/_EVENT_DATA_DESCRIPTOR_u_12_s_1	_EVENT_DATA_DESCRIPTOR_u_12_s_1		0	4	
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12/_EVENT_DATA_DESCRIPTOR_u_12_s_1	_EVENT_DATA_DESCRIPTOR_u_12_s_1	Type	0	1	uchar
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12/_EVENT_DATA_DESCRIPTOR_u_12_s_1	_EVENT_DATA_DESCRIPTOR_u_12_s_1	Reserved1	1	1	uchar
+FIELD	/pcip.pdb/_EVENT_DATA_DESCRIPTOR/_EVENT_DATA_DESCRIPTOR_u_12/_EVENT_DATA_DESCRIPTOR_u_12_s_1	_EVENT_DATA_DESCRIPTOR_u_12_s_1	Reserved2	2	2	ushort
+STRUCT	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR		0	16	
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Id	0	2	ushort
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Version	2	1	uchar
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Channel	3	1	uchar
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Level	4	1	uchar
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Opcode	5	1	uchar
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Task	6	2	ushort
+FIELD	/pcip.pdb/_EVENT_DESCRIPTOR	_EVENT_DESCRIPTOR	Keyword	8	8	ulong64
+ENUM	/pcip.pdb/_EVENT_TYPE	_EVENT_TYPE	NotificationEvent	0	4	
+ENUM	/pcip.pdb/_EVENT_TYPE	_EVENT_TYPE	SynchronizationEvent	1	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	LowPoolPriority	0	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	LowPoolPrioritySpecialPoolOverrun	8	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	LowPoolPrioritySpecialPoolUnderrun	9	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	NormalPoolPriority	16	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	NormalPoolPrioritySpecialPoolOverrun	24	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	NormalPoolPrioritySpecialPoolUnderrun	25	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	HighPoolPriority	32	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	HighPoolPrioritySpecialPoolOverrun	40	4	
+ENUM	/pcip.pdb/_EX_POOL_PRIORITY	_EX_POOL_PRIORITY	HighPoolPrioritySpecialPoolUnderrun	41	4	
+STRUCT	/pcip.pdb/_EXT_DELETE_PARAMETERS	_EXT_DELETE_PARAMETERS		0	24	
+FIELD	/pcip.pdb/_EXT_DELETE_PARAMETERS	_EXT_DELETE_PARAMETERS	Version	0	4	ulong
+FIELD	/pcip.pdb/_EXT_DELETE_PARAMETERS	_EXT_DELETE_PARAMETERS	Reserved	4	4	ulong
+FIELD	/pcip.pdb/_EXT_DELETE_PARAMETERS	_EXT_DELETE_PARAMETERS	DeleteCallback	8	8	_func___cdecl_void_void_ptr *
+FIELD	/pcip.pdb/_EXT_DELETE_PARAMETERS	_EXT_DELETE_PARAMETERS	DeleteContext	16	8	void *
+STRUCT	/pcip.pdb/_EXT_SET_PARAMETERS_V0	_EXT_SET_PARAMETERS_V0		0	16	
+FIELD	/pcip.pdb/_EXT_SET_PARAMETERS_V0	_EXT_SET_PARAMETERS_V0	Version	0	4	ulong
+FIELD	/pcip.pdb/_EXT_SET_PARAMETERS_V0	_EXT_SET_PARAMETERS_V0	Reserved	4	4	ulong
+FIELD	/pcip.pdb/_EXT_SET_PARAMETERS_V0	_EXT_SET_PARAMETERS_V0	NoWakeTolerance	8	8	long64
+STRUCT	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH		0	224	
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	SizeOfFastIoDispatch	0	4	ulong
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoCheckIfPossible	8	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_uchar_ulong_uchar__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoRead	16	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_uchar_ulong_void_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoWrite	24	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_uchar_ulong_void_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoQueryBasicInfo	32	8	_func___cdecl_uchar__FILE_OBJECT_ptr_uchar__FILE_BASIC_INFORMATION_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoQueryStandardInfo	40	8	_func___cdecl_uchar__FILE_OBJECT_ptr_uchar__FILE_STANDARD_INFORMATION_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoLock	48	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr__LARGE_INTEGER_ptr__EPROCESS_ptr_ulong_uchar_uchar__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoUnlockSingle	56	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr__LARGE_INTEGER_ptr__EPROCESS_ptr_ulong__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoUnlockAll	64	8	_func___cdecl_uchar__FILE_OBJECT_ptr__EPROCESS_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoUnlockAllByKey	72	8	_func___cdecl_uchar__FILE_OBJECT_ptr_void_ptr_ulong__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoDeviceControl	80	8	_func___cdecl_uchar__FILE_OBJECT_ptr_uchar_void_ptr_ulong_void_ptr_ulong_ulong__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	AcquireFileForNtCreateSection	88	8	_func___cdecl_void__FILE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	ReleaseFileForNtCreateSection	96	8	_func___cdecl_void__FILE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoDetachDevice	104	8	_func___cdecl_void__DEVICE_OBJECT_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoQueryNetworkOpenInfo	112	8	_func___cdecl_uchar__FILE_OBJECT_ptr_uchar__FILE_NETWORK_OPEN_INFORMATION_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	AcquireForModWrite	120	8	_func___cdecl_long__FILE_OBJECT_ptr__LARGE_INTEGER_ptr__ERESOURCE_ptr_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	MdlRead	128	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_ulong__MDL_ptr_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	MdlReadComplete	136	8	_func___cdecl_uchar__FILE_OBJECT_ptr__MDL_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	PrepareMdlWrite	144	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_ulong__MDL_ptr_ptr__IO_STATUS_BLOCK_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	MdlWriteComplete	152	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr__MDL_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoReadCompressed	160	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_ulong_void_ptr__MDL_ptr_ptr__IO_STATUS_BLOCK_ptr__COMPRESSED_DATA_INFO_ptr_ulong__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoWriteCompressed	168	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr_ulong_ulong_void_ptr__MDL_ptr_ptr__IO_STATUS_BLOCK_ptr__COMPRESSED_DATA_INFO_ptr_ulong__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	MdlReadCompleteCompressed	176	8	_func___cdecl_uchar__FILE_OBJECT_ptr__MDL_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	MdlWriteCompleteCompressed	184	8	_func___cdecl_uchar__FILE_OBJECT_ptr__LARGE_INTEGER_ptr__MDL_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	FastIoQueryOpen	192	8	_func___cdecl_uchar__IRP_ptr__FILE_NETWORK_OPEN_INFORMATION_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	ReleaseForModWrite	200	8	_func___cdecl_long__FILE_OBJECT_ptr__ERESOURCE_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	AcquireForCcFlush	208	8	_func___cdecl_long__FILE_OBJECT_ptr__DEVICE_OBJECT_ptr *
+FIELD	/pcip.pdb/_FAST_IO_DISPATCH	_FAST_IO_DISPATCH	ReleaseForCcFlush	216	8	_func___cdecl_long__FILE_OBJECT_ptr__DEVICE_OBJECT_ptr *
+STRUCT	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX		0	56	
+FIELD	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX	Count	0	4	long
+FIELD	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX	Owner	8	8	void *
+FIELD	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX	Contention	16	4	ulong
+FIELD	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX	Event	24	24	_KEVENT
+FIELD	/pcip.pdb/_FAST_MUTEX	_FAST_MUTEX	OldIrql	48	4	ulong
+STRUCT	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION		0	40	
+FIELD	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION	CreationTime	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION	LastAccessTime	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION	LastWriteTime	16	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION	ChangeTime	24	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_BASIC_INFORMATION	_FILE_BASIC_INFORMATION	FileAttributes	32	4	ulong
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileDirectoryInformation	1	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileFullDirectoryInformation	2	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileBothDirectoryInformation	3	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileBasicInformation	4	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStandardInformation	5	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileInternalInformation	6	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileEaInformation	7	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAccessInformation	8	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNameInformation	9	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileRenameInformation	10	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileLinkInformation	11	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNamesInformation	12	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileDispositionInformation	13	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FilePositionInformation	14	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileFullEaInformation	15	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileModeInformation	16	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAlignmentInformation	17	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAllInformation	18	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAllocationInformation	19	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileEndOfFileInformation	20	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAlternateNameInformation	21	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStreamInformation	22	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FilePipeInformation	23	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FilePipeLocalInformation	24	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FilePipeRemoteInformation	25	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMailslotQueryInformation	26	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMailslotSetInformation	27	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileCompressionInformation	28	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileObjectIdInformation	29	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileCompletionInformation	30	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMoveClusterInformation	31	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileQuotaInformation	32	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileReparsePointInformation	33	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNetworkOpenInformation	34	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileAttributeTagInformation	35	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileTrackingInformation	36	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdBothDirectoryInformation	37	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdFullDirectoryInformation	38	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileValidDataLengthInformation	39	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileShortNameInformation	40	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIoCompletionNotificationInformation	41	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIoStatusBlockRangeInformation	42	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIoPriorityHintInformation	43	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileSfioReserveInformation	44	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileSfioVolumeInformation	45	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileHardLinkInformation	46	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileProcessIdsUsingFileInformation	47	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNormalizedNameInformation	48	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNetworkPhysicalNameInformation	49	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdGlobalTxDirectoryInformation	50	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIsRemoteDeviceInformation	51	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileUnusedInformation	52	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileNumaNodeInformation	53	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStandardLinkInformation	54	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileRemoteProtocolInformation	55	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileRenameInformationBypassAccessCheck	56	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileLinkInformationBypassAccessCheck	57	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileVolumeNameInformation	58	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdInformation	59	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdExtdDirectoryInformation	60	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileReplaceCompletionInformation	61	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileHardLinkFullIdInformation	62	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdExtdBothDirectoryInformation	63	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileDispositionInformationEx	64	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileRenameInformationEx	65	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileRenameInformationExBypassAccessCheck	66	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileDesiredStorageClassInformation	67	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStatInformation	68	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMemoryPartitionInformation	69	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStatLxInformation	70	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileCaseSensitiveInformation	71	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileLinkInformationEx	72	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileLinkInformationExBypassAccessCheck	73	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStorageReserveIdInformation	74	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileCaseSensitiveInformationForceAccessCheck	75	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileKnownFolderInformation	76	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStatBasicInformation	77	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileId64ExtdDirectoryInformation	78	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileId64ExtdBothDirectoryInformation	79	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdAllExtdDirectoryInformation	80	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileIdAllExtdBothDirectoryInformation	81	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileStreamReservationInformation	82	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMupProviderInfo	83	4	
+ENUM	/pcip.pdb/_FILE_INFORMATION_CLASS	_FILE_INFORMATION_CLASS	FileMaximumInformation	84	4	
+STRUCT	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION		0	56	
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	CreationTime	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	LastAccessTime	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	LastWriteTime	16	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	ChangeTime	24	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	AllocationSize	32	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	EndOfFile	40	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_NETWORK_OPEN_INFORMATION	_FILE_NETWORK_OPEN_INFORMATION	FileAttributes	48	4	ulong
+STRUCT	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT		0	216	
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Type	0	2	short
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Size	2	2	short
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	DeviceObject	8	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Vpb	16	8	_VPB *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	FsContext	24	8	void *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	FsContext2	32	8	void *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	SectionObjectPointer	40	8	_SECTION_OBJECT_POINTERS *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	PrivateCacheMap	48	8	void *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	FinalStatus	56	4	long
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	RelatedFileObject	64	8	_FILE_OBJECT *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	LockOperation	72	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	DeletePending	73	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	ReadAccess	74	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	WriteAccess	75	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	DeleteAccess	76	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	SharedRead	77	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	SharedWrite	78	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	SharedDelete	79	1	uchar
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Flags	80	4	ulong
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	FileName	88	16	_UNICODE_STRING
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	CurrentByteOffset	104	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Waiters	112	4	ulong
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Busy	116	4	ulong
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	LastLock	120	8	void *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Lock	128	24	_KEVENT
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	Event	152	24	_KEVENT
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	CompletionContext	176	8	_IO_COMPLETION_CONTEXT *
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	IrpListLock	184	8	ulong64
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	IrpList	192	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_FILE_OBJECT	_FILE_OBJECT	FileObjectExtension	208	8	_IOP_FILE_OBJECT_EXTENSION *
+STRUCT	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION		0	24	
+FIELD	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION	AllocationSize	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION	EndOfFile	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION	NumberOfLinks	16	4	ulong
+FIELD	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION	DeletePending	20	1	uchar
+FIELD	/pcip.pdb/_FILE_STANDARD_INFORMATION	_FILE_STANDARD_INFORMATION	Directory	21	1	uchar
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsVolumeInformation	1	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsLabelInformation	2	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsSizeInformation	3	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsDeviceInformation	4	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsAttributeInformation	5	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsControlInformation	6	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsFullSizeInformation	7	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsObjectIdInformation	8	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsDriverPathInformation	9	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsVolumeFlagsInformation	10	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsSectorSizeInformation	11	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsDataCopyInformation	12	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsMetadataSizeInformation	13	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsFullSizeInformationEx	14	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsGuidInformation	15	4	
+ENUM	/pcip.pdb/_FSINFOCLASS	_FSINFOCLASS	FileFsMaximumInformation	16	4	
+STRUCT	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		0	128	
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		0	16	_GENERAL_LOOKASIDE_u_0
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	Depth	16	2	ushort
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	MaximumDepth	18	2	ushort
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	TotalAllocates	20	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		24	4	_GENERAL_LOOKASIDE_u_24
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	TotalFrees	28	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		32	4	_GENERAL_LOOKASIDE_u_32
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	Type	36	4	_POOL_TYPE
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	Tag	40	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	Size	44	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		48	8	_GENERAL_LOOKASIDE_u_48
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		56	8	_GENERAL_LOOKASIDE_u_56
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	ListEntry	64	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	LastTotalAllocates	80	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		84	4	_GENERAL_LOOKASIDE_u_84
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE	Future	88	8	ulong[2]
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		96	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		97	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		98	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		99	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		100	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		101	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		102	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		103	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		104	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		105	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		106	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		107	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		108	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		109	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		110	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		111	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		112	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		113	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		114	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		115	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		116	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		117	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		118	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		119	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		120	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		121	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		122	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		123	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		124	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		125	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		126	1	undefined
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE	_GENERAL_LOOKASIDE		127	1	undefined
+STRUCT	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		0	96	
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		0	16	_GENERAL_LOOKASIDE_POOL_u_0
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	Depth	16	2	ushort
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	MaximumDepth	18	2	ushort
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	TotalAllocates	20	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		24	4	_GENERAL_LOOKASIDE_POOL_u_24
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	TotalFrees	28	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		32	4	_GENERAL_LOOKASIDE_POOL_u_32
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	Type	36	4	_POOL_TYPE
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	Tag	40	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	Size	44	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		48	8	_GENERAL_LOOKASIDE_POOL_u_48
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		56	8	_GENERAL_LOOKASIDE_POOL_u_56
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	ListEntry	64	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	LastTotalAllocates	80	4	ulong
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL		84	4	_GENERAL_LOOKASIDE_POOL_u_84
+FIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL	_GENERAL_LOOKASIDE_POOL	Future	88	8	ulong[2]
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_0	_GENERAL_LOOKASIDE_POOL_u_0		0	16	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_0	_GENERAL_LOOKASIDE_POOL_u_0	ListHead	0	16	_SLIST_HEADER
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_0	_GENERAL_LOOKASIDE_POOL_u_0	SingleListHead	0	8	_SINGLE_LIST_ENTRY
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_24	_GENERAL_LOOKASIDE_POOL_u_24		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_24	_GENERAL_LOOKASIDE_POOL_u_24	AllocateMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_24	_GENERAL_LOOKASIDE_POOL_u_24	AllocateHits	0	4	ulong
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_32	_GENERAL_LOOKASIDE_POOL_u_32		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_32	_GENERAL_LOOKASIDE_POOL_u_32	FreeMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_32	_GENERAL_LOOKASIDE_POOL_u_32	FreeHits	0	4	ulong
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_48	_GENERAL_LOOKASIDE_POOL_u_48		0	8	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_48	_GENERAL_LOOKASIDE_POOL_u_48	AllocateEx	0	8	_func___cdecl_void_ptr__POOL_TYPE_ulong64_ulong__LOOKASIDE_LIST_EX_ptr *
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_48	_GENERAL_LOOKASIDE_POOL_u_48	Allocate	0	8	_func___cdecl_void_ptr__POOL_TYPE_ulong64_ulong *
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_56	_GENERAL_LOOKASIDE_POOL_u_56		0	8	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_56	_GENERAL_LOOKASIDE_POOL_u_56	FreeEx	0	8	_func___cdecl_void_void_ptr__LOOKASIDE_LIST_EX_ptr *
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_56	_GENERAL_LOOKASIDE_POOL_u_56	Free	0	8	_func___cdecl_void_void_ptr *
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_84	_GENERAL_LOOKASIDE_POOL_u_84		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_84	_GENERAL_LOOKASIDE_POOL_u_84	LastAllocateMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE_POOL/_GENERAL_LOOKASIDE_POOL_u_84	_GENERAL_LOOKASIDE_POOL_u_84	LastAllocateHits	0	4	ulong
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_0	_GENERAL_LOOKASIDE_u_0		0	16	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_0	_GENERAL_LOOKASIDE_u_0	ListHead	0	16	_SLIST_HEADER
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_0	_GENERAL_LOOKASIDE_u_0	SingleListHead	0	8	_SINGLE_LIST_ENTRY
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_24	_GENERAL_LOOKASIDE_u_24		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_24	_GENERAL_LOOKASIDE_u_24	AllocateMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_24	_GENERAL_LOOKASIDE_u_24	AllocateHits	0	4	ulong
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_32	_GENERAL_LOOKASIDE_u_32		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_32	_GENERAL_LOOKASIDE_u_32	FreeMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_32	_GENERAL_LOOKASIDE_u_32	FreeHits	0	4	ulong
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_48	_GENERAL_LOOKASIDE_u_48		0	8	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_48	_GENERAL_LOOKASIDE_u_48	AllocateEx	0	8	_func___cdecl_void_ptr__POOL_TYPE_ulong64_ulong__LOOKASIDE_LIST_EX_ptr *
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_48	_GENERAL_LOOKASIDE_u_48	Allocate	0	8	_func___cdecl_void_ptr__POOL_TYPE_ulong64_ulong *
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_56	_GENERAL_LOOKASIDE_u_56		0	8	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_56	_GENERAL_LOOKASIDE_u_56	FreeEx	0	8	_func___cdecl_void_void_ptr__LOOKASIDE_LIST_EX_ptr *
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_56	_GENERAL_LOOKASIDE_u_56	Free	0	8	_func___cdecl_void_void_ptr *
+UNION	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_84	_GENERAL_LOOKASIDE_u_84		0	4	
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_84	_GENERAL_LOOKASIDE_u_84	LastAllocateMisses	0	4	ulong
+UFIELD	/pcip.pdb/_GENERAL_LOOKASIDE/_GENERAL_LOOKASIDE_u_84	_GENERAL_LOOKASIDE_u_84	LastAllocateHits	0	4	ulong
+STRUCT	/pcip.pdb/_GUID	_GUID		0	16	
+FIELD	/pcip.pdb/_GUID	_GUID	Data1	0	4	ulong
+FIELD	/pcip.pdb/_GUID	_GUID	Data2	4	2	ushort
+FIELD	/pcip.pdb/_GUID	_GUID	Data3	6	2	ushort
+FIELD	/pcip.pdb/_GUID	_GUID	Data4	8	8	uchar[8]
+STRUCT	/PE/_IMAGE_RUNTIME_FUNCTION_ENTRY	_IMAGE_RUNTIME_FUNCTION_ENTRY		0	12	
+FIELD	/PE/_IMAGE_RUNTIME_FUNCTION_ENTRY	_IMAGE_RUNTIME_FUNCTION_ENTRY	BeginAddress	0	4	ImageBaseOffset32
+FIELD	/PE/_IMAGE_RUNTIME_FUNCTION_ENTRY	_IMAGE_RUNTIME_FUNCTION_ENTRY	EndAddress	4	4	dword
+FIELD	/PE/_IMAGE_RUNTIME_FUNCTION_ENTRY	_IMAGE_RUNTIME_FUNCTION_ENTRY	UnwindInfoAddressOrData	8	4	ImageBaseOffset32
+STRUCT	/pcip.pdb/_INITIAL_PRIVILEGE_SET	_INITIAL_PRIVILEGE_SET		0	44	
+FIELD	/pcip.pdb/_INITIAL_PRIVILEGE_SET	_INITIAL_PRIVILEGE_SET	PrivilegeCount	0	4	ulong
+FIELD	/pcip.pdb/_INITIAL_PRIVILEGE_SET	_INITIAL_PRIVILEGE_SET	Control	4	4	ulong
+FIELD	/pcip.pdb/_INITIAL_PRIVILEGE_SET	_INITIAL_PRIVILEGE_SET	Privilege	8	36	_LUID_AND_ATTRIBUTES[3]
+STRUCT	/pcip.pdb/_INTERFACE	_INTERFACE		0	32	
+FIELD	/pcip.pdb/_INTERFACE	_INTERFACE	Size	0	2	ushort
+FIELD	/pcip.pdb/_INTERFACE	_INTERFACE	Version	2	2	ushort
+FIELD	/pcip.pdb/_INTERFACE	_INTERFACE	Context	8	8	void *
+FIELD	/pcip.pdb/_INTERFACE	_INTERFACE	InterfaceReference	16	8	_func___cdecl_void_void_ptr *
+FIELD	/pcip.pdb/_INTERFACE	_INTERFACE	InterfaceDereference	24	8	_func___cdecl_void_void_ptr *
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	Internal	0	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	Isa	1	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	Eisa	2	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	MicroChannel	3	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	TurboChannel	4	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	PCIBus	5	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	VMEBus	6	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	NuBus	7	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	PCMCIABus	8	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	CBus	9	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	MPIBus	10	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	MPSABus	11	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	ProcessorInternal	12	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	InternalPowerBus	13	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	PNPISABus	14	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	PNPBus	15	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	Vmcs	16	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	ACPIBus	17	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	MaximumInterfaceType	18	4	
+ENUM	/pcip.pdb/_INTERFACE_TYPE	_INTERFACE_TYPE	InterfaceTypeUndefined	4294967295	4	
+ENUM	/pcip.pdb/_IO_ALLOCATION_ACTION	_IO_ALLOCATION_ACTION	KeepObject	1	4	
+ENUM	/pcip.pdb/_IO_ALLOCATION_ACTION	_IO_ALLOCATION_ACTION	DeallocateObject	2	4	
+ENUM	/pcip.pdb/_IO_ALLOCATION_ACTION	_IO_ALLOCATION_ACTION	DeallocateObjectKeepRegisters	3	4	
+STRUCT	/pcip.pdb/_IO_COMPLETION_CONTEXT	_IO_COMPLETION_CONTEXT		0	24	
+FIELD	/pcip.pdb/_IO_COMPLETION_CONTEXT	_IO_COMPLETION_CONTEXT	Port	0	8	void *
+FIELD	/pcip.pdb/_IO_COMPLETION_CONTEXT	_IO_COMPLETION_CONTEXT	Key	8	8	void *
+FIELD	/pcip.pdb/_IO_COMPLETION_CONTEXT	_IO_COMPLETION_CONTEXT	UsageCount	16	8	long64
+STRUCT	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR		0	32	
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	Option	0	1	uchar
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	Type	1	1	uchar
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	ShareDisposition	2	1	uchar
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	Spare1	3	1	uchar
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	Flags	4	2	ushort
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	Spare2	6	2	ushort
+FIELD	/pcip.pdb/_IO_RESOURCE_DESCRIPTOR	_IO_RESOURCE_DESCRIPTOR	u	8	24	<unnamed-tag_000013DB>
+STRUCT	/pcip.pdb/_IO_RESOURCE_LIST	_IO_RESOURCE_LIST		0	40	
+FIELD	/pcip.pdb/_IO_RESOURCE_LIST	_IO_RESOURCE_LIST	Version	0	2	ushort
+FIELD	/pcip.pdb/_IO_RESOURCE_LIST	_IO_RESOURCE_LIST	Revision	2	2	ushort
+FIELD	/pcip.pdb/_IO_RESOURCE_LIST	_IO_RESOURCE_LIST	Count	4	4	ulong
+FIELD	/pcip.pdb/_IO_RESOURCE_LIST	_IO_RESOURCE_LIST	Descriptors	8	32	_IO_RESOURCE_DESCRIPTOR[1]
+STRUCT	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST		0	72	
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	ListSize	0	4	ulong
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	InterfaceType	4	4	_INTERFACE_TYPE
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	BusNumber	8	4	ulong
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	SlotNumber	12	4	ulong
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	Reserved	16	12	ulong[3]
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	AlternativeLists	28	4	ulong
+FIELD	/pcip.pdb/_IO_RESOURCE_REQUIREMENTS_LIST	_IO_RESOURCE_REQUIREMENTS_LIST	List	32	40	_IO_RESOURCE_LIST[1]
+STRUCT	/pcip.pdb/_IO_SECURITY_CONTEXT	_IO_SECURITY_CONTEXT		0	24	
+FIELD	/pcip.pdb/_IO_SECURITY_CONTEXT	_IO_SECURITY_CONTEXT	SecurityQos	0	8	_SECURITY_QUALITY_OF_SERVICE *
+FIELD	/pcip.pdb/_IO_SECURITY_CONTEXT	_IO_SECURITY_CONTEXT	AccessState	8	8	_ACCESS_STATE *
+FIELD	/pcip.pdb/_IO_SECURITY_CONTEXT	_IO_SECURITY_CONTEXT	DesiredAccess	16	4	ulong
+FIELD	/pcip.pdb/_IO_SECURITY_CONTEXT	_IO_SECURITY_CONTEXT	FullCreateOptions	20	4	ulong
+STRUCT	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION		0	72	
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	MajorFunction	0	1	uchar
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	MinorFunction	1	1	uchar
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	Flags	2	1	uchar
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	Control	3	1	uchar
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	Parameters	8	32	<unnamed-tag_000011AB>
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	DeviceObject	40	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	FileObject	48	8	_FILE_OBJECT *
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	CompletionRoutine	56	8	_func___cdecl_long__DEVICE_OBJECT_ptr__IRP_ptr_void_ptr *
+FIELD	/pcip.pdb/_IO_STACK_LOCATION	_IO_STACK_LOCATION	Context	64	8	void *
+STRUCT	/pcip.pdb/_IO_STATUS_BLOCK	_IO_STATUS_BLOCK		0	16	
+FIELD	/pcip.pdb/_IO_STATUS_BLOCK	_IO_STATUS_BLOCK		0	8	_IO_STATUS_BLOCK_u_0
+FIELD	/pcip.pdb/_IO_STATUS_BLOCK	_IO_STATUS_BLOCK	Information	8	8	ulong64
+UNION	/pcip.pdb/_IO_STATUS_BLOCK/_IO_STATUS_BLOCK_u_0	_IO_STATUS_BLOCK_u_0		0	8	
+UFIELD	/pcip.pdb/_IO_STATUS_BLOCK/_IO_STATUS_BLOCK_u_0	_IO_STATUS_BLOCK_u_0	Status	0	4	long
+UFIELD	/pcip.pdb/_IO_STATUS_BLOCK/_IO_STATUS_BLOCK_u_0	_IO_STATUS_BLOCK_u_0	Pointer	0	8	void *
+STRUCT	/mbstring.h/_iobuf	_iobuf		0	48	
+FIELD	/mbstring.h/_iobuf	_iobuf	_ptr	0	8	char *
+FIELD	/mbstring.h/_iobuf	_iobuf	_cnt	8	4	int
+FIELD	/mbstring.h/_iobuf	_iobuf	_base	16	8	char *
+FIELD	/mbstring.h/_iobuf	_iobuf	_flag	24	4	int
+FIELD	/mbstring.h/_iobuf	_iobuf	_file	28	4	int
+FIELD	/mbstring.h/_iobuf	_iobuf	_charbuf	32	4	int
+FIELD	/mbstring.h/_iobuf	_iobuf	_bufsiz	36	4	int
+FIELD	/mbstring.h/_iobuf	_iobuf	_tmpfname	40	8	char *
+STRUCT	/pcip.pdb/_IRP	_IRP		0	208	
+FIELD	/pcip.pdb/_IRP	_IRP	Type	0	2	short
+FIELD	/pcip.pdb/_IRP	_IRP	Size	2	2	ushort
+FIELD	/pcip.pdb/_IRP	_IRP	MdlAddress	8	8	_MDL *
+FIELD	/pcip.pdb/_IRP	_IRP	Flags	16	4	ulong
+FIELD	/pcip.pdb/_IRP	_IRP	AssociatedIrp	24	8	<unnamed-tag_00001112>
+FIELD	/pcip.pdb/_IRP	_IRP	ThreadListEntry	32	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_IRP	_IRP	IoStatus	48	16	_IO_STATUS_BLOCK
+FIELD	/pcip.pdb/_IRP	_IRP	RequestorMode	64	1	char
+FIELD	/pcip.pdb/_IRP	_IRP	PendingReturned	65	1	uchar
+FIELD	/pcip.pdb/_IRP	_IRP	StackCount	66	1	char
+FIELD	/pcip.pdb/_IRP	_IRP	CurrentLocation	67	1	char
+FIELD	/pcip.pdb/_IRP	_IRP	Cancel	68	1	uchar
+FIELD	/pcip.pdb/_IRP	_IRP	CancelIrql	69	1	uchar
+FIELD	/pcip.pdb/_IRP	_IRP	ApcEnvironment	70	1	char
+FIELD	/pcip.pdb/_IRP	_IRP	AllocationFlags	71	1	uchar
+FIELD	/pcip.pdb/_IRP	_IRP		72	8	_IRP_u_72
+FIELD	/pcip.pdb/_IRP	_IRP	UserEvent	80	8	_KEVENT *
+FIELD	/pcip.pdb/_IRP	_IRP	Overlay	88	16	<unnamed-tag_0000111D>
+FIELD	/pcip.pdb/_IRP	_IRP	CancelRoutine	104	8	_func___cdecl_void__DEVICE_OBJECT_ptr__IRP_ptr *
+FIELD	/pcip.pdb/_IRP	_IRP	UserBuffer	112	8	void *
+FIELD	/pcip.pdb/_IRP	_IRP	Tail	120	88	<unnamed-tag_0000112D>
+UNION	/pcip.pdb/_IRP/_IRP_u_72	_IRP_u_72		0	8	
+UFIELD	/pcip.pdb/_IRP/_IRP_u_72	_IRP_u_72	UserIosb	0	8	_IO_STATUS_BLOCK *
+UFIELD	/pcip.pdb/_IRP/_IRP_u_72	_IRP_u_72	IoRingContext	0	8	void *
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicyMachineDefault	0	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicyAllCloseProcessors	1	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicyOneCloseProcessor	2	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicyAllProcessorsInMachine	3	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicySpecifiedProcessors	4	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicySpreadMessagesAcrossAllProcessors	5	4	
+ENUM	/pcip.pdb/_IRQ_DEVICE_POLICY	_IRQ_DEVICE_POLICY	IrqPolicyAllProcessorsInMachineWhenSteered	6	4	
+ENUM	/pcip.pdb/_IRQ_PRIORITY	_IRQ_PRIORITY	IrqPriorityUndefined	0	4	
+ENUM	/pcip.pdb/_IRQ_PRIORITY	_IRQ_PRIORITY	IrqPriorityLow	1	4	
+ENUM	/pcip.pdb/_IRQ_PRIORITY	_IRQ_PRIORITY	IrqPriorityNormal	2	4	
+ENUM	/pcip.pdb/_IRQ_PRIORITY	_IRQ_PRIORITY	IrqPriorityHigh	3	4	
+STRUCT	/pcip.pdb/_KAPC	_KAPC		0	88	
+FIELD	/pcip.pdb/_KAPC	_KAPC	Type	0	1	uchar
+FIELD	/pcip.pdb/_KAPC	_KAPC	AllFlags	1	1	uchar
+FIELD	/pcip.pdb/_KAPC	_KAPC	Size	2	1	uchar
+FIELD	/pcip.pdb/_KAPC	_KAPC	SpareByte1	3	1	uchar
+FIELD	/pcip.pdb/_KAPC	_KAPC	SpareLong0	4	4	ulong
+FIELD	/pcip.pdb/_KAPC	_KAPC	Thread	8	8	_KTHREAD *
+FIELD	/pcip.pdb/_KAPC	_KAPC	ApcListEntry	16	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_KAPC	_KAPC	Reserved	32	24	void *[3]
+FIELD	/pcip.pdb/_KAPC	_KAPC	NormalContext	56	8	void *
+FIELD	/pcip.pdb/_KAPC	_KAPC	SystemArgument1	64	8	void *
+FIELD	/pcip.pdb/_KAPC	_KAPC	SystemArgument2	72	8	void *
+FIELD	/pcip.pdb/_KAPC	_KAPC	ApcStateIndex	80	1	char
+FIELD	/pcip.pdb/_KAPC	_KAPC	ApcMode	81	1	char
+FIELD	/pcip.pdb/_KAPC	_KAPC	Inserted	82	1	uchar
+STRUCT	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE		0	40	
+FIELD	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE	Type	0	2	short
+FIELD	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE	Size	2	2	short
+FIELD	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE	DeviceListHead	8	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE	Lock	24	8	ulong64
+FIELD	/pcip.pdb/_KDEVICE_QUEUE	_KDEVICE_QUEUE		32	8	_KDEVICE_QUEUE_u_32
+STRUCT	/pcip.pdb/_KDEVICE_QUEUE_ENTRY	_KDEVICE_QUEUE_ENTRY		0	24	
+FIELD	/pcip.pdb/_KDEVICE_QUEUE_ENTRY	_KDEVICE_QUEUE_ENTRY	DeviceListEntry	0	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_KDEVICE_QUEUE_ENTRY	_KDEVICE_QUEUE_ENTRY	SortKey	16	4	ulong
+FIELD	/pcip.pdb/_KDEVICE_QUEUE_ENTRY	_KDEVICE_QUEUE_ENTRY	Inserted	20	1	uchar
+UNION	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32	_KDEVICE_QUEUE_u_32		0	8	
+UFIELD	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32	_KDEVICE_QUEUE_u_32	Busy	0	1	uchar
+UFIELD	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32	_KDEVICE_QUEUE_u_32	_s_1	0	8	_KDEVICE_QUEUE_u_32_s_1
+STRUCT	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32/_KDEVICE_QUEUE_u_32_s_1	_KDEVICE_QUEUE_u_32_s_1		0	8	
+FIELD	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32/_KDEVICE_QUEUE_u_32_s_1	_KDEVICE_QUEUE_u_32_s_1	Reserved	0	1	long64:8
+FIELD	/pcip.pdb/_KDEVICE_QUEUE/_KDEVICE_QUEUE_u_32/_KDEVICE_QUEUE_u_32_s_1	_KDEVICE_QUEUE_u_32_s_1	Hint	1	7	long64:56
+STRUCT	/pcip.pdb/_KDPC	_KDPC		0	64	
+FIELD	/pcip.pdb/_KDPC	_KDPC		0	4	_KDPC_u_0
+FIELD	/pcip.pdb/_KDPC	_KDPC	DpcListEntry	8	8	_SINGLE_LIST_ENTRY
+FIELD	/pcip.pdb/_KDPC	_KDPC	ProcessorHistory	16	8	ulong64
+FIELD	/pcip.pdb/_KDPC	_KDPC	DeferredRoutine	24	8	_func___cdecl_void__KDPC_ptr_void_ptr_void_ptr_void_ptr *
+FIELD	/pcip.pdb/_KDPC	_KDPC	DeferredContext	32	8	void *
+FIELD	/pcip.pdb/_KDPC	_KDPC	SystemArgument1	40	8	void *
+FIELD	/pcip.pdb/_KDPC	_KDPC	SystemArgument2	48	8	void *
+FIELD	/pcip.pdb/_KDPC	_KDPC	DpcData	56	8	void *
+UNION	/pcip.pdb/_KDPC/_KDPC_u_0	_KDPC_u_0		0	4	
+UFIELD	/pcip.pdb/_KDPC/_KDPC_u_0	_KDPC_u_0	TargetInfoAsUlong	0	4	ulong
+UFIELD	/pcip.pdb/_KDPC/_KDPC_u_0	_KDPC_u_0	_s_1	0	4	_KDPC_u_0_s_1
+STRUCT	/pcip.pdb/_KDPC/_KDPC_u_0/_KDPC_u_0_s_1	_KDPC_u_0_s_1		0	4	
+FIELD	/pcip.pdb/_KDPC/_KDPC_u_0/_KDPC_u_0_s_1	_KDPC_u_0_s_1	Type	0	1	uchar
+FIELD	/pcip.pdb/_KDPC/_KDPC_u_0/_KDPC_u_0_s_1	_KDPC_u_0_s_1	Importance	1	1	uchar
+FIELD	/pcip.pdb/_KDPC/_KDPC_u_0/_KDPC_u_0_s_1	_KDPC_u_0_s_1	Number	2	2	ushort
+STRUCT	/pcip.pdb/_KEVENT	_KEVENT		0	24	
+FIELD	/pcip.pdb/_KEVENT	_KEVENT	Header	0	24	_DISPATCHER_HEADER
+STRUCT	/pcip.pdb/_KFLOATING_SAVE	_KFLOATING_SAVE		0	4	
+FIELD	/pcip.pdb/_KFLOATING_SAVE	_KFLOATING_SAVE	Dummy	0	4	ulong
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptPolarityUnknown	0	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptActiveHigh	1	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptRisingEdge	1	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptActiveLow	2	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptFallingEdge	2	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptActiveBoth	3	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptActiveBothTriggerLow	3	4	
+ENUM	/pcip.pdb/_KINTERRUPT_POLARITY	_KINTERRUPT_POLARITY	InterruptActiveBothTriggerHigh	4	4	
+UNION	/pcip.pdb/_LARGE_INTEGER	_LARGE_INTEGER		0	8	
+UFIELD	/pcip.pdb/_LARGE_INTEGER	_LARGE_INTEGER	_s_0	0	8	_LARGE_INTEGER_s_0
+UFIELD	/pcip.pdb/_LARGE_INTEGER	_LARGE_INTEGER	u	0	8	<unnamed-tag_000010AB>
+UFIELD	/pcip.pdb/_LARGE_INTEGER	_LARGE_INTEGER	QuadPart	0	8	long64
+STRUCT	/pcip.pdb/_LARGE_INTEGER/_LARGE_INTEGER_s_0	_LARGE_INTEGER_s_0		0	8	
+FIELD	/pcip.pdb/_LARGE_INTEGER/_LARGE_INTEGER_s_0	_LARGE_INTEGER_s_0	LowPart	0	4	ulong
+FIELD	/pcip.pdb/_LARGE_INTEGER/_LARGE_INTEGER_s_0	_LARGE_INTEGER_s_0	HighPart	4	4	long
+STRUCT	/pcip.pdb/_LIST_ENTRY	_LIST_ENTRY		0	16	
+FIELD	/pcip.pdb/_LIST_ENTRY	_LIST_ENTRY	Flink	0	8	_LIST_ENTRY *
+FIELD	/pcip.pdb/_LIST_ENTRY	_LIST_ENTRY	Blink	8	8	_LIST_ENTRY *
+STRUCT	/pcip.pdb/_LOOKASIDE_LIST_EX	_LOOKASIDE_LIST_EX		0	96	
+FIELD	/pcip.pdb/_LOOKASIDE_LIST_EX	_LOOKASIDE_LIST_EX	L	0	96	_GENERAL_LOOKASIDE_POOL
+STRUCT	/pcip.pdb/_LUID	_LUID		0	8	
+FIELD	/pcip.pdb/_LUID	_LUID	LowPart	0	4	ulong
+FIELD	/pcip.pdb/_LUID	_LUID	HighPart	4	4	long
+STRUCT	/pcip.pdb/_LUID_AND_ATTRIBUTES	_LUID_AND_ATTRIBUTES		0	12	
+FIELD	/pcip.pdb/_LUID_AND_ATTRIBUTES	_LUID_AND_ATTRIBUTES	Luid	0	8	_LUID
+FIELD	/pcip.pdb/_LUID_AND_ATTRIBUTES	_LUID_AND_ATTRIBUTES	Attributes	8	4	ulong
+STRUCT	/pcip.pdb/_MAILSLOT_CREATE_PARAMETERS	_MAILSLOT_CREATE_PARAMETERS		0	24	
+FIELD	/pcip.pdb/_MAILSLOT_CREATE_PARAMETERS	_MAILSLOT_CREATE_PARAMETERS	MailslotQuota	0	4	ulong
+FIELD	/pcip.pdb/_MAILSLOT_CREATE_PARAMETERS	_MAILSLOT_CREATE_PARAMETERS	MaximumMessageSize	4	4	ulong
+FIELD	/pcip.pdb/_MAILSLOT_CREATE_PARAMETERS	_MAILSLOT_CREATE_PARAMETERS	ReadTimeout	8	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_MAILSLOT_CREATE_PARAMETERS	_MAILSLOT_CREATE_PARAMETERS	TimeoutSpecified	16	1	uchar
+STRUCT	/pcip.pdb/_MDL	_MDL		0	48	
+FIELD	/pcip.pdb/_MDL	_MDL	Next	0	8	_MDL *
+FIELD	/pcip.pdb/_MDL	_MDL	Size	8	2	short
+FIELD	/pcip.pdb/_MDL	_MDL	MdlFlags	10	2	short
+FIELD	/pcip.pdb/_MDL	_MDL	Process	16	8	_EPROCESS *
+FIELD	/pcip.pdb/_MDL	_MDL	MappedSystemVa	24	8	void *
+FIELD	/pcip.pdb/_MDL	_MDL	StartVa	32	8	void *
+FIELD	/pcip.pdb/_MDL	_MDL	ByteCount	40	4	ulong
+FIELD	/pcip.pdb/_MDL	_MDL	ByteOffset	44	4	ulong
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmNonCached	0	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmCached	1	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmWriteCombined	2	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmHardwareCoherentCached	3	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmNonCachedUnordered	4	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmUSWCCached	5	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmMaximumCacheType	6	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE	_MEMORY_CACHING_TYPE	MmNotMapped	4294967295	4	
+ENUM	/pcip.pdb/_MEMORY_CACHING_TYPE_ORIG	_MEMORY_CACHING_TYPE_ORIG	MmFrameBufferCached	2	4	
+ENUM	/pcip.pdb/_MODE	_MODE	KernelMode	0	4	
+ENUM	/pcip.pdb/_MODE	_MODE	UserMode	1	4	
+ENUM	/pcip.pdb/_MODE	_MODE	MaximumMode	2	4	
+STRUCT	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS		0	40	
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	NamedPipeType	0	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	ReadMode	4	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	CompletionMode	8	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	MaximumInstances	12	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	InboundQuota	16	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	OutboundQuota	20	4	ulong
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	DefaultTimeout	24	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_NAMED_PIPE_CREATE_PARAMETERS	_NAMED_PIPE_CREATE_PARAMETERS	TimeoutSpecified	32	1	uchar
+STRUCT	/pcip.pdb/_NPAGED_LOOKASIDE_LIST	_NPAGED_LOOKASIDE_LIST		0	128	
+FIELD	/pcip.pdb/_NPAGED_LOOKASIDE_LIST	_NPAGED_LOOKASIDE_LIST	L	0	128	_GENERAL_LOOKASIDE
+STRUCT	/pcip.pdb/_OWNER_ENTRY	_OWNER_ENTRY		0	16	
+FIELD	/pcip.pdb/_OWNER_ENTRY	_OWNER_ENTRY	OwnerThread	0	8	ulong64
+FIELD	/pcip.pdb/_OWNER_ENTRY	_OWNER_ENTRY		8	4	_OWNER_ENTRY_u_8
+UNION	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8	_OWNER_ENTRY_u_8		0	4	
+UFIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8	_OWNER_ENTRY_u_8	_s_0	0	4	_OWNER_ENTRY_u_8_s_0
+UFIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8	_OWNER_ENTRY_u_8	TableSize	0	4	ulong
+STRUCT	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8/_OWNER_ENTRY_u_8_s_0	_OWNER_ENTRY_u_8_s_0		0	4	
+FIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8/_OWNER_ENTRY_u_8_s_0	_OWNER_ENTRY_u_8_s_0	IoPriorityBoosted	0	1	ulong:1
+FIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8/_OWNER_ENTRY_u_8_s_0	_OWNER_ENTRY_u_8_s_0	OwnerReferenced	0	1	ulong:1
+FIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8/_OWNER_ENTRY_u_8_s_0	_OWNER_ENTRY_u_8_s_0	IoQoSPriorityBoosted	0	1	ulong:1
+FIELD	/pcip.pdb/_OWNER_ENTRY/_OWNER_ENTRY_u_8/_OWNER_ENTRY_u_8_s_0	_OWNER_ENTRY_u_8_s_0	OwnerCount	0	4	ulong:29
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeBatterySaver	0	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeEnergySaverHighSavings	0	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeBetterBattery	1	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeEnergySaverStandard	1	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeBalanced	2	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeHighPerformance	3	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeMaxPerformance	4	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeGameMode	5	4	
+ENUM	/pcip.pdb/_PO_EFFECTIVE_POWER_MODE	_PO_EFFECTIVE_POWER_MODE	PoEffectivePowerModeMixedReality	6	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPool	0	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolBase	0	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolExecute	0	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	PagedPool	1	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolBaseMustSucceed	2	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolMustSucceed	2	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	DontUseThisType	3	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolBaseCacheAligned	4	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolCacheAligned	4	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	PagedPoolCacheAligned	5	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolBaseCacheAlignedMustS	6	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolCacheAlignedMustS	6	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	MaxPoolType	7	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolSession	32	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	PagedPoolSession	33	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolMustSucceedSession	34	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	DontUseThisTypeSession	35	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolCacheAlignedSession	36	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	PagedPoolCacheAlignedSession	37	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolCacheAlignedMustSSession	38	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolNx	512	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolNxCacheAligned	516	4	
+ENUM	/pcip.pdb/_POOL_TYPE	_POOL_TYPE	NonPagedPoolSessionNx	544	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitContinuous	0	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitType1	0	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitBurst	1	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitType2	1	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitRapid	2	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitType3	2	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitPreemptive	3	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitType4	3	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitPreemptiveOffset	4	4	
+ENUM	/pcip.pdb/_POWER_LIMIT_TYPES	_POWER_LIMIT_TYPES	PowerLimitTypeMax	5	4	
+STRUCT	/pcip.pdb/_POWER_SEQUENCE	_POWER_SEQUENCE		0	12	
+FIELD	/pcip.pdb/_POWER_SEQUENCE	_POWER_SEQUENCE	SequenceD1	0	4	ulong
+FIELD	/pcip.pdb/_POWER_SEQUENCE	_POWER_SEQUENCE	SequenceD2	4	4	ulong
+FIELD	/pcip.pdb/_POWER_SEQUENCE	_POWER_SEQUENCE	SequenceD3	8	4	ulong
+UNION	/pcip.pdb/_POWER_STATE	_POWER_STATE		0	4	
+UFIELD	/pcip.pdb/_POWER_STATE	_POWER_STATE	SystemState	0	4	_SYSTEM_POWER_STATE
+UFIELD	/pcip.pdb/_POWER_STATE	_POWER_STATE	DeviceState	0	4	_DEVICE_POWER_STATE
+ENUM	/pcip.pdb/_POWER_STATE_TYPE	_POWER_STATE_TYPE	SystemPowerState	0	4	
+ENUM	/pcip.pdb/_POWER_STATE_TYPE	_POWER_STATE_TYPE	DevicePowerState	1	4	
+STRUCT	/pcip.pdb/_PRIVILEGE_SET	_PRIVILEGE_SET		0	20	
+FIELD	/pcip.pdb/_PRIVILEGE_SET	_PRIVILEGE_SET	PrivilegeCount	0	4	ulong
+FIELD	/pcip.pdb/_PRIVILEGE_SET	_PRIVILEGE_SET	Control	4	4	ulong
+FIELD	/pcip.pdb/_PRIVILEGE_SET	_PRIVILEGE_SET	Privilege	8	12	_LUID_AND_ATTRIBUTES[1]
+STRUCT	/pcip.pdb/_RECORDER_CONFIGURE_PARAMS	_RECORDER_CONFIGURE_PARAMS		0	16	
+FIELD	/pcip.pdb/_RECORDER_CONFIGURE_PARAMS	_RECORDER_CONFIGURE_PARAMS	Size	0	4	ulong
+FIELD	/pcip.pdb/_RECORDER_CONFIGURE_PARAMS	_RECORDER_CONFIGURE_PARAMS	CreateDefaultLog	4	1	uchar
+FIELD	/pcip.pdb/_RECORDER_CONFIGURE_PARAMS	_RECORDER_CONFIGURE_PARAMS	UseTimeStamp	8	4	_WPP_RECORDER_TRI_STATE
+FIELD	/pcip.pdb/_RECORDER_CONFIGURE_PARAMS	_RECORDER_CONFIGURE_PARAMS	PreciseTimeStamp	12	4	_WPP_RECORDER_TRI_STATE
+STRUCT	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS		0	56	
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	Size	0	4	ulong
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	LogTag	4	4	ulong
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	TotalBufferSize	8	4	ulong
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	ErrorPartitionSize	12	4	ulong
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	LogIdentifierAppendValue	16	8	ulong64
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	LogIdentifierAppendValueSet	24	1	uchar
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	LogIdentifierSize	28	4	ulong
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	LogIdentifier	32	16	char[16]
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	UseTimeStamp	48	4	_WPP_RECORDER_TRI_STATE
+FIELD	/pcip.pdb/_RECORDER_LOG_CREATE_PARAMS	_RECORDER_LOG_CREATE_PARAMS	PreciseTimeStamp	52	4	_WPP_RECORDER_TRI_STATE
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtDeleteKey	0	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreDeleteKey	0	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreSetValueKey	1	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtSetValueKey	1	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtDeleteValueKey	2	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreDeleteValueKey	2	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreSetInformationKey	3	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtSetInformationKey	3	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreRenameKey	4	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtRenameKey	4	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtEnumerateKey	5	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreEnumerateKey	5	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtEnumerateValueKey	6	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreEnumerateValueKey	6	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreQueryKey	7	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtQueryKey	7	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreQueryValueKey	8	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtQueryValueKey	8	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreQueryMultipleValueKey	9	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtQueryMultipleValueKey	9	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreCreateKey	10	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostCreateKey	11	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreOpenKey	12	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostOpenKey	13	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtKeyHandleClose	14	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreKeyHandleClose	14	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostDeleteKey	15	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostSetValueKey	16	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostDeleteValueKey	17	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostSetInformationKey	18	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostRenameKey	19	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostEnumerateKey	20	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostEnumerateValueKey	21	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostQueryKey	22	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostQueryValueKey	23	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostQueryMultipleValueKey	24	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostKeyHandleClose	25	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreCreateKeyEx	26	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostCreateKeyEx	27	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreOpenKeyEx	28	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostOpenKeyEx	29	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreFlushKey	30	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostFlushKey	31	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreLoadKey	32	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostLoadKey	33	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreUnLoadKey	34	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostUnLoadKey	35	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreQueryKeySecurity	36	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostQueryKeySecurity	37	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreSetKeySecurity	38	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostSetKeySecurity	39	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtCallbackObjectContextCleanup	40	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreRestoreKey	41	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostRestoreKey	42	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreSaveKey	43	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostSaveKey	44	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreReplaceKey	45	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostReplaceKey	46	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreQueryKeyName	47	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostQueryKeyName	48	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPreSaveMergedKey	49	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	RegNtPostSaveMergedKey	50	4	
+ENUM	/pcip.pdb/_REG_NOTIFY_CLASS	_REG_NOTIFY_CLASS	MaxRegNtNotifyClass	51	4	
+STRUCT	/pcip.pdb/_RTL_BITMAP	_RTL_BITMAP		0	16	
+FIELD	/pcip.pdb/_RTL_BITMAP	_RTL_BITMAP	SizeOfBitMap	0	4	ulong
+FIELD	/pcip.pdb/_RTL_BITMAP	_RTL_BITMAP	Buffer	8	8	ulong *
+STRUCT	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE		0	56	
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	QueryRoutine	0	8	_func___cdecl_long_wchar_t_ptr_ulong_void_ptr_ulong_void_ptr_void_ptr *
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	Flags	8	4	ulong
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	Name	16	8	wchar_t *
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	EntryContext	24	8	void *
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	DefaultType	32	4	ulong
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	DefaultData	40	8	void *
+FIELD	/pcip.pdb/_RTL_QUERY_REGISTRY_TABLE	_RTL_QUERY_REGISTRY_TABLE	DefaultLength	48	4	ulong
+STRUCT	/pcip.pdb/_SCATTER_GATHER_ELEMENT	_SCATTER_GATHER_ELEMENT		0	24	
+FIELD	/pcip.pdb/_SCATTER_GATHER_ELEMENT	_SCATTER_GATHER_ELEMENT	Address	0	8	_LARGE_INTEGER
+FIELD	/pcip.pdb/_SCATTER_GATHER_ELEMENT	_SCATTER_GATHER_ELEMENT	Length	8	4	ulong
+FIELD	/pcip.pdb/_SCATTER_GATHER_ELEMENT	_SCATTER_GATHER_ELEMENT	Reserved	16	8	ulong64
+STRUCT	/pcip.pdb/_SCATTER_GATHER_LIST	_SCATTER_GATHER_LIST		0	16	
+FIELD	/pcip.pdb/_SCATTER_GATHER_LIST	_SCATTER_GATHER_LIST	NumberOfElements	0	4	ulong
+FIELD	/pcip.pdb/_SCATTER_GATHER_LIST	_SCATTER_GATHER_LIST	Reserved	8	8	ulong64
+FIELD	/pcip.pdb/_SCATTER_GATHER_LIST	_SCATTER_GATHER_LIST	Elements	16	0	_SCATTER_GATHER_ELEMENT[0]
+STRUCT	/pcip.pdb/_SECTION_OBJECT_POINTERS	_SECTION_OBJECT_POINTERS		0	24	
+FIELD	/pcip.pdb/_SECTION_OBJECT_POINTERS	_SECTION_OBJECT_POINTERS	DataSectionObject	0	8	void *
+FIELD	/pcip.pdb/_SECTION_OBJECT_POINTERS	_SECTION_OBJECT_POINTERS	SharedCacheMap	8	8	void *
+FIELD	/pcip.pdb/_SECTION_OBJECT_POINTERS	_SECTION_OBJECT_POINTERS	ImageSectionObject	16	8	void *
+ENUM	/pcip.pdb/_SECURITY_IMPERSONATION_LEVEL	_SECURITY_IMPERSONATION_LEVEL	SecurityAnonymous	0	4	
+ENUM	/pcip.pdb/_SECURITY_IMPERSONATION_LEVEL	_SECURITY_IMPERSONATION_LEVEL	SecurityIdentification	1	4	
+ENUM	/pcip.pdb/_SECURITY_IMPERSONATION_LEVEL	_SECURITY_IMPERSONATION_LEVEL	SecurityImpersonation	2	4	
+ENUM	/pcip.pdb/_SECURITY_IMPERSONATION_LEVEL	_SECURITY_IMPERSONATION_LEVEL	SecurityDelegation	3	4	
+STRUCT	/pcip.pdb/_SECURITY_QUALITY_OF_SERVICE	_SECURITY_QUALITY_OF_SERVICE		0	12	
+FIELD	/pcip.pdb/_SECURITY_QUALITY_OF_SERVICE	_SECURITY_QUALITY_OF_SERVICE	Length	0	4	ulong
+FIELD	/pcip.pdb/_SECURITY_QUALITY_OF_SERVICE	_SECURITY_QUALITY_OF_SERVICE	ImpersonationLevel	4	4	_SECURITY_IMPERSONATION_LEVEL
+FIELD	/pcip.pdb/_SECURITY_QUALITY_OF_SERVICE	_SECURITY_QUALITY_OF_SERVICE	ContextTrackingMode	8	1	uchar
+FIELD	/pcip.pdb/_SECURITY_QUALITY_OF_SERVICE	_SECURITY_QUALITY_OF_SERVICE	EffectiveOnly	9	1	uchar
+STRUCT	/pcip.pdb/_SECURITY_SUBJECT_CONTEXT	_SECURITY_SUBJECT_CONTEXT		0	32	
+FIELD	/pcip.pdb/_SECURITY_SUBJECT_CONTEXT	_SECURITY_SUBJECT_CONTEXT	ClientToken	0	8	void *
+FIELD	/pcip.pdb/_SECURITY_SUBJECT_CONTEXT	_SECURITY_SUBJECT_CONTEXT	ImpersonationLevel	8	4	_SECURITY_IMPERSONATION_LEVEL
+FIELD	/pcip.pdb/_SECURITY_SUBJECT_CONTEXT	_SECURITY_SUBJECT_CONTEXT	PrimaryToken	16	8	void *
+FIELD	/pcip.pdb/_SECURITY_SUBJECT_CONTEXT	_SECURITY_SUBJECT_CONTEXT	ProcessAuditId	24	8	void *
+STRUCT	/pcip.pdb/_SINGLE_LIST_ENTRY	_SINGLE_LIST_ENTRY		0	8	
+FIELD	/pcip.pdb/_SINGLE_LIST_ENTRY	_SINGLE_LIST_ENTRY	Next	0	8	_SINGLE_LIST_ENTRY *
+UNION	/pcip.pdb/_SLIST_HEADER	_SLIST_HEADER		0	16	
+UFIELD	/pcip.pdb/_SLIST_HEADER	_SLIST_HEADER	_s_0	0	16	_SLIST_HEADER_s_0
+UFIELD	/pcip.pdb/_SLIST_HEADER	_SLIST_HEADER	HeaderX64	0	16	<unnamed-tag_00001399>
+STRUCT	/pcip.pdb/_SLIST_HEADER/_SLIST_HEADER_s_0	_SLIST_HEADER_s_0		0	16	
+FIELD	/pcip.pdb/_SLIST_HEADER/_SLIST_HEADER_s_0	_SLIST_HEADER_s_0	Alignment	0	8	ulong64
+FIELD	/pcip.pdb/_SLIST_HEADER/_SLIST_HEADER_s_0	_SLIST_HEADER_s_0	Region	8	8	ulong64
+STRUCT	/pcip.pdb/_STRING	_STRING		0	16	
+FIELD	/pcip.pdb/_STRING	_STRING	Length	0	2	ushort
+FIELD	/pcip.pdb/_STRING	_STRING	MaximumLength	2	2	ushort
+FIELD	/pcip.pdb/_STRING	_STRING	Buffer	8	8	char *
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemUnspecified	0	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemWorking	1	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemSleeping1	2	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemSleeping2	3	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemSleeping3	4	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemHibernate	5	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemShutdown	6	4	
+ENUM	/pcip.pdb/_SYSTEM_POWER_STATE	_SYSTEM_POWER_STATE	PowerSystemMaximum	7	4	
+STRUCT	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT	_SYSTEM_POWER_STATE_CONTEXT		0	4	
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT	_SYSTEM_POWER_STATE_CONTEXT		0	4	_SYSTEM_POWER_STATE_CONTEXT_u_0
+UNION	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0	_SYSTEM_POWER_STATE_CONTEXT_u_0		0	4	
+UFIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0	_SYSTEM_POWER_STATE_CONTEXT_u_0	_s_0	0	4	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0
+UFIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0	_SYSTEM_POWER_STATE_CONTEXT_u_0	ContextAsUlong	0	4	ulong
+STRUCT	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0		0	4	
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	Reserved1	0	1	ulong:8
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	TargetSystemState	1	1	ulong:4
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	EffectiveSystemState	1	1	ulong:4
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	CurrentSystemState	2	1	ulong:4
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	IgnoreHibernationPath	2	1	ulong:1
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	PseudoTransition	2	1	ulong:1
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	KernelSoftReboot	2	1	ulong:1
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	DirectedDripsTransition	2	1	ulong:1
+FIELD	/pcip.pdb/_SYSTEM_POWER_STATE_CONTEXT/_SYSTEM_POWER_STATE_CONTEXT_u_0/_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	_SYSTEM_POWER_STATE_CONTEXT_u_0_s_0	Reserved2	3	1	ulong:8
+UNION	/pcip.pdb/_ULARGE_INTEGER	_ULARGE_INTEGER		0	8	
+UFIELD	/pcip.pdb/_ULARGE_INTEGER	_ULARGE_INTEGER	_s_0	0	8	_ULARGE_INTEGER_s_0
+UFIELD	/pcip.pdb/_ULARGE_INTEGER	_ULARGE_INTEGER	u	0	8	<unnamed-tag_000010B0>
+UFIELD	/pcip.pdb/_ULARGE_INTEGER	_ULARGE_INTEGER	QuadPart	0	8	ulong64
+STRUCT	/pcip.pdb/_ULARGE_INTEGER/_ULARGE_INTEGER_s_0	_ULARGE_INTEGER_s_0		0	8	
+FIELD	/pcip.pdb/_ULARGE_INTEGER/_ULARGE_INTEGER_s_0	_ULARGE_INTEGER_s_0	LowPart	0	4	ulong
+FIELD	/pcip.pdb/_ULARGE_INTEGER/_ULARGE_INTEGER_s_0	_ULARGE_INTEGER_s_0	HighPart	4	4	ulong
+STRUCT	/pcip.pdb/_UNICODE_STRING	_UNICODE_STRING		0	16	
+FIELD	/pcip.pdb/_UNICODE_STRING	_UNICODE_STRING	Length	0	2	ushort
+FIELD	/pcip.pdb/_UNICODE_STRING	_UNICODE_STRING	MaximumLength	2	2	ushort
+FIELD	/pcip.pdb/_UNICODE_STRING	_UNICODE_STRING	Buffer	8	8	wchar_t *
+ENUM	/pcip.pdb/_USER_ACTIVITY_PRESENCE	_USER_ACTIVITY_PRESENCE	PowerUserPresent	0	4	
+ENUM	/pcip.pdb/_USER_ACTIVITY_PRESENCE	_USER_ACTIVITY_PRESENCE	PowerUserNotPresent	1	4	
+ENUM	/pcip.pdb/_USER_ACTIVITY_PRESENCE	_USER_ACTIVITY_PRESENCE	PowerUserInactive	2	4	
+ENUM	/pcip.pdb/_USER_ACTIVITY_PRESENCE	_USER_ACTIVITY_PRESENCE	PowerUserInvalid	3	4	
+ENUM	/pcip.pdb/_USER_ACTIVITY_PRESENCE	_USER_ACTIVITY_PRESENCE	PowerUserMaximum	3	4	
+STRUCT	/pcip.pdb/_VPB	_VPB		0	96	
+FIELD	/pcip.pdb/_VPB	_VPB	Type	0	2	short
+FIELD	/pcip.pdb/_VPB	_VPB	Size	2	2	short
+FIELD	/pcip.pdb/_VPB	_VPB	Flags	4	2	ushort
+FIELD	/pcip.pdb/_VPB	_VPB	VolumeLabelLength	6	2	ushort
+FIELD	/pcip.pdb/_VPB	_VPB	DeviceObject	8	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_VPB	_VPB	RealDevice	16	8	_DEVICE_OBJECT *
+FIELD	/pcip.pdb/_VPB	_VPB	SerialNumber	24	4	ulong
+FIELD	/pcip.pdb/_VPB	_VPB	ReferenceCount	28	4	ulong
+FIELD	/pcip.pdb/_VPB	_VPB	VolumeLabel	32	64	wchar_t[32]
+STRUCT	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK		0	72	
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK		0	24	_WAIT_CONTEXT_BLOCK_u_0
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	DeviceRoutine	24	8	_func___cdecl__IO_ALLOCATION_ACTION__DEVICE_OBJECT_ptr__IRP_ptr_void_ptr_void_ptr *
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	DeviceContext	32	8	void *
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	NumberOfMapRegisters	40	4	ulong
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	DeviceObject	48	8	void *
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	CurrentIrp	56	8	void *
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK	_WAIT_CONTEXT_BLOCK	BufferChainingDpc	64	8	_KDPC *
+UNION	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0	_WAIT_CONTEXT_BLOCK_u_0		0	24	
+UFIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0	_WAIT_CONTEXT_BLOCK_u_0	WaitQueueEntry	0	24	_KDEVICE_QUEUE_ENTRY
+UFIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0	_WAIT_CONTEXT_BLOCK_u_0	_s_1	0	24	_WAIT_CONTEXT_BLOCK_u_0_s_1
+STRUCT	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1		0	24	
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	DmaWaitEntry	0	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	NumberOfChannels	16	4	ulong
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	SyncCallback	20	1	ulong:1
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	DmaContext	20	1	ulong:1
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	ZeroMapRegisters	20	1	ulong:1
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	Reserved	20	2	ulong:9
+FIELD	/pcip.pdb/_WAIT_CONTEXT_BLOCK/_WAIT_CONTEXT_BLOCK_u_0/_WAIT_CONTEXT_BLOCK_u_0_s_1	_WAIT_CONTEXT_BLOCK_u_0_s_1	NumberOfRemapPages	21	3	ulong:20
+STRUCT	/pcip.pdb/_WORK_QUEUE_ITEM	_WORK_QUEUE_ITEM		0	32	
+FIELD	/pcip.pdb/_WORK_QUEUE_ITEM	_WORK_QUEUE_ITEM	List	0	16	_LIST_ENTRY
+FIELD	/pcip.pdb/_WORK_QUEUE_ITEM	_WORK_QUEUE_ITEM	WorkerRoutine	16	8	_func___cdecl_void_void_ptr *
+FIELD	/pcip.pdb/_WORK_QUEUE_ITEM	_WORK_QUEUE_ITEM	Parameter	24	8	void *
+ENUM	/pcip.pdb/_WPP_RECORDER_TRI_STATE	_WPP_RECORDER_TRI_STATE	WppRecorderFalse	0	4	
+ENUM	/pcip.pdb/_WPP_RECORDER_TRI_STATE	_WPP_RECORDER_TRI_STATE	WppRecorderTrue	1	4	
+ENUM	/pcip.pdb/_WPP_RECORDER_TRI_STATE	_WPP_RECORDER_TRI_STATE	WppRecorderUseDefault	2	4	
+STRUCT	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK		0	80	
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Callback	0	8	_func___cdecl_long_uchar_void_ptr_ulong_void_ptr_void_ptr_ulong_ptr *
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	ControlGuid	8	8	_GUID *
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Next	16	8	_WPP_TRACE_CONTROL_BLOCK *
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Logger	24	8	long64
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	RegistryPath	32	8	_UNICODE_STRING *
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	FlagsLen	40	1	uchar
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Level	41	1	uchar
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Reserved	42	2	ushort
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	Flags	44	4	ulong[1]
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	ReservedFlags	48	4	ulong
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	RegHandle	56	8	ulong64
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	AutoLogContext	64	8	void *
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	AutoLogVerboseEnabled	72	2	ushort
+FIELD	/pcip.pdb/_WPP_TRACE_CONTROL_BLOCK	_WPP_TRACE_CONTROL_BLOCK	AutoLogAttachToMiniDump	74	2	ushort
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryDeviceID	0	4	
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryHardwareIDs	1	4	
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryCompatibleIDs	2	4	
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryInstanceID	3	4	
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryDeviceSerialNumber	4	4	
+ENUM	/pcip.pdb/BUS_QUERY_ID_TYPE	BUS_QUERY_ID_TYPE	BusQueryContainerID	5	4	
+STRUCT	/CLIENT_ID	CLIENT_ID		0	16	
+FIELD	/CLIENT_ID	CLIENT_ID	UniqueProcess	0	8	void *
+FIELD	/CLIENT_ID	CLIENT_ID	UniqueThread	8	8	void *
+ENUM	/pcip.pdb/DEVICE_TEXT_TYPE	DEVICE_TEXT_TYPE	DeviceTextDescription	0	4	
+ENUM	/pcip.pdb/DEVICE_TEXT_TYPE	DEVICE_TEXT_TYPE	DeviceTextLocationInformation	1	4	
+ENUM	/pcip.pdb/DMA_COMPLETION_STATUS	DMA_COMPLETION_STATUS	DmaComplete	0	4	
+ENUM	/pcip.pdb/DMA_COMPLETION_STATUS	DMA_COMPLETION_STATUS	DmaAborted	1	4	
+ENUM	/pcip.pdb/DMA_COMPLETION_STATUS	DMA_COMPLETION_STATUS	DmaError	2	4	
+ENUM	/pcip.pdb/DMA_COMPLETION_STATUS	DMA_COMPLETION_STATUS	DmaCancelled	3	4	
+STRUCT	/PDB/DotNetPdbInfo	DotNetPdbInfo		0	32	
+FIELD	/PDB/DotNetPdbInfo	DotNetPdbInfo	signature	0	4	string
+FIELD	/PDB/DotNetPdbInfo	DotNetPdbInfo	guid	4	16	GUID
+FIELD	/PDB/DotNetPdbInfo	DotNetPdbInfo	age	20	4	dword
+FIELD	/PDB/DotNetPdbInfo	DotNetPdbInfo	pdbpath	24	8	string
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_GUARD_RF_PROLOGUE	1	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_GUARD_RF_EPILOGUE	2	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_IMPORT_CONTROL_TRANSFER	3	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_INDIR_CONTROL_TRANSFER	4	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_SWITCHABLE_BRANCH	5	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_ARM64X	6	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE	7	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_ARM64_KERNEL_IMPORT_CALL_TRANSFER	8	8	
+ENUM	/PE/DvrtType	DvrtType	IMAGE_DYNAMIC_RELOCATION_UNKNOWN	256	8	
+STRUCT	/CFG/GuardCfgTableEntry	GuardCfgTableEntry		0	4	
+FIELD	/CFG/GuardCfgTableEntry	GuardCfgTableEntry	Offset	0	4	ImageBaseOffset32
+STRUCT	/PE/IMAGE_BASE_RELOCATION	IMAGE_BASE_RELOCATION		0	8	
+FIELD	/PE/IMAGE_BASE_RELOCATION	IMAGE_BASE_RELOCATION	VirtualAddress	0	4	dword
+FIELD	/PE/IMAGE_BASE_RELOCATION	IMAGE_BASE_RELOCATION	SizeOfBlock	4	4	dword
+STRUCT	/PE/IMAGE_BDD_DYNAMIC_RELOCATION	IMAGE_BDD_DYNAMIC_RELOCATION		0	8	
+FIELD	/PE/IMAGE_BDD_DYNAMIC_RELOCATION	IMAGE_BDD_DYNAMIC_RELOCATION	Left	0	2	word
+FIELD	/PE/IMAGE_BDD_DYNAMIC_RELOCATION	IMAGE_BDD_DYNAMIC_RELOCATION	Right	2	2	word
+FIELD	/PE/IMAGE_BDD_DYNAMIC_RELOCATION	IMAGE_BDD_DYNAMIC_RELOCATION	Value	4	4	dword
+STRUCT	/PE/IMAGE_BDD_INFO	IMAGE_BDD_INFO		0	8	
+FIELD	/PE/IMAGE_BDD_INFO	IMAGE_BDD_INFO	Version	0	4	dword
+FIELD	/PE/IMAGE_BDD_INFO	IMAGE_BDD_INFO	BDDSize	4	4	dword
+STRUCT	/PE/IMAGE_DATA_DIRECTORY	IMAGE_DATA_DIRECTORY		0	8	
+FIELD	/PE/IMAGE_DATA_DIRECTORY	IMAGE_DATA_DIRECTORY	VirtualAddress	0	4	ImageBaseOffset32
+FIELD	/PE/IMAGE_DATA_DIRECTORY	IMAGE_DATA_DIRECTORY	Size	4	4	dword
+STRUCT	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY		0	28	
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	Characteristics	0	4	dword
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	TimeDateStamp	4	4	dword
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	MajorVersion	8	2	word
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	MinorVersion	10	2	word
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	Type	12	4	dword
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	SizeOfData	16	4	dword
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	AddressOfRawData	20	4	dword
+FIELD	/PE/IMAGE_DEBUG_DIRECTORY	IMAGE_DEBUG_DIRECTORY	PointerToRawData	24	4	dword
+STRUCT	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER		0	128	
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_magic	0	2	char[2]
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_cblp	2	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_cp	4	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_crlc	6	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_cparhdr	8	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_minalloc	10	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_maxalloc	12	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_ss	14	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_sp	16	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_csum	18	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_ip	20	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_cs	22	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_lfarlc	24	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_ovno	26	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_res[4]	28	8	word[4]
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_oemid	36	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_oeminfo	38	2	word
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_res2[10]	40	20	word[10]
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_lfanew	60	4	dword
+FIELD	/DOS/IMAGE_DOS_HEADER	IMAGE_DOS_HEADER	e_program	64	64	byte[64]
+STRUCT	/PE/IMAGE_DYNAMIC_RELOCATION	IMAGE_DYNAMIC_RELOCATION		0	12	
+FIELD	/PE/IMAGE_DYNAMIC_RELOCATION	IMAGE_DYNAMIC_RELOCATION	Symbol	0	8	DvrtType
+FIELD	/PE/IMAGE_DYNAMIC_RELOCATION	IMAGE_DYNAMIC_RELOCATION	BaseRelocSize	8	4	dword
+STRUCT	/PE/IMAGE_DYNAMIC_RELOCATION_TABLE	IMAGE_DYNAMIC_RELOCATION_TABLE		0	8	
+FIELD	/PE/IMAGE_DYNAMIC_RELOCATION_TABLE	IMAGE_DYNAMIC_RELOCATION_TABLE	Version	0	4	dword
+FIELD	/PE/IMAGE_DYNAMIC_RELOCATION_TABLE	IMAGE_DYNAMIC_RELOCATION_TABLE	Size	4	4	dword
+STRUCT	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER		0	20	
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	Machine	0	2	word
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	NumberOfSections	2	2	word
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	TimeDateStamp	4	4	dword
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	PointerToSymbolTable	8	4	dword
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	NumberOfSymbols	12	4	dword
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	SizeOfOptionalHeader	16	2	word
+FIELD	/PE/IMAGE_FILE_HEADER	IMAGE_FILE_HEADER	Characteristics	18	2	word
+STRUCT	/PE/IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION		0	16	
+FIELD	/PE/IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	OriginalRva	0	4	dword
+FIELD	/PE/IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	BDDOffset	4	4	dword
+FIELD	/PE/IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	RvaSize	8	4	dword
+FIELD	/PE/IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	IMAGE_FUNCTION_OVERRIDE_DYNAMIC_RELOCATION	BaseRelocSize	12	4	dword
+STRUCT	/PE/IMAGE_FUNCTION_OVERRIDE_HEADER	IMAGE_FUNCTION_OVERRIDE_HEADER		0	4	
+FIELD	/PE/IMAGE_FUNCTION_OVERRIDE_HEADER	IMAGE_FUNCTION_OVERRIDE_HEADER	FuncOverrideSize	0	4	dword
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_INSTRUMENTED	256	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CFW_INSTRUMENTED	512	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_FUNCTION_TABLE_PRESENT	1024	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_SECURITY_COOKIE_UNUSED	2048	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_PROTECT_DELAYLOAD_IAT	4096	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_DELAYLOAD_IAT_IN_ITS_OWN_SECTION	8192	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT	16384	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_ENABLE_EXPORT_SUPPRESSION	32768	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_LONGJUMP_TABLE_PRESENT	65536	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_RF_INSTRUMENTED	131072	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_RF_ENABLE	262144	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_RF_STRICT	524288	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_1	268435456	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_2	536870912	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_4	1073741824	4	
+ENUM	/PE/IMAGE_GUARD_FLAGS	IMAGE_GUARD_FLAGS	IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK_8	2147483648	4	
+STRUCT	/PE/IMAGE_IMPORT_CONTROL_TRANSFER	IMAGE_IMPORT_CONTROL_TRANSFER		0	8	
+FIELD	/PE/IMAGE_IMPORT_CONTROL_TRANSFER	IMAGE_IMPORT_CONTROL_TRANSFER	VirtualAddress	0	4	dword
+FIELD	/PE/IMAGE_IMPORT_CONTROL_TRANSFER	IMAGE_IMPORT_CONTROL_TRANSFER	SizeOfBlock	4	4	dword
+STRUCT	/PE/IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION		0	4	
+FIELD	/PE/IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	PageRelativeOffset	0	2	dword:12
+FIELD	/PE/IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IndirectCall	1	1	dword:1
+FIELD	/PE/IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IATIndex	1	3	dword:19
+STRUCT	/PE/IMAGE_INDIR_CONTROL_TRANSFER	IMAGE_INDIR_CONTROL_TRANSFER		0	8	
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER	IMAGE_INDIR_CONTROL_TRANSFER	VirtualAddress	0	4	dword
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER	IMAGE_INDIR_CONTROL_TRANSFER	SizeOfBlock	4	4	dword
+STRUCT	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION		0	2	
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	PageRelativeOffset	0	2	word:12
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IndirectCall	1	1	word:1
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	RexWPrefix	1	1	word:1
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	CfgCheck	1	1	word:1
+FIELD	/PE/IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION	Reserved	1	1	word:1
+STRUCT	/PE/IMAGE_LOAD_CONFIG_CODE_INTEGRITY	IMAGE_LOAD_CONFIG_CODE_INTEGRITY		0	12	
+FIELD	/PE/IMAGE_LOAD_CONFIG_CODE_INTEGRITY	IMAGE_LOAD_CONFIG_CODE_INTEGRITY	Flags	0	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_CODE_INTEGRITY	IMAGE_LOAD_CONFIG_CODE_INTEGRITY	Catalog	2	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_CODE_INTEGRITY	IMAGE_LOAD_CONFIG_CODE_INTEGRITY	CatalogOffset	4	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_CODE_INTEGRITY	IMAGE_LOAD_CONFIG_CODE_INTEGRITY	Reserved	8	4	dword
+STRUCT	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64		0	328	
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	Size	0	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	TimeDateStamp	4	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	MajorVersion	8	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	MinorVersion	10	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GlobalFlagsClear	12	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GlobalFlagsSet	16	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	CriticalSectionDefaultTimeout	20	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DeCommitFreeBlockThreshold	24	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DeCommitTotalFreeThreshold	32	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	LockPrefixTable	40	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	MaximumAllocationSize	48	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	VirtualMemoryThreshold	56	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	ProcessAffinityMask	64	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	ProcessHeapFlags	72	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	CsdVersion	76	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DependentLoadFlags	78	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	EditList	80	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	SecurityCookie	88	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	SEHandlerTable	96	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	SEHandlerCount	104	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardCFCCheckFunctionPointer	112	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardCFDispatchFunctionPointer	120	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardCFFunctionTable	128	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardCFFunctionCount	136	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardFlags	144	4	IMAGE_GUARD_FLAGS
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	CodeIntegrity	148	12	IMAGE_LOAD_CONFIG_CODE_INTEGRITY
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardAddressTakenIatEntryTable	160	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardAddressTakenIatEntryCount	168	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardLongJumpTargetTable	176	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardLongJumpTargetCount	184	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DynamicValueRelocTable	192	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	CHPEMetadataPointer	200	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardRFFailureRoutine	208	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardRFFailureRoutineFunctionPointer	216	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DynamicValueRelocTableOffset	224	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	DynamicValueRelocTableSection	228	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	Reserved2	230	2	word
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardRFVerifyStackPointerFunctionPointer	232	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	HotPatchTableOffset	240	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	Reserved3	244	4	dword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	EnclaveConfigurationPointer	248	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	VolatileMetadataPointer	256	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardEHContinuationTable	264	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardEHContinuationCount	272	8	qword
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardXFGCheckFunctionPointer	280	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardXFGDispatchFunctionPointer	288	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardXFGTableDispatchFunctionPointer	296	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	CastGuardOsDeterminedFailureMode	304	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	GuardMemcpyFunctionPointer	312	8	pointer64
+FIELD	/PE/IMAGE_LOAD_CONFIG_DIRECTORY64	IMAGE_LOAD_CONFIG_DIRECTORY64	UmaFunctionPointers	320	8	pointer64
+STRUCT	/PE/IMAGE_NT_HEADERS64	IMAGE_NT_HEADERS64		0	264	
+FIELD	/PE/IMAGE_NT_HEADERS64	IMAGE_NT_HEADERS64	Signature	0	4	char[4]
+FIELD	/PE/IMAGE_NT_HEADERS64	IMAGE_NT_HEADERS64	FileHeader	4	20	IMAGE_FILE_HEADER
+FIELD	/PE/IMAGE_NT_HEADERS64	IMAGE_NT_HEADERS64	OptionalHeader	24	240	IMAGE_OPTIONAL_HEADER64
+STRUCT	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64		0	240	
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	Magic	0	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MajorLinkerVersion	2	1	byte
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MinorLinkerVersion	3	1	byte
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfCode	4	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfInitializedData	8	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfUninitializedData	12	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	AddressOfEntryPoint	16	4	ImageBaseOffset32
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	BaseOfCode	20	4	ImageBaseOffset32
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	ImageBase	24	8	pointer64
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SectionAlignment	32	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	FileAlignment	36	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MajorOperatingSystemVersion	40	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MinorOperatingSystemVersion	42	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MajorImageVersion	44	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MinorImageVersion	46	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MajorSubsystemVersion	48	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	MinorSubsystemVersion	50	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	Win32VersionValue	52	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfImage	56	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfHeaders	60	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	CheckSum	64	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	Subsystem	68	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	DllCharacteristics	70	2	word
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfStackReserve	72	8	qword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfStackCommit	80	8	qword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfHeapReserve	88	8	qword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	SizeOfHeapCommit	96	8	qword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	LoaderFlags	104	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	NumberOfRvaAndSizes	108	4	dword
+FIELD	/PE/IMAGE_OPTIONAL_HEADER64	IMAGE_OPTIONAL_HEADER64	DataDirectory	112	128	IMAGE_DATA_DIRECTORY[16]
+STRUCT	/PE/IMAGE_RESOURCE_DATA_ENTRY	IMAGE_RESOURCE_DATA_ENTRY		0	16	
+FIELD	/PE/IMAGE_RESOURCE_DATA_ENTRY	IMAGE_RESOURCE_DATA_ENTRY	OffsetToData	0	4	dword
+FIELD	/PE/IMAGE_RESOURCE_DATA_ENTRY	IMAGE_RESOURCE_DATA_ENTRY	Size	4	4	dword
+FIELD	/PE/IMAGE_RESOURCE_DATA_ENTRY	IMAGE_RESOURCE_DATA_ENTRY	CodePage	8	4	dword
+FIELD	/PE/IMAGE_RESOURCE_DATA_ENTRY	IMAGE_RESOURCE_DATA_ENTRY	Reserved	12	4	dword
+STRUCT	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY		0	16	
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	Characteristics	0	4	dword
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	TimeDateStamp	4	4	dword
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	MajorVersion	8	2	word
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	MinorVersion	10	2	word
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	NumberOfNamedEntries	12	2	word
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY	IMAGE_RESOURCE_DIRECTORY	NumberOfIdEntries	14	2	word
+STRUCT	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY	IMAGE_RESOURCE_DIRECTORY_ENTRY		0	8	
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY	IMAGE_RESOURCE_DIRECTORY_ENTRY	NameUnion	0	4	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY	IMAGE_RESOURCE_DIRECTORY_ENTRY	DirectoryUnion	4	4	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion
+STRUCT	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct		0	4	
+FIELD	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	OffsetToDirectory	0	4	dword:31
+FIELD	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	DataIsDirectory	3	1	dword:1
+UNION	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion		0	4	
+UFIELD	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion	OffsetToData	0	4	dword
+UFIELD	/IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct	0	4	IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct
+STRUCT	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct		0	4	
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	NameOffset	0	4	dword:31
+FIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	NameIsString	3	1	dword:1
+UNION	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion		0	4	
+UFIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct	0	4	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct
+UFIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	Name	0	4	dword
+UFIELD	/PE/IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion	Id	0	2	word
+STRUCT	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER		0	40	
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	Name	0	8	char[8]
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	Misc	8	4	Misc
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	VirtualAddress	12	4	ImageBaseOffset32
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	SizeOfRawData	16	4	dword
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	PointerToRawData	20	4	dword
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	PointerToRelocations	24	4	dword
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	PointerToLinenumbers	28	4	dword
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	NumberOfRelocations	32	2	word
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	NumberOfLinenumbers	34	2	word
+FIELD	/PE/IMAGE_SECTION_HEADER	IMAGE_SECTION_HEADER	Characteristics	36	4	SectionFlags
+STRUCT	/crtdefs.h/lconv	lconv		0	152	
+FIELD	/crtdefs.h/lconv	lconv	decimal_point	0	8	char *
+FIELD	/crtdefs.h/lconv	lconv	thousands_sep	8	8	char *
+FIELD	/crtdefs.h/lconv	lconv	grouping	16	8	char *
+FIELD	/crtdefs.h/lconv	lconv	int_curr_symbol	24	8	char *
+FIELD	/crtdefs.h/lconv	lconv	currency_symbol	32	8	char *
+FIELD	/crtdefs.h/lconv	lconv	mon_decimal_point	40	8	char *
+FIELD	/crtdefs.h/lconv	lconv	mon_thousands_sep	48	8	char *
+FIELD	/crtdefs.h/lconv	lconv	mon_grouping	56	8	char *
+FIELD	/crtdefs.h/lconv	lconv	positive_sign	64	8	char *
+FIELD	/crtdefs.h/lconv	lconv	negative_sign	72	8	char *
+FIELD	/crtdefs.h/lconv	lconv	int_frac_digits	80	1	char
+FIELD	/crtdefs.h/lconv	lconv	frac_digits	81	1	char
+FIELD	/crtdefs.h/lconv	lconv	p_cs_precedes	82	1	char
+FIELD	/crtdefs.h/lconv	lconv	p_sep_by_space	83	1	char
+FIELD	/crtdefs.h/lconv	lconv	n_cs_precedes	84	1	char
+FIELD	/crtdefs.h/lconv	lconv	n_sep_by_space	85	1	char
+FIELD	/crtdefs.h/lconv	lconv	p_sign_posn	86	1	char
+FIELD	/crtdefs.h/lconv	lconv	n_sign_posn	87	1	char
+FIELD	/crtdefs.h/lconv	lconv	_W_decimal_point	88	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_thousands_sep	96	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_int_curr_symbol	104	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_currency_symbol	112	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_mon_decimal_point	120	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_mon_thousands_sep	128	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_positive_sign	136	8	wchar_t *
+FIELD	/crtdefs.h/lconv	lconv	_W_negative_sign	144	8	wchar_t *
+STRUCT	/pcip.pdb/LIST_ENTRY32	LIST_ENTRY32		0	8	
+FIELD	/pcip.pdb/LIST_ENTRY32	LIST_ENTRY32	Flink	0	4	ulong
+FIELD	/pcip.pdb/LIST_ENTRY32	LIST_ENTRY32	Blink	4	4	ulong
+STRUCT	/pcip.pdb/LIST_ENTRY64	LIST_ENTRY64		0	16	
+FIELD	/pcip.pdb/LIST_ENTRY64	LIST_ENTRY64	Flink	0	8	ulong64
+FIELD	/pcip.pdb/LIST_ENTRY64	LIST_ENTRY64	Blink	8	8	ulong64
+STRUCT	/crtdefs.h/localeinfo_struct	localeinfo_struct		0	16	
+FIELD	/crtdefs.h/localeinfo_struct	localeinfo_struct	locinfo	0	8	pthreadlocinfo
+FIELD	/crtdefs.h/localeinfo_struct	localeinfo_struct	mbcinfo	8	8	pthreadmbcinfo
+STRUCT	/crtdefs.h/localerefcount	localerefcount		0	32	
+FIELD	/crtdefs.h/localerefcount	localerefcount	locale	0	8	char *
+FIELD	/crtdefs.h/localerefcount	localerefcount	wlocale	8	8	wchar_t *
+FIELD	/crtdefs.h/localerefcount	localerefcount	refcount	16	8	int *
+FIELD	/crtdefs.h/localerefcount	localerefcount	wrefcount	24	8	int *
+UNION	/PE/Misc	Misc		0	4	
+UFIELD	/PE/Misc	Misc	PhysicalAddress	0	4	dword
+UFIELD	/PE/Misc	Misc	VirtualSize	0	4	dword
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionNone	0	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionReserved	1	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionSleep	2	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionHibernate	3	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionShutdown	4	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionShutdownReset	5	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionShutdownOff	6	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionWarmEject	7	4	
+ENUM	/pcip.pdb/POWER_ACTION	POWER_ACTION	PowerActionDisplayOff	8	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_TYPE_NO_PAD	8	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_RESERVED_0001	16	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_CNT_CODE	32	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_CNT_INITIALIZED_DATA	64	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_CNT_UNINITIALIZED_DATA	128	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_LNK_OTHER	256	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_LNK_INFO	512	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_RESERVED_0040	1024	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_LNK_REMOVE	2048	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_LNK_COMDAT	4096	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_GPREL	32768	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_16BIT	131072	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_PURGEABLE	131072	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_LOCKED	262144	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_PRELOAD	524288	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_1BYTES	1048576	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_2BYTES	2097152	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_4BYTES	3145728	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_8BYTES	4194304	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_16BYTES	5242880	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_32BYTES	6291456	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_64BYTES	7340032	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_128BYTES	8388608	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_256BYTES	9437184	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_512BYTES	10485760	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_1024BYTES	11534336	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_2048BYTES	12582912	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_4096BYTES	13631488	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_ALIGN_8192BYTES	14680064	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_LNK_NRELOC_OVFL	16777216	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_DISCARDABLE	33554432	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_NOT_CACHED	67108864	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_NOT_PAGED	134217728	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_SHARED	268435456	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_EXECUTE	536870912	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_READ	1073741824	4	
+ENUM	/PE/SectionFlags	SectionFlags	IMAGE_SCN_MEM_WRITE	2147483648	4	
+STRUCT	/PE/StringFileInfo	StringFileInfo		0	6	
+FIELD	/PE/StringFileInfo	StringFileInfo	wLength	0	2	word
+FIELD	/PE/StringFileInfo	StringFileInfo	wValueLength	2	2	word
+FIELD	/PE/StringFileInfo	StringFileInfo	wType	4	2	word
+STRUCT	/PE/StringInfo	StringInfo		0	6	
+FIELD	/PE/StringInfo	StringInfo	wLength	0	2	word
+FIELD	/PE/StringInfo	StringInfo	wValueLength	2	2	word
+FIELD	/PE/StringInfo	StringInfo	wType	4	2	word
+STRUCT	/PE/StringTable	StringTable		0	6	
+FIELD	/PE/StringTable	StringTable	wLength	0	2	word
+FIELD	/PE/StringTable	StringTable	wValueLength	2	2	word
+FIELD	/PE/StringTable	StringTable	wType	4	2	word
+STRUCT	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct		0	344	
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	refcount	0	4	int
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_codepage	4	4	uint
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_collate_cp	8	4	uint
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_time_cp	12	4	uint
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_category	16	192	locrefcount[6]
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_clike	208	4	int
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	mb_cur_max	212	4	int
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lconv_intl_refcount	216	8	int *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lconv_num_refcount	224	8	int *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lconv_mon_refcount	232	8	int *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lconv	240	8	lconv *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	ctype1_refcount	248	8	int *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	ctype1	256	8	ushort *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	pctype	264	8	ushort *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	pclmap	272	8	uchar *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	pcumap	280	8	uchar *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	lc_time_curr	288	8	__lc_time_data *
+FIELD	/crtdefs.h/threadlocaleinfostruct	threadlocaleinfostruct	locale_name	296	48	wchar_t *[6]
+STRUCT	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct		0	552	
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	refcount	0	4	int
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	mbcodepage	4	4	int
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	ismbcodepage	8	4	int
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	mbulinfo	12	12	ushort[6]
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	mbctype	24	257	uchar[257]
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	mbcasemap	281	256	uchar[256]
+FIELD	/crtdefs.h/threadmbcinfostruct	threadmbcinfostruct	mblocalename	544	8	wchar_t *
+STRUCT	/PE/Var	Var		0	6	
+FIELD	/PE/Var	Var	wLength	0	2	word
+FIELD	/PE/Var	Var	wValueLength	2	2	word
+FIELD	/PE/Var	Var	wType	4	2	word
+STRUCT	/PE/VarFileInfo	VarFileInfo		0	6	
+FIELD	/PE/VarFileInfo	VarFileInfo	wLength	0	2	word
+FIELD	/PE/VarFileInfo	VarFileInfo	wValueLength	2	2	word
+FIELD	/PE/VarFileInfo	VarFileInfo	wType	4	2	word
+STRUCT	/PE/VS_VERSION_INFO	VS_VERSION_INFO		0	92	
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	StructLength	0	2	word
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	ValueLength	2	2	word
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	StructType	4	2	word
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	Info	6	32	unicode
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	Padding	38	2	byte[2]
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	Signature	40	4	dword
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	StructVersion	44	4	word[2]
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileVersion	48	8	word[4]
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	ProductVersion	56	8	word[4]
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileFlagsMask	64	8	dword[2]
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileFlags	72	4	dword
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileOS	76	4	dword
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileType	80	4	dword
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileSubtype	84	4	dword
+FIELD	/PE/VS_VERSION_INFO	VS_VERSION_INFO	FileTimestamp	88	4	dword
