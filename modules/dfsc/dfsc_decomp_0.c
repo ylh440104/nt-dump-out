@@ -16354,7 +16354,8 @@ int DfscSurrogateCreate(longlong *******param_1,undefined8 param_2,longlong ****
             }
 LAB_1400214d2:
             param_3 = (longlong *******)&local_res10;
-            iVar12 = FsRtlFindExtraCreateParameter();
+            iVar12 = FsRtlFindExtraCreateParameter
+                               (local_res8,&DFSC_DFS_SHARE_CHECK_ECP_GUID,param_3,0);
             if (iVar12 != 0) {
               param_3 = (longlong *******)0x0;
               pppppppppppplVar16 = (longlong ************)0x0;
