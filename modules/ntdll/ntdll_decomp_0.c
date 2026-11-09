@@ -229124,7 +229124,7 @@ void RtlRaiseNoncontinuableException(longlong param_1,longlong param_2,char para
 ===== LdrpHandleInvalidUserCallTarget @ 180120ee0 =====
 
 code * LdrpHandleInvalidUserCallTarget
-                 (undefined8 param_1,undefined4 param_2,undefined8 param_3,undefined4 param_4)
+                 (undefined8 param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   code *UNRECOVERED_JUMPTABLE;
