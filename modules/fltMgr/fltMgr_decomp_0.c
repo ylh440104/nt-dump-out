@@ -37548,20 +37548,21 @@ ulonglong FltpNormalizeNameComponent(undefined8 *param_1)
   byte bVar14;
   byte local_res8;
   longlong *local_res10;
+  ulonglong uVar15;
   undefined8 in_stack_ffffffffffffff00;
-  undefined4 uVar16;
-  undefined8 uVar15;
+  undefined4 uVar17;
+  undefined8 uVar16;
   undefined8 in_stack_ffffffffffffff08;
-  undefined4 uVar18;
-  undefined8 uVar17;
+  undefined4 uVar19;
+  undefined8 uVar18;
   undefined8 in_stack_ffffffffffffff10;
-  undefined4 uVar20;
-  undefined8 uVar19;
+  undefined4 uVar21;
+  undefined8 uVar20;
   undefined8 in_stack_ffffffffffffff18;
-  undefined4 uVar22;
-  undefined8 uVar21;
-  undefined1 uVar23;
-  undefined8 *puVar24;
+  undefined4 uVar23;
+  undefined8 uVar22;
+  undefined1 uVar24;
+  undefined8 *puVar25;
   undefined8 local_a8;
   ulonglong uStack_a0;
   undefined2 local_98;
@@ -37579,10 +37580,10 @@ ulonglong FltpNormalizeNameComponent(undefined8 *param_1)
   undefined8 local_50;
   ulonglong uStack_48;
   
-  uVar16 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-  uVar18 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-  uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff10 >> 0x20);
-  uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff18 >> 0x20);
+  uVar17 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+  uVar19 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+  uVar21 = (undefined4)((ulonglong)in_stack_ffffffffffffff10 >> 0x20);
+  uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff18 >> 0x20);
   plVar1 = param_1 + 0x1d;
   local_res10 = (longlong *)0x0;
   bVar14 = 0;
@@ -37628,15 +37629,15 @@ ulonglong FltpNormalizeNameComponent(undefined8 *param_1)
         puVar9 = (uint *)0x0;
       }
       plVar10 = (longlong *)&uStack_90;
-      uVar22 = 0;
-      uVar5 = TargetedIOCtrlGenerateECP
-                        (&local_res10,'\0',uVar3,*(undefined8 *)(puVar12 + 0x1a),puVar7,lVar6,puVar9
-                         ,plVar10,(undefined8 *)0x0);
-      uVar16 = (undefined4)((ulonglong)lVar6 >> 0x20);
-      uVar18 = (undefined4)((ulonglong)puVar9 >> 0x20);
-      uVar20 = (undefined4)((ulonglong)plVar10 >> 0x20);
-      uVar13 = uVar5 & 0xffffffff;
-      iVar4 = FltpDbgStatus((int)uVar5);
+      uVar23 = 0;
+      uVar15 = TargetedIOCtrlGenerateECP
+                         (&local_res10,'\0',uVar3,*(undefined8 *)(puVar12 + 0x1a),puVar7,lVar6,
+                          puVar9,plVar10,(undefined8 *)0x0);
+      uVar17 = (undefined4)((ulonglong)lVar6 >> 0x20);
+      uVar19 = (undefined4)((ulonglong)puVar9 >> 0x20);
+      uVar21 = (undefined4)((ulonglong)plVar10 >> 0x20);
+      uVar13 = uVar15 & 0xffffffff;
+      iVar4 = FltpDbgStatus((int)uVar15);
       plVar10 = local_res10;
       if (iVar4 < 0) goto LAB_180053c15;
       local_res8 = *(byte *)((longlong)local_res10 + 6) >> 3 & 1;
@@ -37651,24 +37652,24 @@ ulonglong FltpNormalizeNameComponent(undefined8 *param_1)
     uStack_68 = 0;
     uStack_58 = CONCAT44(uStack_58._4_4_,~(*(int *)(param_1 + 5) * 2)) & 0xffffffff00000040 | 0x200;
     local_60 = param_1[0xe];
-    uVar21 = CONCAT44(uVar22,0x4021);
-    uVar19 = CONCAT44(uVar20,1);
-    uVar17 = CONCAT44(uVar18,7);
-    uVar15 = CONCAT44(uVar16,0x90);
+    uVar22 = CONCAT44(uVar23,0x4021);
+    uVar20 = CONCAT44(uVar21,1);
+    uVar18 = CONCAT44(uVar19,7);
+    uVar16 = CONCAT44(uVar17,0x90);
     local_50 = 0;
     uStack_48 = 0;
-    uVar3 = IoCreateFileEx(plVar1,0x100001,&local_70,&local_a8,0,uVar15,uVar17,uVar19,uVar21,0,0,0,0
+    uVar3 = IoCreateFileEx(plVar1,0x100001,&local_70,&local_a8,0,uVar16,uVar18,uVar20,uVar22,0,0,0,0
                            ,0x800,&local_98);
-    uVar16 = (undefined4)((ulonglong)uVar15 >> 0x20);
-    uVar18 = (undefined4)((ulonglong)uVar17 >> 0x20);
-    uVar20 = (undefined4)((ulonglong)uVar19 >> 0x20);
-    uVar22 = (undefined4)((ulonglong)uVar21 >> 0x20);
+    uVar17 = (undefined4)((ulonglong)uVar16 >> 0x20);
+    uVar19 = (undefined4)((ulonglong)uVar18 >> 0x20);
+    uVar21 = (undefined4)((ulonglong)uVar20 >> 0x20);
+    uVar23 = (undefined4)((ulonglong)uVar22 >> 0x20);
     uVar13 = (ulonglong)uVar3;
     if (uVar3 == 0xc0000279) {
       cVar2 = FsRtlIsNonEmptyDirectoryReparsePointAllowed(uStack_a0 & 0xffffffff);
       if (cVar2 != '\0') {
-        uVar3 = IoCreateFileEx(plVar1,0x100001,&local_70,&local_a8,0,CONCAT44(uVar16,0x90),
-                               CONCAT44(uVar18,7),CONCAT44(uVar20,1),CONCAT44(uVar22,0x204021),0,0,0
+        uVar3 = IoCreateFileEx(plVar1,0x100001,&local_70,&local_a8,0,CONCAT44(uVar17,0x90),
+                               CONCAT44(uVar19,7),CONCAT44(uVar21,1),CONCAT44(uVar23,0x204021),0,0,0
                                ,0,0x800,&local_98);
         uVar13 = (ulonglong)uVar3;
         goto LAB_180053d7c;
@@ -37690,11 +37691,11 @@ LAB_180053d7c:
   }
   else {
 LAB_180053a37:
-    puVar24 = param_1 + 0x16;
+    puVar25 = param_1 + 0x16;
     uVar3 = ZwQueryDirectoryFile
                       (*plVar1,0,0,0,&local_a8,param_1[0x1a],*(undefined4 *)(param_1 + 0x1b),0xc,1,
-                       puVar24,1);
-    uVar23 = SUB81(puVar24,0);
+                       puVar25,1);
+    uVar24 = SUB81(puVar25,0);
     uVar13 = (ulonglong)uVar3;
     FltpDbgStatus(uVar3);
     uVar3 = *(uint *)(param_1 + 5);
@@ -37702,9 +37703,10 @@ LAB_180053a37:
       local_res10 = (longlong *)0x0;
       uVar3 = FltpAllocateInitializeNameGenerationContext
                         ((longlong *)&local_res10,param_1[2],param_1[0x1e],0,
-                         *(uint *)((longlong)param_1 + 0x6c) & 0x100ff00 | 1,0,0,0,0,uVar23,
+                         *(uint *)((longlong)param_1 + 0x6c) & 0x100ff00 | 1,0,0,0,0,uVar24,
                          uVar3 & 0x400 | 0x4001);
       pcVar11 = (char *)0x1526;
+      uVar15 = 0;
       pcVar8 = "minkernel\\fs\\filtermgr\\filter\\namesup.c";
       iVar4 = FltpDbgStatus(uVar3);
       plVar1 = local_res10;
@@ -37715,9 +37717,14 @@ LAB_180053a37:
         uVar3 = (uint)uVar5;
         iVar4 = FltpDbgStatus(uVar3);
         if (-1 < iVar4) {
-          pcVar11 = *(char **)(param_1[0xe] + 8);
+          lVar6 = *(longlong *)(plVar1[0xf] + 0x10);
+          pcVar11 = *(char **)((ushort *)param_1[0xe] + 4);
           pcVar8 = (char *)(ulonglong)(*(ushort *)(plVar1[0xf] + 8) >> 1);
-          iVar4 = RtlCompareUnicodeStrings();
+          iVar4 = RtlCompareUnicodeStrings
+                            (lVar6,pcVar8,pcVar11,
+                             (ulonglong)(*(ushort *)param_1[0xe] >> 1) -
+                             (ulonglong)(*(short *)(lVar6 + -2 + (longlong)pcVar8 * 2) != 0x5c),
+                             uVar15 & 0xffffffffffffff00);
           if (iVar4 != 0) {
             param_1[0x1c] = plVar1[0xf];
             plVar1[0xf] = 0;
