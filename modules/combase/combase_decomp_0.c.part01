@@ -1,4 +1,4 @@
-Var1 = *(longlong **)(in_RCX + 0x20);
+ 0x20);
   UNRECOVERED_JUMPTABLE = *(code **)(*plVar1 + 0x1c80);
   _guard_check_icall_nop((ulong64)UNRECOVERED_JUMPTABLE);
                     /* WARNING: Could not recover jumptable at 0x000180235a87. Too many branches */
