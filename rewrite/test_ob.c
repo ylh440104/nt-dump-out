@@ -7,6 +7,12 @@ extern LONG_PTR ObReferenceObjectExWithTag(void *Object, LONG_PTR Count, ULONG T
 extern void *ObGetObjectType(void *Object);
 extern unsigned char ObHeaderCookie;
 extern void *ObTypeIndexTable[256];
+extern ULONG ObGetFilterVersion(void);
+extern void ObCleanupSiloState(ULONG_PTR *SiloState);
+extern void ObpShutdownCloseHandleProcedure(void *HandleTable, void *Entry, ULONG HandleValue);
+extern int ObpDeviceMapDerefCalls;
+extern void *ObpLastDeviceMap;
+extern ULONG ObpLastDeviceMapCount;
 extern int ObpDeferCount;
 extern int ObpBugCheckHit;
 extern ULONG ObpLastBugCode;
@@ -91,6 +97,32 @@ int main(void)
         printf("case8 type table hit              %s\n",
                (t == (void *)0) ? "NULL-OK(not-set)" : "MISMATCH");
     }
+
+    Reset();
+    printf("case9 filter version = 0x%x  %s\n", ObGetFilterVersion(),
+           ObGetFilterVersion() == 0x100 ? "OK" : "FAIL");
+
+    {
+        ULONG_PTR silo = 0x1234;
+
+        Reset();
+        ObpDeviceMapDerefCalls = 0;
+        ObCleanupSiloState(&silo);
+        printf("case10 silo clear : zero=%d calls=%d map=%p cnt=%u  %s\n",
+               silo == 0, ObpDeviceMapDerefCalls, ObpLastDeviceMap,
+               ObpLastDeviceMapCount,
+               (silo == 0 && ObpDeviceMapDerefCalls == 1 &&
+                ObpLastDeviceMap == (void *)0x1230 && ObpLastDeviceMapCount == 5)
+                   ? "OK" : "FAIL");
+
+        ObCleanupSiloState(&silo);
+        printf("case10b silo empty: calls=%d  %s\n", ObpDeviceMapDerefCalls,
+               ObpDeviceMapDerefCalls == 1 ? "OK" : "FAIL");
+    }
+
+    Reset();
+    ObpShutdownCloseHandleProcedure((void *)1, (void *)2, 0x2Cu);
+    printf("case11 close handle proc survived  OK\n");
 
     return 0;
 }
