@@ -9380,48 +9380,42 @@ int VfsCreateScb(longlong param_1,undefined8 param_2,undefined4 *param_3,undefin
 {
   undefined4 *puVar1;
   int *piVar2;
-  undefined4 uVar3;
+  undefined8 *puVar3;
   undefined4 uVar4;
   undefined4 uVar5;
-  undefined8 uVar6;
-  int iVar7;
+  undefined4 uVar6;
+  undefined8 uVar7;
+  int iVar8;
   undefined8 *_Dst;
   undefined4 *_Dst_00;
-  int iVar8;
-  undefined8 *puVar9;
-  undefined4 *puVar10;
   
   _Dst_00 = (undefined4 *)0x0;
-  _Dst = (undefined8 *)
-         ExAllocateFromPagedLookasideList(&DAT_1c001f680,param_2,param_3,param_4,0,0,0);
+  _Dst = (undefined8 *)ExAllocateFromPagedLookasideList(&DAT_1c001f680);
   if (_Dst != (undefined8 *)0x0) {
-    puVar9 = _Dst;
     memset(_Dst,0,0x198);
     _Dst_00 = (undefined4 *)ExAllocateFromNPagedLookasideList(&DAT_1c001f700);
     if (_Dst_00 != (undefined4 *)0x0) {
-      puVar10 = _Dst_00;
       memset(_Dst_00,0,0xa0);
       *_Dst_00 = 1;
       KeInitializeEvent(_Dst_00 + 6,1,0);
-      iVar7 = ExInitializeResourceLite(_Dst_00 + 0xe);
-      if (-1 < iVar7) {
+      iVar8 = ExInitializeResourceLite(_Dst_00 + 0xe);
+      if (-1 < iVar8) {
         _Dst[0xf] = _Dst_00;
         puVar1 = *(undefined4 **)(param_3 + 4);
-        uVar3 = puVar1[1];
-        uVar4 = puVar1[2];
-        uVar5 = puVar1[3];
+        uVar4 = puVar1[1];
+        uVar5 = puVar1[2];
+        uVar6 = puVar1[3];
         *(undefined4 *)((longlong)_Dst + 0xdc) = *puVar1;
-        *(undefined4 *)(_Dst + 0x1c) = uVar3;
-        *(undefined4 *)((longlong)_Dst + 0xe4) = uVar4;
-        *(undefined4 *)(_Dst + 0x1d) = uVar5;
-        uVar3 = puVar1[5];
-        uVar4 = puVar1[6];
-        uVar5 = puVar1[7];
+        *(undefined4 *)(_Dst + 0x1c) = uVar4;
+        *(undefined4 *)((longlong)_Dst + 0xe4) = uVar5;
+        *(undefined4 *)(_Dst + 0x1d) = uVar6;
+        uVar4 = puVar1[5];
+        uVar5 = puVar1[6];
+        uVar6 = puVar1[7];
         *(undefined4 *)((longlong)_Dst + 0xec) = puVar1[4];
-        *(undefined4 *)(_Dst + 0x1e) = uVar3;
-        *(undefined4 *)((longlong)_Dst + 0xf4) = uVar4;
-        *(undefined4 *)(_Dst + 0x1f) = uVar5;
-        iVar8 = iVar7;
+        *(undefined4 *)(_Dst + 0x1e) = uVar4;
+        *(undefined4 *)((longlong)_Dst + 0xf4) = uVar5;
+        *(undefined4 *)(_Dst + 0x1f) = uVar6;
         RtlCopySid(0x44,_Dst + 0x13,*(undefined8 *)(param_3 + 2));
         _Dst[0x11] = *(undefined8 *)(param_3 + 6);
         piVar2 = *(int **)(param_3 + 8);
@@ -9430,39 +9424,36 @@ int VfsCreateScb(longlong param_1,undefined8 param_2,undefined4 *param_3,undefin
           LOCK();
           *piVar2 = *piVar2 + 1;
           UNLOCK();
-          _Dst = puVar9;
-          _Dst_00 = puVar10;
-          iVar7 = iVar8;
         }
         *(undefined4 *)(_Dst + 0x22) = *param_3;
         _Dst[0x10] = param_2;
         FltReferenceContext(param_2);
-        puVar9 = _Dst + 0x20;
-        _Dst[0x21] = puVar9;
-        *puVar9 = puVar9;
+        puVar3 = _Dst + 0x20;
+        _Dst[0x21] = puVar3;
+        *puVar3 = puVar3;
         *(undefined4 *)((longlong)_Dst + 0x114) = 1;
         *(undefined4 *)(_Dst + 0x23) = 0;
-        puVar9 = *(undefined8 **)(param_1 + 0x18);
-        uVar6 = puVar9[1];
-        *_Dst = *puVar9;
-        _Dst[1] = uVar6;
-        uVar6 = puVar9[3];
-        _Dst[2] = puVar9[2];
-        _Dst[3] = uVar6;
-        uVar3 = *(undefined4 *)((longlong)puVar9 + 0x24);
-        uVar4 = *(undefined4 *)(puVar9 + 5);
-        uVar5 = *(undefined4 *)((longlong)puVar9 + 0x2c);
-        *(undefined4 *)(_Dst + 4) = *(undefined4 *)(puVar9 + 4);
-        *(undefined4 *)((longlong)_Dst + 0x24) = uVar3;
-        *(undefined4 *)(_Dst + 5) = uVar4;
-        *(undefined4 *)((longlong)_Dst + 0x2c) = uVar5;
+        puVar3 = *(undefined8 **)(param_1 + 0x18);
+        uVar7 = puVar3[1];
+        *_Dst = *puVar3;
+        _Dst[1] = uVar7;
+        uVar7 = puVar3[3];
+        _Dst[2] = puVar3[2];
+        _Dst[3] = uVar7;
+        uVar4 = *(undefined4 *)((longlong)puVar3 + 0x24);
+        uVar5 = *(undefined4 *)(puVar3 + 5);
+        uVar6 = *(undefined4 *)((longlong)puVar3 + 0x2c);
+        *(undefined4 *)(_Dst + 4) = *(undefined4 *)(puVar3 + 4);
+        *(undefined4 *)((longlong)_Dst + 0x24) = uVar4;
+        *(undefined4 *)(_Dst + 5) = uVar5;
+        *(undefined4 *)((longlong)_Dst + 0x2c) = uVar6;
         *(undefined4 *)_Dst = 0x1981686;
         *(byte *)((longlong)_Dst + 4) = *(byte *)((longlong)_Dst + 4) | 0x40;
         *(byte *)((longlong)_Dst + 6) = *(byte *)((longlong)_Dst + 6) | 2;
         *(byte *)((longlong)_Dst + 7) = *(byte *)((longlong)_Dst + 7) & 0xf | 0x50;
-        puVar9 = _Dst + 7;
-        _Dst[8] = puVar9;
-        *puVar9 = puVar9;
+        puVar3 = _Dst + 7;
+        _Dst[8] = puVar3;
+        *puVar3 = puVar3;
         _Dst[6] = _Dst_00;
         _Dst[9] = 0;
         _Dst[10] = 0;
@@ -9475,9 +9466,9 @@ int VfsCreateScb(longlong param_1,undefined8 param_2,undefined4 *param_3,undefin
       goto LAB_1c000d7f5;
     }
   }
-  iVar7 = -0x3fffff66;
+  iVar8 = -0x3fffff66;
 LAB_1c000d7f5:
-  if (iVar7 < 0) {
+  if (iVar8 < 0) {
     if (_Dst_00 != (undefined4 *)0x0) {
       if (_Dst[0x10] != 0) {
         FltReleaseContext();
@@ -9491,7 +9482,7 @@ LAB_1c000d7f5:
       ExFreeToPagedLookasideList(&DAT_1c001f680,_Dst);
     }
   }
-  return iVar7;
+  return iVar8;
 }
 
 
