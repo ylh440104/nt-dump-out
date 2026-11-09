@@ -132,3 +132,61 @@ LONG_PTR ObReferenceObjectByPointer(void *Object, ULONG Tag)
 {
     return ObReferenceObjectExWithTag(Object, 1, Tag);
 }
+
+ULONG ObGetFilterVersion(void)
+{
+    return 0x100;
+}
+
+int ObpDeviceMapDerefCalls = 0;
+void *ObpLastDeviceMap = 0;
+ULONG ObpLastDeviceMapCount = 0;
+
+void ObDereferenceDeviceMap(void *DeviceMap, ULONG Count)
+{
+    ObpDeviceMapDerefCalls++;
+    ObpLastDeviceMap = DeviceMap;
+    ObpLastDeviceMapCount = Count;
+}
+
+void ObCleanupSiloState(ULONG_PTR *SiloState)
+{
+    ULONG_PTR Old;
+
+    Old = __atomic_exchange_n(SiloState, 0, __ATOMIC_SEQ_CST);
+
+    if (Old != 0)
+    {
+        ObDereferenceDeviceMap((void *)(Old & ~(ULONG_PTR)0xF),
+                               (ULONG)(Old & 0xF) + 1);
+    }
+}
+
+void *ExGetHandlePointer(void *Entry)
+{
+    return Entry;
+}
+
+void ExUnlockHandleTableEntry(void *HandleTable, void *Entry)
+{
+    (void)HandleTable;
+    (void)Entry;
+}
+
+int DbgPrint(const char *Format, ...)
+{
+    (void)Format;
+    return 0;
+}
+
+void ObpShutdownCloseHandleProcedure(void *HandleTable, void *Entry, ULONG HandleValue)
+{
+    void *Object;
+
+    Object = ExGetHandlePointer(Entry);
+
+    ExUnlockHandleTableEntry(HandleTable, Entry);
+
+    DbgPrint("\tFound object %p(handle %08lx)\n",
+             (void *)((UCHAR *)Object + OBJ_HEADER_OFFSET), HandleValue);
+}
