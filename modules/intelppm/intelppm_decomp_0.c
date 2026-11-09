@@ -30547,9 +30547,8 @@ int DecodeAcpiIdleState(longlong param_1,char *param_2,uint param_3,undefined8 p
       param_5._0_4_ = 3;
     }
   }
-  if ((DAT_140019398 != (code *)0x0) &&
-     (local_48 = (*DAT_140019398)(param_1,param_2,param_3,param_4,puVar1,param_6,param_7,param_8),
-     -1 < local_48)) goto LAB_14003e4b1;
+  if ((DAT_140019398 != (code *)0x0) && (local_48 = (*DAT_140019398)(param_1), -1 < local_48))
+  goto LAB_14003e4b1;
   pcVar4 = "LPI";
   if (param_3 != 0xffffffff) {
     pcVar4 = "C";
