@@ -45590,7 +45590,9 @@ LAB_140045771:
                                   (CONCAT44(local_2f0._4_4_,(int)(local_290 >> 2)) &
                                   0xffffffff0000007f);
                       local_2f8 = (longlong *)CONCAT44(local_2f8._4_4_,0xbb2);
-                      WPP_RECORDER_SF_sddsdDDi();
+                      WPP_RECORDER_SF_sddsdDDi
+                                (local_2c8,*(ushort *)((longlong)local_2a8 + 10),
+                                 *(ushort *)(local_2a8 + 2),0x5c);
                     }
                   }
                   else {
@@ -103227,37 +103229,40 @@ int VmsCdpNicCollectInternalStats(ulonglong param_1,undefined8 param_2,undefined
 int VmsCdpNicConnect(ulonglong param_1,ulonglong param_2,longlong param_3)
 
 {
-  int iVar1;
-  longlong lVar2;
+  longlong lVar1;
+  int iVar2;
   longlong lVar3;
-  ulonglong uVar4;
+  longlong lVar4;
   ulonglong uVar5;
   ulonglong uVar6;
-  int iVar7;
-  char cVar8;
-  uint uVar9;
-  longlong lVar10;
+  ulonglong uVar7;
+  int iVar8;
+  char cVar9;
+  uint uVar10;
   longlong lVar11;
   longlong lVar12;
   longlong lVar13;
-  bool bVar14;
+  longlong lVar14;
+  bool bVar15;
   ulonglong local_res8;
   ulonglong local_res10;
   longlong local_res18;
   char local_res20;
   undefined8 in_stack_fffffffffffffed8;
-  uint *puVar15;
-  undefined8 uVar16;
-  undefined4 uVar17;
-  ulonglong in_stack_fffffffffffffee0;
-  ulonglong in_stack_fffffffffffffee8;
+  uint *puVar16;
+  undefined8 uVar17;
   undefined4 uVar18;
-  undefined8 *puVar19;
+  ulonglong in_stack_fffffffffffffee0;
+  undefined4 uVar19;
+  ulonglong in_stack_fffffffffffffee8;
+  undefined4 uVar21;
+  longlong *plVar20;
+  undefined8 *puVar22;
   longlong in_stack_ffffffffffffff00;
-  undefined4 uVar20;
+  undefined4 uVar23;
   longlong in_stack_ffffffffffffff08;
-  undefined4 uVar22;
-  undefined8 uVar21;
+  undefined4 uVar25;
+  undefined8 uVar24;
   int local_e8;
   char local_e4;
   longlong local_e0;
@@ -103280,13 +103285,15 @@ int VmsCdpNicConnect(ulonglong param_1,ulonglong param_2,longlong param_3)
   undefined8 local_58;
   undefined8 uStack_50;
   
-  lVar12 = 0;
-  uVar21 = CONCAT71((int7)((ulonglong)in_stack_fffffffffffffed8 >> 8),4);
+  lVar13 = 0;
+  uVar5 = in_stack_fffffffffffffee8 & 0xffffffffffffff00;
+  uVar7 = in_stack_fffffffffffffee0 & 0xffffffff00000000;
+  uVar24 = CONCAT71((int7)((ulonglong)in_stack_fffffffffffffed8 >> 8),4);
   local_e0 = 0;
   local_c0 = 0;
   local_78 = 0;
   uStack_70 = 0;
-  lVar10 = 0;
+  lVar11 = 0;
   local_88 = 0;
   uStack_80 = 0;
   local_res10 = param_2 & 0xffffffffffffff00;
@@ -103303,82 +103310,90 @@ int VmsCdpNicConnect(ulonglong param_1,ulonglong param_2,longlong param_3)
   local_res8 = param_1;
   local_res18 = param_3;
   VmsWppTraceApi(&local_res8,"VmsCdpNicConnect",
-                 "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlnic.c",0xf8d,uVar21,
-                 in_stack_fffffffffffffee0 & 0xffffffff00000000,
-                 in_stack_fffffffffffffee8 & 0xffffffffffffff00,1,1);
-  uVar17 = (undefined4)((ulonglong)uVar21 >> 0x20);
-  iVar7 = 0;
+                 "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlnic.c",0xf8d,uVar24,uVar7,uVar5,1,1
+                );
+  uVar18 = (undefined4)((ulonglong)uVar24 >> 0x20);
+  uVar19 = (undefined4)(uVar7 >> 0x20);
+  uVar21 = (undefined4)(uVar5 >> 0x20);
+  iVar8 = 0;
   local_d8[1] = 0;
-  lVar2 = 0;
-  local_d8[0] = 0;
   lVar3 = 0;
+  local_d8[0] = 0;
+  lVar4 = 0;
   local_b8 = 0;
-  uVar9 = 0;
+  uVar10 = 0;
   local_b0 = 0;
-  lVar13 = 0;
+  lVar14 = 0;
   local_d0 = 0;
   local_c8 = 0;
   local_e8 = LibIoctlInitializeOperation(local_res18,&local_b0);
-  uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-  uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+  uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+  uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
   if (local_e8 < 0) {
-    uVar17 = 1;
-    WPP_RECORDER_SF_L(VmsIfrLog);
+    uVar18 = 1;
+    WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0x9b,&WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids,
+                      CONCAT44(uVar19,local_e8));
   }
   else {
-    lVar2 = ExAllocatePool2(0x40,0xfe,0x74437356);
-    uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-    uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-    if (lVar2 == 0) {
-      iVar7 = 5;
+    lVar3 = ExAllocatePool2(0x40,0xfe,0x74437356);
+    uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+    uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+    if (lVar3 == 0) {
+      iVar8 = 5;
+      uVar24 = 0x9c;
     }
     else {
-      lVar3 = ExAllocatePool2(0x40,0xfe,0x74437356);
-      uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-      uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-      if (lVar3 == 0) {
-        iVar7 = 10;
+      lVar4 = ExAllocatePool2(0x40,0xfe,0x74437356);
+      uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+      uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+      if (lVar4 == 0) {
+        iVar8 = 10;
+        uVar24 = 0x9d;
       }
       else {
         local_b8 = ExAllocatePool2(0x40,0xfe,0x74437356);
-        uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-        uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+        uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+        uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
         if (local_b8 != 0) {
           local_e8 = VmsUtilInitUnicodeStringSafe(&local_58);
-          uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-          uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+          uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+          uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
           if (local_e8 < 0) {
-            iVar7 = 0x14;
+            iVar8 = 0x14;
           }
           else {
             local_e8 = VmsUtilInitUnicodeStringSafe(&local_68);
-            uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-            uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+            uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+            uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
             if (local_e8 < 0) {
-              iVar7 = 0x19;
+              iVar8 = 0x19;
             }
             else {
               local_e8 = VmsUtilInitUnicodeStringSafe(&local_a8);
-              uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-              uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+              uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+              uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
               if (local_e8 < 0) {
-                iVar7 = 0x1e;
+                iVar8 = 0x1e;
               }
               else {
-                puVar15 = local_d8;
+                plVar20 = &local_e0;
+                uVar19 = 0;
+                puVar16 = local_d8;
                 local_e8 = LibIoctlGetRecordEx(local_b0);
-                uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                 if (local_e8 < 0) {
-                  uVar17 = 1;
-                  WPP_RECORDER_SF_L(VmsIfrLog);
+                  uVar18 = 1;
+                  WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0x9f,
+                                    &WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids,
+                                    CONCAT44(uVar19,local_e8),plVar20);
                 }
                 else if (local_d8[0] < 0x300) {
                   local_e8 = -0x3ffffff3;
-                  uVar17 = 1;
+                  uVar18 = 1;
                   WPP_RECORDER_SF_lld(VmsIfrLog);
                   local_e0 = 0;
-                  iVar7 = 0x23;
+                  iVar8 = 0x23;
                 }
                 else {
                   if ((local_res8 & 1) != 0) {
@@ -103386,123 +103401,132 @@ int VmsCdpNicConnect(ulonglong param_1,ulonglong param_2,longlong param_3)
                     in_stack_ffffffffffffff00 = local_e0;
                     WPP_RECORDER_SF_sddsSSS();
                   }
-                  iVar1 = VmsUtilInitUnicodeStringSafe(&local_88);
-                  uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                  uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                  uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-                  if (iVar1 == 0) {
+                  iVar2 = VmsUtilInitUnicodeStringSafe(&local_88);
+                  uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                  uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                  uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                  if (iVar2 == 0) {
                     local_e4 = '\x01';
                     local_e8 = VmsUtilUpcaseUnicodeString(&local_68);
-                    uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                    uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                    uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                    uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                    uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                    uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                     if (local_e8 == 0) {
-                      iVar1 = VmsUtilInitUnicodeStringSafe(&local_98);
-                      uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                      uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                      uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-                      if (iVar1 == 0) {
+                      iVar2 = VmsUtilInitUnicodeStringSafe(&local_98);
+                      uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                      uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                      uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                      if (iVar2 == 0) {
                         local_res20 = '\x01';
                         local_e8 = VmsUtilUpcaseUnicodeString(&local_58);
-                        uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                        uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                        uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                        uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                        uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                        uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                         if (local_e8 == 0) {
-                          iVar1 = VmsUtilInitUnicodeStringSafe(&local_78);
-                          uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                          uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                          uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-                          if (iVar1 == 0) {
+                          iVar2 = VmsUtilInitUnicodeStringSafe(&local_78);
+                          uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                          uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                          uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                          if (iVar2 == 0) {
                             local_res10 = CONCAT71(local_res10._1_7_,1);
                             local_e8 = VmsUtilUpcaseUnicodeString(&local_a8);
-                            uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                            uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                            uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                            uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                            uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                            uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                             if (local_e8 == 0) {
                               local_e8 = VmsOmFindSwitchInitialized(&local_58);
-                              lVar13 = local_d0;
-                              uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                              uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                              uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                              lVar14 = local_d0;
+                              uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                              uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                              uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                               if (local_e8 == 0) {
                                 local_e8 = VmsOmFindPortInitialized(local_d0);
-                                lVar12 = local_c8;
-                                uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                                uVar20 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                                uVar22 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
+                                lVar13 = local_c8;
+                                uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                                uVar23 = (undefined4)((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
+                                uVar25 = (undefined4)((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
                                 if (local_e8 == 0) {
                                   local_e8 = 0;
                                   while( true ) {
                                     local_e8 = VmsOmFindNicInitialized(&local_a8,0x23,&local_c0);
-                                    lVar10 = local_c0;
-                                    uVar17 = (undefined4)((ulonglong)puVar15 >> 0x20);
-                                    uVar20 = (undefined4)
+                                    lVar11 = local_c0;
+                                    uVar18 = (undefined4)((ulonglong)puVar16 >> 0x20);
+                                    uVar23 = (undefined4)
                                              ((ulonglong)in_stack_ffffffffffffff00 >> 0x20);
-                                    uVar22 = (undefined4)
+                                    uVar25 = (undefined4)
                                              ((ulonglong)in_stack_ffffffffffffff08 >> 0x20);
-                                    if (((short)*(undefined4 *)(lVar12 + 0x2828) != 1) ||
+                                    if (((short)*(undefined4 *)(lVar13 + 0x2828) != 1) ||
                                        (local_e8 != -0x3fffffcc)) break;
-                                    uVar9 = uVar9 + 1;
-                                    if (100 < uVar9) goto LAB_14009d289;
+                                    uVar10 = uVar10 + 1;
+                                    if (100 < uVar10) goto LAB_14009d289;
                                     NdisMSleep(100000);
                                   }
                                   if (local_e8 == 0) {
-                                    lVar11 = *(longlong *)
-                                              (*(longlong *)
-                                                (*(longlong *)(local_res18 + 0xb8) + 0x30) + 0x18);
-                                    if ((lVar11 == 0) || (lVar11 == local_c0)) {
+                                    lVar12 = *(longlong *)(local_res18 + 0xb8);
+                                    lVar1 = *(longlong *)(*(longlong *)(lVar12 + 0x30) + 0x18);
+                                    if ((lVar1 == 0) || (lVar1 == local_c0)) {
                                       local_e8 = VmsOmNicConnect(&local_a8);
                                       if (local_e8 != 0) {
-                                        iVar7 = 100;
+                                        iVar8 = 100;
                                       }
                                     }
                                     else {
                                       local_e8 = -0x3ffffff3;
-                                      uVar17 = 1;
-                                      WPP_RECORDER_SF_qqd(VmsIfrNicLog);
-                                      iVar7 = 0x5a;
+                                      uVar18 = 1;
+                                      WPP_RECORDER_SF_qqd(VmsIfrNicLog,
+                                                          CONCAT71((int7)((ulonglong)lVar12 >> 8),2)
+                                                          ,0x14,0xa3,
+                                                          &
+                                                  WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids,
+                                                  *(undefined8 *)
+                                                   (*(longlong *)(lVar12 + 0x30) + 0x18),local_c0,
+                                                  0xc000000d);
+                                      iVar8 = 0x5a;
                                     }
                                   }
                                   else {
 LAB_14009d289:
-                                    iVar7 = 0x50;
-                                    uVar17 = 1;
-                                    WPP_RECORDER_SF_qZDd(VmsIfrNicLog);
+                                    iVar8 = 0x50;
+                                    uVar18 = 1;
+                                    WPP_RECORDER_SF_qZDd
+                                              (VmsIfrNicLog,2,0x14,0xa2,
+                                               &WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids,
+                                               local_c0,&local_a8,0x50,local_e8);
                                   }
                                 }
                                 else {
-                                  iVar7 = 0x4b;
+                                  iVar8 = 0x4b;
                                 }
                               }
                               else {
-                                iVar7 = 0x46;
+                                iVar8 = 0x46;
                               }
                             }
                             else {
-                              iVar7 = 0x41;
+                              iVar8 = 0x41;
                             }
                           }
                           else {
                             local_e8 = -0x3ffffff3;
-                            iVar7 = 0x3c;
+                            iVar8 = 0x3c;
                           }
                         }
                         else {
-                          iVar7 = 0x37;
+                          iVar8 = 0x37;
                         }
                       }
                       else {
                         local_e8 = -0x3ffffff3;
-                        iVar7 = 0x32;
+                        iVar8 = 0x32;
                       }
                     }
                     else {
-                      iVar7 = 0x2d;
+                      iVar8 = 0x2d;
                     }
                   }
                   else {
                     local_e8 = -0x3ffffff3;
-                    iVar7 = 0x28;
+                    iVar8 = 0x28;
                   }
                 }
               }
@@ -103510,80 +103534,82 @@ LAB_14009d289:
           }
           goto LAB_14009d35e;
         }
-        iVar7 = 0xf;
+        iVar8 = 0xf;
+        uVar24 = 0x9e;
       }
     }
     local_e8 = -0x3fffff66;
-    uVar17 = 1;
-    WPP_RECORDER_SF_ld(VmsIfrLog);
+    uVar18 = 1;
+    WPP_RECORDER_SF_ld(VmsIfrLog,2,0x14,uVar24,&WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids,
+                       CONCAT44(uVar19,0xfe),CONCAT44(uVar21,0xc000009a));
   }
 LAB_14009d35e:
   if (local_e8 < 0) {
     if (local_e0 == 0) {
-      puVar19 = (undefined8 *)0x0;
-      uVar18 = 0;
+      puVar22 = (undefined8 *)0x0;
+      uVar19 = 0;
     }
     else {
-      puVar19 = (undefined8 *)(local_e0 + 0x100);
-      uVar18 = (undefined4)((ulonglong)(local_e0 + 0x200) >> 0x20);
+      puVar22 = (undefined8 *)(local_e0 + 0x100);
+      uVar19 = (undefined4)((ulonglong)(local_e0 + 0x200) >> 0x20);
     }
-    uVar21 = CONCAT44(uVar22,local_e8);
-    uVar6 = CONCAT44(uVar20,iVar7);
+    uVar24 = CONCAT44(uVar25,local_e8);
+    uVar7 = CONCAT44(uVar23,iVar8);
     WPP_RECORDER_SF_qSSSDd();
-    if (iVar7 != 0) {
-      uVar6 = -(ulonglong)(local_res20 != '\0') & (ulonglong)&local_98;
-      uVar4 = -(ulonglong)(local_e4 != '\0') & (ulonglong)&local_88;
-      if (lVar10 == 0) {
-        lVar11 = 0;
+    if (iVar8 != 0) {
+      uVar7 = -(ulonglong)(local_res20 != '\0') & (ulonglong)&local_98;
+      uVar5 = -(ulonglong)(local_e4 != '\0') & (ulonglong)&local_88;
+      if (lVar11 == 0) {
+        lVar12 = 0;
       }
       else {
-        lVar11 = lVar10 + 0x268;
+        lVar12 = lVar11 + 0x268;
       }
-      cVar8 = (char)local_res10;
-      uVar21 = 0;
-      puVar19 = (undefined8 *)0x0;
-      uVar16 = CONCAT44(uVar17,iVar7);
-      VmsEtwTraceNicError(&VM_NIC_CONNECT_FAILED,uVar6,uVar4,&local_e8,uVar16,
-                          -(ulonglong)((char)local_res10 != '\0') & (ulonglong)&local_78,lVar11,
-                          uVar4,0,uVar6,0);
-      uVar17 = (undefined4)((ulonglong)uVar16 >> 0x20);
-      uVar18 = (undefined4)((ulonglong)lVar11 >> 0x20);
+      cVar9 = (char)local_res10;
+      uVar24 = 0;
+      puVar22 = (undefined8 *)0x0;
+      uVar17 = CONCAT44(uVar18,iVar8);
+      VmsEtwTraceNicError(&VM_NIC_CONNECT_FAILED,uVar7,uVar5,&local_e8,uVar17,
+                          -(ulonglong)((char)local_res10 != '\0') & (ulonglong)&local_78,lVar12,
+                          uVar5,0,uVar7,0);
+      uVar18 = (undefined4)((ulonglong)uVar17 >> 0x20);
+      uVar19 = (undefined4)((ulonglong)lVar12 >> 0x20);
       goto LAB_14009d39b;
     }
   }
   else {
-    uVar21 = CONCAT44(uVar22,local_e8);
-    puVar19 = &local_88;
-    uVar6 = CONCAT44(uVar20,iVar7);
-    uVar18 = (undefined4)((ulonglong)&local_78 >> 0x20);
+    uVar24 = CONCAT44(uVar25,local_e8);
+    puVar22 = &local_88;
+    uVar7 = CONCAT44(uVar23,iVar8);
+    uVar19 = (undefined4)((ulonglong)&local_78 >> 0x20);
     WPP_RECORDER_SF_qZZZDd();
   }
-  cVar8 = (char)local_res10;
+  cVar9 = (char)local_res10;
 LAB_14009d39b:
-  bVar14 = local_res20 != '\0';
+  bVar15 = local_res20 != '\0';
   local_res20 = -local_res20;
-  uVar5 = -(ulonglong)bVar14 & (ulonglong)&local_98;
-  bVar14 = local_e4 != '\0';
+  uVar6 = -(ulonglong)bVar15 & (ulonglong)&local_98;
+  bVar15 = local_e4 != '\0';
   local_e4 = -local_e4;
-  uVar4 = -(ulonglong)bVar14 & (ulonglong)&local_88;
+  uVar5 = -(ulonglong)bVar15 & (ulonglong)&local_88;
   ExecMonitorOperationContextInfoUpdate
-            (local_res18,1,1,-(ulonglong)(cVar8 != '\0') & (ulonglong)&local_78,CONCAT44(uVar17,3),
-             uVar4,CONCAT44(uVar18,5),uVar5,puVar19,uVar6,uVar21);
-  uVar17 = (undefined4)(uVar4 >> 0x20);
-  if (lVar10 != 0) {
-    VmsOmpObjectDereference(lVar10,0x23);
-  }
-  if (lVar12 != 0) {
-    VmsOmpObjectDereference(lVar12,5);
+            (local_res18,1,1,-(ulonglong)(cVar9 != '\0') & (ulonglong)&local_78,CONCAT44(uVar18,3),
+             uVar5,CONCAT44(uVar19,5),uVar6,puVar22,uVar7,uVar24);
+  uVar18 = (undefined4)(uVar5 >> 0x20);
+  if (lVar11 != 0) {
+    VmsOmpObjectDereference(lVar11,0x23);
   }
   if (lVar13 != 0) {
-    VmsOmpObjectDereference(lVar13,8);
+    VmsOmpObjectDereference(lVar13,5);
   }
-  if (lVar2 != 0) {
-    ExFreePoolWithTag(lVar2,0);
+  if (lVar14 != 0) {
+    VmsOmpObjectDereference(lVar14,8);
   }
   if (lVar3 != 0) {
     ExFreePoolWithTag(lVar3,0);
+  }
+  if (lVar4 != 0) {
+    ExFreePoolWithTag(lVar4,0);
   }
   if (local_b8 != 0) {
     ExFreePoolWithTag(local_b8,0);
@@ -103591,8 +103617,8 @@ LAB_14009d39b:
   LibIoctlFinalizeAndDeinitializeOperationEx(local_b0,0);
   VmsWppTraceApi(&local_res8,"VmsCdpNicConnect",
                  "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlnic.c",0x1123,4,
-                 CONCAT44(uVar17,local_e8),1,uVar5 & 0xffffffffffffff00,
-                 (ulonglong)puVar19 & 0xffffffffffffff00);
+                 CONCAT44(uVar18,local_e8),1,uVar6 & 0xffffffffffffff00,
+                 (ulonglong)puVar22 & 0xffffffffffffff00);
   return local_e8;
 }
 
@@ -105264,7 +105290,7 @@ int VmsCdpNicGetInternalStats(ulonglong param_1,undefined8 param_2,undefined8 pa
               local_1c8 = (undefined8 **)CONCAT44(local_1c8._4_4_,0x19e9);
               local_1d0 = "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlnic.c";
               local_1d8 = (uint *)&WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids;
-              WPP_RECORDER_SF_sddsDD();
+              WPP_RECORDER_SF_sddsDD("VmsCdpNicGetInternalStats",local_1a8,uVar8,0xf5);
             }
           }
           else {
@@ -107042,7 +107068,9 @@ LAB_1400a2d20:
           local_148 = (byte *****)CONCAT44(local_148._4_4_,0x106);
           local_150 = "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlnic.c";
           local_158 = (uint *)&WPP_de35bc2b32c031158e55d6d8f894af4a_Traceguids;
-          WPP_RECORDER_SF_sddsdd();
+          WPP_RECORDER_SF_sddsdd
+                    ("VmsCdpNicMorphToVmNic",*(ushort *)((longlong)local_a0 + 2),*(byte *)local_a0,
+                     0x16);
         }
         local_b6 = *(undefined2 *)((longlong)local_a0 + 2);
         local_b8[0] = *(byte *)local_a0;
@@ -114980,7 +115008,9 @@ int VmsCdpPortEnumLearnedMac(ulonglong param_1,undefined8 param_2,undefined8 par
                     local_338 = (undefined8 **)CONCAT44(local_338._4_4_,0x666);
                     local_340 = "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlport.c";
                     local_348 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
-                    WPP_RECORDER_SF_sdds_MAC_ddd();
+                    WPP_RECORDER_SF_sdds_MAC_ddd
+                              ("VmsCdpPortEnumLearnedMac",*(byte *)(local_2a8 + 1),
+                               *(ushort *)((longlong)local_2a8 + 6),0x36);
                   }
                 }
                 iVar4 = NvspRoutingObjGetNextLearnedEntriesForPort
@@ -115480,9 +115510,10 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
   byte bVar2;
   longlong lVar3;
   int iVar4;
-  longlong lVar5;
-  undefined4 uVar6;
-  longlong lVar7;
+  undefined8 uVar5;
+  longlong lVar6;
+  undefined4 uVar7;
+  longlong lVar8;
   undefined1 auStack_338 [32];
   uint *local_318;
   undefined8 local_310;
@@ -115538,13 +115569,13 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
   local_290 = 0xfe0000;
   VmsWppTraceApi(&local_2a0,"VmsCdpPortGetHandleCount",
                  "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlport.c",0x7cc);
-  lVar5 = 0;
+  lVar6 = 0;
   local_2c0 = 0;
   local_2d0 = 0;
   local_2b8 = 0;
-  lVar7 = 0;
+  lVar8 = 0;
   local_2a8 = 0;
-  uVar6 = 0;
+  uVar7 = 0;
   bVar2 = 0;
   bVar1 = 0;
   local_2d8 = LibIoctlInitializeOperation(param_3,&local_2a8);
@@ -115552,7 +115583,7 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
     local_310 = (char *)CONCAT44(local_310._4_4_,local_2d8);
     local_318 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
     WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0x3f);
-    uVar6 = 5;
+    uVar7 = 5;
   }
   else {
     local_308 = &local_2b8;
@@ -115563,7 +115594,7 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
       local_310 = (char *)CONCAT44(local_310._4_4_,local_2d8);
       local_318 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
       WPP_RECORDER_SF_L(VmsIfrLog,2,0x14);
-      uVar6 = 10;
+      uVar7 = 10;
     }
     else if (local_2c8[0] < 0x200) {
       local_2d8 = -0x3ffffff3;
@@ -115571,7 +115602,7 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
       local_310 = (char *)CONCAT44(local_310._4_4_,0x200);
       local_318 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
       WPP_RECORDER_SF_ld(VmsIfrLog,2,0x14);
-      uVar6 = 0xf;
+      uVar7 = 0xf;
     }
     else {
       local_2d8 = VmsUtilInitUnicodeStringSafe(&local_270,local_2b8,0x100);
@@ -115595,7 +115626,7 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
                 WPP_RECORDER_SF_sddsSS();
               }
               iVar4 = VmsOmFindSwitchInitialized(&local_280,0,&local_2c0);
-              lVar7 = local_2c0;
+              lVar8 = local_2c0;
               if (iVar4 == 0) {
                 local_2d8 = VmsOmFindPortInitialized(local_2c0,&local_290,0,&local_2d0);
                 if (local_2d8 == 0) {
@@ -115604,21 +115635,21 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
                   local_2d8 = LibIoctlAddRecordEx(local_2a8,0x5b,1,4);
                   lVar3 = local_2d0;
                   if (local_2d8 < 0) {
-                    lVar5 = local_2d0;
+                    lVar6 = local_2d0;
                     if (local_2d8 != -0x7ffffffb) {
                       local_310 = (char *)CONCAT44(local_310._4_4_,local_2d8);
                       local_318 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
                       WPP_RECORDER_SF_L(VmsIfrLog,2,0x14);
-                      lVar5 = local_2d0;
+                      lVar6 = local_2d0;
                     }
                   }
                   else {
                     *local_2b0 = 0;
                     VmsOmObjectLockShared(local_2d0,&local_2d4,0);
-                    lVar5 = local_2d0;
+                    lVar6 = local_2d0;
                     *local_2b0 = *(undefined4 *)(lVar3 + 0x4c8);
                     NdisReleaseRWLock(*(undefined8 *)(local_2d0 + 0x38),&local_2d4);
-                    lVar7 = local_2c0;
+                    lVar8 = local_2c0;
                     if ((local_2a0 & 1) != 0) {
                       local_2f0 = CONCAT44(local_2f0._4_4_,*local_2b0);
                       local_2f8 = "VmsCdpPortGetHandleCount";
@@ -115628,34 +115659,34 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
                       local_310 = "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlport.c";
                       local_318 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
                       WPP_RECORDER_SF_sddsD();
-                      lVar7 = local_2c0;
+                      lVar8 = local_2c0;
                     }
                   }
                 }
                 else {
-                  uVar6 = 0x23;
-                  lVar5 = local_2d0;
+                  uVar7 = 0x23;
+                  lVar6 = local_2d0;
                 }
               }
               else {
                 local_2d8 = -0x3fffffc6;
-                uVar6 = 0x1e;
+                uVar7 = 0x1e;
               }
             }
             else {
-              uVar6 = 0x1b;
+              uVar7 = 0x1b;
             }
           }
           else {
-            uVar6 = 0x19;
+            uVar7 = 0x19;
           }
         }
         else {
-          uVar6 = 0x16;
+          uVar7 = 0x16;
         }
       }
       else {
-        uVar6 = 0x14;
+        uVar7 = 0x14;
       }
     }
   }
@@ -115664,39 +115695,45 @@ int VmsCdpPortGetHandleCount(ulonglong param_1,undefined8 param_2,undefined8 par
     if (local_2b8 == 0) {
       local_2f8 = (char *)0x0;
     }
+    if (lVar8 == 0) {
+      uVar5 = VmsIfrLog;
+    }
+    else {
+      uVar5 = *(undefined8 *)(&DAT_00002388 + lVar8);
+    }
     local_2e8 = CONCAT44(local_2e8._4_4_,local_2d8);
-    local_2f0 = CONCAT44(local_2f0._4_4_,uVar6);
+    local_2f0 = CONCAT44(local_2f0._4_4_,uVar7);
     local_300 = local_2b8;
-    local_310 = (char *)lVar7;
-    local_308 = (longlong *)lVar5;
-    WPP_RECORDER_SF_qqSSDd();
-    local_2f0 = lVar7 + 0x268;
-    if (lVar7 == 0) {
+    local_310 = (char *)lVar8;
+    local_308 = (longlong *)lVar6;
+    WPP_RECORDER_SF_qqSSDd(uVar5,uVar5,local_2f8,0x45);
+    local_2f0 = lVar8 + 0x268;
+    if (lVar8 == 0) {
       local_2f0 = 0;
     }
-    local_300 = lVar5 + 0x268;
+    local_300 = lVar6 + 0x268;
     local_2f8 = (char *)(-(ulonglong)bVar1 & (ulonglong)&local_280);
-    if (lVar5 == 0) {
+    if (lVar6 == 0) {
       local_300 = 0;
     }
     local_308 = (longlong *)(-(ulonglong)bVar2 & (ulonglong)&local_290);
     local_310 = (char *)CONCAT44(local_310._4_4_,0x14);
-    local_318 = (uint *)CONCAT44(local_318._4_4_,uVar6);
-    VmsEtwTracePortOperationFailure();
+    local_318 = (uint *)CONCAT44(local_318._4_4_,uVar7);
+    VmsEtwTracePortOperationFailure(local_308,local_2f8,local_300,&local_2d8);
   }
-  local_300 = lVar5 + 0x268;
-  if (lVar5 == 0) {
+  local_300 = lVar6 + 0x268;
+  if (lVar6 == 0) {
     local_300 = 0;
   }
   local_308 = (longlong *)CONCAT44(local_308._4_4_,4);
   local_310 = (char *)(-(ulonglong)bVar2 & (ulonglong)&local_290);
   local_318 = (uint *)CONCAT44(local_318._4_4_,3);
   ExecMonitorOperationContextInfoUpdate(param_3,1,5,-(ulonglong)bVar1 & (ulonglong)&local_280);
-  if (lVar7 != 0) {
-    VmsOmpObjectDereference(lVar7,0);
+  if (lVar8 != 0) {
+    VmsOmpObjectDereference(lVar8,0);
   }
-  if (lVar5 != 0) {
-    VmsOmpObjectDereference(lVar5,0);
+  if (lVar6 != 0) {
+    VmsOmpObjectDereference(lVar6,0);
   }
   LibIoctlFinalizeAndDeinitializeOperationEx(local_2a8,0);
   local_2f8 = (char *)((ulonglong)local_2f8 & 0xffffffffffffff00);
@@ -116081,7 +116118,9 @@ int VmsCdpPortGetInfo(ulonglong param_1,undefined8 param_2,undefined8 param_3)
                       local_3a0 = CONCAT44(local_3a0._4_4_,(int)(local_2b8 >> 2)) &
                                   0xffffffff0000007f;
                       local_3a8 = (undefined8 ****)CONCAT44(local_3a8._4_4_,0x947);
-                      WPP_RECORDER_SF_sddsSSSSdcSSSSDDDDccDDDcDD();
+                      WPP_RECORDER_SF_sddsSSSSdcSSSSDDDDccDDDcDD
+                                ("VmsCdpPortGetInfo",*(ushort *)((longlong)local_2c8 + 0x112e),
+                                 local_348,0x4b);
                       lVar2 = local_2b0;
                       param_3 = local_270;
                       cVar4 = local_2d4;
@@ -116105,14 +116144,15 @@ int VmsCdpPortGetInfo(ulonglong param_1,undefined8 param_2,undefined8 param_3)
                                   CONCAT44(local_388._4_4_,
                                            (uint)*(ushort *)((longlong)local_2c8 + 0x2536));
                       local_390 = (undefined8 ****)
-                                  (CONCAT44(local_390._4_4_,
-                                            *(undefined4 *)((longlong)local_2c8 + 0x2534)) &
-                                  0xffffffff0000ffff);
+                                  (CONCAT44(local_390._4_4_,*(uint *)((longlong)local_2c8 + 0x2534))
+                                  & 0xffffffff0000ffff);
                       local_398 = "VmsCdpPortGetInfo";
                       local_3a0 = CONCAT44(local_3a0._4_4_,(int)(local_2b8 >> 2)) &
                                   0xffffffff0000007f;
                       local_3a8 = (undefined8 ****)CONCAT44(local_3a8._4_4_,0x948);
-                      WPP_RECORDER_SF_sddsDDccccDDd();
+                      WPP_RECORDER_SF_sddsDDccccDDd
+                                ("VmsCdpPortGetInfo",local_2c8,
+                                 *(uint *)((longlong)local_2c8 + 0x2534) & 0xffff,0x4c);
                     }
                   }
                   else {
@@ -116164,7 +116204,7 @@ int VmsCdpPortGetInfo(ulonglong param_1,undefined8 param_2,undefined8 param_3)
     local_3a8 = (undefined8 ****)(-(ulonglong)(cVar4 != '\0') & (ulonglong)(local_298 + 1));
     local_3b0 = (char *)CONCAT44(local_3b0._4_4_,2);
     local_3b8 = (uint *)CONCAT44(local_3b8._4_4_,uVar5);
-    VmsEtwTracePortOperationFailure();
+    VmsEtwTracePortOperationFailure(local_398,local_3a8,local_3a0,&local_2d8);
   }
   LibIoctlFinalizeAndDeinitializeOperationEx(local_2a8,0);
   local_3a0 = lVar6 + 0x268;
@@ -116375,7 +116415,7 @@ LAB_1400b2e07:
     local_2d8 = (undefined1 ***)(-(ulonglong)bVar2 & (ulonglong)(local_290 + 1));
     local_2e0 = (undefined1 **)CONCAT44(local_2e0._4_4_,0x12);
     local_2e8 = (uint *)CONCAT44(local_2e8._4_4_,uVar7);
-    VmsEtwTracePortOperationFailure();
+    VmsEtwTracePortOperationFailure(local_2d8,local_2c8,local_2d0,&local_2b8);
   }
   local_2d0 = lVar5 + 0x268;
   if (lVar5 == 0) {
@@ -116593,7 +116633,7 @@ LAB_1400b3372:
     local_2f8 = (char **)(-(ulonglong)bVar2 & (ulonglong)(local_2a0 + 1));
     local_300 = (char *)CONCAT44(local_300._4_4_,1);
     local_308 = (uint *)CONCAT44(local_308._4_4_,uVar7);
-    VmsEtwTracePortOperationFailure();
+    VmsEtwTracePortOperationFailure(local_2e8,local_2f8,local_2f0,&local_2c8);
   }
   LibIoctlFinalizeAndDeinitializeOperationEx(uVar3,0);
   if (lVar5 == 0) {
@@ -117429,7 +117469,7 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
   undefined8 *local_2e8;
   longlong local_2e0;
   int local_2d8;
-  int local_2c8;
+  int local_2c8 [2];
   longlong local_2c0;
   uint local_2b8 [2];
   longlong local_2b0;
@@ -117477,9 +117517,9 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
   local_2a0 = 0;
   bVar2 = 0;
   bVar1 = 0;
-  local_2c8 = LibIoctlInitializeOperation(param_3,&local_2a0);
-  if (local_2c8 < 0) {
-    local_300 = CONCAT44(local_300._4_4_,local_2c8);
+  local_2c8[0] = LibIoctlInitializeOperation(param_3,&local_2a0);
+  if (local_2c8[0] < 0) {
+    local_300 = CONCAT44(local_300._4_4_,local_2c8[0]);
     local_308 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
     WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,100);
     uVar5 = 10;
@@ -117488,9 +117528,9 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
     local_2f8 = &local_2c0;
     local_308 = local_2b8;
     local_300 = 0;
-    local_2c8 = LibIoctlGetRecordEx(local_2a0);
-    if (local_2c8 < 0) {
-      local_300 = CONCAT44(local_300._4_4_,local_2c8);
+    local_2c8[0] = LibIoctlGetRecordEx(local_2a0);
+    if (local_2c8[0] < 0) {
+      local_300 = CONCAT44(local_300._4_4_,local_2c8[0]);
       local_308 = (uint *)&WPP_4612b5fb516632bcd2da8faa15e2eb5d_Traceguids;
       WPP_RECORDER_SF_L(VmsIfrLog,2,0x14);
       uVar5 = 0x14;
@@ -117499,16 +117539,16 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
       if (0x2223 < local_2b8[0]) {
         iVar3 = VmsUtilInitUnicodeStringSafe(&local_270,local_2c0 + 0x100,0x100);
         if (iVar3 == 0) {
-          local_2c8 = VmsUtilUpcaseUnicodeString(&local_290,&local_270);
-          if (local_2c8 != 0) {
+          local_2c8[0] = VmsUtilUpcaseUnicodeString(&local_290,&local_270);
+          if (local_2c8[0] != 0) {
             uVar5 = 0x32;
             goto LAB_1400b4a40;
           }
           bVar2 = 1;
           iVar3 = VmsUtilInitUnicodeStringSafe(&local_260,local_2c0,0x100);
           if (iVar3 == 0) {
-            local_2c8 = VmsUtilUpcaseUnicodeString(&local_280,&local_260);
-            if (local_2c8 != 0) {
+            local_2c8[0] = VmsUtilUpcaseUnicodeString(&local_280,&local_260);
+            if (local_2c8[0] != 0) {
               uVar5 = 0x46;
               goto LAB_1400b4a40;
             }
@@ -117517,37 +117557,37 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
             if (iVar3 == 0) {
               VmsCdpPortSetInfoTraceInput(local_298,local_2c0);
               lVar7 = local_2b0;
-              local_2c8 = VmsOmFindPortInitialized(local_2b0,&local_290,0,&local_2a8);
+              local_2c8[0] = VmsOmFindPortInitialized(local_2b0,&local_290,0,&local_2a8);
               uVar6 = local_2a8;
-              if (local_2c8 != 0) {
+              if (local_2c8[0] != 0) {
                 uVar5 = 0x5a;
                 goto LAB_1400b4a40;
               }
-              local_2c8 = VmsOmPortInfoSet(local_2a8,local_2c0);
+              local_2c8[0] = VmsOmPortInfoSet(local_2a8,local_2c0);
               uVar5 = 0;
-              if (local_2c8 != 0) {
+              if (local_2c8[0] != 0) {
                 uVar5 = 100;
               }
             }
             else {
-              local_2c8 = -0x3fffffc6;
+              local_2c8[0] = -0x3fffffc6;
               uVar5 = 0x50;
               lVar7 = local_2b0;
             }
           }
           else {
-            local_2c8 = -0x3ffffff3;
+            local_2c8[0] = -0x3ffffff3;
             uVar5 = 0x3c;
           }
         }
         else {
-          local_2c8 = -0x3ffffff3;
+          local_2c8[0] = -0x3ffffff3;
           uVar5 = 0x28;
         }
         goto LAB_1400b4a40;
       }
       local_2c0 = 0;
-      local_2c8 = -0x3ffffff3;
+      local_2c8[0] = -0x3ffffff3;
       uVar5 = 0x1e;
       local_2f8 = (longlong *)CONCAT44(local_2f8._4_4_,local_2b8[0]);
       local_300 = CONCAT44(local_300._4_4_,0x2224);
@@ -117558,15 +117598,21 @@ int VmsCdpPortSetInfo(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 LAB_1400b4a40:
   local_300 = lVar7;
   local_2f8 = (longlong *)uVar6;
-  if (local_2c8 < 0) {
+  if (local_2c8[0] < 0) {
     local_2e8 = (undefined8 *)(local_2c0 + 0x100);
     if (local_2c0 == 0) {
       local_2e8 = (undefined8 *)0x0;
     }
+    if (lVar7 == 0) {
+      uVar4 = VmsIfrLog;
+    }
+    else {
+      uVar4 = *(undefined8 *)(&DAT_00002388 + lVar7);
+    }
     local_2e0 = CONCAT44(local_2e0._4_4_,uVar5);
     local_2f0 = (undefined8 *)local_2c0;
-    local_2d8 = local_2c8;
-    WPP_RECORDER_SF_qqSSDd();
+    local_2d8 = local_2c8[0];
+    WPP_RECORDER_SF_qqSSDd(uVar4,uVar4,local_2e8,0x68);
     local_2e0 = lVar7 + 0x268;
     if (lVar7 == 0) {
       local_2e0 = 0;
@@ -117579,7 +117625,7 @@ LAB_1400b4a40:
     local_2f8 = (longlong *)(-(ulonglong)bVar2 & (ulonglong)&local_290);
     local_300 = CONCAT44(local_300._4_4_,3);
     local_308 = (uint *)CONCAT44(local_308._4_4_,uVar5);
-    VmsEtwTracePortOperationFailure();
+    VmsEtwTracePortOperationFailure(local_2e8,local_2f8,local_2f0,local_2c8);
   }
   else {
     if (lVar7 == 0) {
@@ -117588,7 +117634,7 @@ LAB_1400b4a40:
     else {
       uVar4 = *(undefined8 *)(&DAT_00002388 + lVar7);
     }
-    local_2e0 = CONCAT44(local_2e0._4_4_,local_2c8);
+    local_2e0 = CONCAT44(local_2e0._4_4_,local_2c8[0]);
     local_2e8 = &local_270;
     local_2f0 = &local_260;
     WPP_RECORDER_SF_qqZZd(uVar4);
@@ -117611,11 +117657,11 @@ LAB_1400b4a40:
   local_2e8 = (undefined8 *)((ulonglong)local_2e8 & 0xffffffffffffff00);
   local_2f0 = (undefined8 *)((ulonglong)local_2f0 & 0xffffffffffffff00);
   local_2f8 = (longlong *)CONCAT71(local_2f8._1_7_,1);
-  local_300 = CONCAT44(local_300._4_4_,local_2c8);
+  local_300 = CONCAT44(local_300._4_4_,local_2c8[0]);
   local_308 = (uint *)CONCAT71(local_308._1_7_,4);
   VmsWppTraceApi(&local_298,"VmsCdpPortSetInfo",
                  "onecore\\vm\\dv\\net\\nvsp\\driver\\ctl\\vmsctlport.c",0xd19);
-  return local_2c8;
+  return local_2c8[0];
 }
 
 
@@ -118078,7 +118124,9 @@ LAB_1400b5b44:
             local_310 = (undefined8 *)
                         (CONCAT44(local_310._4_4_,(int)(local_2b8 >> 2)) & 0xffffffff0000007f);
             local_318 = (undefined8 **)CONCAT44(local_318._4_4_,0xa2a);
-            WPP_RECORDER_SF_sddsdDDi();
+            WPP_RECORDER_SF_sddsdDDi
+                      (*(undefined4 *)(local_2d0 + 0x40),*(ushort *)((longlong)local_2d0 + 0x20a),
+                       *(ushort *)(local_2d0 + 0x41),0x52);
           }
           iVar4 = VmsOmFindSwitchInitialized(&local_288,0,&local_2a8);
           puVar11 = local_2a8;
@@ -124748,7 +124796,7 @@ undefined8 VmsCdpPortPropertyBandwidthDelete(longlong param_1)
   local_70 = -(ulonglong)(param_1 != 0) & param_1 + 0x268U;
   local_78 = -(ulonglong)(param_1 != 0) & param_1 + 0x48U;
   local_58 = &local_40;
-  VmsEtwTracePortBandwidthPolicySuccess();
+  VmsEtwTracePortBandwidthPolicySuccess(local_78,local_70,local_68,3);
   return 0;
 }
 
@@ -124833,56 +124881,65 @@ int VmsCdpPortPropertyBandwidthSet
 
 {
   int *piVar1;
-  longlong lVar2;
+  ulonglong uVar2;
   longlong lVar3;
   longlong *plVar4;
-  undefined8 uVar5;
+  ulonglong uVar5;
   undefined8 uVar6;
+  undefined8 uVar7;
+  longlong lVar8;
+  undefined8 *puVar9;
   undefined2 local_res8;
   undefined1 local_resa;
   undefined2 local_res10;
   undefined8 *local_res18;
-  int local_res20;
+  int local_res20 [2];
+  undefined4 uVar10;
+  longlong lVar11;
   
-  local_res20 = 0;
+  local_res20[0] = 0;
   local_res8 = 0;
   local_resa = 0;
   *param_6 = 0;
+  puVar9 = (undefined8 *)0x0;
+  lVar8 = 0;
   local_res10 = param_2;
   local_res18 = param_3;
   VmsOmObjectLockExclusive(param_1,&local_res8);
   if (*(int *)(param_1 + 0x44) == 2) {
-    local_res20 = -0x3fffffaa;
+    local_res20[0] = -0x3fffffaa;
     *param_6 = 3;
     WPP_RECORDER_SF_(VmsIfrPortLog,"LL",0x14,10,&WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids);
     goto LAB_1400c1695;
   }
-  lVar2 = *(longlong *)(*(longlong *)(param_1 + 0x4d8) + 0x21e8);
+  lVar8 = *(longlong *)(param_1 + 0x4d8);
+  puVar9 = (undefined8 *)(param_1 + 0x1728);
+  lVar11 = *(longlong *)(lVar8 + 0x21e8);
   if (*(longlong *)(param_1 + 0x1768) == 0) {
     plVar4 = param_4 + 1;
     if ((*param_4 != 0) || (*plVar4 != 0)) {
-      if (lVar2 == 0) {
-        local_res20 = -0x3fffff45;
+      if (lVar11 == 0) {
+        local_res20[0] = -0x3fffff45;
         *param_6 = 0x30;
         WPP_RECORDER_SF_(VmsIfrPortLog,"LL",0x14,0xe,
                          &WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids);
         goto LAB_1400c1695;
       }
-      if (*(longlong *)(lVar2 + 0xf0) < *param_4) {
+      if (*(longlong *)(lVar11 + 0xf0) < *param_4) {
         *param_6 = 0x32;
-        uVar6 = *(undefined8 *)(lVar2 + 0xf0);
-        uVar5 = 0xf;
+        uVar7 = *(undefined8 *)(lVar11 + 0xf0);
+        uVar6 = 0xf;
         lVar3 = *param_4;
         goto LAB_1400c1469;
       }
-      if (1000000 < (ulonglong)(*(longlong *)(lVar2 + 0x108) + *plVar4)) {
+      if (1000000 < (ulonglong)(*(longlong *)(lVar11 + 0x108) + *plVar4)) {
         *param_6 = 0x32;
-        uVar6 = 0x10;
-        lVar3 = *plVar4 + *(longlong *)(lVar2 + 0x108);
+        uVar7 = 0x10;
+        lVar3 = *plVar4 + *(longlong *)(lVar11 + 0x108);
         goto LAB_1400c14ca;
       }
-      local_res20 = VmsScQosCreateFlow(param_4,param_1,lVar2,1,param_1 + 0x1768);
-      if (local_res20 < 0) {
+      local_res20[0] = VmsScQosCreateFlow(param_4,param_1,lVar11,1,param_1 + 0x1768);
+      if (local_res20[0] < 0) {
         *param_6 = 0x37;
         goto LAB_1400c1695;
       }
@@ -124898,7 +124955,7 @@ int VmsCdpPortPropertyBandwidthSet
     }
   }
   else {
-    if (lVar2 == 0) {
+    if (lVar11 == 0) {
       WPP_RECORDER_SF_s(VmsIfrLog,&WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids,0x13,0xb,
                         &WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids,"line != NULL");
       MicrosoftTelemetryAssertTriggeredNoArgsKM();
@@ -124921,32 +124978,32 @@ int VmsCdpPortPropertyBandwidthSet
     else {
       if (*(int *)(*(longlong *)(param_1 + 0x4d8) + 0x2210) == 2) {
         lVar3 = *param_4 - *(longlong *)(param_1 + 0x1738);
-        if ((0 < lVar3) && (*(longlong *)(lVar2 + 0xf0) < lVar3)) {
+        if ((0 < lVar3) && (*(longlong *)(lVar11 + 0xf0) < lVar3)) {
           *param_6 = 0x32;
-          uVar6 = *(undefined8 *)(lVar2 + 0xf0);
-          uVar5 = 0xc;
+          uVar7 = *(undefined8 *)(lVar11 + 0xf0);
+          uVar6 = 0xc;
 LAB_1400c1469:
-          local_res20 = -0x3fffff66;
-          WPP_RECORDER_SF_qq(VmsIfrPortLog,"LL",0x14,uVar5,
-                             &WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids,lVar3,uVar6);
+          local_res20[0] = -0x3fffff66;
+          WPP_RECORDER_SF_qq(VmsIfrPortLog,"LL",0x14,uVar6,
+                             &WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids,lVar3,uVar7);
           goto LAB_1400c1695;
         }
       }
       else {
         lVar3 = param_4[1] - *(longlong *)(param_1 + 0x1740);
-        if (1000000 < *(longlong *)(lVar2 + 0x108) + lVar3) {
+        if (1000000 < *(longlong *)(lVar11 + 0x108) + lVar3) {
           *param_6 = 0x32;
-          uVar6 = 0xd;
-          lVar3 = *(longlong *)(lVar2 + 0x108) + lVar3;
+          uVar7 = 0xd;
+          lVar3 = *(longlong *)(lVar11 + 0x108) + lVar3;
 LAB_1400c14ca:
-          local_res20 = -0x3fffff66;
-          WPP_RECORDER_SF_q(VmsIfrPortLog,"LL",0x14,uVar6,
+          local_res20[0] = -0x3fffff66;
+          WPP_RECORDER_SF_q(VmsIfrPortLog,"LL",0x14,uVar7,
                             &WPP_87a7d2e8699f364986cdf7dbe12c58e6_Traceguids,lVar3);
           goto LAB_1400c1695;
         }
       }
-      local_res20 = VmsScQosUpdateFlow(param_4);
-      if (local_res20 < 0) {
+      local_res20[0] = VmsScQosUpdateFlow(param_4);
+      if (local_res20[0] < 0) {
         *param_6 = 0x36;
         goto LAB_1400c1695;
       }
@@ -124957,8 +125014,8 @@ LAB_1400c161b:
   plVar4 = (longlong *)(param_1 + 0x1760);
   if (*plVar4 == 0) {
     if ((param_4[2] != 0) &&
-       (local_res20 = VmsScQosCreateFlow(param_4,param_1,VmsVirtualLine,0,plVar4), local_res20 < 0))
-    {
+       (local_res20[0] = VmsScQosCreateFlow(param_4,param_1,VmsVirtualLine,0,plVar4),
+       local_res20[0] < 0)) {
       *param_6 = 0x39;
       goto LAB_1400c1695;
     }
@@ -124968,32 +125025,43 @@ LAB_1400c161b:
     *plVar4 = 0;
   }
   else {
-    local_res20 = VmsScQosUpdateFlow(param_4);
-    if (local_res20 < 0) {
+    local_res20[0] = VmsScQosUpdateFlow(param_4);
+    if (local_res20[0] < 0) {
       *param_6 = 0x38;
       goto LAB_1400c1695;
     }
   }
-  lVar2 = param_4[1];
+  lVar11 = param_4[1];
   *(longlong *)(param_1 + 0x1738) = *param_4;
-  *(longlong *)(param_1 + 0x1740) = lVar2;
-  lVar2 = param_4[3];
+  *(longlong *)(param_1 + 0x1740) = lVar11;
+  lVar11 = param_4[3];
   *(longlong *)(param_1 + 0x1748) = param_4[2];
-  *(longlong *)(param_1 + 0x1750) = lVar2;
+  *(longlong *)(param_1 + 0x1750) = lVar11;
   *(longlong *)(param_1 + 0x1758) = param_4[4];
-  uVar6 = local_res18[1];
-  *(undefined8 *)(param_1 + 0x1728) = *local_res18;
-  *(undefined8 *)(param_1 + 0x1730) = uVar6;
+  uVar7 = local_res18[1];
+  *puVar9 = *local_res18;
+  *(undefined8 *)(param_1 + 0x1730) = uVar7;
 LAB_1400c1695:
-  if (local_res20 == 0) {
-    VmsEtwTracePortBandwidthPolicySuccess();
+  if (local_res20[0] == 0) {
+    uVar5 = -(ulonglong)(param_1 != 0) & param_1 + 0x268U;
+    uVar2 = -(ulonglong)(param_1 != 0) & param_1 + 0x48U;
+    VmsEtwTracePortBandwidthPolicySuccess
+              (param_1 + 0x48U,uVar2,uVar5,1,uVar2,uVar5,-(ulonglong)(lVar8 != 0) & lVar8 + 0x48U,
+               -(ulonglong)(lVar8 != 0) & lVar8 + 0x268U,puVar9 + 2);
   }
   else {
+    uVar10 = 1;
+    lVar11 = param_1;
     WPP_RECORDER_SF_qD_guid_Ld();
-    VmsEtwTracePortBandwidthPolicyFailure();
+    uVar5 = -(ulonglong)(param_1 != 0) & param_1 + 0x268U;
+    uVar2 = -(ulonglong)(param_1 != 0) & param_1 + 0x48U;
+    VmsEtwTracePortBandwidthPolicyFailure
+              (param_1 + 0x48U,uVar2,uVar5,local_res20,CONCAT44(uVar10,*param_6),lVar11,uVar2,uVar5,
+               -(ulonglong)(lVar8 != 0) & lVar8 + 0x48U,-(ulonglong)(lVar8 != 0) & lVar8 + 0x268U,
+               puVar9 + 2);
   }
   NdisReleaseRWLock(*(undefined8 *)(param_1 + 0x38),&local_res8);
-  return local_res20;
+  return local_res20[0];
 }
 
 
@@ -125609,11 +125677,12 @@ int VmsCdpPortPropertySecurityUpdate
   undefined8 *puVar26;
   undefined8 *puVar27;
   longlong lVar28;
-  longlong lVar29;
-  uint uVar30;
-  longlong lVar31;
-  undefined1 *puVar32;
-  undefined4 uVar33;
+  ulonglong uVar29;
+  longlong lVar30;
+  uint uVar31;
+  longlong lVar32;
+  undefined1 *puVar33;
+  undefined4 uVar34;
   undefined1 auStack_358 [8];
   undefined1 auStack_350 [24];
   int *local_338;
@@ -125679,36 +125748,36 @@ int VmsCdpPortPropertySecurityUpdate
     local_338 = (int *)&WPP_92776d59d94e396a8833598a738159a8_Traceguids;
     WPP_RECORDER_SF_(VmsIfrPortLog,2);
 LAB_1400c2686:
-    puVar32 = auStack_358;
+    puVar33 = auStack_358;
     iVar23 = -0x3ffffddb;
     NdisReleaseRWLock(*(undefined8 *)(param_1 + 0x38),&local_2b4);
 LAB_1400c2bd9:
     if (*param_13 == 0) {
-      *(char **)(puVar32 + 0x28) = "*FailedReason != VmsPolicyFailReasonUnknown";
-      *(undefined **)(puVar32 + 0x20) = &WPP_92776d59d94e396a8833598a738159a8_Traceguids;
-      *(undefined8 *)(puVar32 + -8) = 0x1400c2c07;
+      *(char **)(puVar33 + 0x28) = "*FailedReason != VmsPolicyFailReasonUnknown";
+      *(undefined **)(puVar33 + 0x20) = &WPP_92776d59d94e396a8833598a738159a8_Traceguids;
+      *(undefined8 *)(puVar33 + -8) = 0x1400c2c07;
       WPP_RECORDER_SF_s(VmsIfrLog);
       if (*param_13 == 0) {
-        *(undefined8 *)(puVar32 + -8) = 0x1400c2c13;
+        *(undefined8 *)(puVar33 + -8) = 0x1400c2c13;
         MicrosoftTelemetryAssertTriggeredNoArgsKM();
       }
     }
     iVar4 = *param_13;
-    *(int *)(puVar32 + 0x90) = iVar23;
-    *(int *)(puVar32 + 0x88) = iVar4;
-    *(uint *)(puVar32 + 0x80) = (uint)param_12;
-    *(int *)(puVar32 + 0x78) = param_11;
-    *(int *)(puVar32 + 0x70) = param_10;
-    *(uint *)(puVar32 + 0x68) = (uint)param_9;
-    *(int *)(puVar32 + 0x60) = param_8;
-    *(uint *)(puVar32 + 0x58) = (uint)param_7;
-    *(ushort *)(puVar32 + 0x50) = (ushort)param_6;
-    *(uint *)(puVar32 + 0x48) = (uint)param_5;
-    *(uint *)(puVar32 + 0x40) = (uint)param_4;
-    *(uint *)(puVar32 + 0x38) = (uint)param_3;
-    *(uint *)(puVar32 + 0x30) = (uint)param_2;
-    *(longlong *)(puVar32 + 0x28) = param_1;
-    *(undefined8 *)(puVar32 + -8) = 0x1400c2cac;
+    *(int *)(puVar33 + 0x90) = iVar23;
+    *(int *)(puVar33 + 0x88) = iVar4;
+    *(uint *)(puVar33 + 0x80) = (uint)param_12;
+    *(int *)(puVar33 + 0x78) = param_11;
+    *(int *)(puVar33 + 0x70) = param_10;
+    *(uint *)(puVar33 + 0x68) = (uint)param_9;
+    *(int *)(puVar33 + 0x60) = param_8;
+    *(uint *)(puVar33 + 0x58) = (uint)param_7;
+    *(ushort *)(puVar33 + 0x50) = (ushort)param_6;
+    *(uint *)(puVar33 + 0x48) = (uint)param_5;
+    *(uint *)(puVar33 + 0x40) = (uint)param_4;
+    *(uint *)(puVar33 + 0x38) = (uint)param_3;
+    *(uint *)(puVar33 + 0x30) = (uint)param_2;
+    *(longlong *)(puVar33 + 0x28) = param_1;
+    *(undefined8 *)(puVar33 + -8) = 0x1400c2cac;
     WPP_RECORDER_SF_qlllLHlDlDDlLd();
     local_285 = param_5;
     local_283 = param_7;
@@ -125719,43 +125788,45 @@ LAB_1400c2bd9:
     local_16b = param_12;
     local_284 = param_6;
     if (lVar5 == 0) {
-      lVar31 = 0;
-      lVar29 = 0;
+      lVar32 = 0;
+      lVar30 = 0;
     }
     else {
-      lVar31 = lVar5 + 0x268;
-      lVar29 = lVar5 + 0x48;
+      lVar32 = lVar5 + 0x268;
+      lVar30 = lVar5 + 0x48;
     }
-    *(int *)(puVar32 + 0x40) = *param_13;
-    *(byte **)(puVar32 + 0x38) = &local_288;
-    *(longlong *)(puVar32 + 0x30) = lVar31;
-    *(longlong *)(puVar32 + 0x28) = lVar29;
-    *(ulonglong *)(puVar32 + 0x20) = -(ulonglong)(param_1 != 0) & param_1 + 0x268U;
-    *(undefined8 *)(puVar32 + -8) = 0x1400c2d73;
+    uVar29 = -(ulonglong)(param_1 != 0) & param_1 + 0x268U;
+    *(int *)(puVar33 + 0x40) = *param_13;
+    *(byte **)(puVar33 + 0x38) = &local_288;
+    *(longlong *)(puVar33 + 0x30) = lVar32;
+    *(longlong *)(puVar33 + 0x28) = lVar30;
+    *(ulonglong *)(puVar33 + 0x20) = uVar29;
+    *(undefined8 *)(puVar33 + -8) = 0x1400c2d73;
     local_288 = param_2;
     local_287 = param_3;
     local_286 = param_4;
-    VmsEtwTracePortSecurityPolicyFailure();
+    VmsEtwTracePortSecurityPolicyFailure
+              (param_1 + 0x48U,uVar29,lVar30,-(ulonglong)(param_1 != 0) & param_1 + 0x48U);
     cVar21 = local_2b7;
     if ((local_2b7 != '\0') || (bVar18)) {
       if (!bVar19) {
-        *(undefined8 *)(puVar32 + -8) = 0x1400c2da2;
+        *(undefined8 *)(puVar33 + -8) = 0x1400c2da2;
         VmsOmObjectLockExclusive(lVar5,&local_2ac,0);
-        *(undefined8 *)(puVar32 + -8) = 0x1400c2db6;
+        *(undefined8 *)(puVar33 + -8) = 0x1400c2db6;
         VmsOmObjectLockExclusive(param_1,&local_2b4,1);
         bVar19 = true;
       }
-      if (((cVar21 != '\0') && (lVar29 = *(longlong *)(param_1 + 0x4e8), lVar29 != 0)) &&
-         (*(int *)(lVar29 + 0x758) == 1)) {
-        *(int **)(puVar32 + 0x20) = param_13;
-        *(undefined8 *)(puVar32 + -8) = 0x1400c2df3;
-        VmsOmNicUpdateMacSpoofing(lVar5,lVar29,param_1,local_168[0]);
+      if (((cVar21 != '\0') && (lVar30 = *(longlong *)(param_1 + 0x4e8), lVar30 != 0)) &&
+         (*(int *)(lVar30 + 0x758) == 1)) {
+        *(int **)(puVar33 + 0x20) = param_13;
+        *(undefined8 *)(puVar33 + -8) = 0x1400c2df3;
+        VmsOmNicUpdateMacSpoofing(lVar5,lVar30,param_1,local_168[0]);
       }
       if (bVar18) {
-        *(undefined8 *)(puVar32 + -8) = 0x1400c2e0a;
+        *(undefined8 *)(puVar33 + -8) = 0x1400c2e0a;
         VmsOmPortMonitorModeSet(param_1,uStack_165,param_13);
       }
-      lVar29 = 2;
+      lVar30 = 2;
       puVar6 = (undefined8 *)(param_1 + 6000);
       puVar26 = (undefined8 *)local_168;
       do {
@@ -125792,17 +125863,17 @@ LAB_1400c2bd9:
         puVar25[0xd] = uVar17;
         puVar25[0xe] = uVar15;
         puVar25[0xf] = uVar16;
-        lVar29 = lVar29 + -1;
+        lVar30 = lVar30 + -1;
         puVar6 = puVar25 + 0x10;
         puVar26 = puVar27 + 0x10;
-      } while (lVar29 != 0);
-      uVar33 = *(undefined4 *)((longlong)puVar27 + 0x84);
+      } while (lVar30 != 0);
+      uVar34 = *(undefined4 *)((longlong)puVar27 + 0x84);
       uVar9 = *(undefined4 *)(puVar27 + 0x11);
       uVar10 = *(undefined4 *)((longlong)puVar27 + 0x8c);
       uVar7 = puVar27[0x12];
       uVar15 = puVar27[0x13];
       *(undefined4 *)(puVar25 + 0x10) = *(undefined4 *)(puVar27 + 0x10);
-      *(undefined4 *)((longlong)puVar25 + 0x84) = uVar33;
+      *(undefined4 *)((longlong)puVar25 + 0x84) = uVar34;
       *(undefined4 *)(puVar25 + 0x11) = uVar9;
       *(undefined4 *)((longlong)puVar25 + 0x8c) = uVar10;
       puVar25[0x12] = uVar7;
@@ -125829,17 +125900,17 @@ LAB_1400c2bd9:
       *param_13 = 3;
       local_338 = (int *)&WPP_92776d59d94e396a8833598a738159a8_Traceguids;
       WPP_RECORDER_SF_(VmsIfrPortLog,2);
-      puVar32 = auStack_358;
+      puVar33 = auStack_358;
       goto LAB_1400c2bd9;
     }
     local_290 = *(longlong *)(lVar5 + 0x10a8);
     pbVar1 = (byte *)(param_1 + 6000);
-    lVar29 = *(longlong *)(param_1 + 0x4e8);
+    lVar30 = *(longlong *)(param_1 + 0x4e8);
     pbVar22 = pbVar1;
     puVar6 = (undefined8 *)local_168;
-    lVar31 = 2;
+    lVar32 = 2;
     do {
-      lVar28 = lVar31;
+      lVar28 = lVar32;
       puVar26 = puVar6;
       pbVar24 = pbVar22;
       uVar7 = *(undefined8 *)(pbVar24 + 8);
@@ -125875,9 +125946,9 @@ LAB_1400c2bd9:
       puVar26[0xf] = uVar16;
       pbVar22 = pbVar24 + 0x80;
       puVar6 = puVar26 + 0x10;
-      lVar31 = lVar28 + -1;
+      lVar32 = lVar28 + -1;
     } while (lVar28 + -1 != 0);
-    uVar33 = *(undefined4 *)(pbVar24 + 0x84);
+    uVar34 = *(undefined4 *)(pbVar24 + 0x84);
     uVar9 = *(undefined4 *)(pbVar24 + 0x88);
     uVar10 = *(undefined4 *)(pbVar24 + 0x8c);
     uVar11 = *(undefined4 *)(pbVar24 + 0x90);
@@ -125885,7 +125956,7 @@ LAB_1400c2bd9:
     uVar13 = *(undefined4 *)(pbVar24 + 0x98);
     uVar14 = *(undefined4 *)(pbVar24 + 0x9c);
     *(undefined4 *)(puVar26 + 0x10) = *(undefined4 *)(pbVar24 + 0x80);
-    *(undefined4 *)((longlong)puVar26 + 0x84) = uVar33;
+    *(undefined4 *)((longlong)puVar26 + 0x84) = uVar34;
     *(undefined4 *)(puVar26 + 0x11) = uVar9;
     *(undefined4 *)((longlong)puVar26 + 0x8c) = uVar10;
     *(undefined4 *)(puVar26 + 0x12) = uVar11;
@@ -125893,16 +125964,16 @@ LAB_1400c2bd9:
     *(undefined4 *)(puVar26 + 0x13) = uVar13;
     *(undefined4 *)((longlong)puVar26 + 0x9c) = uVar14;
     if (*pbVar1 != param_2) {
-      if ((lVar29 != 0) && (*(int *)(lVar29 + 0x758) == (int)lVar28)) {
-        local_2a0 = (short)*(undefined4 *)(lVar29 + 0xd08);
-        uStack_29e = (undefined2)((uint)*(undefined4 *)(lVar29 + 0xd08) >> 0x10);
-        local_29c = *(undefined2 *)(lVar29 + 0xd0c);
+      if ((lVar30 != 0) && (*(int *)(lVar30 + 0x758) == (int)lVar28)) {
+        local_2a0 = (short)*(undefined4 *)(lVar30 + 0xd08);
+        uStack_29e = (undefined2)((uint)*(undefined4 *)(lVar30 + 0xd08) >> 0x10);
+        local_29c = *(undefined2 *)(lVar30 + 0xd0c);
         local_338 = param_13;
-        iVar23 = VmsOmNicUpdateMacSpoofing(lVar5,lVar29,param_1,param_2);
-        puVar32 = auStack_358;
+        iVar23 = VmsOmNicUpdateMacSpoofing(lVar5,lVar30,param_1,param_2);
+        puVar33 = auStack_358;
         if (iVar23 < 0) goto LAB_1400c2bd9;
-        if ((CONCAT22(local_29c,uStack_29e) == *(int *)(lVar29 + 0xd0a)) &&
-           (local_2a0 == *(short *)(lVar29 + 0xd08))) {
+        if ((CONCAT22(local_29c,uStack_29e) == *(int *)(lVar30 + 0xd0a)) &&
+           (local_2a0 == *(short *)(lVar30 + 0xd08))) {
           local_2a0 = 0;
           uStack_29e = 0;
         }
@@ -125915,7 +125986,7 @@ LAB_1400c2bd9:
       *pbVar1 = param_2;
     }
     iVar23 = VmsOmPortMonitorModeSet(param_1,param_5);
-    puVar32 = auStack_358;
+    puVar33 = auStack_358;
     if (iVar23 < 0) goto LAB_1400c2bd9;
     *(byte *)(param_1 + 0x1771) = param_3;
     *(byte *)(param_1 + 0x1772) = param_4;
@@ -125927,14 +125998,14 @@ LAB_1400c2bd9:
     }
     *(byte *)(param_1 + 0x177c) = param_9;
     if (param_10 == 0) {
-      uVar30 = local_298 & 0xff;
+      uVar31 = local_298 & 0xff;
       if (*(int *)(param_1 + 0x1884) != 0) {
-        uVar30 = 1;
+        uVar31 = 1;
       }
     }
     else {
       local_2b8 = *(int *)(param_1 + 0x1884) == 0;
-      uVar30 = local_298;
+      uVar31 = local_298;
     }
     *(int *)(param_1 + 0x1884) = param_10;
     if (*(int *)(param_1 + 0x1888) != param_11) {
@@ -125942,25 +126013,25 @@ LAB_1400c2bd9:
     }
     *(byte *)(param_1 + 0x188d) = param_12;
     NdisReleaseRWLock(*(undefined8 *)(param_1 + 0x38),&local_2b4);
-    uVar33 = NdisReleaseRWLock(*(undefined8 *)(lVar5 + 0x38));
+    uVar34 = NdisReleaseRWLock(*(undefined8 *)(lVar5 + 0x38));
     bVar20 = false;
     bVar19 = false;
-    if ((local_2b8 != '\0') || ((char)uVar30 != '\0')) {
-      VmsUtilLockExclusive(uVar33,&local_2a8);
+    if ((local_2b8 != '\0') || ((char)uVar31 != '\0')) {
+      VmsUtilLockExclusive(uVar34,&local_2a8);
       if (local_2b8 == '\0') {
-        if ((char)uVar30 == '\0') {
+        if ((char)uVar31 == '\0') {
           local_330 = "removePortFromStormList";
           local_338 = (int *)&WPP_92776d59d94e396a8833598a738159a8_Traceguids;
           WPP_RECORDER_SF_s(VmsIfrLog);
           MicrosoftTelemetryAssertTriggeredNoArgsKM();
         }
         plVar2 = (longlong *)(param_1 + 0x2940);
-        lVar31 = *plVar2;
-        if ((*(longlong **)(lVar31 + 8) != plVar2) ||
+        lVar32 = *plVar2;
+        if ((*(longlong **)(lVar32 + 8) != plVar2) ||
            (plVar3 = *(longlong **)(param_1 + 0x2948), (longlong *)*plVar3 != plVar2))
         goto LAB_1400c2bc5;
-        *plVar3 = lVar31;
-        *(longlong **)(lVar31 + 8) = plVar3;
+        *plVar3 = lVar32;
+        *(longlong **)(lVar32 + 8) = plVar3;
         if (*(longlong **)(lVar5 + 0x2238) == (longlong *)(lVar5 + 0x2238)) {
           KeCancelTimer(lVar5 + 0x2288);
         }
@@ -125976,7 +126047,7 @@ LAB_1400c2bd9:
 LAB_1400c2bc5:
           pcVar8 = (code *)swi(0x29);
           (*pcVar8)(3);
-          puVar32 = auStack_350;
+          puVar33 = auStack_350;
           goto LAB_1400c2bd9;
         }
         *plVar3 = (longlong)plVar2;
@@ -125987,36 +126058,36 @@ LAB_1400c2bc5:
       NdisReleaseRWLock(VmsOmObjectListLock);
     }
     if (CONCAT22(uStack_29e,local_2a0) == 0) {
-      lVar31 = local_290;
+      lVar32 = local_290;
     }
     else {
-      VmsOmObjectLockShared(lVar29,&local_2a4,0);
-      _Dst = *(int **)(lVar29 + 0xfc8);
+      VmsOmObjectLockShared(lVar30,&local_2a4,0);
+      _Dst = *(int **)(lVar30 + 0xfc8);
       memset(_Dst,0,0x8b0);
-      VmsOmNicCopyDataUnsafe(lVar29,param_1,_Dst);
-      NdisReleaseRWLock(*(undefined8 *)(lVar29 + 0x38),&local_2a4);
-      lVar31 = local_290;
+      VmsOmNicCopyDataUnsafe(lVar30,param_1,_Dst);
+      NdisReleaseRWLock(*(undefined8 *)(lVar30 + 0x38),&local_2a4);
+      lVar32 = local_290;
       local_328 = 0;
       local_330 = (char *)0x1;
       local_338 = _Dst;
-      VmsOmNicSendMultipleOids(lVar29,lVar5,local_290,0x10294);
+      VmsOmNicSendMultipleOids(lVar30,lVar5,local_290,0x10294);
     }
-    if ((local_2b7 == '\0') || (*(int *)(lVar29 + 0x750) != 3)) {
-      if (lVar31 != 0) {
+    if ((local_2b7 == '\0') || (*(int *)(lVar30 + 0x750) != 3)) {
+      if (lVar32 != 0) {
 LAB_1400c2b38:
         if ((((local_2b0 != '\0') && (*(longlong *)(param_1 + 0x4e8) != 0)) &&
             (*(int *)(*(longlong *)(param_1 + 0x4e8) + 0x758) == 1)) &&
-           ((*(int *)(lVar29 + 0x750) - 1U & 0xfffffffd) == 0)) {
+           ((*(int *)(lVar30 + 0x750) - 1U & 0xfffffffd) == 0)) {
           VmsVmqRecreate(param_1);
         }
-        puVar32 = auStack_358;
+        puVar33 = auStack_358;
         if (iVar23 < 0) goto LAB_1400c2bd9;
       }
     }
-    else if (lVar31 != 0) {
+    else if (lVar32 != 0) {
       if ((g_NVBugFixes2509SriovMacSpoofingEnabled == 0) || (*(int *)(lVar5 + 0x217c) == 0)) {
         iVar23 = VmsVmqDoVmqOperation();
-        puVar32 = auStack_358;
+        puVar33 = auStack_358;
         if (iVar23 < 0) {
           *param_13 = 0xb - (uint)(param_2 != 0);
           goto LAB_1400c2bd9;
@@ -126028,18 +126099,19 @@ LAB_1400c2b38:
     local_328 = lVar5 + 0x268;
     local_338 = (int *)(-(ulonglong)(param_1 != 0) & param_1 + 0x268U);
     local_330 = (char *)(lVar5 + 0x48);
-    VmsEtwTracePortSecurityPolicySuccess();
-    puVar32 = auStack_358;
+    VmsEtwTracePortSecurityPolicySuccess
+              (param_1 + 0x48U,local_338,local_320,-(ulonglong)(param_1 != 0) & param_1 + 0x48U);
+    puVar33 = auStack_358;
   }
-  *(undefined8 *)(puVar32 + -8) = 0x1400c2e90;
+  *(undefined8 *)(puVar33 + -8) = 0x1400c2e90;
   VmsOmpObjectDereference(lVar5,0);
 LAB_1400c2e90:
   if (bVar20) {
     uVar7 = *(undefined8 *)(param_1 + 0x38);
-    *(undefined8 *)(puVar32 + -8) = 0x1400c2ea4;
+    *(undefined8 *)(puVar33 + -8) = 0x1400c2ea4;
     NdisReleaseRWLock(uVar7,&local_2b4);
     uVar7 = *(undefined8 *)(lVar5 + 0x38);
-    *(undefined8 *)(puVar32 + -8) = 0x1400c2eb8;
+    *(undefined8 *)(puVar33 + -8) = 0x1400c2eb8;
     NdisReleaseRWLock(uVar7,&local_2ac);
   }
   return iVar23;
@@ -131031,7 +131103,7 @@ LAB_1400cadab:
   local_b0 = *param_7;
   local_a8 = param_4;
   local_a0 = param_5;
-  VmsEtwTracePortRoutingDomainPropertyFailure();
+  VmsEtwTracePortRoutingDomainPropertyFailure(local_b8,local_c0,local_c8,param_1 + 0x48);
   return iVar5;
 }
 
@@ -142147,7 +142219,7 @@ int VmsMcNicHandleRssParametersChange(longlong param_1,ulonglong *param_2)
           *(ushort *)(puVar33 + 0x28) = uVar3;
           *(undefined **)(puVar33 + 0x20) = &WPP_e6d1f738af35346a7fcf3d1b6de6c5ff_Traceguids;
           *(undefined8 *)(puVar33 + -8) = 0x1400ddb19;
-          WPP_RECORDER_SF_Hd();
+          WPP_RECORDER_SF_Hd(0x28,uVar37,uVar36,0x5a);
           goto LAB_1400ddb1f;
         }
         uVar11 = *puVar10;
@@ -142177,7 +142249,7 @@ LAB_1400de237:
           *(ushort *)(puVar33 + 0x28) = uVar35;
           *(undefined **)(puVar33 + 0x20) = &WPP_e6d1f738af35346a7fcf3d1b6de6c5ff_Traceguids;
           *(undefined8 *)(puVar33 + -8) = 0x1400ddbcb;
-          WPP_RECORDER_SF_H();
+          WPP_RECORDER_SF_H(uVar11 - uVar39,uVar37,uVar36,0x5b);
         }
         else if (((uVar35 & 2) == 0) && (local_298 != uVar6)) {
           iVar26 = -0x3ffffff3;
@@ -147434,7 +147506,7 @@ LAB_1400e5bbe:
   local_180 = (char *)(-(ulonglong)(lVar8 != 0) & lVar8 + 0x48U);
   local_188 = (undefined *)(param_1 + 0x268);
   local_160 = param_2;
-  VmsEtwTraceNicSendStatusResult();
+  VmsEtwTraceNicSendStatusResult(lVar8 + 0x268U,local_180,local_178,param_1 + 0x48);
   lVar8 = VmsPtGetNicHeaderAtIndex(param_1,0);
   if (lVar8 != 0) {
     uVar6 = KeGetCurrentProcessorNumberEx(0);
@@ -168872,25 +168944,25 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
   longlong lVar24;
   longlong lVar25;
   ushort *puVar26;
-  longlong *plVar27;
+  longlong lVar27;
   longlong lVar28;
   longlong lVar29;
-  longlong lVar30;
-  undefined4 *puVar31;
+  undefined4 *puVar30;
+  longlong lVar31;
   longlong lVar32;
   longlong lVar33;
   longlong lVar34;
   longlong lVar35;
   longlong lVar36;
   longlong lVar37;
-  longlong lVar38;
-  undefined8 *puVar39;
-  ulong uVar40;
-  undefined4 uVar41;
+  undefined8 *puVar38;
+  ulong uVar39;
+  undefined4 uVar40;
+  longlong lVar41;
   longlong lVar42;
-  longlong lVar43;
-  undefined8 uVar44;
-  undefined2 uVar45;
+  undefined8 uVar43;
+  undefined2 uVar44;
+  longlong *plVar45;
   undefined4 uVar46;
   int iVar49;
   uint uVar54;
@@ -168906,10 +168978,11 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
   GUID *pGVar58;
   GUID *pGVar59;
   undefined8 uVar60;
-  uchar uVar61;
+  longlong *plVar61;
   uchar uVar62;
-  uint uVar63;
-  GUID *pGVar64;
+  uchar uVar63;
+  uint uVar64;
+  GUID *pGVar65;
   undefined4 extraout_XMM0_Da;
   undefined1 auStack_728 [32];
   GUID *local_708;
@@ -168992,7 +169065,7 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
   local_668[0] = 0;
   local_458.Data2 = 0;
   uStack_568 = 0;
-  plVar52 = (longlong *)0x0;
+  plVar61 = (longlong *)0x0;
   uVar50 = 0;
   local_660 = (GUID *)0x0;
   pGVar59 = (GUID *)0x0;
@@ -169069,9 +169142,9 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
   local_678[1] = '\0';
   pGVar58 = (GUID *)0x0;
   local_678[2] = 0;
-  pGVar64 = (GUID *)0x0;
+  pGVar65 = (GUID *)0x0;
   local_694 = 0;
-  uVar61 = '\0';
+  uVar62 = '\0';
   local_692 = 0;
   local_688 = '\0';
   local_690 = (GUID *)0x0;
@@ -169112,7 +169185,7 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
     WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0xe);
     local_6b4 = -0x3ffffff3;
     uVar50 = 5;
-    uVar61 = '\0';
+    uVar62 = '\0';
     goto LAB_140108d75;
   }
   if (((*param_3 == 0x86) && (param_3[1] == 4)) && (0x137 < *(ushort *)(param_3 + 2))) {
@@ -169130,8 +169203,8 @@ int VmsPtNicBindAdapterEx(undefined8 param_1,GUID *param_2,uchar *param_3)
           VmsUtilLockShared(extraout_XMM0_Da,&local_680,0);
           local_6b4 = VmsOmFindSwitchUnsafe(&local_5b8,&local_670);
           NdisReleaseRWLock(VmsOmObjectListLock,&local_680);
-          pGVar64 = local_670;
-          uVar61 = '\0';
+          pGVar65 = local_670;
+          uVar62 = '\0';
           if (local_6b4 == 0) {
             local_6b8 = VmsPtCheckIsEmbeddedTeamingEnabled(0,local_670);
             goto LAB_1401084cf;
@@ -169146,7 +169219,7 @@ LAB_1401084b1:
       else {
         local_6b8 = '\0';
 LAB_1401084cf:
-        uVar61 = local_6b8;
+        uVar62 = local_6b8;
         if (((param_3[1] < 4) || (*(longlong *)(param_3 + 0x110) == 0)) ||
            (local_698 = '\x01', (*(uint *)(*(longlong *)(param_3 + 0x110) + 0x20) & 0x40) == 0)) {
           local_698 = '\0';
@@ -169167,7 +169240,7 @@ LAB_14010908a:
             pGVar59 = (GUID *)(((ulonglong)VmsCacheLineSizeInBytes - 1) + lVar51 &
                               -(ulonglong)VmsCacheLineSizeInBytes);
             *(longlong *)pGVar59[5].Data4 = lVar51;
-            if (uVar61 != '\0') {
+            if (uVar62 != '\0') {
               pGVar59[0x9d].Data4[0] = 0x80;
               pGVar59[0x9d].Data4[1] = '\x01';
               pGVar59[0x9d].Data4[2] = '(';
@@ -169267,7 +169340,7 @@ LAB_14010908a:
                     *(GUID **)(local_6b0 + 0xcf) = pGVar59;
                     *(code **)local_6b0[0xcf].Data4 = VmsPtNicPvtContextCleanup;
                     local_6b0[0x75].Data1 = 2;
-                    local_6b0[0x76].Data4[0] = uVar61;
+                    local_6b0[0x76].Data4[0] = uVar62;
                     RtlInitUnicodeString
                               (local_6b0[0x50].Data4,L"Microsoft Default External Interface");
                     lVar51._0_4_ = local_6b0[0x83].Data1;
@@ -169277,20 +169350,20 @@ LAB_14010908a:
                       local_700 = "objNic->NvIoWorkerQueue != NULL";
                       local_708 = (GUID *)&WPP_700e0f09963a379e48e91820772568f8_Traceguids;
                       WPP_RECORDER_SF_s(VmsIfrLog);
-                      lVar42._0_4_ = local_6b0[0x83].Data1;
-                      lVar42._4_2_ = local_6b0[0x83].Data2;
-                      lVar42._6_2_ = local_6b0[0x83].Data3;
-                      if (lVar42 == 0) {
+                      lVar41._0_4_ = local_6b0[0x83].Data1;
+                      lVar41._4_2_ = local_6b0[0x83].Data2;
+                      lVar41._6_2_ = local_6b0[0x83].Data3;
+                      if (lVar41 == 0) {
                         MicrosoftTelemetryAssertTriggeredNoArgsKM();
                       }
                     }
-                    lVar43._0_4_ = local_6b0[0x83].Data1;
-                    lVar43._4_2_ = local_6b0[0x83].Data2;
-                    lVar43._6_2_ = local_6b0[0x83].Data3;
+                    lVar42._0_4_ = local_6b0[0x83].Data1;
+                    lVar42._4_2_ = local_6b0[0x83].Data2;
+                    lVar42._6_2_ = local_6b0[0x83].Data3;
                     local_700 = (char *)pGVar59[100].Data4;
                     local_708 = (GUID *)0x17;
                     local_6b4 = NvIoAllocateWorkItem
-                                          (lVar43,1,VmsPtpIpsecUpdateCacheWorkItem,pGVar59);
+                                          (lVar42,1,VmsPtpIpsecUpdateCacheWorkItem,pGVar59);
                     if (local_6b4 < 0) {
                       local_700 = (char *)CONCAT44(local_700._4_4_,local_6b4);
                       local_708 = (GUID *)&WPP_700e0f09963a379e48e91820772568f8_Traceguids;
@@ -169624,11 +169697,11 @@ LAB_140109ce2:
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x61].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    puVar39 = *(undefined8 **)(param_3 + 0x100);
-                                                    if (puVar39 != (undefined8 *)0x0) {
-                                                      uVar60 = puVar39[1];
+                                                    puVar38 = *(undefined8 **)(param_3 + 0x100);
+                                                    if (puVar38 != (undefined8 *)0x0) {
+                                                      uVar60 = puVar38[1];
                                                       *(undefined8 *)(pGVar59[0x19].Data4 + 4) =
-                                                           *puVar39;
+                                                           *puVar38;
                                                       pGVar59[0x1a].Data2 = (short)uVar60;
                                                       pGVar59[0x1a].Data3 =
                                                            (short)((ulonglong)uVar60 >> 0x10);
@@ -169640,9 +169713,9 @@ LAB_140109ce2:
                                                            (char)((ulonglong)uVar60 >> 0x30);
                                                       pGVar59[0x1a].Data4[3] =
                                                            (char)((ulonglong)uVar60 >> 0x38);
-                                                      uVar60 = puVar39[3];
+                                                      uVar60 = puVar38[3];
                                                       *(undefined8 *)(pGVar59[0x1a].Data4 + 4) =
-                                                           puVar39[2];
+                                                           puVar38[2];
                                                       pGVar59[0x1b].Data2 = (short)uVar60;
                                                       pGVar59[0x1b].Data3 =
                                                            (short)((ulonglong)uVar60 >> 0x10);
@@ -169654,9 +169727,9 @@ LAB_140109ce2:
                                                            (char)((ulonglong)uVar60 >> 0x30);
                                                       pGVar59[0x1b].Data4[3] =
                                                            (char)((ulonglong)uVar60 >> 0x38);
-                                                      uVar60 = puVar39[5];
+                                                      uVar60 = puVar38[5];
                                                       *(undefined8 *)(pGVar59[0x1b].Data4 + 4) =
-                                                           puVar39[4];
+                                                           puVar38[4];
                                                       pGVar59[0x1c].Data2 = (short)uVar60;
                                                       pGVar59[0x1c].Data3 =
                                                            (short)((ulonglong)uVar60 >> 0x10);
@@ -169668,30 +169741,30 @@ LAB_140109ce2:
                                                            (char)((ulonglong)uVar60 >> 0x30);
                                                       pGVar59[0x1c].Data4[3] =
                                                            (char)((ulonglong)uVar60 >> 0x38);
-                                                      uVar40 = *(ulong *)((longlong)puVar39 + 0x34);
-                                                      uVar50 = *(undefined4 *)(puVar39 + 7);
+                                                      uVar39 = *(ulong *)((longlong)puVar38 + 0x34);
+                                                      uVar50 = *(undefined4 *)(puVar38 + 7);
                                                       uVar46 = *(undefined4 *)
-                                                                ((longlong)puVar39 + 0x3c);
+                                                                ((longlong)puVar38 + 0x3c);
                                                       *(undefined4 *)(pGVar59[0x1c].Data4 + 4) =
-                                                           *(undefined4 *)(puVar39 + 6);
-                                                      pGVar59[0x1d].Data1 = uVar40;
+                                                           *(undefined4 *)(puVar38 + 6);
+                                                      pGVar59[0x1d].Data1 = uVar39;
                                                       pGVar59[0x1d].Data2 = (short)uVar50;
                                                       pGVar59[0x1d].Data3 =
                                                            (short)((uint)uVar50 >> 0x10);
                                                       *(undefined4 *)pGVar59[0x1d].Data4 = uVar46;
-                                                      uVar40 = *(ulong *)((longlong)puVar39 + 0x44);
-                                                      uVar50 = *(undefined4 *)(puVar39 + 9);
+                                                      uVar39 = *(ulong *)((longlong)puVar38 + 0x44);
+                                                      uVar50 = *(undefined4 *)(puVar38 + 9);
                                                       uVar46 = *(undefined4 *)
-                                                                ((longlong)puVar39 + 0x4c);
+                                                                ((longlong)puVar38 + 0x4c);
                                                       *(undefined4 *)(pGVar59[0x1d].Data4 + 4) =
-                                                           *(undefined4 *)(puVar39 + 8);
-                                                      pGVar59[0x1e].Data1 = uVar40;
+                                                           *(undefined4 *)(puVar38 + 8);
+                                                      pGVar59[0x1e].Data1 = uVar39;
                                                       pGVar59[0x1e].Data2 = (short)uVar50;
                                                       pGVar59[0x1e].Data3 =
                                                            (short)((uint)uVar50 >> 0x10);
                                                       *(undefined4 *)pGVar59[0x1e].Data4 = uVar46;
                                                       *(undefined4 *)(pGVar59[0x1e].Data4 + 4) =
-                                                           *(undefined4 *)(puVar39 + 10);
+                                                           *(undefined4 *)(puVar38 + 10);
                                                       cVar47 = VmsVmqUserConfig;
                                                       pGVar53 = *(GUID **)(param_3 + 0x100);
                                                       if ((((*(uint *)pGVar53->Data4 & 1) != 0) &&
@@ -169719,9 +169792,9 @@ LAB_140109ce2:
                                                         cVar47 = VmsPtCheckIsEmbeddedTeamingEnabled
                                                                            (lVar25,0);
                                                         if (cVar47 == '\0') {
-                                                          uVar63._0_2_ = pGVar53[1].Data2;
-                                                          uVar63._2_2_ = pGVar53[1].Data3;
-                                                          if ((uVar63 & 8) == 0) {
+                                                          uVar64._0_2_ = pGVar53[1].Data2;
+                                                          uVar64._2_2_ = pGVar53[1].Data3;
+                                                          if ((uVar64 & 8) == 0) {
                                                             local_700 = 
                                                   "(ReceiveFilterCaps->SupportedQueueProperties & NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED) != 0"
                                                   ;
@@ -169785,69 +169858,69 @@ LAB_140109eee:
                                                                      lVar51 + 0x48U);
                                                   }
                                                   local_687[0] = 0;
-                                                  puVar39 = *(undefined8 **)(param_3 + 0x110);
-                                                  if (puVar39 != (undefined8 *)0x0) {
-                                                    lVar51 = puVar39[1];
-                                                    *(undefined8 *)pGVar59[0x1f].Data4 = *puVar39;
+                                                  puVar38 = *(undefined8 **)(param_3 + 0x110);
+                                                  if (puVar38 != (undefined8 *)0x0) {
+                                                    lVar51 = puVar38[1];
+                                                    *(undefined8 *)pGVar59[0x1f].Data4 = *puVar38;
                                                     pGVar59[0x20].Data1 = (int)lVar51;
                                                     pGVar59[0x20].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x20].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[3];
-                                                    *(undefined8 *)pGVar59[0x20].Data4 = puVar39[2];
+                                                    lVar51 = puVar38[3];
+                                                    *(undefined8 *)pGVar59[0x20].Data4 = puVar38[2];
                                                     pGVar59[0x21].Data1 = (int)lVar51;
                                                     pGVar59[0x21].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x21].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[5];
-                                                    *(undefined8 *)pGVar59[0x21].Data4 = puVar39[4];
+                                                    lVar51 = puVar38[5];
+                                                    *(undefined8 *)pGVar59[0x21].Data4 = puVar38[4];
                                                     pGVar59[0x22].Data1 = (int)lVar51;
                                                     pGVar59[0x22].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x22].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[7];
-                                                    *(undefined8 *)pGVar59[0x22].Data4 = puVar39[6];
+                                                    lVar51 = puVar38[7];
+                                                    *(undefined8 *)pGVar59[0x22].Data4 = puVar38[6];
                                                     pGVar59[0x23].Data1 = (int)lVar51;
                                                     pGVar59[0x23].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x23].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[9];
-                                                    *(undefined8 *)pGVar59[0x23].Data4 = puVar39[8];
+                                                    lVar51 = puVar38[9];
+                                                    *(undefined8 *)pGVar59[0x23].Data4 = puVar38[8];
                                                     pGVar59[0x24].Data1 = (int)lVar51;
                                                     pGVar59[0x24].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x24].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[0xb];
-                                                    *(undefined8 *)pGVar59[0x24].Data4 = puVar39[10]
+                                                    lVar51 = puVar38[0xb];
+                                                    *(undefined8 *)pGVar59[0x24].Data4 = puVar38[10]
                                                     ;
                                                     pGVar59[0x25].Data1 = (int)lVar51;
                                                     pGVar59[0x25].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x25].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[0xd];
+                                                    lVar51 = puVar38[0xd];
                                                     *(undefined8 *)pGVar59[0x25].Data4 =
-                                                         puVar39[0xc];
+                                                         puVar38[0xc];
                                                     pGVar59[0x26].Data1 = (int)lVar51;
                                                     pGVar59[0x26].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x26].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    lVar51 = puVar39[0xf];
+                                                    lVar51 = puVar38[0xf];
                                                     *(undefined8 *)pGVar59[0x26].Data4 =
-                                                         puVar39[0xe];
+                                                         puVar38[0xe];
                                                     pGVar59[0x27].Data1 = (int)lVar51;
                                                     pGVar59[0x27].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x27].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
                                                     *(undefined4 *)pGVar59[0x27].Data4 =
-                                                         *(undefined4 *)(puVar39 + 0x10);
+                                                         *(undefined4 *)(puVar38 + 0x10);
                                                   }
                                                   if (((*(longlong *)(param_3 + 0x120) == 0) ||
                                                       (puVar26 = *(ushort **)
@@ -169898,53 +169971,56 @@ LAB_140109eee:
                                                   else {
                                                     *(uint *)(local_6b0[0x129].Data4 + 4) =
                                                          (-(uint)(param_3[0x118] != 0) & 2) + 1;
-                                                    plVar27 = *(longlong **)(param_3 + 0x120);
-                                                    lVar51 = *plVar27;
-                                                    lVar42 = plVar27[1];
+                                                    plVar52 = *(longlong **)(param_3 + 0x120);
+                                                    lVar51 = *plVar52;
+                                                    lVar41 = plVar52[1];
                                                     local_6b0[0x12a].Data1 = (int)lVar51;
                                                     local_6b0[0x12a].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     local_6b0[0x12a].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    *(longlong *)local_6b0[0x12a].Data4 = lVar42;
-                                                    lVar51 = plVar27[2];
-                                                    lVar42 = plVar27[3];
+                                                    *(longlong *)local_6b0[0x12a].Data4 = lVar41;
+                                                    lVar51 = plVar52[2];
+                                                    lVar41 = plVar52[3];
                                                     local_6b0[299].Data1 = (int)lVar51;
                                                     local_6b0[299].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     local_6b0[299].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    *(longlong *)local_6b0[299].Data4 = lVar42;
+                                                    *(longlong *)local_6b0[299].Data4 = lVar41;
                                                     uVar50 = *(undefined4 *)
-                                                              ((longlong)plVar27 + 0x24);
-                                                    lVar51 = plVar27[5];
+                                                              ((longlong)plVar52 + 0x24);
+                                                    lVar51 = plVar52[5];
                                                     uVar46 = *(undefined4 *)
-                                                              ((longlong)plVar27 + 0x2c);
-                                                    local_6b0[300].Data1 = *(ulong *)(plVar27 + 4);
+                                                              ((longlong)plVar52 + 0x2c);
+                                                    local_6b0[300].Data1 = *(ulong *)(plVar52 + 4);
                                                     local_6b0[300].Data2 = (short)uVar50;
                                                     local_6b0[300].Data3 =
                                                          (short)((uint)uVar50 >> 0x10);
                                                     *(int *)local_6b0[300].Data4 = (int)lVar51;
                                                     *(undefined4 *)(local_6b0[300].Data4 + 4) =
                                                          uVar46;
-                                                    lVar51 = plVar27[6];
+                                                    lVar51 = plVar52[6];
                                                     local_6b0[0x12d].Data1 = (int)lVar51;
                                                     local_6b0[0x12d].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     local_6b0[0x12d].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
                                                   }
-                                                  plVar27 = *(longlong **)(param_3 + 0x128);
-                                                  if (plVar27 != (longlong *)0x0) {
-                                                    lVar51 = *plVar27;
+                                                  plVar52 = *(longlong **)(param_3 + 0x128);
+                                                  if (plVar52 != (longlong *)0x0) {
+                                                    lVar51 = *plVar52;
                                                     pGVar59[0x31].Data1 = (int)lVar51;
                                                     pGVar59[0x31].Data2 =
                                                          (short)((ulonglong)lVar51 >> 0x20);
                                                     pGVar59[0x31].Data3 =
                                                          (short)((ulonglong)lVar51 >> 0x30);
-                                                    *(int *)pGVar59[0x31].Data4 = (int)plVar27[1];
+                                                    *(int *)pGVar59[0x31].Data4 = (int)plVar52[1];
                                                   }
-                                                  if (*(longlong *)(param_3 + 0x130) != 0) {
+                                                  if (*(longlong *)(param_3 + 0x130) == 0) {
+                                                    plVar52 = plVar61;
+                                                  }
+                                                  else {
                                                     local_687[0] = 0;
                                                     plVar52 = (longlong *)
                                                               VmsIovGetDefaultSwitchConfig();
@@ -169953,86 +170029,86 @@ LAB_140109eee:
                                                                 (local_6b0,&local_694,0);
                                                       lVar51 = 4;
                                                       pGVar58 = pGVar59 + 0x33;
-                                                      plVar27 = plVar52;
+                                                      plVar45 = plVar52;
                                                       do {
-                                                        plVar56 = plVar27;
+                                                        plVar56 = plVar45;
                                                         pGVar53 = pGVar58;
-                                                        lVar42 = *plVar56;
-                                                        lVar43 = plVar56[1];
-                                                        pGVar53->Data1 = (int)lVar42;
+                                                        lVar41 = *plVar56;
+                                                        lVar42 = plVar56[1];
+                                                        pGVar53->Data1 = (int)lVar41;
                                                         pGVar53->Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53->Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53->Data4 = lVar43;
-                                                        lVar42 = plVar56[2];
-                                                        lVar43 = plVar56[3];
-                                                        pGVar53[1].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53->Data4 = lVar42;
+                                                        lVar41 = plVar56[2];
+                                                        lVar42 = plVar56[3];
+                                                        pGVar53[1].Data1 = (int)lVar41;
                                                         pGVar53[1].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[1].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[1].Data4 = lVar43;
-                                                        lVar42 = plVar56[4];
-                                                        lVar43 = plVar56[5];
-                                                        pGVar53[2].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[1].Data4 = lVar42;
+                                                        lVar41 = plVar56[4];
+                                                        lVar42 = plVar56[5];
+                                                        pGVar53[2].Data1 = (int)lVar41;
                                                         pGVar53[2].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[2].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[2].Data4 = lVar43;
-                                                        lVar42 = plVar56[6];
-                                                        lVar43 = plVar56[7];
-                                                        pGVar53[3].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[2].Data4 = lVar42;
+                                                        lVar41 = plVar56[6];
+                                                        lVar42 = plVar56[7];
+                                                        pGVar53[3].Data1 = (int)lVar41;
                                                         pGVar53[3].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[3].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[3].Data4 = lVar43;
-                                                        lVar42 = plVar56[8];
-                                                        lVar43 = plVar56[9];
-                                                        pGVar53[4].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[3].Data4 = lVar42;
+                                                        lVar41 = plVar56[8];
+                                                        lVar42 = plVar56[9];
+                                                        pGVar53[4].Data1 = (int)lVar41;
                                                         pGVar53[4].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[4].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[4].Data4 = lVar43;
-                                                        lVar42 = plVar56[10];
-                                                        lVar43 = plVar56[0xb];
-                                                        pGVar53[5].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[4].Data4 = lVar42;
+                                                        lVar41 = plVar56[10];
+                                                        lVar42 = plVar56[0xb];
+                                                        pGVar53[5].Data1 = (int)lVar41;
                                                         pGVar53[5].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[5].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[5].Data4 = lVar43;
-                                                        lVar42 = plVar56[0xc];
-                                                        lVar43 = plVar56[0xd];
-                                                        pGVar53[6].Data1 = (int)lVar42;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[5].Data4 = lVar42;
+                                                        lVar41 = plVar56[0xc];
+                                                        lVar42 = plVar56[0xd];
+                                                        pGVar53[6].Data1 = (int)lVar41;
                                                         pGVar53[6].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[6].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[6].Data4 = lVar43;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[6].Data4 = lVar42;
                                                         pGVar58 = pGVar53 + 8;
-                                                        lVar42 = plVar56[0xe];
-                                                        lVar43 = plVar56[0xf];
-                                                        pGVar53[7].Data1 = (int)lVar42;
+                                                        lVar41 = plVar56[0xe];
+                                                        lVar42 = plVar56[0xf];
+                                                        pGVar53[7].Data1 = (int)lVar41;
                                                         pGVar53[7].Data2 =
-                                                             (short)((ulonglong)lVar42 >> 0x20);
+                                                             (short)((ulonglong)lVar41 >> 0x20);
                                                         pGVar53[7].Data3 =
-                                                             (short)((ulonglong)lVar42 >> 0x30);
-                                                        *(longlong *)pGVar53[7].Data4 = lVar43;
+                                                             (short)((ulonglong)lVar41 >> 0x30);
+                                                        *(longlong *)pGVar53[7].Data4 = lVar42;
                                                         lVar51 = lVar51 + -1;
-                                                        plVar27 = plVar56 + 0x10;
+                                                        plVar45 = plVar56 + 0x10;
                                                       } while (lVar51 != 0);
                                                       lVar51 = plVar56[0x10];
-                                                      lVar42 = plVar56[0x11];
+                                                      lVar41 = plVar56[0x11];
                                                       pGVar58->Data1 = (int)lVar51;
                                                       pGVar58->Data2 =
                                                            (short)((ulonglong)lVar51 >> 0x20);
                                                       pGVar58->Data3 =
                                                            (short)((ulonglong)lVar51 >> 0x30);
-                                                      *(longlong *)pGVar53[8].Data4 = lVar42;
+                                                      *(longlong *)pGVar53[8].Data4 = lVar41;
                                                       uVar50 = *(undefined4 *)
                                                                 ((longlong)plVar56 + 0x94);
                                                       lVar51 = plVar56[0x13];
@@ -170167,33 +170243,33 @@ LAB_140109eee:
                                                            (short)((ulonglong)lVar51 >> 0x20);
                                                       local_6a0[9].Data3 =
                                                            (short)((ulonglong)lVar51 >> 0x30);
-                                                      lVar28._0_4_ = pGVar58->Data1;
-                                                      lVar28._4_2_ = pGVar58->Data2;
-                                                      lVar28._6_2_ = pGVar58->Data3;
+                                                      lVar27._0_4_ = pGVar58->Data1;
+                                                      lVar27._4_2_ = pGVar58->Data2;
+                                                      lVar27._6_2_ = pGVar58->Data3;
                                                       local_6b4 = VmsPtNicPvtUpdateFriendlyName
                                                                             (local_6a0,&local_648,
-                                                                             lVar28);
+                                                                             lVar27);
                                                       if (local_6b4 == 0) {
-                                                        lVar29._0_4_ = pGVar58->Data1;
-                                                        lVar29._4_2_ = pGVar58->Data2;
-                                                        lVar29._6_2_ = pGVar58->Data3;
-                                                        local_6a0->Data1 = (undefined4)lVar29;
-                                                        local_6a0->Data2 = lVar29._4_2_;
-                                                        local_6a0->Data3 = lVar29._6_2_;
-                                                        if (lVar29 == 0) {
+                                                        lVar28._0_4_ = pGVar58->Data1;
+                                                        lVar28._4_2_ = pGVar58->Data2;
+                                                        lVar28._6_2_ = pGVar58->Data3;
+                                                        local_6a0->Data1 = (undefined4)lVar28;
+                                                        local_6a0->Data2 = lVar28._4_2_;
+                                                        local_6a0->Data3 = lVar28._6_2_;
+                                                        if (lVar28 == 0) {
                                                           local_700 = 
                                                   "memberAdapter->ProtocolHandle != NULL";
                                                   local_708 = (GUID *)&
                                                   WPP_700e0f09963a379e48e91820772568f8_Traceguids;
                                                   WPP_RECORDER_SF_s(VmsIfrLog);
-                                                  lVar30._0_4_ = local_6a0->Data1;
-                                                  lVar30._4_2_ = local_6a0->Data2;
-                                                  lVar30._6_2_ = local_6a0->Data3;
-                                                  if (lVar30 == 0) {
+                                                  lVar29._0_4_ = local_6a0->Data1;
+                                                  lVar29._4_2_ = local_6a0->Data2;
+                                                  lVar29._6_2_ = local_6a0->Data3;
+                                                  if (lVar29 == 0) {
                                                     MicrosoftTelemetryAssertTriggeredNoArgsKM();
                                                   }
                                                   }
-                                                  uVar61 = local_6b8;
+                                                  uVar62 = local_6b8;
                                                   if ((local_6b8 != '\0') &&
                                                      (iVar49 = VmsPtNicConnectNicIndexEx
                                                                          (local_6b0,1,local_6a0),
@@ -170202,7 +170278,7 @@ LAB_140109eee:
                                                     goto LAB_140108d71;
                                                   }
                                                   VmsOmObjectLockExclusive(local_6b0,&local_694,0);
-                                                  if (uVar61 == '\0') {
+                                                  if (uVar62 == '\0') {
                                                     VmsPtNicSetMemberState
                                                               (pGVar59,(short)local_6a0[1].Data1,3);
                                                   }
@@ -170225,10 +170301,10 @@ LAB_140109eee:
                                                   local_6d8 = (uchar *)0x0;
                                                   local_6e0 = (GUID *)((ulonglong)local_6e0 &
                                                                       0xffffffff00000000);
-                                                  uVar54 = (uint)(uVar61 != '\0');
+                                                  uVar54 = (uint)(uVar62 != '\0');
                                                   local_6e8 = (GUID *)CONCAT44(local_6e8._4_4_,6);
                                                   local_6f0 = &local_458;
-                                                  register0x000000a0 = (uint)(uVar61 != '\0');
+                                                  register0x000000a0 = (uint)(uVar62 != '\0');
                                                   local_6f8 = (GUID *)((ulonglong)local_6f8 &
                                                                       0xffffffff00000000);
                                                   local_700 = (char *)((ulonglong)local_700 &
@@ -170353,20 +170429,20 @@ LAB_140109eee:
                                                   }
                                                   }
                                                   }
-                                                  puVar31 = *(undefined4 **)(param_3 + 0x90);
-                                                  if (puVar31 != (undefined4 *)0x0) {
-                                                    uVar40 = puVar31[1];
-                                                    uVar50 = puVar31[2];
-                                                    uVar46 = puVar31[3];
+                                                  puVar30 = *(undefined4 **)(param_3 + 0x90);
+                                                  if (puVar30 != (undefined4 *)0x0) {
+                                                    uVar39 = puVar30[1];
+                                                    uVar50 = puVar30[2];
+                                                    uVar46 = puVar30[3];
                                                     *(undefined4 *)(pGVar59[0x5e].Data4 + 4) =
-                                                         *puVar31;
-                                                    pGVar59[0x5f].Data1 = uVar40;
+                                                         *puVar30;
+                                                    pGVar59[0x5f].Data1 = uVar39;
                                                     pGVar59[0x5f].Data2 = (short)uVar50;
                                                     pGVar59[0x5f].Data3 =
                                                          (short)((uint)uVar50 >> 0x10);
                                                     *(undefined4 *)pGVar59[0x5f].Data4 = uVar46;
                                                     *(undefined4 *)(pGVar59[0x5f].Data4 + 4) =
-                                                         puVar31[4];
+                                                         puVar30[4];
                                                   }
                                                   VmsPtPvtInitializeRss(local_6a0);
                                                   VmsPtNicPvtDisableIncompatOffloads
@@ -170469,22 +170545,22 @@ LAB_140109eee:
                                                     }
                                                     VmsPtNicUpdateCurrentOffloadCache();
                                                   }
-                                                  uVar61 = local_6b8;
+                                                  uVar62 = local_6b8;
                                                   lVar51 = *(longlong *)(param_3 + 0xe0);
                                                   if (lVar51 != 0) {
                                                     uVar50 = *(undefined4 *)(lVar51 + 0x70);
                                                     uVar46 = *(undefined4 *)(lVar51 + 0x74);
-                                                    uVar41 = *(undefined4 *)(lVar51 + 0x78);
-                                                    uVar40 = *(ulong *)(lVar51 + 0x7c);
+                                                    uVar40 = *(undefined4 *)(lVar51 + 0x78);
+                                                    uVar39 = *(ulong *)(lVar51 + 0x7c);
                                                     pGVar59[0x62].Data2 = (short)uVar50;
                                                     pGVar59[0x62].Data3 =
                                                          (short)((uint)uVar50 >> 0x10);
                                                     *(undefined4 *)pGVar59[0x62].Data4 = uVar46;
                                                     *(undefined4 *)(pGVar59[0x62].Data4 + 4) =
-                                                         uVar41;
-                                                    pGVar59[99].Data1 = uVar40;
+                                                         uVar40;
+                                                    pGVar59[99].Data1 = uVar39;
                                                     uVar60 = *(undefined8 *)(lVar51 + 0x80);
-                                                    uVar44 = *(undefined8 *)(lVar51 + 0x88);
+                                                    uVar43 = *(undefined8 *)(lVar51 + 0x88);
                                                     pGVar59[99].Data2 = (short)uVar60;
                                                     pGVar59[99].Data3 =
                                                          (short)((ulonglong)uVar60 >> 0x10);
@@ -170496,7 +170572,7 @@ LAB_140109eee:
                                                          (char)((ulonglong)uVar60 >> 0x30);
                                                     pGVar59[99].Data4[3] =
                                                          (char)((ulonglong)uVar60 >> 0x38);
-                                                    *(undefined8 *)(pGVar59[99].Data4 + 4) = uVar44;
+                                                    *(undefined8 *)(pGVar59[99].Data4 + 4) = uVar43;
                                                   }
                                                   if ((*(uint *)(param_3 + 0xd8) & 0x200) != 0) {
                                                     *(undefined1 *)&local_6b0[0xde].Data2 = 1;
@@ -170512,7 +170588,7 @@ LAB_140109eee:
                                                       }
                                                     }
 LAB_14010aafb:
-                                                    uVar61 = local_6b8;
+                                                    uVar62 = local_6b8;
                                                   }
                                                   else {
                                                     if (local_698 != '\0') {
@@ -170525,18 +170601,18 @@ LAB_14010aafb:
                                                   == 0) goto LAB_14010aafb;
                                                   local_700 = &VmsEmptyString;
                                                   if ((local_6b0 == (GUID *)0x0) ||
-                                                     (pGVar64 == (GUID *)0x0)) {
+                                                     (pGVar65 == (GUID *)0x0)) {
                                                     pGVar58 = (GUID *)&VmsEmptyString;
                                                   }
                                                   else {
-                                                    pGVar58 = *(GUID **)(pGVar64 + 0x27);
+                                                    pGVar58 = *(GUID **)(pGVar65 + 0x27);
                                                   }
                                                   if ((local_6b0 == (GUID *)0x0) ||
-                                                     (pGVar64 == (GUID *)0x0)) {
+                                                     (pGVar65 == (GUID *)0x0)) {
                                                     local_6f0 = (GUID *)&VmsEmptyString;
                                                   }
                                                   else {
-                                                    local_6f0 = *(GUID **)(pGVar64 + 5);
+                                                    local_6f0 = *(GUID **)(pGVar65 + 5);
                                                   }
                                                   if (local_6a0 == (GUID *)0x0) {
                                                     local_6f8 = (GUID *)&VmsEmptyString;
@@ -170550,20 +170626,24 @@ LAB_14010aafb:
                                                   local_708 = (GUID *)((ulonglong)local_708 &
                                                                       0xffffffff00000000);
                                                   local_6e8 = pGVar58;
-                                                  McTemplateK0tqzzzzq_EtwWriteTransfer();
+                                                  McTemplateK0tqzzzzq_EtwWriteTransfer
+                                                            (local_6f8,
+                                                             &
+                                                  VMS_NIC_SWITCH_NOT_SUPPORTED_ON_FIRST_MEMBER,
+                                                  pGVar58,local_6b8);
                                                   }
                                                   if (*(longlong *)(param_3 + 0x110) != 0) {
                                                     VmsVmmqInitialize();
                                                   }
                                                   pcVar2 = (char *)((longlong)&pGVar59[0x13].Data1 +
                                                                    1);
-                                                  if (uVar61 != '\0') {
+                                                  if (uVar62 != '\0') {
                                                     local_6a0[0xc].Data4[0] = '\x0f';
                                                     local_6a0[0xc].Data4[1] = '\0';
                                                     local_6a0[0xc].Data4[2] = '\x01';
                                                     local_6a0[0xc].Data4[3] = '\0';
                                                     if ((*pcVar2 == '\0') ||
-                                                       (*(int *)pGVar64[0x217].Data4 == 0)) {
+                                                       (*(int *)pGVar65[0x217].Data4 == 0)) {
                                                       *(uint *)local_6a0[0xc].Data4 =
                                                            *(uint *)local_6a0[0xc].Data4 | 0x20;
                                                     }
@@ -170638,47 +170718,47 @@ LAB_14010aafb:
                                                   *(undefined4 *)(pGVar59[0x1a].Data4 + 4) =
                                                        *(undefined4 *)pGVar59[0x59].Data4;
                                                   }
-                                                  uVar62 = local_6b8;
-                                                  uVar63 = 0;
-                                                  if ((uVar61 == '\0') ||
+                                                  uVar63 = local_6b8;
+                                                  uVar64 = 0;
+                                                  if ((uVar62 == '\0') ||
                                                      (*(char *)((longlong)&pGVar59[0x13].Data1 + 2)
                                                       != '\x01')) {
                                                     if ((*pcVar2 != '\0') ||
                                                        (pGVar59[0x5e].Data4[1] != '\0')) {
-                                                      uVar63 = *(int *)(pGVar59[0x54].Data4 + 4) - 1
+                                                      uVar64 = *(int *)(pGVar59[0x54].Data4 + 4) - 1
                                                       ;
                                                       goto LAB_14010ad0d;
                                                     }
                                                     if (cVar47 == '\0') goto LAB_14010ad0d;
-                                                    uVar63 = *(uint *)(pGVar59[0x1a].Data4 + 4);
-                                                    if (uVar63 == 0) {
+                                                    uVar64 = *(uint *)(pGVar59[0x1a].Data4 + 4);
+                                                    if (uVar64 == 0) {
                                                       *(undefined1 *)&pGVar59[0x13].Data1 = 0;
                                                       pGVar59[0x5d].Data4[0] = '\0';
                                                       goto LAB_14010ad13;
                                                     }
 LAB_14010ad5c:
                                                     pGVar53 = (GUID *)ExAllocatePool2(0x40,(GUID *)(
-                                                  (ulonglong)uVar63 << 3),0x50737356);
+                                                  (ulonglong)uVar64 << 3),0x50737356);
                                                   pGVar58 = pGVar59 + 0x59;
                                                   *(GUID **)pGVar58 = pGVar53;
                                                   if (pGVar53 == (GUID *)0x0) {
                                                     local_6b4 = -0x3fffffe9;
-                                                    local_700 = (char *)((ulonglong)uVar63 << 3);
+                                                    local_700 = (char *)((ulonglong)uVar64 << 3);
                                                     WPP_RECORDER_SF_P();
                                                     uVar50 = 0xa5;
                                                     goto LAB_140109526;
                                                   }
-                                                  *(uint *)(pGVar59[0x58].Data4 + 4) = uVar63;
+                                                  *(uint *)(pGVar59[0x58].Data4 + 4) = uVar64;
                                                   uVar55 = 0;
-                                                  if (uVar63 != 0) {
-                                                    if ((uVar63 < 2) ||
+                                                  if (uVar64 != 0) {
+                                                    if ((uVar64 < 2) ||
                                                        ((pGVar53 <= pGVar58 &&
                                                         (pGVar58 <=
                                                          (GUID *)(pGVar53->Data4 +
-                                                                 (ulonglong)(uVar63 - 1) * 8 + -8)))
+                                                                 (ulonglong)(uVar64 - 1) * 8 + -8)))
                                                        )) {
 LAB_14010ae0c:
-                                                      uVar57 = (ulonglong)(uVar63 - uVar55);
+                                                      uVar57 = (ulonglong)(uVar64 - uVar55);
                                                       lVar51 = (ulonglong)uVar55 * 8;
                                                       do {
                                                         *(undefined8 *)
@@ -170692,20 +170772,20 @@ LAB_14010ae0c:
                                                     else {
                                                       do {
                                                         uVar55 = uVar55 + 2;
-                                                      } while (uVar55 < (uVar63 & 0xfffffffe));
-                                                      pGVar58 = (GUID *)((ulonglong)(uVar63 >> 1) <<
+                                                      } while (uVar55 < (uVar64 & 0xfffffffe));
+                                                      pGVar58 = (GUID *)((ulonglong)(uVar64 >> 1) <<
                                                                         4);
                                                       memset(pGVar53,0,(size_t)pGVar58);
-                                                      if (uVar55 < uVar63) goto LAB_14010ae0c;
+                                                      if (uVar55 < uVar64) goto LAB_14010ae0c;
                                                     }
-                                                    uVar62 = local_6b8;
+                                                    uVar63 = local_6b8;
                                                     goto LAB_14010ae4d;
                                                   }
                                                   uVar57 = (ulonglong)pGVar58 & 0xffffffffffffff00;
-                                                  uVar61 = local_6b8;
+                                                  uVar62 = local_6b8;
                                                   }
                                                   else {
-                                                    uVar63 = *(int *)pGVar59[0x59].Data4 +
+                                                    uVar64 = *(int *)pGVar59[0x59].Data4 +
                                                              *(int *)&pGVar59[0x54].Data2;
 LAB_14010ad0d:
                                                     if (cVar47 != '\0') goto LAB_14010ad5c;
@@ -170719,13 +170799,13 @@ LAB_14010ad13:
                                                          (local_6a0[0xfb].Data4[3] == '\0'))
                                                       goto LAB_14010ae4d;
                                                       uVar57 = 1;
-                                                      uVar61 = uVar62;
+                                                      uVar62 = uVar63;
                                                       goto LAB_14010ae50;
                                                     }
 LAB_14010ae4d:
                                                     uVar57 = (ulonglong)pGVar58 & 0xffffffffffffff00
                                                     ;
-                                                    uVar61 = uVar62;
+                                                    uVar62 = uVar63;
                                                   }
 LAB_14010ae50:
                                                   VmsPtRssInitialize(local_6b0,param_3,uVar57);
@@ -170758,19 +170838,21 @@ LAB_14010ae50:
                                                         (uchar *)0xfffffffffffffffe) {
                                                       pGVar58 = local_4e8;
                                                     }
-                                                    lVar32._0_4_ = pGVar59[7].Data1;
-                                                    lVar32._4_2_ = pGVar59[7].Data2;
-                                                    lVar32._6_2_ = pGVar59[7].Data3;
+                                                    lVar31._0_4_ = pGVar59[7].Data1;
+                                                    lVar31._4_2_ = pGVar59[7].Data2;
+                                                    lVar31._6_2_ = pGVar59[7].Data3;
                                                     *(GUID **)pGVar59[0x61].Data4 = pGVar58;
                                                     local_6b4 = VmsPtPvtDetectTeamingProvider
-                                                                          (lVar32,local_687 + 1);
+                                                                          (lVar31,local_687 + 1);
                                                     if (local_6b4 != 0) {
                                                       uVar50 = 0xaa;
                                                       goto LAB_140108d71;
                                                     }
                                                     local_6b4 = 0;
+                                                    plVar61 = (longlong *)0x1;
                                                     if (local_687[1] == '\0') {
                                                       *(undefined1 *)&pGVar59[0x96].Data1 = 1;
+                                                      plVar61 = (longlong *)0x2;
                                                     }
                                                   }
                                                   else {
@@ -170782,14 +170864,14 @@ LAB_14010ae50:
                                                                          pGVar59 + 0x97);
                                                   if (local_6b4 == 0) {
                                                     uVar50 = *(undefined4 *)&pGVar59[0x97].Data2;
-                                                    uVar40 = *(ulong *)pGVar59[0x97].Data4;
+                                                    uVar39 = *(ulong *)pGVar59[0x97].Data4;
                                                     uVar46 = *(undefined4 *)
                                                               (pGVar59[0x97].Data4 + 4);
                                                     *(ulong *)local_6b0[0x71].Data4 =
                                                          pGVar59[0x97].Data1;
                                                     *(undefined4 *)(local_6b0[0x71].Data4 + 4) =
                                                          uVar50;
-                                                    local_6b0[0x72].Data1 = uVar40;
+                                                    local_6b0[0x72].Data1 = uVar39;
                                                     local_6b0[0x72].Data2 = (short)uVar46;
                                                     local_6b0[0x72].Data3 =
                                                          (short)((uint)uVar46 >> 0x10);
@@ -170815,7 +170897,7 @@ LAB_14010ae50:
                                                          VmsPtNicPvtAllowRef;
                                                     local_6b0[4].Data2 = 1;
                                                     local_6b0[4].Data3 = 0;
-                                                    if (uVar61 != '\0') {
+                                                    if (uVar62 != '\0') {
                                                       VmsPtNicMuxTaskOffloadInit
                                                                 (pGVar59[0xad].Data4 + 4,
                                                                  local_6a0 + 0x36);
@@ -170839,7 +170921,7 @@ LAB_14010ae50:
                                                   uVar50 = 0xb3;
                                                   }
                                                   else {
-                                                    if ((uVar61 != '\0') &&
+                                                    if ((uVar62 != '\0') &&
                                                        (local_6a0[0xc].Data1 = 2,
                                                        *(int *)local_6b0[0x75].Data4 == 1)) {
                                                                                                             
@@ -170859,7 +170941,8 @@ LAB_14010ae50:
                                                   local_6f8 = (GUID *)(-(ulonglong)(lVar51 != 0) &
                                                                       lVar51 + 0x48U);
                                                   local_700 = (char *)local_6b0[0x26].Data4;
-                                                  VmsEtwTraceNicTeamConfiguration();
+                                                  VmsEtwTraceNicTeamConfiguration
+                                                            (local_708,local_6f8,local_6f0,plVar61);
                                                   uVar50 = 0;
                                                   if ((4 < (byte)WPP_GLOBAL_Control[0x29]) ||
                                                      (*(short *)(WPP_GLOBAL_Control + 0x48) != 0)) {
@@ -170929,7 +171012,7 @@ LAB_14010ae50:
                       }
                     }
 LAB_140109526:
-                    uVar61 = local_6b8;
+                    uVar62 = local_6b8;
                   }
                   else {
                     uVar50 = 0x69;
@@ -170947,9 +171030,9 @@ LAB_140108d71:
             uVar50 = 0xd;
             goto LAB_140108d78;
           }
-          VmsOmObjectLockShared(pGVar64,local_67c,0);
-          local_6b4 = VmsOmpFindPortInListUnsafe(pGVar64[0x58].Data4,&local_5a8,local_5d8);
-          NdisReleaseRWLock(*(undefined8 *)pGVar64[3].Data4,local_67c);
+          VmsOmObjectLockShared(pGVar65,local_67c,0);
+          local_6b4 = VmsOmpFindPortInListUnsafe(pGVar65[0x58].Data4,&local_5a8,local_5d8);
+          NdisReleaseRWLock(*(undefined8 *)pGVar65[3].Data4,local_67c);
           pGVar58 = local_5d8[0];
           if (local_6b4 != 0) goto LAB_1401084b1;
           local_690 = local_5d8[0];
@@ -170994,14 +171077,14 @@ LAB_140108d71:
             local_6b4 = VmsPtNicMuxCreateNewMemberAdapter(local_6b0,param_3,local_5c8,&local_6a0);
             if (local_6b4 == 0) {
               iVar49 = VmsPtPvtAllocateNicIndex(local_6b0,local_687 + 3);
-              uVar63 = stack0xfffffffffffff97c;
+              uVar64 = stack0xfffffffffffff97c;
               if (iVar49 == 0) {
-                uVar45 = local_687._3_2_;
+                uVar44 = local_687._3_2_;
                 uVar54 = stack0xfffffffffffff97c & 0xffff;
                 local_6a8 = stack0xfffffffffffff97c & 0xffff;
                 *(undefined2 *)&local_6a0[1].Data1 = local_687._3_2_;
                 RtlCopyUnicodeString(local_6a0 + 0x88,&local_648);
-                VmsPtNicSetMemberState(pGVar59,uVar45,2);
+                VmsPtNicSetMemberState(pGVar59,uVar44,2);
                 NdisReleaseRWLock(*(undefined8 *)local_6b0[3].Data4,&local_694);
                 local_618.Data4 = *(uchar (*) [8])(param_3 + 0x10);
                 local_608 = &DAT_140200eec;
@@ -171034,7 +171117,7 @@ LAB_140108d71:
                 lVar5._6_2_ = local_6a0->Data3;
                 local_6b4 = VmsPtNicPvtUpdateFriendlyName(local_6a0,&local_648,lVar5);
                 if (local_6b4 == 0) {
-                  iVar49 = VmsPtNicConnectNicIndexEx(local_6b0,uVar45,local_6a0);
+                  iVar49 = VmsPtNicConnectNicIndexEx(local_6b0,uVar44,local_6a0);
                   if (iVar49 == 0) {
                     VmsOmObjectLockExclusive(local_6b0,&local_694,0);
                     local_6a0[0xc].Data1 = 2;
@@ -171044,9 +171127,9 @@ LAB_140108d71:
                     VmsPtUpdateMemberAdapterInfoFromBind(local_6a0,param_3);
                     VmsPtInitializeMemberAdapterNdisQos(local_6a0);
                     VmsPtPvtInitializeRss(local_6a0);
-                    VmsPtNicPvtDisableIncompatOffloads(local_6b0,uVar45);
-                    VmsRscApplyOffloadSettings(local_6b0,uVar54,pGVar64[0x23e].Data4[0]);
-                    uVar55 = uVar63 & 0xffff;
+                    VmsPtNicPvtDisableIncompatOffloads(local_6b0,uVar44);
+                    VmsRscApplyOffloadSettings(local_6b0,uVar54,pGVar65[0x23e].Data4[0]);
+                    uVar55 = uVar64 & 0xffff;
                     if (*(longlong *)(param_3 + 0xe0) != 0) {
                       local_6c8 = 0;
                       local_6d0 = 0;
@@ -171071,7 +171154,7 @@ LAB_140108d71:
                       local_598.Data4[6] = '\0';
                       local_598.Data4[7] = '\0';
                       uStack_588 = 0;
-                      iVar49 = VmsPtPvtProcessPrivateOid(local_6b0,1,0x101010a,uVar45);
+                      iVar49 = VmsPtPvtProcessPrivateOid(local_6b0,1,0x101010a,uVar44);
                       if (iVar49 == 0) {
                         local_6a0[0x76].Data4[4] = '\x01';
                         local_6a0[0x76].Data4[5] = '\0';
@@ -171110,7 +171193,7 @@ LAB_140108d71:
                       cVar47 = VmsOmObjectPrepareForConfigStore(local_6b0,0xd,1);
                       if (cVar47 == '\x01') {
                         iVar49 = VmsOmNicStoreConfig(local_6b0,local_6a0 + 0x88,0xd);
-                        uVar61 = local_6b8;
+                        uVar62 = local_6b8;
                         uVar54 = local_6a8;
                         if (iVar49 != 0) {
                           uVar46 = 0x24;
@@ -171118,7 +171201,7 @@ LAB_140108d71:
                         }
                       }
                       else {
-                        uVar61 = local_6b8;
+                        uVar62 = local_6b8;
                         uVar54 = local_6a8;
                       }
                     }
@@ -171127,7 +171210,7 @@ LAB_140108d71:
                     local_6a0[0xc].Data4[2] = '\x01';
                     local_6a0[0xc].Data4[3] = '\0';
                     if ((*(char *)((longlong)&pGVar59[0x13].Data1 + 1) == '\0') ||
-                       (*(int *)pGVar64[0x217].Data4 == 0)) {
+                       (*(int *)pGVar65[0x217].Data4 == 0)) {
                       *(uint *)local_6a0[0xc].Data4 = *(uint *)local_6a0[0xc].Data4 | 0x20;
                     }
                     local_6c8 = 0;
@@ -171169,20 +171252,20 @@ LAB_140108d71:
                                                  *(undefined8 *)(param_3 + 0x110));
                           if (local_6b4 == 0) {
                             VmsPtNicRetrieveDefaultNicSwitch(pGVar59,uVar54 & 0xffff,0);
-                            iVar49._0_2_ = pGVar64[0x22d].Data2;
-                            iVar49._2_2_ = pGVar64[0x22d].Data3;
+                            iVar49._0_2_ = pGVar65[0x22d].Data2;
+                            iVar49._2_2_ = pGVar65[0x22d].Data3;
                             if (iVar49 == 1) {
 LAB_140109001:
                               iVar49 = VmsPDSetupPDAccess(local_6b0,local_6b0,uVar54 & 0xffff);
                               if (iVar49 < 0) {
                                 uVar60 = 0;
 LAB_14010901d:
-                                VmsPDSwitchDataPathMode(pGVar64,local_6b0,uVar60);
+                                VmsPDSwitchDataPathMode(pGVar65,local_6b0,uVar60);
                               }
                             }
-                            else if (((pGVar64[0x22c].Data4[0] != '\0') &&
+                            else if (((pGVar65[0x22c].Data4[0] != '\0') &&
                                      (cVar47 = VmsPDIsPDSupported(pGVar59,0), cVar47 != '\0')) &&
-                                    (*(longlong *)pGVar64[0x10a].Data4 != 0)) {
+                                    (*(longlong *)pGVar65[0x10a].Data4 != 0)) {
                               if ((2 < (byte)(WPP_GLOBAL_Control[0x29] - 1)) ||
                                  (*(short *)(WPP_GLOBAL_Control + 0x48) != 0)) {
                                 uVar60 = 0x17;
@@ -171212,7 +171295,7 @@ LAB_140108e7c:
                           local_6f8 = &local_538;
                           local_6f0 = (GUID *)CONCAT44(local_6f0._4_4_,
                                                        (uint)(ushort)local_6a0[1].Data1);
-                          local_6e0 = pGVar64;
+                          local_6e0 = pGVar65;
                           WPP_RECORDER_SF_Z_guid_Dqqd();
                           if (((byte)Microsoft_Windows_Hyper_V_VmSwitchEnableBits & 4) != 0) {
                             local_700 = &VmsEmptyString;
@@ -171221,8 +171304,8 @@ LAB_140108e7c:
                               local_6f0 = (GUID *)&VmsEmptyString;
                             }
                             else {
-                              local_6e8 = *(GUID **)(pGVar64 + 0x27);
-                              local_6f0 = *(GUID **)(pGVar64 + 5);
+                              local_6e8 = *(GUID **)(pGVar65 + 0x27);
+                              local_6f0 = *(GUID **)(pGVar65 + 5);
                             }
                             if (local_6a0 == (GUID *)0x0) {
                               local_6f8 = (GUID *)&VmsEmptyString;
@@ -171232,12 +171315,12 @@ LAB_140108e7c:
                               local_700 = *(char **)local_6a0[0x88].Data4;
                             }
                             local_6e0 = (GUID *)CONCAT44(local_6e0._4_4_,local_6b4);
-                            uVar54 = -(uint)(local_6a0 != (GUID *)0x0) & uVar63 & 0xffff;
+                            uVar54 = -(uint)(local_6a0 != (GUID *)0x0) & uVar64 & 0xffff;
                             local_708 = (GUID *)CONCAT44(local_708._4_4_,uVar54);
                             McTemplateK0tqzzzzq_EtwWriteTransfer
                                       (uVar54,&
                                               VMS_EMBEDDED_TEAMING_TEAM_NIC_SWITCH_ASSYMETRIC_CONFIGURATION
-                                       ,local_6f0,uVar61);
+                                       ,local_6f0,uVar62);
                           }
                         }
                       }
@@ -171245,13 +171328,13 @@ LAB_140108e7c:
                         if (local_698 == '\0') {
                           local_6b4 = -0x3fffff45;
                           local_6d8 = (uchar *)CONCAT44(local_6d8._4_4_,0xc00000bb);
+                          uVar48 = (ushort)local_6a0[1].Data1;
                           local_700 = (char *)(local_6a0 + 0x88);
                           local_6e8 = local_6b0;
                           local_6f8 = &local_538;
-                          local_6f0 = (GUID *)CONCAT44(local_6f0._4_4_,
-                                                       (uint)(ushort)local_6a0[1].Data1);
-                          local_6e0 = pGVar64;
-                          WPP_RECORDER_SF_Z_guid_Dqqd();
+                          local_6f0 = (GUID *)CONCAT44(local_6f0._4_4_,(uint)uVar48);
+                          local_6e0 = pGVar65;
+                          WPP_RECORDER_SF_Z_guid_Dqqd(uVar48,local_700,0xc00000bb,0x14);
                           pGVar58 = (GUID *)&VmsEmptyString;
                           if (((byte)Microsoft_Windows_Hyper_V_VmSwitchEnableBits & 4) != 0) {
                             if (local_6b0 == (GUID *)0x0) {
@@ -171259,8 +171342,8 @@ LAB_140108e7c:
                               local_6f0 = (GUID *)&VmsEmptyString;
                             }
                             else {
-                              local_6e8 = *(GUID **)(pGVar64 + 0x27);
-                              local_6f0 = *(GUID **)(pGVar64 + 5);
+                              local_6e8 = *(GUID **)(pGVar65 + 0x27);
+                              local_6f0 = *(GUID **)(pGVar65 + 5);
                             }
                             if (local_6a0 == (GUID *)0x0) {
                               local_6f8 = (GUID *)&VmsEmptyString;
@@ -171275,15 +171358,15 @@ LAB_140108e7c:
                             local_708 = (GUID *)CONCAT44(local_708._4_4_,uVar54);
                             McTemplateK0tqzzzzq_EtwWriteTransfer
                                       (uVar54,&VMS_NIC_SWITCH_NOT_SUPPORTED_ON_SECONDARY_MEMBER,
-                                       local_6f8,uVar61);
+                                       local_6f8,uVar62);
                             if (((byte)Microsoft_Windows_Hyper_V_VmSwitchEnableBits & 4) != 0) {
                               if (local_6b0 == (GUID *)0x0) {
                                 local_6e8 = (GUID *)&VmsEmptyString;
                                 local_6f0 = (GUID *)&VmsEmptyString;
                               }
                               else {
-                                local_6e8 = *(GUID **)(pGVar64 + 0x27);
-                                local_6f0 = *(GUID **)(pGVar64 + 5);
+                                local_6e8 = *(GUID **)(pGVar65 + 0x27);
+                                local_6f0 = *(GUID **)(pGVar65 + 5);
                               }
                               if (local_6a0 == (GUID *)0x0) {
                                 local_6f8 = (GUID *)&VmsEmptyString;
@@ -171299,7 +171382,7 @@ LAB_140108e7c:
                               McTemplateK0tqzzzzq_EtwWriteTransfer
                                         (uVar55,&
                                                 VMS_EMBEDDED_TEAMING_TEAM_NIC_SWITCH_ASSYMETRIC_CONFIGURATION
-                                         ,local_6f0,uVar61);
+                                         ,local_6f0,uVar62);
                             }
                           }
                           uVar50 = 0x2e;
@@ -171311,12 +171394,12 @@ LAB_140108e7c:
                           uVar46 = 0x2f;
                           goto LAB_1401088ae;
                         }
-                        iVar3._0_2_ = pGVar64[0x22d].Data2;
-                        iVar3._2_2_ = pGVar64[0x22d].Data3;
+                        iVar3._0_2_ = pGVar65[0x22d].Data2;
+                        iVar3._2_2_ = pGVar65[0x22d].Data3;
                         if (iVar3 == 1) goto LAB_140109001;
-                        if (((pGVar64[0x22c].Data4[0] != '\0') &&
+                        if (((pGVar65[0x22c].Data4[0] != '\0') &&
                             (cVar47 = VmsPDIsPDSupported(pGVar59,0), cVar47 != '\0')) &&
-                           (*(longlong *)pGVar64[0x10a].Data4 != 0)) {
+                           (*(longlong *)pGVar65[0x10a].Data4 != 0)) {
                           if ((2 < (byte)(WPP_GLOBAL_Control[0x29] - 1)) ||
                              (*(short *)(WPP_GLOBAL_Control + 0x48) != 0)) {
                             uVar60 = 0x15;
@@ -171390,20 +171473,20 @@ LAB_140108d78:
   uVar48 = (ushort)uVar54;
   if (local_6b0 != (GUID *)0x0) {
     pGVar58 = *(GUID **)(local_6b0 + 0x7c);
-    pGVar64 = *(GUID **)(local_6b0 + 0x76);
+    pGVar65 = *(GUID **)(local_6b0 + 0x76);
   }
   if (local_658 != (GUID *)0x0) {
     ExFreePoolWithTag(local_658,0);
   }
   local_6f8 = (GUID *)0x0;
   if (local_6b4 == 0) {
-    if (pGVar64 == (GUID *)0x0) {
+    if (pGVar65 == (GUID *)0x0) {
       local_6e8 = (GUID *)0x0;
       local_6f0 = (GUID *)0x0;
     }
     else {
-      local_6e8 = (GUID *)pGVar64[0x26].Data4;
-      local_6f0 = (GUID *)pGVar64[4].Data4;
+      local_6e8 = (GUID *)pGVar65[0x26].Data4;
+      local_6f0 = (GUID *)pGVar65[4].Data4;
     }
     if (pGVar58 == (GUID *)0x0) {
       local_6f8 = (GUID *)0x0;
@@ -171418,17 +171501,17 @@ LAB_140108d78:
     local_6f8 = (GUID *)local_6b0[0x26].Data4;
     local_700 = (char *)local_6b0;
     local_6f0 = pGVar58;
-    local_6e8 = pGVar64;
+    local_6e8 = pGVar65;
     WPP_RECORDER_SF_qZqq();
   }
   else {
-    if (pGVar64 == (GUID *)0x0) {
+    if (pGVar65 == (GUID *)0x0) {
       local_6d8 = (uchar *)0x0;
       local_6e0 = (GUID *)0x0;
     }
     else {
-      local_6d8 = pGVar64[0x26].Data4;
-      local_6e0 = (GUID *)pGVar64[4].Data4;
+      local_6d8 = pGVar65[0x26].Data4;
+      local_6e0 = (GUID *)pGVar65[4].Data4;
     }
     if (pGVar58 == (GUID *)0x0) {
       local_6e8 = (GUID *)0x0;
@@ -171454,7 +171537,7 @@ LAB_140108d78:
     local_700 = (char *)local_650;
     local_6f8 = (GUID *)param_3;
     local_6e8 = pGVar58;
-    local_6e0 = pGVar64;
+    local_6e0 = pGVar65;
     WPP_RECORDER_SF_qqqqqZd();
   }
   if (local_660 != (GUID *)0x0) {
@@ -171464,7 +171547,7 @@ LAB_140108d78:
     ExFreePoolWithTag(local_638,0);
   }
   if (local_6b4 == 0) {
-    if (uVar61 != '\0') {
+    if (uVar62 != '\0') {
       if (*(int *)(pGVar59[0x66].Data4 + (ulonglong)(ushort)local_6a0[1].Data1 * 4 + -8) != 3) {
         local_700 = "VmsPtNicIsMemberConnected(ptNicExt, memberAdapter->MemberIndex)";
         local_708 = (GUID *)&WPP_700e0f09963a379e48e91820772568f8_Traceguids;
@@ -171481,24 +171564,24 @@ LAB_14010b720:
     if (local_6b0 == (GUID *)0x0) goto LAB_14010b72c;
   }
   else {
-    if (uVar61 == '\0') {
+    if (uVar62 == '\0') {
       if (pGVar59 != (GUID *)0x0) {
         if (*(longlong *)(pGVar59 + 0xd4) != 0) {
           NvIoFreeWorkItem(*(longlong *)(pGVar59 + 0xd4) + 0xe80);
         }
 LAB_14010b570:
-        lVar36._0_4_ = pGVar59[7].Data1;
-        lVar36._4_2_ = pGVar59[7].Data2;
-        lVar36._6_2_ = pGVar59[7].Data3;
-        if (lVar36 != 0) {
+        lVar35._0_4_ = pGVar59[7].Data1;
+        lVar35._4_2_ = pGVar59[7].Data2;
+        lVar35._6_2_ = pGVar59[7].Data3;
+        if (lVar35 != 0) {
           local_708 = (GUID *)0x0;
           KeWaitForSingleObject(&VmsOmIoctlMutex,0,0,0);
           VmsVmqDoVmqOperation(local_6b0,0,2);
-          lVar37._0_4_ = pGVar59[0x59].Data1;
-          lVar37._4_2_ = pGVar59[0x59].Data2;
-          lVar37._6_2_ = pGVar59[0x59].Data3;
-          if (lVar37 != 0) {
-            ExFreePoolWithTag(lVar37,0);
+          lVar36._0_4_ = pGVar59[0x59].Data1;
+          lVar36._4_2_ = pGVar59[0x59].Data2;
+          lVar36._6_2_ = pGVar59[0x59].Data3;
+          if (lVar36 != 0) {
+            ExFreePoolWithTag(lVar36,0);
             pGVar59[0x59].Data1 = 0;
             pGVar59[0x59].Data2 = 0;
             pGVar59[0x59].Data3 = 0;
@@ -171513,19 +171596,19 @@ LAB_14010b570:
             VmsPtNicDeleteDefaultNicSwitch(pGVar59,0);
           }
           NdisResetEvent(pGVar59 + 9);
-          lVar38._0_4_ = pGVar59[7].Data1;
-          lVar38._4_2_ = pGVar59[7].Data2;
-          lVar38._6_2_ = pGVar59[7].Data3;
-          iVar49 = NdisCloseAdapterEx(lVar38);
+          lVar37._0_4_ = pGVar59[7].Data1;
+          lVar37._4_2_ = pGVar59[7].Data2;
+          lVar37._6_2_ = pGVar59[7].Data3;
+          iVar49 = NdisCloseAdapterEx(lVar37);
           if (iVar49 == 0x103) {
             NdisWaitEvent(pGVar59 + 9,0);
           }
-          puVar39 = *(undefined8 **)(pGVar59 + 0xd4);
+          puVar38 = *(undefined8 **)(pGVar59 + 0xd4);
           pGVar59[7].Data1 = 0;
           pGVar59[7].Data2 = 0;
           pGVar59[7].Data3 = 0;
-          if (puVar39 != (undefined8 *)0x0) {
-            *puVar39 = 0;
+          if (puVar38 != (undefined8 *)0x0) {
+            *puVar38 = 0;
           }
         }
         if (local_6b0 == (GUID *)0x0) {
@@ -171541,9 +171624,9 @@ LAB_14010b570:
         VmsOmObjectLockExclusive(local_6b0,&local_694,0);
         VmsPtNicSetMemberState(pGVar59,(short)local_6a0[1].Data1,4);
         local_6a0[0xc].Data1 = 6;
-        uVar62 = local_6a0[0xe6].Data4[0];
+        uVar63 = local_6a0[0xe6].Data4[0];
         NdisReleaseRWLock(*(undefined8 *)local_6b0[3].Data4,&local_694);
-        if (uVar62 != '\0') {
+        if (uVar63 != '\0') {
           NdisWaitEvent(local_6a0[0x86].Data4,3000);
         }
         if (local_696 == '\0') {
@@ -171568,24 +171651,24 @@ LAB_14010b570:
           pGVar59[0x9a].Data1 = pGVar59[0x9a].Data1 - 1;
         }
         NdisReleaseRWLock(*(undefined8 *)local_6b0[3].Data4,&local_694);
-        lVar33._0_4_ = local_6a0->Data1;
-        lVar33._4_2_ = local_6a0->Data2;
-        lVar33._6_2_ = local_6a0->Data3;
-        if (lVar33 != 0) {
+        lVar32._0_4_ = local_6a0->Data1;
+        lVar32._4_2_ = local_6a0->Data2;
+        lVar32._6_2_ = local_6a0->Data3;
+        if (lVar32 != 0) {
           NdisResetEvent(pGVar59 + 9);
-          lVar34._0_4_ = local_6a0->Data1;
-          lVar34._4_2_ = local_6a0->Data2;
-          lVar34._6_2_ = local_6a0->Data3;
-          iVar49 = NdisCloseAdapterEx(lVar34);
+          lVar33._0_4_ = local_6a0->Data1;
+          lVar33._4_2_ = local_6a0->Data2;
+          lVar33._6_2_ = local_6a0->Data3;
+          iVar49 = NdisCloseAdapterEx(lVar33);
           if (iVar49 == 0x103) {
             NdisWaitEvent(pGVar59 + 9,0);
           }
         }
-        lVar35._0_4_ = local_6a0[0x7c].Data1;
-        lVar35._4_2_ = local_6a0[0x7c].Data2;
-        lVar35._6_2_ = local_6a0[0x7c].Data3;
-        if (lVar35 != 0) {
-          ExFreePoolWithTag(lVar35,0);
+        lVar34._0_4_ = local_6a0[0x7c].Data1;
+        lVar34._4_2_ = local_6a0[0x7c].Data2;
+        lVar34._6_2_ = local_6a0[0x7c].Data3;
+        if (lVar34 != 0) {
+          ExFreePoolWithTag(lVar34,0);
           local_6a0[0x7c].Data1 = 0;
           local_6a0[0x7c].Data2 = 0;
           local_6a0[0x7c].Data3 = 0;
@@ -171599,7 +171682,7 @@ LAB_14010b570:
     if (local_6b0 != (GUID *)0x0) {
       VmsOmNicDelete(local_6b0,0,0);
     }
-    if (uVar61 == '\0') goto LAB_14010b720;
+    if (uVar62 == '\0') goto LAB_14010b720;
 LAB_14010b710:
     if ((local_6b0 == (GUID *)0x0) || (local_696 != '\0')) goto LAB_14010b72c;
   }
@@ -204010,7 +204093,7 @@ LAB_140140d12:
 ===== VmsPtNicMuxEnumVPorts @ 140140d68 =====
 
 int VmsPtNicMuxEnumVPorts
-              (longlong *param_1,longlong param_2,uint param_3,uint param_4,longlong param_5)
+              (longlong *param_1,longlong param_2,ulonglong param_3,uint param_4,longlong param_5)
 
 {
   undefined4 uVar1;
@@ -204061,168 +204144,172 @@ int VmsPtNicMuxEnumVPorts
   lVar18 = *(longlong *)(*param_1 + 0x760);
   local_68 = (longlong *)0x0;
   local_58 = lVar18;
-  if (param_3 < 0x1c) {
+  if ((uint)param_3 < 0x1c) {
     iVar12 = -0x3ffffff3;
     WPP_RECORDER_SF_DDD(VmsIfrLog,2,0x14,0x19,&WPP_28e009e0b85531f3855a0e0647ad84fd_Traceguids,0x1c,
-                        param_3,0xc000000d);
-  }
-  else if ((*(int *)(param_2 + 8) == 0) && (((byte)*(undefined4 *)(param_2 + 4) & 3) == 2)) {
-    local_60 = param_4;
-    if (0x1b < param_4) {
-      *(undefined4 *)(param_2 + 0x14) = 0;
-      *(undefined4 *)(param_2 + 0x10) = 0x1c;
-      *(undefined4 *)(param_2 + 0x18) = 0x240;
-      local_60 = 0x1c;
-    }
-    plVar4 = (longlong *)(lVar18 + 0x588);
-    local_60 = param_4 - local_60;
-    local_50 = (undefined8 *)(param_2 + 0x1c);
-    VmsOmObjectLockShared(lVar18,&local_78,0);
-    plVar7 = (longlong *)*plVar4;
-    uVar13 = 0;
-    uVar19 = uVar13;
-    if (plVar7 != plVar4) {
-      do {
-        plVar7 = (longlong *)*plVar7;
-        uVar13 = uVar13 + 1;
-      } while (plVar7 != plVar4);
-      uVar19 = 0;
-      if (uVar13 != 0) {
-        local_68 = (longlong *)ExAllocatePool2(0x40,(ulonglong)uVar13 << 3,0x50737356);
-        if (local_68 == (longlong *)0x0) {
-          iVar12 = -0x3fffff66;
-          WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0x1b,&WPP_28e009e0b85531f3855a0e0647ad84fd_Traceguids,
-                            CONCAT44(uVar20,0xc000009a));
-          NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_78);
-          goto LAB_14014114b;
-        }
-        for (plVar7 = (longlong *)*plVar4; uVar19 = (uint)plVar15, plVar7 != plVar4;
-            plVar7 = (longlong *)*plVar7) {
-          if (uVar13 <= uVar19) {
-            WPP_RECORDER_SF_s(VmsIfrLog);
-            MicrosoftTelemetryAssertTriggeredNoArgsKM();
-            break;
-          }
-          VmsOmObjectLockShared(plVar7,&local_74,0);
-          if ((*(int *)((longlong)plVar7 + 0x44) != 2) && (plVar7[0x9d] != 0)) {
-            VmsOmpObjectReference(plVar7[0x9d],0x43);
-            local_68[(longlong)plVar15] = plVar7[0x9d];
-            plVar15 = (longlong *)(ulonglong)(uVar19 + 1);
-          }
-          NdisReleaseRWLock(plVar7[7],&local_74);
-        }
-        plVar15 = local_68;
-        lVar18 = local_58;
-      }
-    }
-    NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_78);
-    iVar12 = 0;
-    if (uVar19 != 0) {
-      uVar17 = (ulonglong)uVar19;
-      puVar16 = local_50;
-      uVar19 = local_60;
-      iVar11 = local_6c;
-      do {
-        lVar18 = *plVar15;
-        VmsOmObjectLockShared(lVar18,&local_70,0);
-        if (*(char *)(lVar18 + 0xfe8) != '\0') {
-          iVar11 = iVar11 + 1;
-          uVar14 = uVar14 + 0x240;
-          if (uVar19 < 0x240) {
-            uVar13 = uVar19;
-          }
-          else {
-            lVar10 = 4;
-            puVar5 = puVar16;
-            puVar6 = (undefined8 *)(lVar18 + 0x1058);
-            do {
-              puVar9 = puVar6;
-              puVar8 = puVar5;
-              uVar3 = puVar9[1];
-              *puVar8 = *puVar9;
-              puVar8[1] = uVar3;
-              uVar3 = puVar9[3];
-              puVar8[2] = puVar9[2];
-              puVar8[3] = uVar3;
-              uVar3 = puVar9[5];
-              puVar8[4] = puVar9[4];
-              puVar8[5] = uVar3;
-              uVar3 = puVar9[7];
-              puVar8[6] = puVar9[6];
-              puVar8[7] = uVar3;
-              uVar3 = puVar9[9];
-              puVar8[8] = puVar9[8];
-              puVar8[9] = uVar3;
-              uVar3 = puVar9[0xb];
-              puVar8[10] = puVar9[10];
-              puVar8[0xb] = uVar3;
-              uVar3 = puVar9[0xd];
-              puVar8[0xc] = puVar9[0xc];
-              puVar8[0xd] = uVar3;
-              uVar3 = puVar9[0xf];
-              puVar8[0xe] = puVar9[0xe];
-              puVar8[0xf] = uVar3;
-              lVar10 = lVar10 + -1;
-              puVar5 = puVar8 + 0x10;
-              puVar6 = puVar9 + 0x10;
-            } while (lVar10 != 0);
-            uVar3 = puVar9[0x11];
-            puVar8[0x10] = puVar9[0x10];
-            puVar8[0x11] = uVar3;
-            uVar3 = puVar9[0x13];
-            puVar8[0x12] = puVar9[0x12];
-            puVar8[0x13] = uVar3;
-            uVar20 = *(undefined4 *)((longlong)puVar9 + 0xa4);
-            uVar1 = *(undefined4 *)(puVar9 + 0x15);
-            uVar2 = *(undefined4 *)((longlong)puVar9 + 0xac);
-            *(undefined4 *)(puVar8 + 0x14) = *(undefined4 *)(puVar9 + 0x14);
-            *(undefined4 *)((longlong)puVar8 + 0xa4) = uVar20;
-            *(undefined4 *)(puVar8 + 0x15) = uVar1;
-            *(undefined4 *)((longlong)puVar8 + 0xac) = uVar2;
-            uVar20 = *(undefined4 *)((longlong)puVar9 + 0xb4);
-            uVar1 = *(undefined4 *)(puVar9 + 0x17);
-            uVar2 = *(undefined4 *)((longlong)puVar9 + 0xbc);
-            *(undefined4 *)(puVar8 + 0x16) = *(undefined4 *)(puVar9 + 0x16);
-            *(undefined4 *)((longlong)puVar8 + 0xb4) = uVar20;
-            *(undefined4 *)(puVar8 + 0x17) = uVar1;
-            *(undefined4 *)((longlong)puVar8 + 0xbc) = uVar2;
-            VmsPtNicMUXGetAggregateVMQId
-                      (*(undefined2 *)(lVar18 + 0x1050),*(undefined4 *)(lVar18 + 0x105c));
-            puVar16 = puVar16 + 0x48;
-            uVar13 = 0x240;
-          }
-          uVar19 = uVar19 - uVar13;
-        }
-        NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_70);
-        VmsOmpObjectDereference(lVar18,0x43);
-        plVar15 = plVar15 + 1;
-        uVar17 = uVar17 - 1;
-      } while (uVar17 != 0);
-      plVar15 = local_68;
-      iVar12 = local_5c;
-      local_6c = iVar11;
-    }
-    if (param_4 < uVar14) {
-      iVar12 = -0x3ffeffea;
-      *(uint *)(param_5 + 0x44) = uVar14;
-    }
-    else {
-      *(int *)(param_2 + 0x14) = local_6c;
-      *(uint *)(param_5 + 0x3c) = uVar14;
-    }
-    if (plVar15 != (longlong *)0x0) {
-      ExFreePoolWithTag(plVar15,0);
-    }
-    if (iVar12 == 0) {
-      return 0;
-    }
-    if (iVar12 == -0x3ffeffea) {
-      return -0x3ffeffea;
-    }
+                        param_3 & 0xffffffff,0xc000000d);
   }
   else {
-    iVar12 = -0x3fffff45;
-    WPP_RECORDER_SF_dDd();
+    iVar11 = *(int *)(param_2 + 8);
+    if ((iVar11 == 0) && (((byte)*(undefined4 *)(param_2 + 4) & 3) == 2)) {
+      local_60 = param_4;
+      if (0x1b < param_4) {
+        *(undefined4 *)(param_2 + 0x14) = 0;
+        *(undefined4 *)(param_2 + 0x10) = 0x1c;
+        *(undefined4 *)(param_2 + 0x18) = 0x240;
+        local_60 = 0x1c;
+      }
+      plVar4 = (longlong *)(lVar18 + 0x588);
+      local_60 = param_4 - local_60;
+      local_50 = (undefined8 *)(param_2 + 0x1c);
+      VmsOmObjectLockShared(lVar18,&local_78,0);
+      plVar7 = (longlong *)*plVar4;
+      uVar13 = 0;
+      uVar19 = uVar13;
+      if (plVar7 != plVar4) {
+        do {
+          plVar7 = (longlong *)*plVar7;
+          uVar13 = uVar13 + 1;
+        } while (plVar7 != plVar4);
+        uVar19 = 0;
+        if (uVar13 != 0) {
+          local_68 = (longlong *)ExAllocatePool2(0x40,(ulonglong)uVar13 << 3,0x50737356);
+          if (local_68 == (longlong *)0x0) {
+            iVar12 = -0x3fffff66;
+            WPP_RECORDER_SF_L(VmsIfrLog,2,0x14,0x1b,&WPP_28e009e0b85531f3855a0e0647ad84fd_Traceguids
+                              ,CONCAT44(uVar20,0xc000009a));
+            NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_78);
+            goto LAB_14014114b;
+          }
+          for (plVar7 = (longlong *)*plVar4; uVar19 = (uint)plVar15, plVar7 != plVar4;
+              plVar7 = (longlong *)*plVar7) {
+            if (uVar13 <= uVar19) {
+              WPP_RECORDER_SF_s(VmsIfrLog);
+              MicrosoftTelemetryAssertTriggeredNoArgsKM();
+              break;
+            }
+            VmsOmObjectLockShared(plVar7,&local_74,0);
+            if ((*(int *)((longlong)plVar7 + 0x44) != 2) && (plVar7[0x9d] != 0)) {
+              VmsOmpObjectReference(plVar7[0x9d],0x43);
+              local_68[(longlong)plVar15] = plVar7[0x9d];
+              plVar15 = (longlong *)(ulonglong)(uVar19 + 1);
+            }
+            NdisReleaseRWLock(plVar7[7],&local_74);
+          }
+          plVar15 = local_68;
+          lVar18 = local_58;
+        }
+      }
+      NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_78);
+      iVar12 = 0;
+      if (uVar19 != 0) {
+        uVar17 = (ulonglong)uVar19;
+        puVar16 = local_50;
+        uVar19 = local_60;
+        iVar11 = local_6c;
+        do {
+          lVar18 = *plVar15;
+          VmsOmObjectLockShared(lVar18,&local_70,0);
+          if (*(char *)(lVar18 + 0xfe8) != '\0') {
+            iVar11 = iVar11 + 1;
+            uVar14 = uVar14 + 0x240;
+            if (uVar19 < 0x240) {
+              uVar13 = uVar19;
+            }
+            else {
+              lVar10 = 4;
+              puVar5 = puVar16;
+              puVar6 = (undefined8 *)(lVar18 + 0x1058);
+              do {
+                puVar9 = puVar6;
+                puVar8 = puVar5;
+                uVar3 = puVar9[1];
+                *puVar8 = *puVar9;
+                puVar8[1] = uVar3;
+                uVar3 = puVar9[3];
+                puVar8[2] = puVar9[2];
+                puVar8[3] = uVar3;
+                uVar3 = puVar9[5];
+                puVar8[4] = puVar9[4];
+                puVar8[5] = uVar3;
+                uVar3 = puVar9[7];
+                puVar8[6] = puVar9[6];
+                puVar8[7] = uVar3;
+                uVar3 = puVar9[9];
+                puVar8[8] = puVar9[8];
+                puVar8[9] = uVar3;
+                uVar3 = puVar9[0xb];
+                puVar8[10] = puVar9[10];
+                puVar8[0xb] = uVar3;
+                uVar3 = puVar9[0xd];
+                puVar8[0xc] = puVar9[0xc];
+                puVar8[0xd] = uVar3;
+                uVar3 = puVar9[0xf];
+                puVar8[0xe] = puVar9[0xe];
+                puVar8[0xf] = uVar3;
+                lVar10 = lVar10 + -1;
+                puVar5 = puVar8 + 0x10;
+                puVar6 = puVar9 + 0x10;
+              } while (lVar10 != 0);
+              uVar3 = puVar9[0x11];
+              puVar8[0x10] = puVar9[0x10];
+              puVar8[0x11] = uVar3;
+              uVar3 = puVar9[0x13];
+              puVar8[0x12] = puVar9[0x12];
+              puVar8[0x13] = uVar3;
+              uVar20 = *(undefined4 *)((longlong)puVar9 + 0xa4);
+              uVar1 = *(undefined4 *)(puVar9 + 0x15);
+              uVar2 = *(undefined4 *)((longlong)puVar9 + 0xac);
+              *(undefined4 *)(puVar8 + 0x14) = *(undefined4 *)(puVar9 + 0x14);
+              *(undefined4 *)((longlong)puVar8 + 0xa4) = uVar20;
+              *(undefined4 *)(puVar8 + 0x15) = uVar1;
+              *(undefined4 *)((longlong)puVar8 + 0xac) = uVar2;
+              uVar20 = *(undefined4 *)((longlong)puVar9 + 0xb4);
+              uVar1 = *(undefined4 *)(puVar9 + 0x17);
+              uVar2 = *(undefined4 *)((longlong)puVar9 + 0xbc);
+              *(undefined4 *)(puVar8 + 0x16) = *(undefined4 *)(puVar9 + 0x16);
+              *(undefined4 *)((longlong)puVar8 + 0xb4) = uVar20;
+              *(undefined4 *)(puVar8 + 0x17) = uVar1;
+              *(undefined4 *)((longlong)puVar8 + 0xbc) = uVar2;
+              VmsPtNicMUXGetAggregateVMQId
+                        (*(undefined2 *)(lVar18 + 0x1050),*(undefined4 *)(lVar18 + 0x105c));
+              puVar16 = puVar16 + 0x48;
+              uVar13 = 0x240;
+            }
+            uVar19 = uVar19 - uVar13;
+          }
+          NdisReleaseRWLock(*(undefined8 *)(lVar18 + 0x38),&local_70);
+          VmsOmpObjectDereference(lVar18,0x43);
+          plVar15 = plVar15 + 1;
+          uVar17 = uVar17 - 1;
+        } while (uVar17 != 0);
+        plVar15 = local_68;
+        iVar12 = local_5c;
+        local_6c = iVar11;
+      }
+      if (param_4 < uVar14) {
+        iVar12 = -0x3ffeffea;
+        *(uint *)(param_5 + 0x44) = uVar14;
+      }
+      else {
+        *(int *)(param_2 + 0x14) = local_6c;
+        *(uint *)(param_5 + 0x3c) = uVar14;
+      }
+      if (plVar15 != (longlong *)0x0) {
+        ExFreePoolWithTag(plVar15,0);
+      }
+      if (iVar12 == 0) {
+        return 0;
+      }
+      if (iVar12 == -0x3ffeffea) {
+        return -0x3ffeffea;
+      }
+    }
+    else {
+      iVar12 = -0x3fffff45;
+      WPP_RECORDER_SF_dDd(0,iVar11,param_3,0x1a,&WPP_28e009e0b85531f3855a0e0647ad84fd_Traceguids,
+                          iVar11,*(undefined4 *)(param_2 + 4),0xc00000bb);
+    }
   }
 LAB_14014114b:
   WPP_RECORDER_SF_dqqddq();
@@ -213866,7 +213953,8 @@ LAB_14014fd46:
   local_58 = CONCAT31(local_58._1_3_,uVar22);
   local_60 = (undefined8 *)CONCAT71(local_60._1_7_,uVar21);
   local_48 = param_4;
-  VmsEtwTraceExtendedPortAclPolicyFailure();
+  VmsEtwTraceExtendedPortAclPolicyFailure
+            (param_1 + 0x48U,local_78,local_70,-(ulonglong)(param_1 != 0) & param_1 + 0x48U);
   local_50 = CONCAT44(local_50._4_4_,iVar10);
   local_58 = param_5;
   local_78 = &WPP_68db1a9a9d863e1352190fd72e664e5c_Traceguids;
@@ -258030,110 +258118,115 @@ int VmsVmNicPvtRestoreVmNicBase
               undefined4 *param_5,undefined4 *param_6)
 
 {
-  uint uVar1;
-  longlong lVar2;
-  undefined4 uVar3;
-  undefined8 uVar4;
-  uint uVar5;
-  int iVar6;
-  int iVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
+  longlong lVar1;
+  uint uVar2;
+  longlong lVar3;
+  longlong lVar4;
+  undefined4 uVar5;
+  undefined8 uVar6;
+  uint uVar7;
+  int iVar8;
+  int iVar9;
   undefined4 uVar10;
   undefined4 uVar11;
-  undefined8 in_stack_ffffffffffffffc8;
   undefined4 uVar12;
+  undefined4 uVar13;
+  undefined8 in_stack_ffffffffffffffc8;
+  undefined4 uVar14;
   
-  uVar12 = (undefined4)((ulonglong)in_stack_ffffffffffffffc8 >> 0x20);
-  uVar8 = 0;
-  lVar2 = *(longlong *)(param_1 + 0x2a8);
+  uVar14 = (undefined4)((ulonglong)in_stack_ffffffffffffffc8 >> 0x20);
   uVar10 = 0;
-  uVar9 = 0;
+  lVar3 = *(longlong *)(param_1 + 0x2a8);
+  uVar12 = 0;
+  uVar11 = 0;
   if (*(int *)(param_2 + 0x44) - 1U < 4) {
-    iVar6 = *(int *)(param_2 + 0x54);
-    if (((((iVar6 == 0x50000) || (iVar6 == 0x40000)) || (iVar6 == 0x30002)) ||
-        ((iVar6 == 2 || (iVar6 == 0)))) || (iVar6 - 0x60000U < 2)) {
-      uVar4 = *(undefined8 *)(param_2 + 0x10);
+    iVar8 = *(int *)(param_2 + 0x54);
+    if (((((iVar8 == 0x50000) || (iVar8 == 0x40000)) || (iVar8 == 0x30002)) ||
+        ((iVar8 == 2 || (iVar8 == 0)))) || (iVar8 - 0x60000U < 2)) {
+      uVar6 = *(undefined8 *)(param_2 + 0x10);
       *(undefined8 *)(param_1 + 0x208) = *(undefined8 *)(param_2 + 8);
-      *(undefined8 *)(param_1 + 0x210) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x20);
+      *(undefined8 *)(param_1 + 0x210) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x20);
       *(undefined8 *)(param_1 + 0x218) = *(undefined8 *)(param_2 + 0x18);
-      *(undefined8 *)(param_1 + 0x220) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x30);
+      *(undefined8 *)(param_1 + 0x220) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x30);
       *(undefined8 *)(param_1 + 0x228) = *(undefined8 *)(param_2 + 0x28);
-      *(undefined8 *)(param_1 + 0x230) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x40);
+      *(undefined8 *)(param_1 + 0x230) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x40);
       *(undefined8 *)(param_1 + 0x238) = *(undefined8 *)(param_2 + 0x38);
-      *(undefined8 *)(param_1 + 0x240) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x50);
+      *(undefined8 *)(param_1 + 0x240) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x50);
       *(undefined8 *)(param_1 + 0x248) = *(undefined8 *)(param_2 + 0x48);
-      *(undefined8 *)(param_1 + 0x250) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x60);
+      *(undefined8 *)(param_1 + 0x250) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x60);
       *(undefined8 *)(param_1 + 600) = *(undefined8 *)(param_2 + 0x58);
-      *(undefined8 *)(param_1 + 0x260) = uVar4;
-      uVar4 = *(undefined8 *)(param_2 + 0x70);
+      *(undefined8 *)(param_1 + 0x260) = uVar6;
+      uVar6 = *(undefined8 *)(param_2 + 0x70);
       *(undefined8 *)(param_1 + 0x268) = *(undefined8 *)(param_2 + 0x68);
-      *(undefined8 *)(param_1 + 0x270) = uVar4;
-      uVar12 = *(undefined4 *)(param_2 + 0x7c);
-      uVar11 = *(undefined4 *)(param_2 + 0x80);
-      uVar3 = *(undefined4 *)(param_2 + 0x84);
+      *(undefined8 *)(param_1 + 0x270) = uVar6;
+      uVar14 = *(undefined4 *)(param_2 + 0x7c);
+      uVar13 = *(undefined4 *)(param_2 + 0x80);
+      uVar5 = *(undefined4 *)(param_2 + 0x84);
       *(undefined4 *)(param_1 + 0x278) = *(undefined4 *)(param_2 + 0x78);
-      *(undefined4 *)(param_1 + 0x27c) = uVar12;
-      *(undefined4 *)(param_1 + 0x280) = uVar11;
-      *(undefined4 *)(param_1 + 0x284) = uVar3;
-      uVar12 = *(undefined4 *)(param_2 + 0x8c);
-      uVar11 = *(undefined4 *)(param_2 + 0x90);
-      uVar3 = *(undefined4 *)(param_2 + 0x94);
+      *(undefined4 *)(param_1 + 0x27c) = uVar14;
+      *(undefined4 *)(param_1 + 0x280) = uVar13;
+      *(undefined4 *)(param_1 + 0x284) = uVar5;
+      uVar14 = *(undefined4 *)(param_2 + 0x8c);
+      uVar13 = *(undefined4 *)(param_2 + 0x90);
+      uVar5 = *(undefined4 *)(param_2 + 0x94);
       *(undefined4 *)(param_1 + 0x288) = *(undefined4 *)(param_2 + 0x88);
-      *(undefined4 *)(param_1 + 0x28c) = uVar12;
-      *(undefined4 *)(param_1 + 0x290) = uVar11;
-      *(undefined4 *)(param_1 + 0x294) = uVar3;
+      *(undefined4 *)(param_1 + 0x28c) = uVar14;
+      *(undefined4 *)(param_1 + 0x290) = uVar13;
+      *(undefined4 *)(param_1 + 0x294) = uVar5;
       *(undefined8 *)(param_1 + 0x298) = *(undefined8 *)(param_2 + 0x98);
-      if (((*(char *)(lVar2 + 0xf68) != '\0') && ((*(byte *)(param_1 + 0x234) & 8) == 0)) &&
-         ((*(int *)(lVar2 + 0x758) == 1 && (*(int *)(*(longlong *)(lVar2 + 0x7c0) + 0x880) == 2))))
-      {
-        VmsEtwTraceVlanTrunkNotSupported();
+      if (((*(char *)(lVar3 + 0xf68) != '\0') && ((*(byte *)(param_1 + 0x234) & 8) == 0)) &&
+         ((*(int *)(lVar3 + 0x758) == 1 &&
+          (lVar4 = *(longlong *)(lVar3 + 0x7c0), *(int *)(lVar4 + 0x880) == 2)))) {
+        lVar1 = *(longlong *)(lVar4 + 0x4d8) + 0x268;
+        VmsEtwTraceVlanTrunkNotSupported
+                  (lVar1,lVar4 + 0x268,param_3,lVar4 + 0x48,lVar4 + 0x268,
+                   *(longlong *)(lVar4 + 0x4d8) + 0x48,lVar1);
       }
       if (1 < *(uint *)(param_1 + 0x254)) {
-        uVar1 = *(uint *)(param_1 + 0x25c);
-        uVar5 = -(uint)(uVar1 == 0) & 0xffffffa8;
-        iVar6 = uVar5 + 200;
-        if (uVar1 < 2) {
-          iVar6 = uVar5 + 0x94;
+        uVar2 = *(uint *)(param_1 + 0x25c);
+        uVar7 = -(uint)(uVar2 == 0) & 0xffffffa8;
+        iVar8 = uVar7 + 200;
+        if (uVar2 < 2) {
+          iVar8 = uVar7 + 0x94;
         }
-        iVar7 = iVar6 + 0x10;
-        if (uVar1 < 3) {
-          iVar7 = iVar6;
+        iVar9 = iVar8 + 0x10;
+        if (uVar2 < 3) {
+          iVar9 = iVar8;
         }
-        iVar6 = iVar7 + 0x14;
-        if (uVar1 < 4) {
-          iVar6 = iVar7;
+        iVar8 = iVar9 + 0x14;
+        if (uVar2 < 4) {
+          iVar8 = iVar9;
         }
-        *(int *)(param_1 + 0x358) = iVar6 + 8;
+        *(int *)(param_1 + 0x358) = iVar8 + 8;
         if (*(int *)(param_1 + 0x21c) != 0) {
-          iVar6 = VmsVmNicPvtSetReceiveBuffers
+          iVar8 = VmsVmNicPvtSetReceiveBuffers
                             (param_1,*(int *)(param_1 + 0x21c),*(undefined2 *)(param_1 + 0x220),
                              *(undefined4 *)(param_1 + 0x22c));
-          if (iVar6 < 0) {
-            uVar9 = *(undefined4 *)(param_1 + 0x21c);
-            uVar10 = 0xc;
-            uVar8 = *(undefined4 *)(param_1 + 0x22c);
+          if (iVar8 < 0) {
+            uVar11 = *(undefined4 *)(param_1 + 0x21c);
+            uVar12 = 0xc;
+            uVar10 = *(undefined4 *)(param_1 + 0x22c);
             goto LAB_14019a7d3;
           }
         }
         if (*(int *)(param_1 + 0x224) != 0) {
-          iVar6 = VmsVmNicPvtSetSendBuffers
+          iVar8 = VmsVmNicPvtSetSendBuffers
                             (param_1,*(int *)(param_1 + 0x224),*(undefined4 *)(param_1 + 0x240));
-          if (iVar6 < 0) {
-            uVar9 = *(undefined4 *)(param_1 + 0x224);
-            uVar10 = 0xd;
-            uVar8 = *(undefined4 *)(param_1 + 0x240);
+          if (iVar8 < 0) {
+            uVar11 = *(undefined4 *)(param_1 + 0x224);
+            uVar12 = 0xd;
+            uVar10 = *(undefined4 *)(param_1 + 0x240);
             goto LAB_14019a7d3;
           }
         }
         VmsVmNicPvtSetMessageHandlerTables(param_1);
       }
-      VmsMcNicStateRestore(lVar2,param_2 + 0xa0,param_3);
+      VmsMcNicStateRestore(lVar3,param_2 + 0xa0,param_3);
       if (2 < *(int *)(param_1 + 0x244)) {
         VmsVmNicPvtSetRndisMaxPacketsPerMessage(param_1);
       }
@@ -258147,21 +258240,21 @@ int VmsVmNicPvtRestoreVmNicBase
         WPP_RECORDER_SF_(*(undefined8 *)(WPP_GLOBAL_Control + 0x40),0,10,0x7d,
                          &WPP_1858641e68ab36940b23744f8d07576f_Traceguids);
       }
-      iVar6 = -0x3fffffea;
+      iVar8 = -0x3fffffea;
     }
     else {
-      uVar11 = 1;
+      uVar13 = 1;
       WPP_RECORDER_SF_s(VmsIfrNicLog,param_2,0x13,0x7a,
                         &WPP_1858641e68ab36940b23744f8d07576f_Traceguids,
                         "!\"Invalid protocol version.\"");
       MicrosoftTelemetryAssertTriggeredNoArgsKM();
-      uVar9 = *(undefined4 *)(param_2 + 0x54);
-      uVar10 = 0xb;
-      iVar6 = -0x3ffffff3;
+      uVar11 = *(undefined4 *)(param_2 + 0x54);
+      uVar12 = 0xb;
+      iVar8 = -0x3ffffff3;
       WPP_RECORDER_SF_lld(VmsIfrNicLog,0xc000000d,0x14,0x7b,
                           &WPP_1858641e68ab36940b23744f8d07576f_Traceguids,
-                          CONCAT44(uVar11,(uint)*(ushort *)(param_2 + 0x56)),
-                          CONCAT44(uVar12,uVar9) & 0xffffffff0000ffff,0xc000000d);
+                          CONCAT44(uVar13,(uint)*(ushort *)(param_2 + 0x56)),
+                          CONCAT44(uVar14,uVar11) & 0xffffffff0000ffff,0xc000000d);
       if ((2 < (byte)(WPP_GLOBAL_Control[0x29] - 1)) || (*(short *)(WPP_GLOBAL_Control + 0x48) != 0)
          ) {
         WPP_RECORDER_SF_ld(*(undefined8 *)(WPP_GLOBAL_Control + 0x40),0,10,0x7c,
@@ -258171,16 +258264,16 @@ int VmsVmNicPvtRestoreVmNicBase
     }
   }
   else {
-    uVar11 = 1;
+    uVar13 = 1;
     WPP_RECORDER_SF_s(VmsIfrNicLog,param_2,0x13,0x77,
                       &WPP_1858641e68ab36940b23744f8d07576f_Traceguids,"!\"Invalid VscState.\"");
     MicrosoftTelemetryAssertTriggeredNoArgsKM();
-    uVar9 = *(undefined4 *)(param_2 + 0x44);
-    iVar6 = -0x3ffffff3;
-    uVar10 = 10;
+    uVar11 = *(undefined4 *)(param_2 + 0x44);
+    iVar8 = -0x3ffffff3;
+    uVar12 = 10;
     WPP_RECORDER_SF_ld(VmsIfrNicLog,0xc0000002,0x14,0x78,
-                       &WPP_1858641e68ab36940b23744f8d07576f_Traceguids,CONCAT44(uVar11,uVar9),
-                       CONCAT44(uVar12,0xc000000d));
+                       &WPP_1858641e68ab36940b23744f8d07576f_Traceguids,CONCAT44(uVar13,uVar11),
+                       CONCAT44(uVar14,0xc000000d));
     if ((2 < (byte)(WPP_GLOBAL_Control[0x29] - 1)) || (*(short *)(WPP_GLOBAL_Control + 0x48) != 0))
     {
       WPP_RECORDER_SF_L(*(undefined8 *)(WPP_GLOBAL_Control + 0x40),0,10,0x79,
@@ -258189,10 +258282,10 @@ int VmsVmNicPvtRestoreVmNicBase
     }
   }
 LAB_14019a7d3:
-  *param_4 = uVar10;
-  *param_5 = uVar9;
-  *param_6 = uVar8;
-  return iVar6;
+  *param_4 = uVar12;
+  *param_5 = uVar11;
+  *param_6 = uVar10;
+  return iVar8;
 }
 
 
