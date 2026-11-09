@@ -23723,7 +23723,9 @@ int DecodeAcpiIdleState(longlong param_1,char *param_2,uint param_3,undefined8 p
       local_res18 = 3;
     }
   }
-  if ((DAT_140014748 == (code *)0x0) || (iVar1 = (*DAT_140014748)(param_1), iVar1 < 0)) {
+  if ((DAT_140014748 == (code *)0x0) ||
+     (iVar1 = (*DAT_140014748)(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8),
+     iVar1 < 0)) {
     pcVar3 = "LPI";
     uVar6 = 1;
     if (param_3 != 0xffffffff) {
