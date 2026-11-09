@@ -54784,8 +54784,8 @@ LAB_18003c283:
       uStack_10 = (undefined4)param_2[1];
       uStack_c = *(undefined4 *)((longlong)param_2 + 0xc);
       local_28 = (ulonglong)uVar11;
-      uVar4 = uStack_20._4_4_;
-      uVar5 = (undefined4)uStack_20;
+      uVar4 = (undefined4)uStack_20;
+      uVar5 = uStack_20._4_4_;
       uStack_20 = puVar3;
       RtlpSelectFunctionFromBinaryDecisionDiagram(&local_28,&local_18,param_5,param_4,1,param_6);
       local_28 = CONCAT44(uVar12,uVar11);
@@ -64200,7 +64200,7 @@ LAB_180045e96:
     *(uint *)((longlong)puVar5 + 0x2c) = uVar1;
     *(undefined1 *)(puVar5 + 6) = uVar13;
     *(undefined1 *)((longlong)puVar5 + 0x31) = uVar12;
-    cVar4 = (**(code **)*puVar5)(0);
+    cVar4 = (**(code **)*puVar5)(0,puVar8,param_3,param_4,uVar7);
     if (cVar4 == '\0') {
       uVar10 = 0xc0000001;
     }
@@ -145098,6 +145098,7 @@ long __cdecl CimFSRead(_FILE_ENTRY *param_1,void *param_2,ulong param_3,ulong *p
   uint local_res8;
   uint local_res18 [2];
   ulong *local_res20;
+  undefined4 *puVar16;
   Stream *local_108;
   __uint64 local_100;
   ulonglong local_f8;
@@ -145172,19 +145173,18 @@ long __cdecl CimFSRead(_FILE_ENTRY *param_1,void *param_2,ulong param_3,ulong *p
         }
         else {
           if ((*(byte *)(lVar1 + 0x9f) & 1) == 0) {
+            puVar16 = local_d8;
             uVar12 = 0;
             pSVar8 = local_108;
             _Var13 = local_100;
-            bVar5 = Cim::ImageReader::GetOffset
-                              ((ImageReader *)(lVar2 + 0x28),local_108,0,local_100,&uStack_f0,
-                               local_d8);
+            bVar5 = Cim::ImageReader::GetOffset((ImageReader *)(lVar2 + 0x28));
             if (!bVar5) {
               pcVar14 = "Cim::FileSystem::GetDataSegment";
               uVar12 = 0xa900090cf7;
               pSVar9 = (StackEventTracer *)local_d8;
               CimFs::ProcessTraceStatusPushLocation
                         (-0x3fff3fff,pSVar9,0xa900090cf7,"Cim::FileSystem::GetDataSegment",
-                         "PUSH: GetOffset failed");
+                         "PUSH: GetOffset failed",puVar16);
               if (local_58 != 0) {
                 BlMmFreeHeap(local_58,pSVar9,uVar12,pcVar14);
               }
@@ -161415,7 +161415,7 @@ LAB_1800a7913:
         pwVar11 = (wchar_t *)(ulonglong)param_3;
         ppuVar16 = (ulonglong **)local_158;
         ppuVar14 = (ulonglong **)local_res8;
-        uVar13 = (*DAT_1801d8d38)(param_2);
+        uVar13 = (*DAT_1801d8d38)(param_2,pwVar11,ppuVar14,ppuVar16,local_168,&local_160);
         if ((int)uVar13 < 0) goto LAB_1800a7c36;
         if ((char)local_res8[0] == '\0') {
           local_138[0] = local_138[0] & 0xffffffefffffffff;
