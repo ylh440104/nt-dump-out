@@ -5386,13 +5386,13 @@ void __tailMerge_ext_ms_win_ntuser_gui_l1_3_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R8;
   undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_140016060,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140005c8d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,param_4);
   return;
 }
 
@@ -5442,14 +5442,11 @@ void __tailMerge_ext_ms_win_ntuser_keyboard_l1_1_0_dll
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
   undefined8 in_R8;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_140016080,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140005d6d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_R8,param_4);
   return;
 }
 
@@ -5487,13 +5484,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_sysparams_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R8;
   undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400160a0,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140005e0a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,param_4);
   return;
 }
 
@@ -5543,15 +5540,12 @@ void __tailMerge_ext_ms_win_wer_reporting_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R8;
   undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400160c0,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140005eb9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,param_3,param_4);
   return;
 }
 
@@ -5672,13 +5666,13 @@ void __tailMerge_ext_ms_win_composition_ghost_l1_1_0_dll
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
   undefined8 in_R8;
-  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM1_Qa;
   undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400160e0,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140006035. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,in_R8,in_XMM3_Qa);
   return;
 }
 
@@ -5763,14 +5757,13 @@ void __tailMerge_ext_ms_win_imm_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R8;
-  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM1_Qa;
   undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_140016100,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014000614d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -16603,8 +16596,7 @@ BlackScreenDiagnostics::CBlackScreenDiagnosticReport::DoDisplayModeReset
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 void BlackScreenDiagnostics::GetCurrentProcessVersionInfo
-               (_String_val<std::_Simple_types<unsigned_short>_> *param_1,undefined8 param_2,
-               undefined8 param_3)
+               (_String_val<std::_Simple_types<unsigned_short>_> *param_1)
 
 {
   bool bVar1;
@@ -16617,6 +16609,7 @@ void BlackScreenDiagnostics::GetCurrentProcessVersionInfo
   undefined8 uVar7;
   ulonglong uVar8;
   _String_val<std::_Simple_types<unsigned_short>_> *p_Var9;
+  undefined8 in_R8;
   undefined1 auStack_2e8 [32];
   uint local_2c8;
   uint local_2c0;
@@ -16637,7 +16630,9 @@ void BlackScreenDiagnostics::GetCurrentProcessVersionInfo
   if (*(ulonglong *)(param_1 + 0x18) < 7) {
     std::
     basic_string<unsigned_short,std::char_traits<unsigned_short>,std::allocator<unsigned_short>_>::
-    _Reallocate_for<<lambda_05cef1f6fdf474c9f3ed207deba0f73b>,unsigned_short_const*___ptr64>();
+    _Reallocate_for<<lambda_05cef1f6fdf474c9f3ed207deba0f73b>,unsigned_short_const*___ptr64>
+              ((basic_string<unsigned_short,std::char_traits<unsigned_short>,std::allocator<unsigned_short>_>
+                *)param_1,7,in_R8,L"Unknown");
   }
   else {
     p_Var4 = param_1;
@@ -17194,7 +17189,6 @@ LAB_14000fb82:
   CWatsonErrorReporting::SetReportParameter
             ((CWatsonErrorReporting *)&local_a8,1,(ushort *)L"Unknown");
   CWatsonErrorReporting::SetReportParameter((CWatsonErrorReporting *)&local_a8,2,(ushort *)pwVar12);
-  uVar7 = 3;
   CWatsonErrorReporting::SetReportParameter((CWatsonErrorReporting *)&local_a8,3,(ushort *)pwVar15);
   local_c8.Data4[0] = '\0';
   local_c8.Data4[1] = '\0';
@@ -17207,8 +17201,7 @@ LAB_14000fb82:
   local_c8._0_8_ = (_GUID *)0x0;
   local_b8 = 0;
   uStack_b0 = 7;
-  GetCurrentProcessVersionInfo
-            ((_String_val<std::_Simple_types<unsigned_short>_> *)&local_c8,uVar7,pwVar15);
+  GetCurrentProcessVersionInfo((_String_val<std::_Simple_types<unsigned_short>_> *)&local_c8);
   p_Var13 = &local_c8;
   bVar2 = std::_String_val<std::_Simple_types<unsigned_short>_>::_Large_mode_engaged
                     ((_String_val<std::_Simple_types<unsigned_short>_> *)&local_c8);
