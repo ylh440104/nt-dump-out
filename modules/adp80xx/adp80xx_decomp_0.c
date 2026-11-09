@@ -22777,16 +22777,16 @@ LAB_1c00228f8:
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
-void dmReportPhySataRcvd(undefined4 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
+void dmReportPhySataRcvd(undefined8 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
                         longlong param_5,longlong param_6)
 
 {
   longlong lVar1;
   char cVar2;
   int iVar3;
-  undefined8 in_RCX;
   longlong lVar4;
   longlong lVar5;
+  undefined4 in_XMM0_Da;
   undefined1 auStack_78 [32];
   undefined4 local_58;
   undefined4 local_38;
@@ -22809,17 +22809,17 @@ void dmReportPhySataRcvd(undefined4 param_1,undefined8 param_2,undefined8 param_
     uStack_34 = *(undefined4 *)(param_6 + 0x18);
     uStack_30 = *(undefined4 *)(param_6 + 0x1c);
     uStack_2c = *(undefined4 *)(param_6 + 0x20);
-    param_1 = *(undefined4 *)(param_6 + 0x24);
+    in_XMM0_Da = *(undefined4 *)(param_6 + 0x24);
     uStack_24 = *(undefined4 *)(param_6 + 0x28);
     uStack_20 = *(undefined4 *)(param_6 + 0x2c);
     uStack_1c = *(undefined4 *)(param_6 + 0x30);
-    local_28 = param_1;
+    local_28 = in_XMM0_Da;
   }
   lVar1 = *(longlong *)(param_4 + 0x48);
-  iVar3 = dmDiscoverCheck(param_1,lVar1);
+  iVar3 = dmDiscoverCheck(in_XMM0_Da,lVar1);
   if (iVar3 != 1) {
     if (lVar4 == 0) {
-      dmDiscoverAbort(in_RCX);
+      dmDiscoverAbort(param_1);
     }
     else if (*(char *)(param_5 + 2) != '\x16') {
       if (*(char *)(param_5 + 2) == '\0') {
@@ -22842,10 +22842,10 @@ void dmReportPhySataRcvd(undefined4 param_1,undefined8 param_2,undefined8 param_
         if (lVar5 != 0) {
           lVar5 = lVar5 + 100;
         }
-        tddmReportDevice(in_RCX,*(undefined8 *)(lVar1 + 0x40),lVar4 + 100,lVar5);
+        tddmReportDevice(param_1,*(undefined8 *)(lVar1 + 0x40),lVar4 + 100,lVar5);
       }
       else {
-        dmDiscoverDone(in_RCX);
+        dmDiscoverDone(param_1);
       }
     }
   }
@@ -22859,16 +22859,16 @@ void dmReportPhySataRcvd(undefined4 param_1,undefined8 param_2,undefined8 param_
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 void dmReportPhySata2Rcvd
-               (undefined4 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
                longlong param_5,longlong param_6)
 
 {
   longlong lVar1;
   char cVar2;
   int iVar3;
-  undefined8 in_RCX;
   longlong lVar4;
   longlong lVar5;
+  undefined4 in_XMM0_Da;
   undefined1 auStack_88 [32];
   undefined4 local_68;
   undefined4 local_48;
@@ -22891,17 +22891,17 @@ void dmReportPhySata2Rcvd
     uStack_44 = *(undefined4 *)(param_6 + 0x18);
     uStack_40 = *(undefined4 *)(param_6 + 0x1c);
     uStack_3c = *(undefined4 *)(param_6 + 0x20);
-    param_1 = *(undefined4 *)(param_6 + 0x24);
+    in_XMM0_Da = *(undefined4 *)(param_6 + 0x24);
     uStack_34 = *(undefined4 *)(param_6 + 0x28);
     uStack_30 = *(undefined4 *)(param_6 + 0x2c);
     uStack_2c = *(undefined4 *)(param_6 + 0x30);
-    local_38 = param_1;
+    local_38 = in_XMM0_Da;
   }
   lVar1 = *(longlong *)(param_4 + 0x48);
-  iVar3 = dmDiscoverCheck(param_1,lVar1);
+  iVar3 = dmDiscoverCheck(in_XMM0_Da,lVar1);
   if (iVar3 != 1) {
     if (lVar4 == 0) {
-      dmDiscoverAbort(in_RCX);
+      dmDiscoverAbort(param_1);
     }
     else if (*(char *)(param_5 + 2) != '\x16') {
       if (*(char *)(param_5 + 2) == '\0') {
@@ -22924,10 +22924,10 @@ void dmReportPhySata2Rcvd
         if (lVar5 != 0) {
           lVar5 = lVar5 + 100;
         }
-        tddmReportDevice(in_RCX,*(undefined8 *)(lVar1 + 0x40),lVar4 + 100,lVar5);
+        tddmReportDevice(param_1,*(undefined8 *)(lVar1 + 0x40),lVar4 + 100,lVar5);
       }
       else {
-        dmDiscoverDone(in_RCX);
+        dmDiscoverDone(param_1);
       }
     }
   }
@@ -130182,14 +130182,14 @@ void tdsaSASDiscoverDone(undefined8 param_1,longlong param_2,int param_3)
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 void tdsaReportGeneralRespRcvd
-               (undefined4 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
                longlong param_5,longlong param_6)
 
 {
   longlong lVar1;
   longlong lVar2;
   short sVar3;
-  undefined8 in_RCX;
+  undefined4 in_XMM0_Da;
   undefined1 auStack_48 [32];
   undefined8 local_28;
   undefined4 uStack_20;
@@ -130199,14 +130199,14 @@ void tdsaReportGeneralRespRcvd
   local_10 = __security_cookie ^ (ulonglong)auStack_48;
   local_28 = 0;
   if (param_6 != 0) {
-    param_1 = *(undefined4 *)(param_6 + 4);
+    in_XMM0_Da = *(undefined4 *)(param_6 + 4);
     local_28 = *(ulonglong *)(param_6 + 4);
     uStack_20 = *(undefined4 *)(param_6 + 0xc);
     uStack_1c = *(undefined4 *)(param_6 + 0x10);
   }
   lVar1 = *(longlong *)(param_4 + 0x1100);
   if (*(int *)(lVar1 + 0x2c8) == 0) {
-    tdsaSASDiscoverAbort(param_1,lVar1);
+    tdsaSASDiscoverAbort(in_XMM0_Da,lVar1);
     return;
   }
   if (*(char *)(param_5 + 2) == '\0') {
@@ -130217,17 +130217,17 @@ void tdsaReportGeneralRespRcvd
     *(uint *)(lVar2 + 0x60) = local_28._6_1_ & 3;
     if ((local_28 & 0x2000000000000) == 0) {
       *(undefined4 *)(lVar1 + 0xf0) = 0;
-      tdsaDiscoverSend(in_RCX,param_4);
+      tdsaDiscoverSend(param_1,param_4);
       return;
     }
     *(int *)(lVar1 + 0xf0) = *(int *)(lVar1 + 0xf0) + 1;
     if (*(uint *)(lVar1 + 0xf0) < 3) {
-      tdsaDiscoveryTimer(in_RCX,lVar1,param_4);
+      tdsaDiscoveryTimer(param_1,lVar1,param_4);
       return;
     }
     *(undefined4 *)(lVar1 + 0xf0) = 0;
   }
-  tdsaSASDiscoverDone(in_RCX,lVar1,1);
+  tdsaSASDiscoverDone(param_1,lVar1,1);
   return;
 }
 
@@ -131175,15 +131175,15 @@ void tdsaConfigRoutingInfoRespRcvd
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 void tdsaReportPhySataRcvd
-               (undefined4 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,longlong param_4,
                longlong param_5,longlong param_6)
 
 {
   char cVar1;
   longlong lVar2;
   undefined8 uVar3;
-  undefined8 in_RCX;
   longlong lVar4;
+  undefined4 in_XMM0_Da;
   undefined1 auStack_68 [48];
   undefined4 local_38;
   undefined4 uStack_34;
@@ -131202,15 +131202,15 @@ void tdsaReportPhySataRcvd
     uStack_34 = *(undefined4 *)(param_6 + 0x18);
     uStack_30 = *(undefined4 *)(param_6 + 0x1c);
     uStack_2c = *(undefined4 *)(param_6 + 0x20);
-    param_1 = *(undefined4 *)(param_6 + 0x24);
+    in_XMM0_Da = *(undefined4 *)(param_6 + 0x24);
     uStack_24 = *(undefined4 *)(param_6 + 0x28);
     uStack_20 = *(undefined4 *)(param_6 + 0x2c);
     uStack_1c = *(undefined4 *)(param_6 + 0x30);
-    local_28 = param_1;
+    local_28 = in_XMM0_Da;
   }
   lVar4 = *(longlong *)(param_4 + 0x1100);
   if ((*(int *)(lVar4 + 0x2c8) == 0) || (lVar2 == 0)) {
-    tdsaSASDiscoverAbort(param_1,lVar4);
+    tdsaSASDiscoverAbort(in_XMM0_Da,lVar4);
   }
   else {
     cVar1 = *(char *)(param_5 + 2);
@@ -131225,10 +131225,10 @@ void tdsaReportPhySataRcvd
         *(undefined1 *)(lVar2 + 0x10c7) = 0;
       }
       uVar3 = tdsaFindRightDevice(cVar1,lVar4);
-      tdsaDiscoveringStpSATADevice(in_RCX,lVar4,uVar3);
+      tdsaDiscoveringStpSATADevice(param_1,lVar4,uVar3);
     }
     else {
-      tdsaSASDiscoverDone(in_RCX,lVar4,1);
+      tdsaSASDiscoverDone(param_1,lVar4,1);
     }
   }
   return;
