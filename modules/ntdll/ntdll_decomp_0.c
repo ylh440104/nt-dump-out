@@ -3301,28 +3301,27 @@ int LdrpMinimalMapModule(longlong param_1,undefined8 param_2)
 {
   uint uVar1;
   longlong lVar2;
-  longlong lVar3;
-  bool bVar4;
-  char cVar5;
-  int iVar6;
-  ulonglong uVar7;
-  longlong lVar8;
-  uint uVar9;
-  undefined4 uVar10;
-  uint uVar11;
-  bool bVar12;
+  bool bVar3;
+  char cVar4;
+  int iVar5;
+  ulonglong uVar6;
+  longlong lVar7;
+  uint uVar8;
+  undefined4 uVar9;
+  uint uVar10;
+  bool bVar11;
   undefined8 local_res8;
   undefined8 local_res10;
   undefined8 local_res18;
   void *local_res20;
-  undefined4 uVar14;
-  undefined8 *puVar13;
+  longlong lVar12;
+  undefined4 uVar15;
+  undefined8 uVar13;
+  undefined8 *puVar14;
   undefined8 in_stack_ffffffffffffff48;
   undefined4 uVar16;
-  longlong lVar15;
   undefined8 in_stack_ffffffffffffff50;
-  undefined4 uVar18;
-  ulonglong *puVar17;
+  undefined4 uVar17;
   longlong local_98 [2];
   undefined8 local_88;
   undefined8 uStack_80;
@@ -3330,40 +3329,40 @@ int LdrpMinimalMapModule(longlong param_1,undefined8 param_2)
   ulonglong local_70;
   undefined8 *apuStack_68 [5];
   
-  uVar18 = (undefined4)((ulonglong)in_stack_ffffffffffffff50 >> 0x20);
+  uVar17 = (undefined4)((ulonglong)in_stack_ffffffffffffff50 >> 0x20);
   uVar16 = (undefined4)((ulonglong)in_stack_ffffffffffffff48 >> 0x20);
   lVar2 = *(longlong *)(param_1 + 0x38);
-  lVar8 = lVar2 + 0x48;
+  lVar12 = lVar2 + 0x48;
   local_res10 = param_2;
-  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x2cf,"LdrpMinimalMapModule",3,"DLL name: %wZ\n",lVar8)
-  ;
-  uVar10 = 1;
-  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x2d0,"LdrpMinimalMapModule",5,"%wZ\n",lVar8);
-  uVar14 = (undefined4)((ulonglong)lVar8 >> 0x20);
-  cVar5 = RtlEqualUnicodeString(lVar2 + 0x58,&LdrpKernel32DllName,1);
-  if ((cVar5 == '\0') || ((*(byte *)(LdrpAppHeaders + 0x16) & 0x20) == 0)) {
-    bVar4 = false;
+  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x2cf,"LdrpMinimalMapModule",3,"DLL name: %wZ\n",lVar12
+                 );
+  uVar9 = 1;
+  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x2d0,"LdrpMinimalMapModule",5,"%wZ\n",lVar12);
+  uVar15 = (undefined4)((ulonglong)lVar12 >> 0x20);
+  cVar4 = RtlEqualUnicodeString(lVar2 + 0x58,&LdrpKernel32DllName,1);
+  if ((cVar4 == '\0') || ((*(byte *)(LdrpAppHeaders + 0x16) & 0x20) == 0)) {
+    bVar3 = false;
     local_res18 = 0;
-    uVar9 = 0x800000;
+    uVar8 = 0x800000;
     if (LdrpLargePageDllKeyHandle != 0) {
-      uVar14 = 0;
+      uVar15 = 0;
       local_res8 = (void **)((ulonglong)local_res8._4_4_ << 0x20);
       LdrQueryImageFileKeyOption
                 (LdrpLargePageDllKeyHandle,*(undefined8 *)(lVar2 + 0x60),4,&local_res8,
-                 CONCAT44(uVar10,4),0);
+                 CONCAT44(uVar9,4),0);
       if ((int)local_res8 != 0) {
-        iVar6 = RtlAcquirePrivilege(&LdrpLockMemoryPrivilege,1,0,&local_res18);
-        uVar9 = 0x800000;
-        if (-1 < iVar6) {
-          uVar9 = 0x20000000;
+        iVar5 = RtlAcquirePrivilege(&LdrpLockMemoryPrivilege,1,0,&local_res18);
+        uVar8 = 0x800000;
+        if (-1 < iVar5) {
+          uVar8 = 0x20000000;
         }
       }
     }
   }
   else {
-    bVar4 = true;
+    bVar3 = true;
     local_res18 = 0;
-    uVar9 = 0x800000;
+    uVar8 = 0x800000;
   }
   *(undefined8 *)(param_1 + 0xa8) = 0;
   local_res8 = &ExceptionList;
@@ -3371,110 +3370,107 @@ int LdrpMinimalMapModule(longlong param_1,undefined8 param_2)
   ArbitraryUserPointer = *(void **)(lVar2 + 0x50);
   uVar1 = *(uint *)(param_1 + 0x20);
   apuStack_68[0] = (undefined8 *)0x0;
-  uVar10 = 2;
+  uVar9 = 2;
   if ((uVar1 >> 0x17 & 1) == 0) {
-    uVar10 = 0x80;
+    uVar9 = 0x80;
   }
   apuStack_68[1] = (undefined8 *)0x0;
   apuStack_68[2] = (undefined8 *)0x0;
-  uVar11 = uVar9 | 0x40000;
+  uVar10 = uVar8 | 0x40000;
   if ((uVar1 >> 0x17 & 1) == 0) {
-    uVar11 = uVar9;
+    uVar10 = uVar8;
   }
   local_78 = 0;
   local_88 = 0;
   uStack_80 = 0;
-  bVar12 = (uVar1 >> 0xb & 1) != 0;
-  if (bVar12) {
+  bVar11 = (uVar1 >> 0xb & 1) != 0;
+  if (bVar11) {
     uStack_80 = LdrpMaximumUserModeAddress;
     apuStack_68[0] = &local_88;
   }
-  local_70 = (ulonglong)bVar12;
-  uVar9 = (uint)bVar12;
-  iVar6 = Feature_Servicing_VBSEnclavesForARM64EC__private_IsEnabledDeviceUsageNoInline();
-  if ((iVar6 != 0) && ((*(uint *)(param_1 + 0x20) & 0x800000) != 0)) {
-    uVar7 = (ulonglong)uVar9;
-    uVar9 = uVar9 + 1;
-    *(undefined1 *)(apuStack_68 + uVar7 * 2 + -1) = 5;
-    apuStack_68[uVar7 * 2] = (undefined8 *)0x200;
+  local_70 = (ulonglong)bVar11;
+  uVar8 = (uint)bVar11;
+  iVar5 = Feature_Servicing_VBSEnclavesForARM64EC__private_IsEnabledDeviceUsageNoInline();
+  if ((iVar5 != 0) && ((*(uint *)(param_1 + 0x20) & 0x800000) != 0)) {
+    uVar6 = (ulonglong)uVar8;
+    uVar8 = uVar8 + 1;
+    *(undefined1 *)(apuStack_68 + uVar6 * 2 + -1) = 5;
+    apuStack_68[uVar6 * 2] = (undefined8 *)0x200;
   }
-  if (uVar9 == 0) {
-    lVar15 = param_1 + 0xa8;
-    puVar17 = (ulonglong *)CONCAT44(uVar18,1);
-    puVar13 = (undefined8 *)0x0;
-    lVar8 = 0;
-    uVar9 = uVar11;
-    iVar6 = NtMapViewOfSection(local_res10,0xffffffffffffffff,lVar2 + 0x30,0,0,0,lVar15,puVar17,
-                               uVar11,uVar10);
+  if (uVar8 == 0) {
+    uVar16 = 0;
+    uVar15 = 0;
+    iVar5 = NtMapViewOfSection(local_res10,0xffffffffffffffff,lVar2 + 0x30,0,0,0,param_1 + 0xa8,
+                               CONCAT44(uVar17,1),uVar10,uVar9);
   }
   else {
-    puVar17 = &local_70;
-    lVar8 = param_1 + 0xa8;
-    lVar15 = CONCAT44(uVar16,uVar10);
-    puVar13 = (undefined8 *)CONCAT44(uVar14,uVar11);
-    iVar6 = NtMapViewOfSectionEx();
+    lVar12 = param_1 + 0xa8;
+    uVar13 = CONCAT44(uVar15,uVar10);
+    iVar5 = NtMapViewOfSectionEx
+                      (local_res10,0xffffffffffffffff,lVar2 + 0x30,0,lVar12,uVar13,
+                       CONCAT44(uVar16,uVar9),&local_70,uVar8);
+    uVar16 = (undefined4)((ulonglong)uVar13 >> 0x20);
+    uVar15 = (undefined4)((ulonglong)lVar12 >> 0x20);
   }
   local_res8[5] = local_res20;
-  if (uVar11 == 0x20000000) {
+  if (uVar10 == 0x20000000) {
     RtlReleasePrivilege(local_res18);
   }
-  if (iVar6 != 0x40000003) {
-    if (iVar6 == 0x4000000e) {
-      lVar3 = *(longlong *)(param_1 + 0x38);
+  if (iVar5 != 0x40000003) {
+    if (iVar5 == 0x4000000e) {
+      lVar12 = *(longlong *)(param_1 + 0x38);
       local_res8 = (void **)((ulonglong)local_res8 & 0xffffffff00000000);
-      lVar8 = RtlImageDirectoryEntryToData
-                        (*(undefined8 *)(lVar3 + 0x30),1,0xe,&local_res18,lVar8,puVar13,lVar15,
-                         puVar17,uVar9);
-      if ((lVar8 == 0) || ((*(byte *)(lVar8 + 0x10) & 1) == 0)) {
+      lVar7 = RtlImageDirectoryEntryToData(*(undefined8 *)(lVar12 + 0x30),1,0xe,&local_res18);
+      if ((lVar7 == 0) || ((*(byte *)(lVar7 + 0x10) & 1) == 0)) {
         if (*(ushort *)(LdrpAppHeaders + 0x48) < 4) {
-          local_98[0] = lVar3 + 0x48;
-          puVar13 = &local_res8;
-          iVar6 = NtRaiseHardError(0x4000000e,1,1,local_98,2,puVar13);
-          if (-1 < iVar6) {
+          local_98[0] = lVar12 + 0x48;
+          puVar14 = &local_res8;
+          iVar5 = NtRaiseHardError(0x4000000e,1,1,local_98,CONCAT44(uVar15,2),puVar14);
+          uVar16 = (undefined4)((ulonglong)puVar14 >> 0x20);
+          if (-1 < iVar5) {
             if ((int)local_res8 == 3) {
               if (LdrInitState != 3) {
                 LdrpFatalHardErrorCount = LdrpFatalHardErrorCount + 1;
               }
-              iVar6 = -0x3fffff85;
+              iVar5 = -0x3fffff85;
             }
             else {
-              *(uint *)(lVar3 + 0x68) = *(uint *)(lVar3 + 0x68) & 0xfffffffb;
+              *(uint *)(lVar12 + 0x68) = *(uint *)(lVar12 + 0x68) & 0xfffffffb;
             }
           }
         }
         else {
-          iVar6 = 0x4000000e;
+          iVar5 = 0x4000000e;
         }
       }
       else {
         *(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x20) | 0x200000;
-        iVar6 = 0;
+        iVar5 = 0;
       }
       goto LAB_180005a2d;
     }
-    if (iVar6 != 0x40000036) goto LAB_180005a2d;
+    if (iVar5 != 0x40000036) goto LAB_180005a2d;
   }
   if ((*(longlong *)(param_1 + 0xb0) == 0) && (LdrpMapAndSnapWork != 0)) {
-    cVar5 = LdrpCheckForRetryLoading(param_1,1);
-    if (cVar5 == '\0') {
-      if (bVar4) {
-        iVar6 = -0x3fffffe8;
+    cVar4 = LdrpCheckForRetryLoading(param_1,1);
+    if (cVar4 == '\0') {
+      if (bVar3) {
+        iVar5 = -0x3fffffe8;
       }
     }
     else {
-      iVar6 = -0x3ffffdd3;
+      iVar5 = -0x3ffffdd3;
     }
   }
 LAB_180005a2d:
-  uVar10 = (undefined4)((ulonglong)puVar13 >> 0x20);
-  if ((*(longlong *)(lVar2 + 0x30) != 0) && ((iVar6 < 0 || (iVar6 == 0x4000000e)))) {
+  if ((*(longlong *)(lVar2 + 0x30) != 0) && ((iVar5 < 0 || (iVar5 == 0x4000000e)))) {
     NtUnmapViewOfSection(0xffffffffffffffff);
     *(undefined8 *)(lVar2 + 0x30) = 0;
   }
   LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x3b5,"LdrpMinimalMapModule",4,"Status: 0x%08lx\n",
-                  CONCAT44(uVar10,iVar6));
-  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x3b6,"LdrpMinimalMapModule",6,"%x\n",iVar6);
-  return iVar6;
+                  CONCAT44(uVar16,iVar5));
+  LdrpLogInternal("minkernel\\ldr\\ldrmap.c",0x3b6,"LdrpMinimalMapModule",6,"%x\n",iVar5);
+  return iVar5;
 }
 
 
@@ -36653,7 +36649,7 @@ LAB_1800325cf:
       local_1a0 = (uint *)CONCAT71(local_1a0._1_7_,local_177);
       local_1a8 = (uint *)CONCAT44(local_1a8._4_4_,uVar6);
       local_b8 = uVar17;
-      lVar8 = LdrpSectionTableFromVirtualAddress();
+      lVar8 = LdrpSectionTableFromVirtualAddress(puVar16,local_128,local_c8,local_e0);
       if (lVar8 != 0) {
         if (cVar3 != '\0') {
           uVar7 = LdrpResReadFile(local_108,local_168,local_58,0x10);
@@ -156993,11 +156989,11 @@ void RtlpSubSegmentInitialize
 {
   undefined8 *_Dst;
   int *piVar1;
-  byte bVar2;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  uint uVar5;
-  undefined8 uVar6;
+  uint uVar4;
+  undefined8 uVar5;
+  byte bVar6;
   ushort uVar7;
   int iVar8;
   ulonglong uVar9;
@@ -157012,7 +157008,7 @@ void RtlpSubSegmentInitialize
   ulonglong uVar18;
   bool bVar19;
   
-  iVar3 = *(int *)(param_2 + 4);
+  iVar2 = *(int *)(param_2 + 4);
   if (*(byte *)((longlong)param_2 + 0x2b) == 0) {
     plVar16 = *(longlong **)(param_1 + 0x4a8 + (ulonglong)*(byte *)(param_6 + 2) * 8);
   }
@@ -157021,23 +157017,25 @@ void RtlpSubSegmentInitialize
               ((ulonglong)*(byte *)((longlong)param_2 + 0x2b) * 0xc0 +
               *(longlong *)(param_1 + 0x8b0 + (ulonglong)*(byte *)(param_6 + 2) * 8) + -0xc0);
   }
-  if (((*(byte *)(param_6 + 3) >> 1 & 3) != 0) &&
-     (iVar8 = RtlpSubSegmentDebugInitialize(), iVar8 != 0)) {
+  bVar6 = *(byte *)(param_6 + 3) >> 1 & 3;
+  if ((bVar6 != 0) &&
+     (iVar8 = RtlpSubSegmentDebugInitialize(param_1,param_2,param_3,bVar6,param_4,param_5,param_6),
+     iVar8 != 0)) {
     return;
   }
-  uVar6 = _RtlpLFHKey;
+  uVar5 = _RtlpLFHKey;
   uVar15 = param_4 + 0x10;
   *param_3 = param_2;
   uVar18 = (((param_5 - 0x40U) / uVar15 & 0xffffffff) + 0x1f >> 3) + 0x40;
   uVar14 = 0;
   uVar13 = (uVar18 & 0xfffffffffffffff0) + (longlong)param_3;
   uVar9 = param_4 + 0x18 + uVar13;
-  while (uVar5 = (uint)uVar14, uVar9 <= (ulonglong)((longlong)param_3 + param_5)) {
+  while (uVar4 = (uint)uVar14, uVar9 <= (ulonglong)((longlong)param_3 + param_5)) {
     *(uint *)(uVar13 + 8) =
-         ((int)uVar13 - (uint)param_3) * 0x1000 ^ (uint)(uVar13 >> 4) ^ (uint)uVar6 ^
+         ((int)uVar13 - (uint)param_3) * 0x1000 ^ (uint)(uVar13 >> 4) ^ (uint)uVar5 ^
          *(uint *)(param_1 + 0x18);
-    uVar14 = (ulonglong)(uVar5 + 1);
-    *(uint *)(uVar13 + 0xc) = (uVar5 & 0xffff) << 8 | *(uint *)(uVar13 + 0xc) & 0xff0000ff;
+    uVar14 = (ulonglong)(uVar4 + 1);
+    *(uint *)(uVar13 + 0xc) = (uVar4 & 0xffff) << 8 | *(uint *)(uVar13 + 0xc) & 0xff0000ff;
     *(undefined1 *)(uVar13 + 0xf) = 0x80;
     uVar13 = uVar13 + uVar15;
     uVar9 = param_4 + 0x18 + uVar13;
@@ -157062,7 +157060,7 @@ void RtlpSubSegmentInitialize
   param_2[2] = 0;
   param_2[3] = 0;
   *(uint *)(param_3 + 3) =
-       ((uint)(ushort)(sVar17 << 4) << 0x10 | (uint)uVar18 & 0xfff0) ^ (uint)param_3 ^ (uint)uVar6 ^
+       ((uint)(ushort)(sVar17 << 4) << 0x10 | (uint)uVar18 & 0xfff0) ^ (uint)param_3 ^ (uint)uVar5 ^
        (uint)param_1;
   if (*(int *)((longlong)plVar16 + 0xa4) == 0) {
     lVar12 = *plVar16;
@@ -157087,14 +157085,14 @@ LAB_1800cdbf0:
   do {
     lVar12 = plVar16[0x14];
     iVar8 = (int)((ulonglong)lVar12 >> 0x20);
-    iVar4 = iVar8 + 1;
-    if ((int)uVar5 < 1) {
-      iVar4 = iVar8 + -1;
+    iVar3 = iVar8 + 1;
+    if ((int)uVar4 < 1) {
+      iVar3 = iVar8 + -1;
     }
     LOCK();
     lVar10 = plVar16[0x14];
     if (lVar12 == lVar10) {
-      plVar16[0x14] = CONCAT44(iVar4,(int)lVar12 + uVar5);
+      plVar16[0x14] = CONCAT44(iVar3,(int)lVar12 + uVar4);
       lVar10 = lVar12;
     }
     else {
@@ -157126,14 +157124,14 @@ LAB_1800cdbf0:
     HeapVirtualAffinity._3_1_ = HeapVirtualAffinity._2_1_;
   }
   HeapVirtualAffinity._2_1_ = HeapVirtualAffinity._2_1_ + 1;
-  bVar2 = *(byte *)((longlong)&RtlpLowFragHeapRandomData + uVar13);
+  bVar6 = *(byte *)((longlong)&RtlpLowFragHeapRandomData + uVar13);
   LOCK();
   UNLOCK();
   *(undefined4 *)((longlong)param_3 + 0x14) = 0xf0e0d0c0;
   *(undefined4 *)((longlong)param_2 + 0x2c) = 1;
   LOCK();
-  if (iVar3 == *(int *)(param_2 + 4)) {
-    *(int *)(param_2 + 4) = CONCAT22((short)((ulonglong)bVar2 % uVar14),(short)uVar14);
+  if (iVar2 == *(int *)(param_2 + 4)) {
+    *(int *)(param_2 + 4) = CONCAT22((short)((ulonglong)bVar6 % uVar14),(short)uVar14);
   }
   UNLOCK();
   if (((byte)RtlpLowFragHeapGlobalFlags & 2) == 0) {
@@ -161277,7 +161275,7 @@ RtlpHpCustomVaCallbacksRegistrarRegister
   uStack_70 = *(undefined4 *)(param_4 + 1);
   uStack_6c = *(undefined4 *)((longlong)param_4 + 0xc);
   local_98 = param_4;
-  puVar5 = (undefined8 *)RtlpHpMetadataAlloc();
+  puVar5 = (undefined8 *)RtlpHpMetadataAlloc(0x38,0x38,0,&local_78);
   local_80 = param_1 + 4;
   RtlAcquireSRWLockExclusive(local_80);
   puVar8 = auStack_c8;
@@ -229124,7 +229122,7 @@ void RtlRaiseNoncontinuableException(longlong param_1,longlong param_2,char para
 ===== LdrpHandleInvalidUserCallTarget @ 180120ee0 =====
 
 code * LdrpHandleInvalidUserCallTarget
-                 (undefined8 param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
+                 (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -299979,22 +299977,22 @@ void RtlHeapZero(undefined8 *param_1,ulonglong param_2)
 
 ===== RtlpHeapZeroFastString @ 1801676b0 =====
 
-void RtlpHeapZeroFastString(undefined8 *param_1,longlong param_2)
+void RtlpHeapZeroFastString(undefined8 param_1,longlong param_2)
 
 {
+  undefined8 *in_RCX;
   longlong lVar1;
   undefined1 *puVar2;
-  undefined8 in_XMM0_Qa;
   undefined8 in_XMM0_Qb;
   
-  *param_1 = in_XMM0_Qa;
-  param_1[1] = in_XMM0_Qb;
-  param_1[2] = in_XMM0_Qa;
-  param_1[3] = in_XMM0_Qb;
-  puVar2 = (undefined1 *)((longlong)param_1 + 0x3fU & 0xffffffffffffffc0);
-  param_1[4] = in_XMM0_Qa;
-  param_1[5] = in_XMM0_Qb;
-  lVar1 = (longlong)param_1 + (param_2 - (longlong)puVar2);
+  *in_RCX = param_1;
+  in_RCX[1] = in_XMM0_Qb;
+  in_RCX[2] = param_1;
+  in_RCX[3] = in_XMM0_Qb;
+  puVar2 = (undefined1 *)((longlong)in_RCX + 0x3fU & 0xffffffffffffffc0);
+  in_RCX[4] = param_1;
+  in_RCX[5] = in_XMM0_Qb;
+  lVar1 = (longlong)in_RCX + (param_2 - (longlong)puVar2);
   for (; lVar1 != 0; lVar1 = lVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
