@@ -1535,13 +1535,13 @@ void __tailMerge_crypt32_dll
 {
   longlong *in_RAX;
   FARPROC UNRECOVERED_JUMPTABLE;
-  undefined8 in_R8;
+  undefined8 in_R9;
   undefined8 in_XMM0_Qa;
   
   UNRECOVERED_JUMPTABLE = __delayLoadHelper2(&ImgDelayDescr_180080eac.grAttrs,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000180002445. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,param_3,in_R9);
   return;
 }
 
@@ -1615,12 +1615,13 @@ void __tailMerge_api_ms_win_security_cryptoapi_l1_1_0_dll
 {
   longlong *in_RAX;
   FARPROC UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM0_Qa;
   
   UNRECOVERED_JUMPTABLE = __delayLoadHelper2(&ImgDelayDescr_180080ecc.grAttrs,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000180002518. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,param_3,in_R9);
   return;
 }
 
@@ -1791,13 +1792,11 @@ void __tailMerge_ws2_32_dll
   longlong *in_RAX;
   FARPROC UNRECOVERED_JUMPTABLE;
   undefined8 in_R8;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = __delayLoadHelper2(&ImgDelayDescr_180080eec.grAttrs,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00018000267b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_R8,param_4);
   return;
 }
 
