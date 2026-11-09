@@ -13539,7 +13539,7 @@ LAB_140014018:
     uStack_60 = (undefined4)uStack_168;
     uStack_5c = uStack_168._4_4_;
     local_ac = (-(uint)((uVar3 & 1) != 0) & 0x1fc) + 4;
-    uVar5 = ZwTraceControl(1,puVar7,0xb0,local_e8);
+    uVar5 = ZwTraceControl();
     if ((int)uVar5 < 0) {
       if ((Microsoft_Windows_CloudFiles_FilterEnableBits & 1) != 0) {
         pwVar12 = L"Starting Cldflt Tracing failed.";
@@ -13554,7 +13554,7 @@ LAB_14001414d:
       puVar7 = (undefined4 *)0x0;
       local_198 = (ulonglong)local_e0;
       uVar2 = local_198;
-      uVar5 = EtwEnableTrace(param_1,0,local_198,1);
+      uVar5 = EtwEnableTrace();
       if (-1 < (int)uVar5) {
         DAT_14002b1a8 = uVar2;
         goto LAB_14001415c;
@@ -45644,7 +45644,7 @@ LAB_1400582b8:
         *(undefined8 *)(puVar22 + 0x28) = 0;
         *(undefined4 *)(puVar22 + 0x20) = 5;
         *(undefined8 *)(puVar22 + -8) = 0x140057abf;
-        uVar11 = FltQueryInformationFile(uVar23,pbVar29,&local_70,0x18);
+        uVar11 = FltQueryInformationFile();
         *(undefined8 *)(puVar22 + -8) = 0x140057acd;
         HsmDbgBreakOnStatus(uVar11);
         if (-1 < (int)uVar11) {
