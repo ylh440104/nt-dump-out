@@ -9510,26 +9510,26 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
   undefined1 auVar13 [16];
   undefined6 uVar14;
   undefined1 auVar15 [14];
-  undefined2 uVar16;
-  bool bVar17;
-  int iVar18;
+  bool bVar16;
+  int iVar17;
   TextBuffer *this_00;
-  int iVar19;
-  longlong lVar20;
-  int iVar21;
-  uint uVar22;
-  int iVar23;
-  ROW *pRVar24;
-  byte *pbVar25;
-  longlong *plVar26;
-  ulonglong uVar27;
-  undefined **ppuVar28;
+  int iVar18;
+  longlong lVar19;
+  int iVar20;
+  uint uVar21;
+  int iVar22;
+  ROW *pRVar23;
+  byte *pbVar24;
+  longlong *plVar25;
+  undefined2 uVar26;
+  undefined **ppuVar27;
+  uint uVar28;
   uint uVar29;
-  uint uVar30;
+  int iVar30;
   int iVar31;
-  int iVar32;
-  undefined2 uVar33;
-  int iVar34;
+  undefined2 uVar32;
+  int iVar33;
+  ulonglong uVar34;
   undefined4 uVar35;
   undefined4 uVar36;
   undefined4 uVar37;
@@ -9731,17 +9731,17 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
   local_378 = 0;
   local_390 = param_4;
   local_370 = local_380;
-  bVar17 = OutputCellIterator::operator_bool(param_2);
-  if (bVar17) {
-    uVar27 = local_390 & 0xffffffff;
+  bVar16 = OutputCellIterator::operator_bool(param_2);
+  if (bVar16) {
+    uVar34 = local_390 & 0xffffffff;
     while( true ) {
-      iVar34 = (int)uVar27;
-      if ((iVar34 < (int)local_378) || ((int)local_380 <= iVar34)) break;
-      iVar18 = (int)(param_4 >> 0x20);
-      if (iVar18 < (int)local_328) {
+      iVar33 = (int)uVar34;
+      if ((iVar33 < (int)local_378) || ((int)local_380 <= iVar33)) break;
+      iVar17 = (int)(param_4 >> 0x20);
+      if (iVar17 < (int)local_328) {
         return param_2;
       }
-      if ((int)(uint)uVar2 <= iVar18) {
+      if ((int)(uint)uVar2 <= iVar17) {
         return param_2;
       }
       uVar38 = *(undefined4 *)(param_2 + 0x50);
@@ -9751,17 +9751,17 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
       uVar3 = *(ushort *)(this + 0xd2);
       local_108 = (undefined2)uVar38;
       uStack_106 = (undefined2)((uint)uVar38 >> 0x10);
-      uVar33 = uStack_106;
+      uVar32 = uStack_106;
       uStack_384 = uStack_384 & 0xffffff00;
       local_320 = 0;
       uVar6 = *(undefined8 *)(param_2 + 0x60);
-      lVar20 = *(longlong *)(param_2 + 0x68);
+      lVar19 = *(longlong *)(param_2 + 0x68);
       uVar39 = *(undefined4 *)param_2;
       uVar41 = *(undefined4 *)(param_2 + 4);
       uVar43 = *(undefined4 *)(param_2 + 8);
       uVar45 = *(undefined4 *)(param_2 + 0xc);
       local_f8 = (undefined2)uVar6;
-      uVar16 = local_f8;
+      uVar26 = local_f8;
       uStack_f6 = (undefined6)((ulonglong)uVar6 >> 0x10);
       uVar46 = *(undefined4 *)(param_2 + 0x10);
       uVar47 = *(undefined4 *)(param_2 + 0x14);
@@ -9779,47 +9779,47 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
       uVar59 = *(undefined4 *)(param_2 + 0x44);
       uVar60 = *(undefined4 *)(param_2 + 0x48);
       uVar61 = *(undefined4 *)(param_2 + 0x4c);
-      iVar32 = *(int *)(param_2 + 0x70);
+      iVar31 = *(int *)(param_2 + 0x70);
       uVar35 = *(undefined4 *)(param_2 + 0x74);
       uVar36 = *(undefined4 *)(param_2 + 0x78);
       uVar37 = *(undefined4 *)(param_2 + 0x7c);
       uStack_104 = uVar40;
       uStack_100 = uVar42;
       uStack_fc = uVar44;
-      lStack_f0 = lVar20;
-      if ((((iVar34 < 0) || ((int)(uint)*(ushort *)(this + 0xd0) <= iVar34)) ||
-          ((longlong)param_4 < 0)) || ((int)(uint)uVar3 <= iVar18)) {
+      lStack_f0 = lVar19;
+      if ((((iVar33 < 0) || ((int)(uint)*(ushort *)(this + 0xd0) <= iVar33)) ||
+          ((longlong)param_4 < 0)) || ((int)(uint)uVar3 <= iVar17)) {
         uVar62 = *(undefined4 *)(param_2 + 0x60);
-        iVar34 = *(int *)(param_2 + 100);
+        iVar33 = *(int *)(param_2 + 100);
         uVar63 = *(undefined4 *)(param_2 + 0x68);
         uVar64 = *(undefined4 *)(param_2 + 0x6c);
       }
       else {
         *(longlong *)(this + 0xe8) = *(longlong *)(this + 0xe8) + 1;
-        iVar21 = (*(int *)(this + 0xe4) + iVar18) % (int)(uint)uVar3;
-        iVar18 = (uint)uVar3 + iVar21;
-        if (-1 < iVar21) {
-          iVar18 = iVar21;
+        iVar20 = (*(int *)(this + 0xe4) + iVar17) % (int)(uint)uVar3;
+        iVar17 = (uint)uVar3 + iVar20;
+        if (-1 < iVar20) {
+          iVar17 = iVar20;
         }
-        pRVar24 = *(ROW **)(this + 0x90) + ((longlong)iVar18 + 1) * *(longlong *)(this + 0xb8);
-        if ((pRVar24 < *(ROW **)(this + 0x90)) || (*(ROW **)(this + 0x98) <= pRVar24)) {
-          bVar17 = true;
+        pRVar23 = *(ROW **)(this + 0x90) + ((longlong)iVar17 + 1) * *(longlong *)(this + 0xb8);
+        if ((pRVar23 < *(ROW **)(this + 0x90)) || (*(ROW **)(this + 0x98) <= pRVar23)) {
+          bVar16 = true;
         }
         else {
-          bVar17 = false;
+          bVar16 = false;
         }
-        local_398 = pRVar24;
-        if (bVar17) {
+        local_398 = pRVar23;
+        if (bVar16) {
                     /* WARNING: Subroutine does not return */
           wil::details::in1diag3::_Throw_Hr
                     (unaff_retaddr,0xb3,
                      "onecore\\windows\\core\\console\\open\\src\\buffer\\out\\textbuffer.cpp",
                      -0x7fff0001);
         }
-        if (*(ROW **)(this + 0xa0) <= pRVar24) {
-          _commit(this,(byte *)pRVar24);
+        if (*(ROW **)(this + 0xa0) <= pRVar23) {
+          _commit(this,(byte *)pRVar23);
         }
-        uVar4 = *(undefined2 *)(pRVar24 + 0x68);
+        uVar4 = *(undefined2 *)(pRVar23 + 0x68);
         local_2c8 = (char)uVar38;
         uStack_2c7 = (undefined1)((uint)uVar38 >> 8);
         uStack_2b6 = (undefined2)((ulonglong)uVar6 >> 0x10);
@@ -9844,28 +9844,28 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
         uStack_2d4 = uVar59;
         uStack_2d0 = uVar60;
         uStack_2cc = uVar61;
-        uStack_2c6 = uVar33;
+        uStack_2c6 = uVar32;
         uStack_2c4 = uVar40;
         uStack_2c0 = uVar42;
         uStack_2bc = uVar44;
-        local_2b8 = uVar16;
-        uStack_2b0 = lVar20;
-        local_2a8 = iVar32;
+        local_2b8 = uVar26;
+        uStack_2b0 = lVar19;
+        local_2a8 = iVar31;
         uStack_2a4 = uVar35;
         uStack_2a0 = uVar36;
         uStack_29c = uVar37;
-        if ((int)(uint)(ushort)uVar4 <= iVar34) {
+        if ((int)(uint)(ushort)uVar4 <= iVar33) {
                     /* WARNING: Subroutine does not return */
           wil::details::in1diag3::_Throw_Hr
                     (unaff_retaddr,0x1a2,
                      "onecore\\windows\\core\\console\\open\\src\\buffer\\out\\row.cpp",-0x7ff8ffa9)
           ;
         }
-        uVar29 = local_388;
+        uVar28 = local_388;
         if ((char)uStack_384 == '\0') {
-          uVar29 = 0;
+          uVar28 = 0;
         }
-        if ((int)(uint)(ushort)uVar4 <= (int)uVar29) {
+        if ((int)(uint)(ushort)uVar4 <= (int)uVar28) {
                     /* WARNING: Subroutine does not return */
           wil::details::in1diag3::_Throw_Hr
                     (unaff_retaddr,0x1a3,
@@ -9873,10 +9873,10 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
           ;
         }
         if ((char)uStack_384 == '\0') {
-          uVar29 = (ushort)uVar4 - 1;
+          uVar28 = (ushort)uVar4 - 1;
         }
         else {
-          uVar29 = local_388;
+          uVar28 = local_388;
         }
         uVar14 = CONCAT42(uStack_104,uStack_106);
         Var11 = CONCAT46(uStack_100,uVar14);
@@ -9884,11 +9884,11 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
         auVar15._0_10_ = Var11;
         auVar13._14_2_ = local_f8;
         auVar13._0_14_ = auVar15;
-        local_res18 = (undefined2)uVar27;
+        local_res18 = (undefined2)uVar34;
         sVar1 = 0;
         local_188 = auVar13;
-        bVar17 = OutputCellIterator::operator_bool((OutputCellIterator *)&local_318);
-        if (bVar17) {
+        bVar16 = OutputCellIterator::operator_bool((OutputCellIterator *)&local_318);
+        if (bVar16) {
           local_360 = (longlong)Var11;
           local_368 = auVar13._8_8_;
           uVar38 = (int)uVar14;
@@ -9896,14 +9896,14 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
           uVar42 = auVar15._8_4_;
           uVar44 = auVar13._12_4_;
           do {
-            iVar34 = iStack_2b4;
-            uVar33 = (undefined2)uVar27;
-            uVar30 = (uint)uVar27 & 0xffff;
+            iVar33 = iStack_2b4;
+            uVar32 = (undefined2)uVar34;
+            uVar29 = (uint)uVar34 & 0xffff;
             uVar39 = uVar38;
             uVar41 = uVar40;
             uVar43 = uVar42;
             uVar45 = uVar44;
-            if ((int)uVar29 < (int)uVar30) break;
+            if ((int)uVar28 < (int)uVar29) break;
             if (iStack_2b4 != 1) {
               Var11 = CONCAT46(uStack_2c0,CONCAT42(uStack_2c4,uStack_2c6));
               auVar12._10_4_ = uStack_2bc;
@@ -9914,12 +9914,12 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
               uVar41 = (undefined4)((unkuint10)Var11 >> 0x20);
               uVar43 = auVar12._8_4_;
               uVar45 = auVar10._12_4_;
-              lVar20 = local_360 - (longlong)Var11;
-              if (lVar20 == 0) {
-                lVar20 = local_368 - auVar10._8_8_;
+              lVar19 = local_360 - (longlong)Var11;
+              if (lVar19 == 0) {
+                lVar19 = local_368 - auVar10._8_8_;
               }
               local_168 = auVar10;
-              if (lVar20 == 0) {
+              if (lVar19 == 0) {
                 sVar1 = sVar1 + 1;
                 uVar39 = uVar38;
                 uVar41 = uVar40;
@@ -9927,11 +9927,11 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
                 uVar45 = uVar44;
               }
               else {
-                uVar27 = uVar27 & 0xffff;
-                if ((ushort)*(undefined2 *)(local_398 + 0x60) < (ushort)uVar33) {
-                  uVar27 = (ulonglong)(ushort)*(undefined2 *)(local_398 + 0x60);
+                uVar26 = uVar32;
+                if ((ushort)*(undefined2 *)(local_398 + 0x60) < (ushort)uVar32) {
+                  uVar26 = *(undefined2 *)(local_398 + 0x60);
                 }
-                if ((ushort)(short)uVar27 < (ushort)local_res18) {
+                if ((ushort)uVar26 < (ushort)local_res18) {
                   local_350 = 1;
                   local_298 = std::exception::_vftable_;
                   local_358 = "start_index <= end_index";
@@ -9946,7 +9946,7 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
                   _CxxThrowException(&local_298,(ThrowInfo *)&_TI3_AVout_of_range_std__);
                 }
                 uStack_260 = 1;
-                local_1b8 = (short)uVar27 - local_res18;
+                local_1b8 = uVar26 - local_res18;
                 local_268 = &local_1c8;
                 uStack_190 = 1;
                 local_1c8 = uVar38;
@@ -9956,74 +9956,72 @@ TextBuffer::Write(TextBuffer *this,OutputCellIterator *param_2,undefined8 *param
                 local_198 = local_268;
                 til::
                 basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-                ::_replace_unchecked
-                          ((basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-                            *)(local_398 + 0x30),local_res18,uVar27,&local_198);
+                ::_replace_unchecked();
                 sVar1 = 1;
-                local_res18 = uVar33;
+                local_res18 = uVar32;
                 local_368 = auVar10._8_8_;
                 local_360 = (longlong)Var11;
                 local_188 = auVar10;
               }
             }
-            pRVar24 = local_398;
-            if (iVar34 == 2) {
+            pRVar23 = local_398;
+            if (iVar33 == 2) {
               OutputCellIterator::operator++((OutputCellIterator *)&local_318);
             }
             else {
-              uVar22 = uVar30;
+              uVar21 = uVar29;
               if (local_2c8 == '\x01') {
-                if (uVar30 != uVar29) {
-                  iVar34 = 2;
+                if (uVar29 != uVar28) {
+                  iVar33 = 2;
                   goto LAB_14000a90c;
                 }
                 ROW::ReplaceCharacters
-                          (local_398,uVar30,1,
+                          (local_398,uVar29,1,
                            (basic_string_view<wchar_t,std::char_traits<wchar_t>_> *)
                            &PTR_u___1400b50b0);
-                pRVar24[0x6c] = (ROW)0x1;
+                pRVar23[0x6c] = (ROW)0x1;
               }
               else {
                 if (local_2c8 == '\x02') {
-                  if (uVar33 == 0) {
-                    ppuVar28 = &PTR_u___1400b50b0;
-                    iVar34 = 1;
+                  if (uVar32 == 0) {
+                    ppuVar27 = &PTR_u___1400b50b0;
+                    iVar33 = 1;
                     goto LAB_14000a910;
                   }
                   if (uStack_2b0 == 0) {
-                    uVar22 = uVar30 - 1;
-                    iVar34 = 2;
+                    uVar21 = uVar29 - 1;
+                    iVar33 = 2;
                     goto LAB_14000a90c;
                   }
                 }
                 else {
-                  iVar34 = 1;
+                  iVar33 = 1;
 LAB_14000a90c:
-                  ppuVar28 = (undefined **)&local_2d8;
+                  ppuVar27 = (undefined **)&local_2d8;
 LAB_14000a910:
                   ROW::ReplaceCharacters
-                            (local_398,uVar22,iVar34,
-                             (basic_string_view<wchar_t,std::char_traits<wchar_t>_> *)ppuVar28);
+                            (local_398,uVar21,iVar33,
+                             (basic_string_view<wchar_t,std::char_traits<wchar_t>_> *)ppuVar27);
                 }
                 OutputCellIterator::operator++((OutputCellIterator *)&local_318);
               }
-              if ((param_5._1_1_ != '\0') && (uVar30 == uVar29)) {
+              if ((param_5._1_1_ != '\0') && (uVar29 == uVar28)) {
                 local_398[0x6b] = SUB21(param_5,0);
               }
             }
-            uVar33 = uVar33 + 1;
-            uVar27 = (ulonglong)(ushort)uVar33;
-            bVar17 = OutputCellIterator::operator_bool((OutputCellIterator *)&local_318);
+            uVar32 = uVar32 + 1;
+            uVar34 = (ulonglong)(ushort)uVar32;
+            bVar16 = OutputCellIterator::operator_bool((OutputCellIterator *)&local_318);
             uVar38 = uVar39;
             uVar40 = uVar41;
             uVar42 = uVar43;
             uVar44 = uVar45;
-          } while (bVar17);
+          } while (bVar16);
           if (sVar1 != 0) {
-            if ((ushort)*(undefined2 *)(local_398 + 0x60) < (ushort)uVar33) {
-              uVar33 = *(undefined2 *)(local_398 + 0x60);
+            if ((ushort)*(undefined2 *)(local_398 + 0x60) < (ushort)uVar32) {
+              uVar32 = *(undefined2 *)(local_398 + 0x60);
             }
-            if ((ushort)uVar33 < (ushort)local_res18) {
+            if ((ushort)uVar32 < (ushort)local_res18) {
               local_340 = 1;
               local_280 = std::exception::_vftable_;
               local_348 = "start_index <= end_index";
@@ -10038,7 +10036,7 @@ LAB_14000a910:
               _CxxThrowException(&local_280,(ThrowInfo *)&_TI3_AVout_of_range_std__);
             }
             uStack_250 = 1;
-            local_1a0 = uVar33 - local_res18;
+            local_1a0 = uVar32 - local_res18;
             local_258 = &local_1b0;
             uStack_170 = 1;
             local_1b0 = uVar39;
@@ -10050,14 +10048,14 @@ LAB_14000a910:
             basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
             ::_replace_unchecked
                       ((basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-                        *)(local_398 + 0x30),local_res18,uVar33,&local_178);
+                        *)(local_398 + 0x30),local_res18,uVar32,&local_178);
           }
         }
         uVar37 = uStack_29c;
         uVar36 = uStack_2a0;
         uVar35 = uStack_2a4;
-        iVar21 = local_2a8;
-        iVar34 = iStack_2b4;
+        iVar20 = local_2a8;
+        iVar33 = iStack_2b4;
         uVar44 = uStack_2bc;
         uVar42 = uStack_2c0;
         uVar40 = uStack_2c4;
@@ -10081,7 +10079,7 @@ LAB_14000a910:
         uVar43 = uStack_310;
         uVar41 = uStack_314;
         uVar39 = local_318;
-        iVar18 = (int)local_390;
+        iVar17 = (int)local_390;
         uVar38 = CONCAT22(uStack_2c6,CONCAT11(uStack_2c7,local_2c8));
         uVar62 = CONCAT22(uStack_2b6,local_2b8);
         uVar63 = (undefined4)uStack_2b0;
@@ -10090,8 +10088,8 @@ LAB_14000a910:
         uStack_244 = uStack_314;
         uStack_240 = uStack_310;
         uStack_23c = uStack_30c;
-        iVar23 = (local_2a8 - iVar32) + (int)local_390;
-        iVar31 = local_390._4_4_ + 1;
+        iVar22 = (local_2a8 - iVar31) + (int)local_390;
+        iVar30 = local_390._4_4_ + 1;
         local_238 = local_308;
         uStack_234 = uStack_304;
         uStack_230 = uStack_300;
@@ -10118,96 +10116,96 @@ LAB_14000a910:
         uStack_1d4 = uStack_2a4;
         uStack_1d0 = uStack_2a0;
         uStack_1cc = uStack_29c;
-        iVar32 = local_2a8;
+        iVar31 = local_2a8;
         local_1f8 = uVar38;
         local_1e8 = uVar62;
         if (this[0x138] != (TextBuffer)0x0) {
-          lVar20 = *(longlong *)this;
-          (**(code **)(**(longlong **)(lVar20 + 0x18) + 8))
-                    (*(longlong **)(lVar20 + 0x18),&local_338);
+          lVar19 = *(longlong *)this;
+          (**(code **)(**(longlong **)(lVar19 + 0x18) + 8))
+                    (*(longlong **)(lVar19 + 0x18),&local_338);
           local_3a4 = local_390._4_4_;
-          local_3a8 = iVar18;
-          local_3a0 = iVar23;
-          local_39c = iVar31;
-          this_00 = (TextBuffer *)(**(code **)(**(longlong **)(lVar20 + 0x18) + 0x18))();
-          iVar18 = local_39c;
-          for (iVar32 = local_3a4; iVar32 < iVar18; iVar32 = iVar32 + 1) {
-            iVar31 = (*(int *)(this_00 + 0xe4) + iVar32) % (int)(uint)*(ushort *)(this_00 + 0xd2);
-            iVar23 = (uint)*(ushort *)(this_00 + 0xd2) + iVar31;
-            if (-1 < iVar31) {
-              iVar23 = iVar31;
+          local_3a8 = iVar17;
+          local_3a0 = iVar22;
+          local_39c = iVar30;
+          this_00 = (TextBuffer *)(**(code **)(**(longlong **)(lVar19 + 0x18) + 0x18))();
+          iVar17 = local_39c;
+          for (iVar31 = local_3a4; iVar31 < iVar17; iVar31 = iVar31 + 1) {
+            iVar30 = (*(int *)(this_00 + 0xe4) + iVar31) % (int)(uint)*(ushort *)(this_00 + 0xd2);
+            iVar22 = (uint)*(ushort *)(this_00 + 0xd2) + iVar30;
+            if (-1 < iVar30) {
+              iVar22 = iVar30;
             }
-            pbVar25 = (byte *)(((longlong)iVar23 + 1) * *(longlong *)(this_00 + 0xb8) +
+            pbVar24 = (byte *)(((longlong)iVar22 + 1) * *(longlong *)(this_00 + 0xb8) +
                               (longlong)*(byte **)(this_00 + 0x90));
-            if ((pbVar25 < *(byte **)(this_00 + 0x90)) || (*(byte **)(this_00 + 0x98) <= pbVar25)) {
-              bVar17 = true;
+            if ((pbVar24 < *(byte **)(this_00 + 0x90)) || (*(byte **)(this_00 + 0x98) <= pbVar24)) {
+              bVar16 = true;
             }
             else {
-              bVar17 = false;
+              bVar16 = false;
             }
-            if (bVar17) {
+            if (bVar16) {
                     /* WARNING: Subroutine does not return */
               wil::details::in1diag3::_Throw_Hr
                         (unaff_retaddr,0xb3,
                          "onecore\\windows\\core\\console\\open\\src\\buffer\\out\\textbuffer.cpp",
                          -0x7fff0001);
             }
-            if (*(byte **)(this_00 + 0xa0) <= pbVar25) {
-              _commit(this_00,pbVar25);
-              iVar18 = local_39c;
+            if (*(byte **)(this_00 + 0xa0) <= pbVar24) {
+              _commit(this_00,pbVar24);
+              iVar17 = local_39c;
             }
-            if (*(byte *)((longlong)pbVar25 + 0x6a) != 0) {
+            if (*(byte *)((longlong)pbVar24 + 0x6a) != 0) {
               local_3a0 = local_3a0 * 2;
               break;
             }
           }
-          iVar23 = local_338;
+          iVar22 = local_338;
           if (local_338 <= local_3a8) {
-            iVar23 = local_3a8;
+            iVar22 = local_3a8;
           }
-          iVar31 = local_330 + 1;
+          iVar30 = local_330 + 1;
           if (local_3a0 <= local_330 + 1) {
-            iVar31 = local_3a0;
+            iVar30 = local_3a0;
           }
-          iVar19 = local_334;
+          iVar18 = local_334;
           if (local_334 <= local_3a4) {
-            iVar19 = local_3a4;
+            iVar18 = local_3a4;
           }
           local_39c = local_32c + 1;
-          if (iVar18 <= local_32c + 1) {
-            local_39c = iVar18;
+          if (iVar17 <= local_32c + 1) {
+            local_39c = iVar17;
           }
-          iVar32 = iVar21;
-          local_3a8 = iVar23;
-          local_3a4 = iVar19;
-          local_3a0 = iVar31;
-          if (iVar23 < iVar31) {
-            if (iVar19 < local_39c) {
-              local_3a8 = iVar23 - local_338;
-              local_3a0 = iVar31 - local_338;
-              local_3a4 = iVar19 - local_334;
+          iVar31 = iVar20;
+          local_3a8 = iVar22;
+          local_3a4 = iVar18;
+          local_3a0 = iVar30;
+          if (iVar22 < iVar30) {
+            if (iVar18 < local_39c) {
+              local_3a8 = iVar22 - local_338;
+              local_3a0 = iVar30 - local_338;
+              local_3a4 = iVar18 - local_334;
               local_39c = local_39c - local_334;
-              for (plVar26 = (longlong *)(lVar20 + 8);
-                  (plVar26 != (longlong *)(lVar20 + 0x18) &&
-                  (plVar5 = (longlong *)*plVar26, plVar5 != (longlong *)0x0)); plVar26 = plVar26 + 1
+              for (plVar25 = (longlong *)(lVar19 + 8);
+                  (plVar25 != (longlong *)(lVar19 + 0x18) &&
+                  (plVar5 = (longlong *)*plVar25, plVar5 != (longlong *)0x0)); plVar25 = plVar25 + 1
                   ) {
-                iVar18 = (**(code **)(*plVar5 + 0x40))(plVar5,&local_3a8);
-                if (iVar18 < 0) {
+                iVar17 = (**(code **)(*plVar5 + 0x40))(plVar5,&local_3a8);
+                if (iVar17 < 0) {
                   wil::details::in1diag3::_Log_Hr
                             (unaff_retaddr,0xf0,
                              "onecore\\windows\\core\\console\\open\\src\\renderer\\base\\renderer.cpp"
-                             ,iVar18);
+                             ,iVar17);
                 }
               }
-              lVar20 = *(longlong *)(lVar20 + 0x20);
-              if (lVar20 != 0) {
-                if (*(char *)(lVar20 + 0x2a) == '\0') {
-                  *(undefined1 *)(lVar20 + 0x29) = 1;
+              lVar19 = *(longlong *)(lVar19 + 0x20);
+              if (lVar19 != 0) {
+                if (*(char *)(lVar19 + 0x2a) == '\0') {
+                  *(undefined1 *)(lVar19 + 0x29) = 1;
                 }
                 else {
-                  SetEvent(*(HANDLE *)(lVar20 + 8));
+                  SetEvent(*(HANDLE *)(lVar19 + 8));
                 }
-                iVar32 = local_1d8;
+                iVar31 = local_1d8;
                 uVar35 = uStack_1d4;
                 uVar36 = uStack_1d0;
                 uVar37 = uStack_1cc;
@@ -10236,7 +10234,7 @@ LAB_14000a910:
                 uVar42 = uStack_1f0;
                 uVar44 = uStack_1ec;
                 uVar62 = local_1e8;
-                iVar34 = iStack_1e4;
+                iVar33 = iStack_1e4;
                 uVar63 = uStack_1e0;
                 uVar64 = uStack_1dc;
               }
@@ -10248,7 +10246,7 @@ LAB_14000a910:
       *(undefined4 *)(param_2 + 4) = uVar41;
       *(undefined4 *)(param_2 + 8) = uVar43;
       *(undefined4 *)(param_2 + 0xc) = uVar45;
-      uVar27 = 0;
+      uVar34 = 0;
       *(undefined4 *)(param_2 + 0x10) = uVar46;
       *(undefined4 *)(param_2 + 0x14) = uVar47;
       *(undefined4 *)(param_2 + 0x18) = uVar48;
@@ -10271,15 +10269,15 @@ LAB_14000a910:
       *(undefined4 *)(param_2 + 0x58) = uVar42;
       *(undefined4 *)(param_2 + 0x5c) = uVar44;
       *(undefined4 *)(param_2 + 0x60) = uVar62;
-      *(int *)(param_2 + 100) = iVar34;
+      *(int *)(param_2 + 100) = iVar33;
       *(undefined4 *)(param_2 + 0x68) = uVar63;
       *(undefined4 *)(param_2 + 0x6c) = uVar64;
-      *(int *)(param_2 + 0x70) = iVar32;
+      *(int *)(param_2 + 0x70) = iVar31;
       *(undefined4 *)(param_2 + 0x74) = uVar35;
       *(undefined4 *)(param_2 + 0x78) = uVar36;
       *(undefined4 *)(param_2 + 0x7c) = uVar37;
-      bVar17 = OutputCellIterator::operator_bool(param_2);
-      if (!bVar17) {
+      bVar16 = OutputCellIterator::operator_bool(param_2);
+      if (!bVar16) {
         return param_2;
       }
       param_4 = local_390;
@@ -10442,9 +10440,7 @@ LAB_14000b10b:
           uStack_5c = uVar17;
           til::
           basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-          ::_replace_unchecked
-                    ((basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-                      *)(this + 0x30),local_res20,uVar9,&local_98);
+          ::_replace_unchecked();
           uVar14 = *(undefined4 *)(param_3 + 0x52);
           uVar15 = *(undefined4 *)(param_3 + 0x56);
           local_98 = *(undefined ***)(param_3 + 0x52);
@@ -10810,9 +10806,7 @@ TextBuffer::WriteLine
           local_128 = local_178;
           til::
           basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-          ::_replace_unchecked
-                    ((basic_rle<TextAttribute,unsigned_short,til::small_vector<til::rle_pair<TextAttribute,unsigned_short>,1>_>
-                      *)(local_238 + 0x30),local_268,uVar4,&local_128);
+          ::_replace_unchecked();
           local_240 = CONCAT22(local_240._2_2_,1);
           local_268 = uVar23;
           local_260 = auVar10._8_8_;
@@ -18050,7 +18044,9 @@ Microsoft::Console::Render::VtEngine::_WriteTerminalUtf8
    __ptr64 */
 
 long __thiscall
-Microsoft::Console::Render::XtermEngine::PaintBufferLine(XtermEngine *this,undefined8 *param_2)
+Microsoft::Console::Render::XtermEngine::PaintBufferLine
+          (XtermEngine *this,undefined8 *param_2,undefined8 param_3,undefined8 param_4,
+          undefined1 param_5)
 
 {
   long lVar1;
@@ -18064,7 +18060,7 @@ Microsoft::Console::Render::XtermEngine::PaintBufferLine(XtermEngine *this,undef
   uStack_10 = *(undefined4 *)(param_2 + 1);
   uStack_c = *(undefined4 *)((longlong)param_2 + 0xc);
   if (this[0x220] == (XtermEngine)0x0) {
-    lVar1 = VtEngine::_PaintUtf8BufferLine();
+    lVar1 = VtEngine::_PaintUtf8BufferLine((VtEngine *)local_18,&local_18,param_3,param_5);
   }
   else {
     lVar1 = VtEngine::_PaintAsciiBufferLine((VtEngine *)local_18,&local_18);
@@ -18155,7 +18151,7 @@ Microsoft::Console::Render::VtEngine::_PaintUtf8BufferLine
       local_a8 = uVar1;
       std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>_>::
       _Reallocate_grow_by<_public:_class_std::basic_string<wchar_t,struct_std::char_traits<wchar_t>,class_std::allocator<wchar_t>_>&___ptr64___cdecl_std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>_>::append(wchar_t_const*___ptr64_const,unsigned___int64)___ptr64_::_2_::<lambda_1>,wchar_t_const*___ptr64,unsigned___int64>
-                (pbVar6,uVar1,local_90[0],_Src);
+                ();
     }
     else {
       *(ulonglong *)(this + 0x210) = uVar1 + lVar16;
@@ -76317,12 +76313,13 @@ void __tailMerge_ext_ms_win_gdi_font_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d85c8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004db01. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -76348,14 +76345,11 @@ void __tailMerge_ext_ms_win_ntuser_message_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d85e8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004db8c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -76381,14 +76375,13 @@ void __tailMerge_ext_ms_win_ntuser_sysparams_ext_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8608,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004dc17. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -76414,13 +76407,13 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8628,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004dca2. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -76457,14 +76450,13 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_4_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8648,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004dd3f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -76490,13 +76482,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_window_ext_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8668,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ddca. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -76943,14 +76935,13 @@ void __tailMerge_icu_dll(undefined8 param_1,undefined8 param_2,undefined8 param_
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8688,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e321. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77084,12 +77075,13 @@ void __tailMerge_api_ms_win_core_com_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d86a8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e44e. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77151,14 +77143,13 @@ void __tailMerge_api_ms_win_core_registry_l2_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d86c8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e50f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77208,12 +77199,13 @@ void __tailMerge_oleaut32_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d86e8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e5be. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77239,12 +77231,13 @@ void __tailMerge_api_ms_win_shcore_scaling_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8708,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e649. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77355,12 +77348,13 @@ void __tailMerge_api_ms_win_mm_playsound_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8728,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e74c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77386,14 +77380,13 @@ void __tailMerge_ext_ms_win_gdi_dc_l1_2_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8748,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e7d7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77419,12 +77412,13 @@ void __tailMerge_ext_ms_win_ntuser_caret_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8768,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e862. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77450,13 +77444,13 @@ void __tailMerge_ext_ms_win_ntuser_dialogbox_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8788,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e8ed. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -77482,14 +77476,13 @@ void __tailMerge_ext_ms_win_ntuser_dialogbox_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d87a8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004e978. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -77575,12 +77568,13 @@ void __tailMerge_ext_ms_win_ntuser_dialogbox_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d87c8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ea5d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77606,12 +77600,13 @@ void __tailMerge_ext_ms_win_ntuser_draw_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d87e8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004eae8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77648,13 +77643,13 @@ void __tailMerge_ext_ms_win_ntuser_keyboard_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8808,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004eb85. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -77704,14 +77699,13 @@ void __tailMerge_ext_ms_win_ntuser_keyboard_l1_3_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8828,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ec34. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77749,13 +77743,13 @@ void __tailMerge_ext_ms_win_ntuser_gui_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8848,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ecd1. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -77781,14 +77775,13 @@ void __tailMerge_ext_ms_win_ntuser_gui_l1_3_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8868,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ed5c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -77850,12 +77843,11 @@ void __tailMerge_ext_ms_win_ntuser_menu_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8888,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ee1d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -77881,13 +77873,13 @@ void __tailMerge_ext_ms_win_ntuser_menu_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d88a8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004eea8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78009,12 +78001,13 @@ void __tailMerge_ext_ms_win_ntuser_message_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d88c8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004efc3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78040,14 +78033,11 @@ void __tailMerge_ext_ms_win_ntuser_misc_l1_5_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d88e8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f04e. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -78073,14 +78063,13 @@ void __tailMerge_ext_ms_win_ntuser_misc_l1_2_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8908,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f0d9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78154,14 +78143,13 @@ void __tailMerge_ext_ms_win_ntuser_misc_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8928,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f1ac. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -78211,13 +78199,13 @@ void __tailMerge_ext_ms_win_ntuser_mouse_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8948,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f25b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78267,12 +78255,13 @@ void __tailMerge_ext_ms_win_ntuser_rectangle_ext_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8968,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f30a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78298,12 +78287,13 @@ void __tailMerge_ext_ms_win_ntuser_server_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8988,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f395. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78341,12 +78331,13 @@ void __tailMerge_ext_ms_win_ntuser_sysparams_ext_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d89a8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f432. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78419,12 +78410,11 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d89c8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f535. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -78450,13 +78440,11 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d89e8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f5c0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -78650,14 +78638,13 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_3_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8a08,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f747. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78682,14 +78669,13 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_5_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8a28,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f7d2. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78797,14 +78783,11 @@ void __tailMerge_ext_ms_win_rtcore_gdi_object_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8a48,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f8db. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -78830,12 +78813,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_cursor_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8a68,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004f966. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78909,14 +78893,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_winstamin_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8a88,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fa39. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -78954,12 +78937,11 @@ void __tailMerge_api_ms_win_shell_dataobject_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8aa8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fad6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -78985,14 +78967,11 @@ void __tailMerge_ext_ms_win_uiacore_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8ac8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fb61. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -79030,13 +79009,13 @@ void __tailMerge_ext_ms_win_uiacore_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8ae8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fbfe. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79173,14 +79152,13 @@ void __tailMerge_propsys_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8b08,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fd74. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79230,12 +79208,13 @@ void __tailMerge_d2d1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8b28,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004fe23. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -79261,12 +79240,13 @@ void __tailMerge_dwrite_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8b48,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004feae. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79292,12 +79272,13 @@ void __tailMerge_dxgi_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8b68,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ff39. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -79323,14 +79304,13 @@ void __tailMerge_d3d11_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8b88,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014004ffc4. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79356,14 +79336,13 @@ void __tailMerge_ext_ms_win_dwmapi_ext_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8ba8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014005004f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -79425,13 +79404,11 @@ void __tailMerge_ext_ms_win_gdi_dc_create_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8bc8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140050110. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -79468,12 +79445,11 @@ void __tailMerge_ext_ms_win_gdi_draw_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8be8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400501ad. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -79511,14 +79487,11 @@ void __tailMerge_ext_ms_win_gdi_draw_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8c08,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014005024a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -79623,13 +79596,13 @@ void __tailMerge_ext_ms_win_gdi_font_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8c28,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140050353. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79703,12 +79676,13 @@ void __tailMerge_ext_ms_win_gdi_font_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8c48,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140050426. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79782,14 +79756,11 @@ void __tailMerge_ext_ms_win_gdi_internal_desktop_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8c68,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400504f9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -79875,12 +79846,13 @@ void __tailMerge_ext_ms_win_ntuser_gui_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8c88,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400505de. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -79929,14 +79901,13 @@ void __tailMerge_ext_ms_win_ntuser_misc_l1_5_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8ca8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014005068d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -79973,14 +79944,13 @@ void __tailMerge_ext_ms_win_rtcore_gdi_rgn_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
-  undefined8 in_XMM3_Qa;
+  undefined8 in_XMM0_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8cc8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014005072a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,in_XMM3_Qa);
+  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -80018,12 +79988,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_dc_access_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_R9;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8ce8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400507c7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -80060,13 +80031,11 @@ void __tailMerge_ext_ms_win_uxtheme_themes_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8d08,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140050864. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -80092,13 +80061,11 @@ void __tailMerge_api_ms_win_shell_namespace_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
-  undefined8 in_R8;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8d28,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400508ef. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,in_R8,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
   return;
 }
 
@@ -80124,12 +80091,13 @@ void __tailMerge_ext_ms_win_usp10_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_RCX;
+  undefined8 in_R9;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d8d48,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014005097a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,in_XMM1_Qa,param_3,in_R9);
   return;
 }
 
@@ -140308,30 +140276,39 @@ void __thiscall Microsoft::Console::Render::Renderer::TriggerSelection(Renderer 
 
 void __thiscall
 Microsoft::Console::Render::Renderer::UpdateSoftFont
-          (Renderer *this,longlong param_2,undefined8 param_3)
+          (Renderer *this,undefined4 *param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  int iVar1;
-  ulonglong uVar2;
-  Renderer *pRVar3;
+  longlong *plVar1;
+  int iVar2;
+  ulonglong uVar3;
+  Renderer *pRVar4;
   void *unaff_retaddr;
+  undefined4 local_28;
+  undefined4 uStack_24;
+  undefined4 uStack_20;
+  undefined4 uStack_1c;
   
-  iVar1 = (int)((ulonglong)param_3 >> 0x20);
-  if (iVar1 == 0) {
-    uVar2 = 0;
+  iVar2 = (int)((ulonglong)param_3 >> 0x20);
+  if (iVar2 == 0) {
+    uVar3 = 0;
   }
   else {
-    uVar2 = *(ulonglong *)(param_2 + 8) / (ulonglong)(longlong)iVar1;
+    uVar3 = *(ulonglong *)(param_2 + 2) / (ulonglong)(longlong)iVar2;
   }
-  *(ulonglong *)(this + 0x28) = uVar2 + 0xef1f;
-  pRVar3 = this;
-  while ((pRVar3 = pRVar3 + 8, pRVar3 != this + 0x18 && (*(longlong **)pRVar3 != (longlong *)0x0)))
-  {
-    iVar1 = (**(code **)(**(longlong **)pRVar3 + 0xe0))();
-    if (iVar1 < 0) {
+  *(ulonglong *)(this + 0x28) = uVar3 + 0xef1f;
+  pRVar4 = this;
+  while ((pRVar4 = pRVar4 + 8, pRVar4 != this + 0x18 &&
+         (plVar1 = *(longlong **)pRVar4, plVar1 != (longlong *)0x0))) {
+    local_28 = *param_2;
+    uStack_24 = param_2[1];
+    uStack_20 = param_2[2];
+    uStack_1c = param_2[3];
+    iVar2 = (**(code **)(*plVar1 + 0xe0))(plVar1,&local_28,param_3,param_4);
+    if (iVar2 < 0) {
       wil::details::in1diag3::_Log_Hr
                 (unaff_retaddr,0x22e,
-                 "onecore\\windows\\core\\console\\open\\src\\renderer\\base\\renderer.cpp",iVar1);
+                 "onecore\\windows\\core\\console\\open\\src\\renderer\\base\\renderer.cpp",iVar2);
     }
   }
   TriggerRedrawAll(this,false,false);
@@ -163878,25 +163855,17 @@ Microsoft::Console::Types::UiaTextRangeBase::RuntimeClassInitialize
 
 long __thiscall
 Microsoft::Console::Types::UiaTextRangeBase::RuntimeClassInitialize
-          (UiaTextRangeBase *this,undefined8 param_1,undefined8 param_2,undefined8 param_4,
-          point param_5,UiaTextRangeBase param_6,undefined4 *param_7)
+          (UiaTextRangeBase *this,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+          point param_5,UiaTextRangeBase param_6,undefined8 param_7)
 
 {
   long lVar1;
   point *ppVar2;
   void *unaff_retaddr;
   undefined8 local_res20;
-  undefined4 local_18;
-  undefined4 uStack_14;
-  undefined4 uStack_10;
-  undefined4 uStack_c;
   
-  local_18 = *param_7;
-  uStack_14 = param_7[1];
-  uStack_10 = param_7[2];
-  uStack_c = param_7[3];
   local_res20 = param_4;
-  lVar1 = (**(code **)(*(longlong *)this + 200))(local_18,param_1,param_2,&local_18);
+  lVar1 = (**(code **)(*(longlong *)this + 200))();
   if (lVar1 < 0) {
     wil::details::in1diag3::Return_Hr
               (unaff_retaddr,0x45,
