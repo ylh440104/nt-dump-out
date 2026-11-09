@@ -13985,7 +13985,9 @@ int DecodeAcpiIdleState(longlong param_1,char *param_2,uint param_3,undefined8 p
       param_5._0_4_ = 3;
     }
   }
-  if ((DAT_1400157b8 == (code *)0x0) || (local_48 = (*DAT_1400157b8)(param_1), local_48 < 0)) {
+  if ((DAT_1400157b8 == (code *)0x0) ||
+     (local_48 = (*DAT_1400157b8)(param_1,param_2,param_3,param_4,puVar1,param_6,param_7,param_8),
+     local_48 < 0)) {
     pcVar4 = "LPI";
     if (param_3 != 0xffffffff) {
       pcVar4 = "C";
@@ -20318,8 +20320,7 @@ int EnumerateControlMethods(longlong param_1,uint *param_2)
       local_98 = 1;
       local_88 = uVar7;
       local_90 = piVar4;
-      iVar3 = (**(code **)(WdfFunctions_01015 + 0x5d0))
-                        (WdfDriverGlobals,*(undefined8 *)(param_1 + 0x10),0,0x32c020);
+      iVar3 = (**(code **)(WdfFunctions_01015 + 0x5d0))();
       if (-1 < iVar3) {
         if (((*piVar4 == 0x47696541) && (uVar7 = piVar4[1], uVar7 != 0)) && (local_80 == uVar9)) {
           piVar12 = piVar4 + 2;
