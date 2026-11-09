@@ -318,7 +318,7 @@ void BampIsProcessModern(undefined8 param_1,undefined1 *param_2)
 
 ===== BampSetThrottleStateCallback @ 1400015b0 =====
 
-void BampSetThrottleStateCallback(ulonglong param_1,undefined8 *param_2,undefined8 param_3)
+void BampSetThrottleStateCallback(ulonglong param_1,undefined8 param_2,undefined8 param_3)
 
 {
   BampThrottlingSetProcessThrottleState(param_1,param_2,param_3);
@@ -7029,11 +7029,12 @@ undefined8 BampProcessWindowReportVerify(uint *param_1,uint param_2)
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 ulonglong BampThrottlingSetProcessThrottleState
-                    (ulonglong param_1,undefined8 *param_2,undefined8 param_3)
+                    (ulonglong param_1,undefined8 param_2,undefined8 param_3)
 
 {
   ulonglong uVar1;
   ulonglong uVar2;
+  undefined8 *in_RDX;
   ulonglong uVar3;
   undefined1 auStackY_e8 [32];
   ulonglong local_b8;
@@ -7071,7 +7072,7 @@ ulonglong BampThrottlingSetProcessThrottleState
   BampReleaseThrottlingLockShared();
   if (uVar1 == 0) {
     if ((*(uint *)(param_1 + 500) & 4) == 0) {
-      uVar2 = BampThrottlingRegisterProcessEx(param_1,0,param_3,&local_b8);
+      uVar2 = BampThrottlingRegisterProcessEx(param_1,param_2,param_3,&local_b8);
       uVar3 = uVar2 & 0xffffffff;
       uVar1 = local_b8;
       if ((int)uVar2 < 0) goto LAB_1400129c5;
@@ -7083,7 +7084,7 @@ LAB_14001299c:
     BampAcquireThrottledProcessLock(uVar1);
     if ((*(byte *)(uVar1 + 0x134) & 1) != 0) {
       BampUpdateThrottledProcessState
-                (uVar1,(undefined4 *)0x0,(undefined4 *)0x0,param_2,(undefined4 *)0x0);
+                (uVar1,(undefined4 *)0x0,(undefined4 *)0x0,in_RDX,(undefined4 *)0x0);
     }
   }
   uVar3 = 0;
@@ -7102,9 +7103,9 @@ LAB_1400129c5:
     local_98 = 0;
     local_68 = &local_b0;
     local_58 = &local_ac;
-    local_a8 = *(undefined4 *)((longlong)param_2 + 4);
+    local_a8 = *(undefined4 *)((longlong)in_RDX + 4);
     local_48 = &local_a8;
-    local_a4 = *(undefined4 *)(param_2 + 1);
+    local_a4 = *(undefined4 *)(in_RDX + 1);
     local_38 = &local_a4;
     local_9c = 4;
     local_88 = PTR_DAT_140009018;
@@ -8150,7 +8151,7 @@ void BampCreateProcessCallback(ulonglong param_1,undefined8 param_2,longlong par
     BampThrottlingOnProcessTerminated(param_1,param_2);
   }
   else {
-    BampThrottlingRegisterProcessEx(param_1,*(longlong *)(param_3 + 0x10),param_3,(ulonglong *)0x0);
+    BampThrottlingRegisterProcessEx(param_1,param_2,param_3,(ulonglong *)0x0);
   }
   return;
 }
@@ -8419,7 +8420,7 @@ LAB_140014187:
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
 ulonglong BampThrottlingRegisterProcessEx
-                    (ulonglong param_1,longlong param_2,undefined8 param_3,ulonglong *param_4)
+                    (ulonglong param_1,undefined8 param_2,undefined8 param_3,ulonglong *param_4)
 
 {
   wchar_t *pwVar1;
@@ -8444,7 +8445,7 @@ ulonglong BampThrottlingRegisterProcessEx
   wchar_t *pwStack_150;
   ulonglong local_148;
   longlong local_140;
-  longlong local_138;
+  undefined1 local_138 [8];
   ushort *local_130;
   undefined4 local_128;
   undefined4 local_124;
@@ -8475,7 +8476,7 @@ ulonglong BampThrottlingRegisterProcessEx
   undefined8 local_70;
   undefined4 *local_68;
   undefined8 local_60;
-  longlong *local_58;
+  undefined1 *local_58;
   undefined8 local_50;
   ulonglong local_48;
   
@@ -8494,7 +8495,6 @@ ulonglong BampThrottlingRegisterProcessEx
   local_118 = 0;
   pwStack_110 = (wchar_t *)0x0;
   local_158 = param_1;
-  local_138 = param_2;
   uVar5 = ObOpenObjectByPointer(param_1,0x200,0,0x1fffff);
   uVar15 = (ulonglong)uVar5;
   if (-1 < (int)uVar5) {
@@ -8514,7 +8514,7 @@ ulonglong BampThrottlingRegisterProcessEx
         uVar7 = BampAllocateObjectsForThrottledProcessInformation((longlong)puVar6);
         uVar15 = uVar7 & 0xffffffff;
         if (-1 < (int)uVar7) {
-          uVar5 = BampStartThrottledProcessInformation(puVar6,local_138,lVar11,&local_148);
+          uVar5 = BampStartThrottledProcessInformation(puVar6,param_2,lVar11,&local_148);
           uVar15 = (ulonglong)uVar5;
           uVar9 = local_148;
           if (-1 < (int)uVar5) {
@@ -8570,7 +8570,7 @@ LAB_14001457b:
       local_88 = local_168;
       local_78 = &local_108;
       local_68 = local_120;
-      local_58 = &local_138;
+      local_58 = local_138;
       local_f8 = PTR_DAT_140009018;
       local_a0[1] = 0;
       pwStack_110 = (wchar_t *)0x0;
@@ -9202,7 +9202,7 @@ undefined8 BampAllocateObjectsForThrottledProcessInformation(longlong param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int BampStartThrottledProcessInformation
-              (undefined8 *param_1,longlong param_2,undefined8 param_3,ulonglong *param_4)
+              (undefined8 *param_1,undefined8 param_2,undefined8 param_3,ulonglong *param_4)
 
 {
   ulonglong *puVar1;
@@ -9219,6 +9219,7 @@ int BampStartThrottledProcessInformation
   byte bVar12;
   uint uVar13;
   longlong lVar14;
+  longlong in_RDX;
   longlong *plVar15;
   undefined1 *puVar16;
   undefined1 *puVar17;
@@ -9227,7 +9228,6 @@ int BampStartThrottledProcessInformation
   short sVar20;
   undefined8 *puVar21;
   bool bVar22;
-  undefined8 in_XMM1_Qa;
   undefined8 uStackY_200;
   undefined1 auStackY_1f8 [8];
   undefined1 auStackY_1f0 [24];
@@ -9293,7 +9293,7 @@ int BampStartThrottledProcessInformation
   local_118 = 0;
   uStack_110 = 0;
   bVar4 = false;
-  local_1c0 = param_2;
+  local_1c0 = in_RDX;
   local_1a8 = uVar11;
   local_168 = param_4;
   KeEnterCriticalRegion();
@@ -9307,7 +9307,7 @@ int BampStartThrottledProcessInformation
     puVar17 = auStackY_1f8;
     if (-1 < iVar5) {
       *(undefined4 *)((longlong)param_1 + 0x14c) = 0;
-      BamUserSettingsGet((ushort *)(param_1 + 0x35),in_XMM1_Qa,'\x01',
+      BamUserSettingsGet((ushort *)(param_1 + 0x35),param_2,'\x01',
                          (undefined4 *)((longlong)param_1 + 0x14c),(undefined8 *)0x0);
       lVar7 = 0;
       lVar14 = 3;
@@ -9361,10 +9361,10 @@ int BampStartThrottledProcessInformation
         local_128 = 0;
         uStack_120 = 0;
         iVar5 = ZwOpenKey(&local_1b0,1,&local_148);
-        param_2 = local_1c0;
+        in_RDX = local_1c0;
         if (-1 < iVar5) {
           iVar5 = ZwQueryValueKey(local_1b0,&BampNonExemptImagePolicyValueName,2);
-          param_2 = local_1c0;
+          in_RDX = local_1c0;
           if (iVar5 < 0) {
             if (iVar5 == -0x3fffffcc) goto LAB_1400157ff;
           }
@@ -9373,7 +9373,7 @@ int BampStartThrottledProcessInformation
             if (local_5c < 8) {
 LAB_1400157ff:
               iVar5 = ZwQueryValueKey(local_1b0,&BampNonExemptImageExemptionsValueName,2);
-              param_2 = local_1c0;
+              in_RDX = local_1c0;
               if (iVar5 < 0) {
                 local_5c = uVar13;
                 uStack_58 = (int)uVar11;
@@ -9406,7 +9406,7 @@ LAB_1400158a4:
       if (uVar6 != 0) {
         ZwClose(uVar6);
       }
-      if (((param_2 != 0) && (iVar5 = PsLookupProcessByProcessId(param_2,local_1a0), -1 < iVar5)) &&
+      if (((in_RDX != 0) && (iVar5 = PsLookupProcessByProcessId(in_RDX,local_1a0), -1 < iVar5)) &&
          (uVar9 = BampFindThrottledProcessInformation(local_1a0[0]), uVar9 != 0)) {
         bVar4 = true;
         KeEnterCriticalRegion();
@@ -9437,7 +9437,7 @@ LAB_1400158a4:
           uVar11 = local_1a8;
           uVar9 = 0;
           if (5 < DAT_140009010) {
-            local_1a8 = CONCAT44(local_1a8._4_4_,(int)param_2);
+            local_1a8 = CONCAT44(local_1a8._4_4_,(int)in_RDX);
             local_80 = 4;
             local_70 = 4;
             local_1c8[0] = *(undefined4 *)(uVar11 + 0x1d0);
@@ -11813,7 +11813,9 @@ int DriverEntry(undefined8 *param_1,wchar_t *param_2,undefined *param_3)
           pcVar5 = BamIdleGlobalUserPresenceCallback;
           param_2 = (wchar_t *)&GUID_GLOBAL_USER_PRESENCE;
           puVar3 = (undefined8 *)0x0;
-          iVar1 = PoRegisterPowerSettingCallback();
+          iVar1 = PoRegisterPowerSettingCallback
+                            (0,&GUID_GLOBAL_USER_PRESENCE,BamIdleGlobalUserPresenceCallback,0,
+                             &PoPowerSettingCallbackHandle);
           param_3 = pcVar5;
           if (-1 < iVar1) {
             WilInitialized = 1;
