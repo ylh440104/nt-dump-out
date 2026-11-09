@@ -1,0 +1,5377 @@
+__security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* public: void __cdecl CGraphicsCommandList::EndEmulatedRenderPassHelper<struct
+   D3D12_TEXTURE_BARRIER>(void) __ptr64 */
+
+void __thiscall
+CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_TEXTURE_BARRIER>(CGraphicsCommandList *this)
+
+{
+  int iVar1;
+  uint uVar2;
+  longlong lVar3;
+  bool bVar4;
+  undefined4 uVar5;
+  long lVar6;
+  uint *puVar7;
+  undefined8 *puVar8;
+  D3D12_MESSAGE_ID DVar9;
+  CGraphicsCommandList *pCVar10;
+  ulonglong uVar11;
+  longlong lVar12;
+  tagRECT *ptVar13;
+  undefined4 uVar14;
+  undefined4 *puVar15;
+  ulonglong uVar16;
+  char *pcVar17;
+  CResource *pCVar18;
+  undefined8 uVar19;
+  uint uVar20;
+  undefined1 auStackY_118 [32];
+  uint in_stack_ffffffffffffff08;
+  uint uVar21;
+  undefined4 in_stack_ffffffffffffff0c;
+  uint local_b8;
+  uint local_a8;
+  uint local_a4;
+  undefined4 local_a0;
+  undefined4 local_9c;
+  D3D12_RESOLVE_MODE local_98;
+  void *local_90;
+  undefined8 uStack_88;
+  longlong local_80;
+  void *local_78;
+  undefined8 uStack_70;
+  longlong local_68;
+  undefined4 local_58 [8];
+  ulonglong local_38;
+  
+  local_38 = __security_cookie ^ (ulonglong)auStackY_118;
+  if ((*(uint *)(this + 0x688) & 2) != 0) {
+    return;
+  }
+  local_78 = (void *)0x0;
+  uStack_70 = 0;
+  local_68 = 0;
+  local_90 = (void *)0x0;
+  uStack_88 = 0;
+  local_80 = 0;
+  iVar1 = *(int *)(this + 0x308);
+  uVar14 = 0x10;
+  if ((((iVar1 == 0) || (iVar1 == 1)) || (iVar1 == 2)) || ((iVar1 == 3 || (iVar1 == 4)))) {
+LAB_18024751e:
+    uVar19 = 0x10;
+  }
+  else if (iVar1 == 5) {
+    uVar19 = 0x80;
+  }
+  else {
+    if (iVar1 != 6) goto LAB_18024751e;
+    uVar19 = 8;
+  }
+  iVar1 = *(int *)(this + 800);
+  if (((iVar1 != 0) && (iVar1 != 1)) && ((iVar1 != 2 && ((iVar1 != 3 && (iVar1 != 4)))))) {
+    if (iVar1 == 5) {
+      uVar14 = 0x80;
+    }
+    else if (iVar1 == 6) {
+      uVar14 = 8;
+    }
+  }
+  if (*(uint *)(this + 0x3a8) != 0) {
+    puVar15 = local_58;
+    pCVar10 = this + 0x3b8;
+    uVar16 = (ulonglong)*(uint *)(this + 0x3a8);
+    do {
+      iVar1 = *(int *)pCVar10;
+      if ((((iVar1 == 0) || (iVar1 == 1)) || (iVar1 == 2)) || ((iVar1 == 3 || (iVar1 == 4)))) {
+LAB_1802475a2:
+        uVar5 = 4;
+      }
+      else if (iVar1 == 5) {
+        uVar5 = 0x80;
+      }
+      else {
+        if (iVar1 != 6) goto LAB_1802475a2;
+        uVar5 = 8;
+      }
+      *puVar15 = uVar5;
+      pCVar10 = pCVar10 + 0x58;
+      puVar15 = puVar15 + 1;
+      uVar16 = uVar16 - 1;
+    } while (uVar16 != 0);
+    uVar16 = 0;
+    local_b8 = 0;
+    do {
+      uVar11 = 0;
+      lVar12 = uVar16 * 0x58;
+      uVar20 = (uint)uVar16;
+      if ((*(int *)(this + lVar12 + 0x3d0) == 2) && (*(int *)(this + lVar12 + 1000) != 0)) {
+        uVar5 = local_58[uVar16];
+        do {
+          EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + lVar12 + 0x3d8),uVar5,0x2000);
+          in_stack_ffffffffffffff08 =
+               *(uint *)(uVar11 * 0x20 + *(longlong *)(this + lVar12 + 0x3f0));
+          EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + lVar12 + 0x3d8),0x2000);
+          uVar20 = (int)uVar11 + 1;
+          uVar11 = (ulonglong)uVar20;
+        } while (uVar20 < *(uint *)(this + lVar12 + 1000));
+        uVar20 = local_b8;
+      }
+      local_b8 = uVar20 + 1;
+      uVar16 = (ulonglong)local_b8;
+    } while (local_b8 < *(uint *)(this + 0x3a8));
+  }
+  if (this[0x2f9] != (CGraphicsCommandList)0x0) {
+    if (*(int *)(this + 0x338) == 2) {
+      EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + 0x340),uVar19,0x2000);
+      in_stack_ffffffffffffff08 = 0;
+      EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + 0x340),0x2000);
+    }
+    if (*(int *)(this + 0x370) == 2) {
+      EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + 0x378),uVar14,0x2000);
+      in_stack_ffffffffffffff08 = 1;
+      EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + 0x378),0x2000);
+    }
+  }
+  RenderPassBarriers(this,&local_78);
+  uVar16 = 0;
+  local_a4 = 0;
+  if (*(int *)(this + 0x3a8) != 0) {
+    do {
+      lVar12 = uVar16 * 0x58;
+      uVar20 = (uint)uVar16;
+      if ((*(int *)(this + lVar12 + 0x3d0) == 2) && (*(int *)(this + lVar12 + 1000) != 0)) {
+        uVar16 = 0;
+        do {
+          puVar7 = (uint *)(uVar16 * 0x20 + *(longlong *)(this + lVar12 + 0x3f0));
+          if ((((puVar7[7] == 0) && (puVar7[4] == 0)) && (puVar7[6] == 0)) && (puVar7[5] == 0)) {
+            bVar4 = true;
+            if (((*(int *)(this + lVar12 + 0x3fc) != 3) || (puVar7[2] != 0)) ||
+               ((puVar7[3] != 0 || (bVar4 = true, 0 < *(int *)(*(longlong *)(this + 0xa0) + 0x188)))
+               )) goto LAB_1802478c5;
+            uVar20 = *puVar7;
+            lVar3 = *(longlong *)(this + lVar12 + 0x3d8);
+            uVar2 = puVar7[1];
+            pCVar18 = *(CResource **)(this + lVar12 + 0x3e0);
+            if (pCVar18 == (CResource *)0x0) goto LAB_180247918;
+            if (lVar3 == 0) goto LAB_180247938;
+            local_a0 = 0;
+            uVar21 = 0;
+            lVar6 = ValidateResolveSubresourceRegion
+                              ((TDebugOutputFunctor *)&local_a0,
+                               (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                               (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,0,0,
+                               (ResourceValidationInfo *)(lVar3 + 0xe8),uVar20,(tagRECT *)0x0,
+                               *(DXGI_FORMAT *)(this + lVar12 + 0x3f8),3);
+            if (lVar6 < 0) goto LAB_180247991;
+            if ((*(longlong *)(lVar3 + 0xd0) != 0) && (*(longlong *)(pCVar18 + 0xd0) == 0))
+            goto LAB_1802479af;
+            bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                              ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+            in_stack_ffffffffffffff08 = uVar21;
+            if (bVar4) {
+              (**(code **)((*(longlong *)(this + 0x180) + 0x70U &
+                           (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                          (g_TableAndSize & 0xffffffffffff0000)))
+                        (this + 0x940,pCVar18 + 0x1c0,uVar2);
+              in_stack_ffffffffffffff08 = uVar20;
+            }
+          }
+          else {
+            bVar4 = false;
+LAB_1802478c5:
+            local_98 = *(D3D12_RESOLVE_MODE *)(this + lVar12 + 0x3fc);
+            ptVar13 = (tagRECT *)0x0;
+            if (!bVar4) {
+              ptVar13 = (tagRECT *)(puVar7 + 4);
+            }
+            lVar3 = *(longlong *)(this + lVar12 + 0x3d8);
+            uVar20 = puVar7[3];
+            uVar21 = puVar7[2];
+            uVar2 = puVar7[1];
+            pCVar18 = *(CResource **)(this + lVar12 + 0x3e0);
+            local_a8 = uVar21;
+            if (pCVar18 == (CResource *)0x0) {
+LAB_180247918:
+              pcVar17 = (char *)0x0;
+              DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_18024791d:
+              lVar6 = -0x7ff8ffa9;
+              uVar21 = in_stack_ffffffffffffff08;
+            }
+            else {
+              if (lVar3 == 0) {
+LAB_180247938:
+                pcVar17 = (char *)0x0;
+                DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+                goto LAB_18024791d;
+              }
+              local_9c = 0;
+              lVar6 = ValidateResolveSubresourceRegion
+                                ((TDebugOutputFunctor *)&local_9c,
+                                 (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                                 (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,uVar21,uVar20,
+                                 (ResourceValidationInfo *)(lVar3 + 0xe8),*puVar7,ptVar13,
+                                 *(DXGI_FORMAT *)(this + lVar12 + 0x3f8),local_98);
+              if (-1 < lVar6) {
+                if ((*(longlong *)(lVar3 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+                  bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                                    ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,
+                                     pCVar18);
+                  in_stack_ffffffffffffff08 = uVar21;
+                  if (bVar4) {
+                    pCVar18 = pCVar18 + 0x1c0;
+                    lVar3 = *(longlong *)(this + 0x180);
+                    puVar8 = (undefined8 *)
+                             CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                                       ((CCommandList<ID3D12GraphicsCommandList10> *)this);
+                    (**(code **)((lVar3 + 0x1b0U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                                (g_TableAndSize & 0xffffffffffff0000)))(*puVar8,pCVar18,uVar2);
+                    in_stack_ffffffffffffff08 = uVar20;
+                  }
+                  goto LAB_180247a5b;
+                }
+LAB_1802479af:
+                pcVar17 = 
+                "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+                ;
+                DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+                in_stack_ffffffffffffff08 = uVar21;
+                goto LAB_18024791d;
+              }
+LAB_180247991:
+              pcVar17 = (char *)0x0;
+              DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+            }
+            CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                      ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,
+                       pcVar17,CONCAT44(in_stack_ffffffffffffff0c,uVar21));
+            in_stack_ffffffffffffff08 = uVar21;
+          }
+LAB_180247a5b:
+          uVar20 = (int)uVar16 + 1;
+          uVar16 = (ulonglong)uVar20;
+        } while (uVar20 < *(uint *)(this + lVar12 + 1000));
+        uVar20 = local_a4;
+      }
+      local_a4 = uVar20 + 1;
+      uVar16 = (ulonglong)local_a4;
+    } while (local_a4 < *(uint *)(this + 0x3a8));
+  }
+  bVar4 = false;
+  if (this[0x2f9] == (CGraphicsCommandList)0x0) goto LAB_180247df8;
+  if ((*(int *)(this + 0x338) == 2) && (*(longlong *)(this + 0x358) != 0)) {
+    puVar7 = *(uint **)(this + 0x358);
+    if ((puVar7[7] == 0) && (((puVar7[4] == 0 && (puVar7[6] == 0)) && (puVar7[5] == 0)))) {
+      bVar4 = true;
+    }
+    ptVar13 = (tagRECT *)0x0;
+    if (!bVar4) {
+      ptVar13 = (tagRECT *)(puVar7 + 4);
+    }
+    lVar12 = *(longlong *)(this + 0x340);
+    uVar20 = puVar7[3];
+    uVar21 = puVar7[2];
+    uVar2 = puVar7[1];
+    pCVar18 = *(CResource **)(this + 0x348);
+    if (pCVar18 == (CResource *)0x0) {
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_180247b21:
+      pcVar17 = (char *)0x0;
+LAB_180247b24:
+      lVar6 = -0x7ff8ffa9;
+    }
+    else {
+      if (lVar12 == 0) {
+        DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+        goto LAB_180247b21;
+      }
+      local_a8 = 0;
+      in_stack_ffffffffffffff08 = uVar21;
+      lVar6 = ValidateResolveSubresourceRegion
+                        ((TDebugOutputFunctor *)&local_a8,
+                         (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                         (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,uVar21,uVar20,
+                         (ResourceValidationInfo *)(lVar12 + 0xe8),*puVar7,ptVar13,
+                         *(DXGI_FORMAT *)(this + 0x360),*(D3D12_RESOLVE_MODE *)(this + 0x364));
+      if (-1 < lVar6) {
+        if ((*(longlong *)(lVar12 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+          bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                            ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+          if (bVar4) {
+            (**(code **)((*(longlong *)(this + 0x180) + 0x1b0U &
+                         (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                        (g_TableAndSize & 0xffffffffffff0000)))
+                      (this + 0x940,pCVar18 + 0x1c0,uVar2,uVar21);
+            in_stack_ffffffffffffff08 = uVar20;
+          }
+          goto LAB_180247c48;
+        }
+        pcVar17 = 
+        "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+        ;
+        DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+        goto LAB_180247b24;
+      }
+      pcVar17 = (char *)0x0;
+      DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+    }
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,pcVar17,
+               CONCAT44(in_stack_ffffffffffffff0c,in_stack_ffffffffffffff08));
+  }
+LAB_180247c48:
+  if ((*(int *)(this + 0x370) != 2) || (*(longlong *)(this + 0x390) == 0)) goto LAB_180247df8;
+  puVar7 = *(uint **)(this + 0x390);
+  if ((puVar7[7] == 0) && (((puVar7[4] == 0 && (puVar7[6] == 0)) && (puVar7[5] == 0)))) {
+    bVar4 = true;
+  }
+  else {
+    bVar4 = false;
+  }
+  ptVar13 = (tagRECT *)0x0;
+  if (!bVar4) {
+    ptVar13 = (tagRECT *)(puVar7 + 4);
+  }
+  lVar12 = *(longlong *)(this + 0x378);
+  uVar20 = puVar7[2];
+  uVar21 = puVar7[1];
+  pCVar18 = *(CResource **)(this + 0x380);
+  if (pCVar18 == (CResource *)0x0) {
+    DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_180247cd3:
+    pcVar17 = (char *)0x0;
+LAB_180247cd6:
+    lVar6 = -0x7ff8ffa9;
+  }
+  else {
+    if (lVar12 == 0) {
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+      goto LAB_180247cd3;
+    }
+    local_a8 = 0;
+    in_stack_ffffffffffffff08 = uVar20;
+    lVar6 = ValidateResolveSubresourceRegion
+                      ((TDebugOutputFunctor *)&local_a8,
+                       (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                       (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar21,uVar20,puVar7[3],
+                       (ResourceValidationInfo *)(lVar12 + 0xe8),*puVar7,ptVar13,
+                       *(DXGI_FORMAT *)(this + 0x398),*(D3D12_RESOLVE_MODE *)(this + 0x39c));
+    if (-1 < lVar6) {
+      if ((*(longlong *)(lVar12 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+        bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                          ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+        if (bVar4) {
+          (**(code **)((*(longlong *)(this + 0x180) + 0x1b0U &
+                       (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                      (g_TableAndSize & 0xffffffffffff0000)))
+                    (this + 0x940,pCVar18 + 0x1c0,uVar21,uVar20);
+        }
+        goto LAB_180247df8;
+      }
+      pcVar17 = 
+      "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+      ;
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+      goto LAB_180247cd6;
+    }
+    pcVar17 = (char *)0x0;
+    DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+  }
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,pcVar17,
+             CONCAT44(in_stack_ffffffffffffff0c,in_stack_ffffffffffffff08));
+LAB_180247df8:
+  RenderPassBarriers(this,&local_90);
+  if (local_90 != (void *)0x0) {
+    std::_Deallocate<16,0>(local_90,local_80 - (longlong)local_90 & 0xffffffffffffffc0);
+  }
+  if (local_78 != (void *)0x0) {
+    std::_Deallocate<16,0>(local_78,local_68 - (longlong)local_78 & 0xffffffffffffffc0);
+  }
+  return;
+}
+
+
+
+===== CreateSubresourceCachedSwizzler @ 180247e6c =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* public: class ISwizzler * __ptr64 __cdecl CResource::CreateSubresourceCachedSwizzler(unsigned
+   int,struct D3D12DDI_SUBRESOURCE_INFO const & __ptr64) __ptr64 */
+
+ISwizzler * __thiscall
+CResource::CreateSubresourceCachedSwizzler
+          (CResource *this,uint param_1,D3D12DDI_SUBRESOURCE_INFO *param_2)
+
+{
+  longlong *plVar1;
+  byte bVar2;
+  long lVar3;
+  CDevice *this_00;
+  D3DWDDM2_0DDI_SWIZZLE_PATTERN DVar4;
+  undefined1 uVar5;
+  D3D12DDI_SUBRESOURCE_INFO *pDVar6;
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *pDVar7;
+  int iVar8;
+  bool bVar9;
+  undefined1 auStackY_168 [32];
+  ISwizzler *local_138;
+  int local_130;
+  uint uStack_12c;
+  D3D12TEST_SWIZZLE_PATTERN_DESC local_128 [240];
+  uint local_38;
+  uint local_34;
+  uint local_30;
+  ulonglong local_28;
+  
+  local_28 = __security_cookie ^ (ulonglong)auStackY_168;
+  pDVar6 = param_2;
+  GetSwizzlePattern(this,(uint)&local_130,(D3D12DDI_SUBRESOURCE_INFO *)(ulonglong)param_1);
+  uVar5 = SUB81(pDVar6,0);
+  memset(local_128,0,0xe8);
+  if (local_130 == 0) {
+    this_00 = CDeviceChild<ID3D12VideoEncoderHeap1>::Device
+                        ((CDeviceChild<ID3D12VideoEncoderHeap1> *)this);
+    lVar3 = CDevice::GetSwizzlePatternDesc((CDevice *)this_00,uStack_12c,local_128);
+    if (lVar3 < 0) {
+      return (ISwizzler *)0x0;
+    }
+  }
+  else {
+    iVar8 = (*(int *)(this + 0xf0) << 4) >> 0x1c;
+    bVar2 = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE::GetAddressingBitsPerAlignedSize
+                      ((int)*(short *)(this + 0xfa));
+    if (local_130 == 1) {
+      DVar4 = 0;
+    }
+    else {
+      DVar4 = 3;
+    }
+    pDVar7 = (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *)local_128;
+    GetStandardOrLinearSwizzlePatternDesc(DVar4,(uint)bVar2,iVar8 - 1,pDVar7);
+    uVar5 = SUB81(pDVar7,0);
+  }
+  local_38 = (uint)*(ushort *)(param_2 + 0x18);
+  local_34 = (uint)*(ushort *)(param_2 + 0x1a);
+  local_30 = (uint)*(ushort *)(param_2 + 0x1c);
+  local_138 = (ISwizzler *)0x0;
+  bVar2 = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE::GetAddressingBitsPerAlignedSize
+                    ((int)*(short *)(this + 0xfa));
+  lVar3 = ISwizzler::Create((D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *)local_128,(uint)bVar2,&local_38,
+                            (bool)uVar5,&local_138);
+  if (lVar3 < 0) {
+    return (ISwizzler *)0x0;
+  }
+  plVar1 = (longlong *)(*(longlong *)(this + 0x1a0) + (ulonglong)param_1 * 8);
+  LOCK();
+  bVar9 = *plVar1 == 0;
+  if (bVar9) {
+    *plVar1 = (longlong)local_138;
+  }
+  UNLOCK();
+  if (bVar9) {
+    return local_138;
+  }
+  if (local_138 != (ISwizzler *)0x0) {
+    (*(code *)**(undefined8 **)local_138)(local_138,1);
+  }
+  return *(ISwizzler **)(*(longlong *)(this + 0x1a0) + (ulonglong)param_1 * 8);
+}
+
+
+
+===== Create @ 180247fc8 =====
+
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: static long __cdecl ISwizzler::Create(struct D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const &
+   __ptr64,unsigned int,unsigned int * __ptr64 const,bool,class ISwizzler * __ptr64 * __ptr64) */
+
+long __cdecl
+ISwizzler::Create(D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,uint param_2,uint *param_3,
+                 bool param_4,ISwizzler **param_5)
+
+{
+  long lVar1;
+  FastPathSwizzler<2,8,2> *this;
+  FastPathSwizzler<2,2,1> *this_00;
+  FastPathSwizzler<2,1,1> *this_01;
+  FastPathSwizzler<2,32,1> *this_02;
+  ISwizzler *pIVar2;
+  FastPathSwizzler<2,16,1> *this_03;
+  FastPathSwizzler<2,2,4> *this_04;
+  FastPathSwizzler<2,16,4> *this_05;
+  FastPathSwizzler<2,8,1> *this_06;
+  FastPathSwizzler<2,4,1> *this_07;
+  FastPathSwizzler<2,4,2> *this_08;
+  FastPathSwizzler<2,2,2> *this_09;
+  FastPathSwizzler<2,16,2> *this_10;
+  FastPathSwizzler<2,32,2> *this_11;
+  FastPathSwizzler<2,8,4> *this_12;
+  FastPathSwizzler<2,4,4> *this_13;
+  uint uVar3;
+  undefined1 auStack_218 [48];
+  EXorType local_1e8 [2];
+  ISwizzler **local_1e0;
+  ISwizzler *local_1d8;
+  uint *local_1d0;
+  SwizzleProperties local_1c8 [44];
+  char local_19c;
+  int local_17c;
+  int local_174;
+  EXorType local_14c;
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC local_118 [240];
+  ulonglong local_28;
+  
+  local_28 = __security_cookie ^ (ulonglong)auStack_218;
+  local_1e0 = param_5;
+  *param_5 = (ISwizzler *)0x0;
+  pIVar2 = (ISwizzler *)0x0;
+  local_1d8 = (ISwizzler *)0x0;
+  local_1d0 = param_3;
+  memset(local_1c8,0,0xa8);
+  memset(local_118,0,0xe8);
+  lVar1 = SwizzlePatternProcessor::ValidateAndPreprocessSwizzlePattern
+                    (param_1,param_2,local_1c8,local_118);
+  if (lVar1 < 0) goto LAB_180248105;
+  if (local_19c == '\0') {
+    pIVar2 = operator_new(0x1b8);
+    if (pIVar2 != (ISwizzler *)0x0) {
+      memset(pIVar2 + 8,0,0x108);
+      memset(pIVar2 + 0x110,0,0xa8);
+      *(undefined ***)pIVar2 = &SlowPathSwizzler::_vftable_;
+    }
+    local_1d8 = pIVar2;
+    goto LAB_180248105;
+  }
+  uVar3 = local_14c + (local_17c + local_174 * 6) * 3;
+  local_1e8[0] = local_14c;
+  if (uVar3 < 0x1c) {
+    if (uVar3 == 0x1b) {
+      pIVar2 = CreateFastPathSwizzler<0,3,1>(local_1e8);
+    }
+    else if (uVar3 < 0xe) {
+      if (uVar3 == 0xd) {
+        pIVar2 = CreateFastPathSwizzler<1,4,0>(local_1e8);
+      }
+      else if (uVar3 < 7) {
+        if (uVar3 == 6) {
+          pIVar2 = CreateFastPathSwizzler<0,2,0>(local_1e8);
+        }
+        else {
+          if (uVar3 == 0) {
+            local_1e8[0] = 0;
+          }
+          else if (uVar3 != 1) {
+            if (uVar3 == 2) {
+              local_1e8[0] = 2;
+              this_01 = operator_new(0x200);
+              if (this_01 == (FastPathSwizzler<2,1,1> *)0x0) goto LAB_1802480f8;
+              memset(this_01,0,0x200);
+              pIVar2 = (ISwizzler *)FastPathSwizzler<2,1,1>::FastPathSwizzler<2,1,1>(this_01);
+            }
+            else if (uVar3 == 3) {
+              pIVar2 = CreateFastPathSwizzler<0,1,0>(local_1e8);
+            }
+            else if (uVar3 == 4) {
+              pIVar2 = CreateFastPathSwizzler<1,1,0>(local_1e8);
+            }
+            else {
+              if (uVar3 != 5) {
+                return -0x7fff0001;
+              }
+              local_1e8[0] = 2;
+              this_00 = operator_new(0x200);
+              if (this_00 == (FastPathSwizzler<2,2,1> *)0x0) goto LAB_1802480f8;
+              memset(this_00,0,0x200);
+              pIVar2 = (ISwizzler *)FastPathSwizzler<2,2,1>::FastPathSwizzler<2,2,1>(this_00);
+            }
+            goto LAB_1802480fa;
+          }
+          pIVar2 = CreateFastPathSwizzler<1,0,0>(local_1e8);
+        }
+      }
+      else if (uVar3 == 7) {
+        pIVar2 = CreateFastPathSwizzler<1,2,0>(local_1e8);
+      }
+      else if (uVar3 == 8) {
+        local_1e8[0] = 2;
+        this_07 = operator_new(0x200);
+        if (this_07 == (FastPathSwizzler<2,4,1> *)0x0) goto LAB_1802480f8;
+        memset(this_07,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,4,1>::FastPathSwizzler<2,4,1>(this_07);
+      }
+      else if (uVar3 == 9) {
+        pIVar2 = CreateFastPathSwizzler<0,3,0>(local_1e8);
+      }
+      else if (uVar3 == 10) {
+        pIVar2 = CreateFastPathSwizzler<1,3,0>(local_1e8);
+      }
+      else if (uVar3 == 0xb) {
+        local_1e8[0] = 2;
+        this_06 = operator_new(0x200);
+        if (this_06 == (FastPathSwizzler<2,8,1> *)0x0) goto LAB_1802480f8;
+        memset(this_06,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,8,1>::FastPathSwizzler<2,8,1>(this_06);
+      }
+      else {
+        if (uVar3 != 0xc) {
+          return -0x7fff0001;
+        }
+        pIVar2 = CreateFastPathSwizzler<0,4,0>(local_1e8);
+      }
+    }
+    else if (uVar3 < 0x15) {
+      if (uVar3 == 0x14) {
+LAB_1802481ac:
+        local_1e8[0] = 2;
+        goto LAB_1802480f8;
+      }
+      if (uVar3 == 0xe) {
+        local_1e8[0] = 2;
+        this_03 = operator_new(0x200);
+        if (this_03 == (FastPathSwizzler<2,16,1> *)0x0) goto LAB_1802480f8;
+        memset(this_03,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,16,1>::FastPathSwizzler<2,16,1>(this_03);
+      }
+      else if (uVar3 == 0xf) {
+        pIVar2 = CreateFastPathSwizzler<0,5,0>(local_1e8);
+      }
+      else if (uVar3 == 0x10) {
+        pIVar2 = CreateFastPathSwizzler<1,5,0>(local_1e8);
+      }
+      else {
+        if (uVar3 != 0x11) {
+          if (uVar3 != 0x12) {
+            if (uVar3 != 0x13) {
+              return -0x7fff0001;
+            }
+            goto LAB_1802483a3;
+          }
+          goto LAB_1802480f3;
+        }
+        local_1e8[0] = 2;
+        this_02 = operator_new(0x200);
+        if (this_02 == (FastPathSwizzler<2,32,1> *)0x0) goto LAB_1802480f8;
+        memset(this_02,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,32,1>::FastPathSwizzler<2,32,1>(this_02);
+      }
+    }
+    else if (uVar3 == 0x15) {
+      pIVar2 = CreateFastPathSwizzler<0,1,1>(local_1e8);
+    }
+    else if (uVar3 == 0x16) {
+      pIVar2 = CreateFastPathSwizzler<1,1,1>(local_1e8);
+    }
+    else if (uVar3 == 0x17) {
+      local_1e8[0] = 2;
+      this_09 = operator_new(0x200);
+      if (this_09 == (FastPathSwizzler<2,2,2> *)0x0) goto LAB_1802480f8;
+      memset(this_09,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,2,2>::FastPathSwizzler<2,2,2>(this_09);
+    }
+    else if (uVar3 == 0x18) {
+      pIVar2 = CreateFastPathSwizzler<0,2,1>(local_1e8);
+    }
+    else if (uVar3 == 0x19) {
+      pIVar2 = CreateFastPathSwizzler<1,2,1>(local_1e8);
+    }
+    else {
+      if (uVar3 != 0x1a) {
+        return -0x7fff0001;
+      }
+      local_1e8[0] = 2;
+      this_08 = operator_new(0x200);
+      if (this_08 == (FastPathSwizzler<2,4,2> *)0x0) goto LAB_1802480f8;
+      memset(this_08,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,4,2>::FastPathSwizzler<2,4,2>(this_08);
+    }
+  }
+  else if (uVar3 < 0x2a) {
+    if (uVar3 == 0x29) {
+LAB_1802484ed:
+      local_1e8[0] = 2;
+      this_04 = operator_new(0x200);
+      if (this_04 == (FastPathSwizzler<2,2,4> *)0x0) goto LAB_1802480f8;
+      memset(this_04,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,2,4>::FastPathSwizzler<2,2,4>(this_04);
+    }
+    else if (uVar3 < 0x23) {
+      if (uVar3 == 0x22) {
+        pIVar2 = CreateFastPathSwizzler<1,5,1>(local_1e8);
+      }
+      else if (uVar3 == 0x1c) {
+        pIVar2 = CreateFastPathSwizzler<1,3,1>(local_1e8);
+      }
+      else if (uVar3 == 0x1d) {
+        local_1e8[0] = 2;
+        this = operator_new(0x200);
+        if (this == (FastPathSwizzler<2,8,2> *)0x0) goto LAB_1802480f8;
+        memset(this,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,8,2>::FastPathSwizzler<2,8,2>(this);
+      }
+      else if (uVar3 == 0x1e) {
+        pIVar2 = CreateFastPathSwizzler<0,4,1>(local_1e8);
+      }
+      else if (uVar3 == 0x1f) {
+        pIVar2 = CreateFastPathSwizzler<1,4,1>(local_1e8);
+      }
+      else if (uVar3 == 0x20) {
+        local_1e8[0] = 2;
+        this_10 = operator_new(0x200);
+        if (this_10 == (FastPathSwizzler<2,16,2> *)0x0) goto LAB_1802480f8;
+        memset(this_10,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,16,2>::FastPathSwizzler<2,16,2>(this_10);
+      }
+      else {
+        if (uVar3 != 0x21) {
+          return -0x7fff0001;
+        }
+        pIVar2 = CreateFastPathSwizzler<0,5,1>(local_1e8);
+      }
+    }
+    else if (uVar3 == 0x23) {
+      local_1e8[0] = 2;
+      this_11 = operator_new(0x200);
+      if (this_11 == (FastPathSwizzler<2,32,2> *)0x0) goto LAB_1802480f8;
+      memset(this_11,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,32,2>::FastPathSwizzler<2,32,2>(this_11);
+    }
+    else {
+      if (uVar3 == 0x24) goto LAB_1802480f3;
+      if (uVar3 == 0x25) goto LAB_1802483a3;
+      if (uVar3 == 0x26) goto LAB_1802481ac;
+      if (uVar3 == 0x27) goto LAB_1802484ed;
+      if (uVar3 != 0x28) {
+        return -0x7fff0001;
+      }
+      pIVar2 = CreateFastPathSwizzler<1,1,2>(local_1e8);
+    }
+  }
+  else if (uVar3 < 0x31) {
+    if (uVar3 == 0x30) {
+      pIVar2 = CreateFastPathSwizzler<0,4,2>(local_1e8);
+    }
+    else if (uVar3 == 0x2a) {
+      pIVar2 = CreateFastPathSwizzler<0,2,2>(local_1e8);
+    }
+    else if (uVar3 == 0x2b) {
+      pIVar2 = CreateFastPathSwizzler<1,2,2>(local_1e8);
+    }
+    else if (uVar3 == 0x2c) {
+      local_1e8[0] = 2;
+      this_13 = operator_new(0x200);
+      if (this_13 == (FastPathSwizzler<2,4,4> *)0x0) goto LAB_1802480f8;
+      memset(this_13,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,4,4>::FastPathSwizzler<2,4,4>(this_13);
+    }
+    else if (uVar3 == 0x2d) {
+      pIVar2 = CreateFastPathSwizzler<0,3,2>(local_1e8);
+    }
+    else if (uVar3 == 0x2e) {
+      pIVar2 = CreateFastPathSwizzler<1,3,2>(local_1e8);
+    }
+    else {
+      if (uVar3 != 0x2f) {
+        return -0x7fff0001;
+      }
+      local_1e8[0] = 2;
+      this_12 = operator_new(0x200);
+      if (this_12 == (FastPathSwizzler<2,8,4> *)0x0) goto LAB_1802480f8;
+      memset(this_12,0,0x200);
+      pIVar2 = (ISwizzler *)FastPathSwizzler<2,8,4>::FastPathSwizzler<2,8,4>(this_12);
+    }
+  }
+  else if (uVar3 == 0x31) {
+    pIVar2 = CreateFastPathSwizzler<1,4,2>(local_1e8);
+  }
+  else {
+    if (uVar3 == 0x32) {
+      local_1e8[0] = 2;
+      this_05 = operator_new(0x200);
+      if (this_05 != (FastPathSwizzler<2,16,4> *)0x0) {
+        memset(this_05,0,0x200);
+        pIVar2 = (ISwizzler *)FastPathSwizzler<2,16,4>::FastPathSwizzler<2,16,4>(this_05);
+        goto LAB_1802480fa;
+      }
+    }
+    else if (uVar3 == 0x33) {
+LAB_1802480f3:
+      local_1e8[0] = 0;
+    }
+    else {
+      if (uVar3 != 0x34) {
+        if (uVar3 != 0x35) {
+          return -0x7fff0001;
+        }
+        goto LAB_1802481ac;
+      }
+LAB_1802483a3:
+      local_1e8[0] = 1;
+    }
+LAB_1802480f8:
+    pIVar2 = (ISwizzler *)0x0;
+  }
+LAB_1802480fa:
+  local_14c = local_1e8[0];
+LAB_180248105:
+  if ((lVar1 < 0) ||
+     (lVar1 = (**(code **)(*(longlong *)pIVar2 + 8))(pIVar2,local_118,local_1c8,param_3), -1 < lVar1
+     )) {
+    *param_5 = pIVar2;
+  }
+  else {
+    (*(code *)**(undefined8 **)pIVar2)(pIVar2,1);
+  }
+  return lVar1;
+}
+
+
+
+===== ValidateAndPreprocessSwizzlePattern @ 1802485b4 =====
+
+/* public: static long __cdecl SwizzlePatternProcessor::ValidateAndPreprocessSwizzlePattern(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const & __ptr64,unsigned int,struct SwizzleProperties *
+   __ptr64,struct D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC & __ptr64) */
+
+long __cdecl
+SwizzlePatternProcessor::ValidateAndPreprocessSwizzlePattern
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,uint param_2,SwizzleProperties *param_3,
+          D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_4)
+
+{
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC DVar1;
+  undefined8 uVar2;
+  bool bVar3;
+  long lVar4;
+  uint uVar5;
+  uint uVar6;
+  
+  memset(param_3,0,0xa8);
+  uVar2 = *(undefined8 *)(param_1 + 8);
+  *(undefined8 *)param_4 = *(undefined8 *)param_1;
+  *(undefined8 *)(param_4 + 8) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x18);
+  *(undefined8 *)(param_4 + 0x10) = *(undefined8 *)(param_1 + 0x10);
+  *(undefined8 *)(param_4 + 0x18) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x28);
+  *(undefined8 *)(param_4 + 0x20) = *(undefined8 *)(param_1 + 0x20);
+  *(undefined8 *)(param_4 + 0x28) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x38);
+  *(undefined8 *)(param_4 + 0x30) = *(undefined8 *)(param_1 + 0x30);
+  *(undefined8 *)(param_4 + 0x38) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x48);
+  *(undefined8 *)(param_4 + 0x40) = *(undefined8 *)(param_1 + 0x40);
+  *(undefined8 *)(param_4 + 0x48) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x58);
+  *(undefined8 *)(param_4 + 0x50) = *(undefined8 *)(param_1 + 0x50);
+  *(undefined8 *)(param_4 + 0x58) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x68);
+  *(undefined8 *)(param_4 + 0x60) = *(undefined8 *)(param_1 + 0x60);
+  *(undefined8 *)(param_4 + 0x68) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x78);
+  *(undefined8 *)(param_4 + 0x70) = *(undefined8 *)(param_1 + 0x70);
+  *(undefined8 *)(param_4 + 0x78) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x88);
+  *(undefined8 *)(param_4 + 0x80) = *(undefined8 *)(param_1 + 0x80);
+  *(undefined8 *)(param_4 + 0x88) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0x98);
+  *(undefined8 *)(param_4 + 0x90) = *(undefined8 *)(param_1 + 0x90);
+  *(undefined8 *)(param_4 + 0x98) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0xa8);
+  *(undefined8 *)(param_4 + 0xa0) = *(undefined8 *)(param_1 + 0xa0);
+  *(undefined8 *)(param_4 + 0xa8) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0xb8);
+  *(undefined8 *)(param_4 + 0xb0) = *(undefined8 *)(param_1 + 0xb0);
+  *(undefined8 *)(param_4 + 0xb8) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 200);
+  *(undefined8 *)(param_4 + 0xc0) = *(undefined8 *)(param_1 + 0xc0);
+  *(undefined8 *)(param_4 + 200) = uVar2;
+  uVar2 = *(undefined8 *)(param_1 + 0xd8);
+  *(undefined8 *)(param_4 + 0xd0) = *(undefined8 *)(param_1 + 0xd0);
+  *(undefined8 *)(param_4 + 0xd8) = uVar2;
+  *(undefined8 *)(param_4 + 0xe0) = *(undefined8 *)(param_1 + 0xe0);
+  param_3[0x2c] = (SwizzleProperties)0x1;
+  for (uVar5 = 0; uVar5 < param_2; uVar5 = uVar5 + 1) {
+    DVar1 = param_4[uVar5];
+    if ((((byte)DVar1 & ((byte)DVar1 & 6) == 0) == 0) || ((byte)DVar1 >> 3 != uVar5)) {
+      return -0x7ff8ffa9;
+    }
+  }
+  lVar4 = SetSwizzleBlockProperties(param_4,param_3);
+  if (lVar4 < 0) {
+    return lVar4;
+  }
+  lVar4 = CheckXorsValid(param_4,*(uint *)param_3);
+  if (lVar4 < 0) {
+    return lVar4;
+  }
+  uVar6 = 0;
+  for (uVar5 = 0; uVar5 < *(uint *)param_3; uVar5 = uVar5 + 1) {
+    if (((byte)param_4[uVar5] & 6) == 0) {
+      if ((byte)param_4[uVar5] >> 3 != uVar6) goto LAB_180248710;
+      uVar6 = uVar6 + 1;
+    }
+  }
+  NormalizeSwizzleTrailingXBits(param_4,param_3);
+  for (uVar5 = 0; uVar5 < 3; uVar5 = uVar5 + 1) {
+    if (10000 < *(uint *)(param_3 + (ulonglong)uVar5 * 4 + 8)) goto LAB_180248710;
+  }
+  if ((*(uint *)param_3 < 0x11) && (bVar3 = CheckAndSetCacheLineProperties(param_4,param_3), bVar3))
+  {
+    SetChunkProperties(param_4,param_3);
+    bVar3 = CheckAndSetXorProperties(param_4,param_3);
+    if (bVar3) {
+      return 0;
+    }
+  }
+LAB_180248710:
+  param_3[0x2c] = (SwizzleProperties)0x0;
+  return 0;
+}
+
+
+
+===== NormalizeSwizzleTrailingXBits @ 180248758 =====
+
+/* private: static void __cdecl SwizzlePatternProcessor::NormalizeSwizzleTrailingXBits(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC & __ptr64,struct SwizzleProperties * __ptr64) */
+
+void __cdecl
+SwizzlePatternProcessor::NormalizeSwizzleTrailingXBits
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,SwizzleProperties *param_2)
+
+{
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC DVar1;
+  byte bVar2;
+  byte bVar3;
+  uint uVar4;
+  ulonglong uVar5;
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *pDVar6;
+  ulonglong uVar7;
+  
+  uVar4 = *(uint *)param_2;
+  uVar5 = (ulonglong)uVar4;
+  if (uVar4 < 6) {
+    pDVar6 = param_1 + uVar5;
+    uVar7 = (ulonglong)(6 - uVar4);
+    do {
+      *pDVar6 = (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC)((byte)*pDVar6 & 0xf9 | 1);
+      *pDVar6 = (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC)((char)param_2[0x14] << 3 | 1);
+      pDVar6 = pDVar6 + 1;
+      *(int *)(param_2 + 8) = *(int *)(param_2 + 8) << 1;
+      *(int *)(param_2 + 0x14) = *(int *)(param_2 + 0x14) + 1;
+      uVar4 = *(int *)param_2 + 1;
+      uVar5 = (ulonglong)uVar4;
+      *(int *)(param_2 + 4) = *(int *)(param_2 + 4) << 1;
+      *(uint *)param_2 = uVar4;
+      *(int *)(param_2 + 0x20) = *(int *)(param_2 + 8) + -1;
+      uVar7 = uVar7 - 1;
+    } while (uVar7 != 0);
+    bVar3 = 0;
+    if (uVar4 == 0) goto LAB_18024889c;
+  }
+  bVar3 = 0;
+  pDVar6 = param_1 + 0x40;
+  uVar7 = uVar5;
+  do {
+    bVar2 = bVar3;
+    if ((((byte)pDVar6[-0x20] & 1) != 0) && (bVar2 = ((byte)pDVar6[-0x20] >> 3) + 1, bVar2 <= bVar3)
+       ) {
+      bVar2 = bVar3;
+    }
+    bVar3 = bVar2;
+    if ((((byte)*pDVar6 & 1) != 0) && (bVar3 = ((byte)*pDVar6 >> 3) + 1, bVar3 <= bVar2)) {
+      bVar3 = bVar2;
+    }
+    bVar2 = bVar3;
+    if ((((byte)pDVar6[0x20] & 1) != 0) && (bVar2 = ((byte)pDVar6[0x20] >> 3) + 1, bVar2 <= bVar3))
+    {
+      bVar2 = bVar3;
+    }
+    bVar3 = bVar2;
+    if ((((byte)pDVar6[0x40] & 1) != 0) && (bVar3 = ((byte)pDVar6[0x40] >> 3) + 1, bVar3 <= bVar2))
+    {
+      bVar3 = bVar2;
+    }
+    pDVar6 = pDVar6 + 1;
+    uVar7 = uVar7 - 1;
+  } while (uVar7 != 0);
+LAB_18024889c:
+  while( true ) {
+    if ((uint)uVar5 < 7) {
+      return;
+    }
+    uVar4 = (uint)uVar5 - 1;
+    DVar1 = param_1[uVar4];
+    if (((byte)DVar1 & 6) != 0) {
+      return;
+    }
+    if (((byte)param_1[(ulonglong)uVar4 + 0x20] & 1) != 0) {
+      return;
+    }
+    if (((byte)param_1[(ulonglong)uVar4 + 0x40] & 1) != 0) {
+      return;
+    }
+    if (((byte)param_1[(ulonglong)uVar4 + 0x60] & 1) != 0) {
+      return;
+    }
+    if (((byte)param_1[(ulonglong)uVar4 + 0x80] & 1) != 0) {
+      return;
+    }
+    if ((*(uint *)(param_1 + 0xe0) >> (uVar4 & 0x1f) & 1) != 0) {
+      return;
+    }
+    if ((byte)DVar1 >> 3 < bVar3) break;
+    param_1[uVar4] = (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC)((byte)DVar1 & 0xfe);
+    *(uint *)(param_2 + 8) = *(uint *)(param_2 + 8) >> 1;
+    uVar5 = (ulonglong)(*(int *)param_2 - 1U);
+    *(int *)(param_2 + 0x14) = *(int *)(param_2 + 0x14) + -1;
+    *(uint *)(param_2 + 4) = *(uint *)(param_2 + 4) >> 1;
+    *(uint *)param_2 = *(int *)param_2 - 1U;
+    *(int *)(param_2 + 0x20) = *(int *)(param_2 + 8) + -1;
+  }
+  return;
+}
+
+
+
+===== SetSwizzleBlockProperties @ 1802488ac =====
+
+/* private: static long __cdecl SwizzlePatternProcessor::SetSwizzleBlockProperties(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const & __ptr64,struct SwizzleProperties * __ptr64) */
+
+long __cdecl
+SwizzlePatternProcessor::SetSwizzleBlockProperties
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,SwizzleProperties *param_2)
+
+{
+  uint uVar1;
+  int iVar2;
+  ulonglong uVar3;
+  uint uVar4;
+  SwizzleProperties *pSVar5;
+  longlong lVar6;
+  
+  *(undefined8 *)(param_2 + 0x14) = 0;
+  *(undefined4 *)(param_2 + 0x1c) = 0;
+  *(undefined4 *)param_2 = 0;
+  lVar6 = 3;
+  for (uVar4 = 0; uVar4 < 0x20; uVar4 = uVar4 + 1) {
+    if (((byte)param_1[uVar4] & 1) == 0) goto LAB_1802488fb;
+    uVar3 = (ulonglong)((byte)param_1[uVar4] >> 1) & 3;
+    uVar1 = ((byte)param_1[uVar4] >> 3) + 1;
+    if (uVar1 <= *(uint *)(param_2 + uVar3 * 4 + 0x14)) {
+      uVar1 = *(uint *)(param_2 + uVar3 * 4 + 0x14);
+    }
+    *(uint *)(param_2 + uVar3 * 4 + 0x14) = uVar1;
+    *(int *)param_2 = *(int *)param_2 + 1;
+  }
+LAB_18024891d:
+  pSVar5 = param_2 + 8;
+  *(int *)(param_2 + 4) = 1 << ((byte)*(undefined4 *)param_2 & 0x1f);
+  do {
+    iVar2 = 1 << ((byte)*(int *)(pSVar5 + 0xc) & 0x1f);
+    *(int *)pSVar5 = iVar2;
+    *(int *)(pSVar5 + 0x18) = iVar2 + -1;
+    pSVar5 = pSVar5 + 4;
+    lVar6 = lVar6 + -1;
+  } while (lVar6 != 0);
+  if (((byte)param_1[0xe4] & 1) == 0) {
+    return 0;
+  }
+  return -(uint)(*(int *)(param_2 + 0x10) != 1) & 0x80070057;
+LAB_1802488fb:
+  for (; uVar4 < 0x20; uVar4 = uVar4 + 1) {
+    if ((((byte)param_1[uVar4] & 1) != 0) || (((byte)param_1[uVar4] & 6) != 0)) {
+      return -0x7ff8ffa9;
+    }
+  }
+  goto LAB_18024891d;
+}
+
+
+
+===== CheckAndSetCacheLineProperties @ 18024896c =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* private: static bool __cdecl SwizzlePatternProcessor::CheckAndSetCacheLineProperties(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const & __ptr64,struct SwizzleProperties * __ptr64) */
+
+bool __cdecl
+SwizzlePatternProcessor::CheckAndSetCacheLineProperties
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,SwizzleProperties *param_2)
+
+{
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC DVar1;
+  bool bVar2;
+  uint uVar3;
+  uint uVar4;
+  int iVar5;
+  longlong lVar6;
+  int iVar7;
+  uint *puVar8;
+  uint local_28 [4];
+  ulonglong local_18;
+  
+  local_18 = __security_cookie ^ (ulonglong)local_28;
+  local_28[0] = 0;
+  local_28[1] = 0;
+  local_28[2] = 0;
+  iVar5 = 0;
+  lVar6 = 6;
+  do {
+    DVar1 = *param_1;
+    uVar4 = 0;
+    puVar8 = local_28;
+    do {
+      if (((byte)DVar1 >> 1 & 3) == uVar4) {
+        uVar3 = ((byte)DVar1 >> 3) + 1;
+        if (uVar3 <= *puVar8) {
+          uVar3 = *puVar8;
+        }
+        *puVar8 = uVar3;
+        if (uVar4 == 2) {
+          iVar5 = iVar5 + 1;
+        }
+      }
+      uVar4 = uVar4 + 1;
+      puVar8 = puVar8 + 1;
+    } while (uVar4 < 3);
+    param_1 = param_1 + 1;
+    lVar6 = lVar6 + -1;
+  } while (lVar6 != 0);
+  bVar2 = local_28[0] + local_28[1] <= 6U - iVar5;
+  if (bVar2) {
+    *(uint *)(param_2 + 0x3c) = local_28[0];
+    iVar7 = 1 << ((byte)local_28[0] & 0x1f);
+    *(uint *)(param_2 + 0x48) = local_28[1];
+    iVar5 = 1 << ((byte)local_28[1] & 0x1f);
+    *(int *)(param_2 + 0x40) = iVar5;
+    *(int *)(param_2 + 0x34) = iVar7;
+    *(int *)(param_2 + 0x38) = iVar7 + -1;
+    *(int *)(param_2 + 0x44) = iVar5 + -1;
+    *(int *)(param_2 + 0x70) =
+         (1 << ((char)*(undefined4 *)(param_2 + 0x18) - (byte)local_28[1] & 0x1f)) + -1;
+  }
+  return bVar2;
+}
+
+
+
+===== CheckAndSetXorProperties @ 180248a70 =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* private: static bool __cdecl SwizzlePatternProcessor::CheckAndSetXorProperties(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const & __ptr64,struct SwizzleProperties * __ptr64) */
+
+bool __cdecl
+SwizzlePatternProcessor::CheckAndSetXorProperties
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,SwizzleProperties *param_2)
+
+{
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC DVar1;
+  bool bVar2;
+  uint uVar3;
+  uint uVar4;
+  ulonglong uVar5;
+  ulonglong uVar6;
+  uint uVar7;
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *pDVar8;
+  undefined1 auStackY_88 [32];
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *local_58 [4];
+  ulonglong local_38;
+  
+  local_38 = __security_cookie ^ (ulonglong)auStackY_88;
+  *(undefined4 *)(param_2 + 0x84) = 0;
+  uVar5 = 0;
+  do {
+    uVar4 = (uint)uVar5;
+    if (0x1f < uVar4) {
+LAB_180248b84:
+      if (*(int *)(param_2 + 0x7c) == 2) {
+        local_58[0] = param_1 + 0x20;
+        local_58[1] = param_1 + 0x40;
+        local_58[2] = param_1 + 0x60;
+        local_58[3] = param_1 + 0x80;
+        for (uVar5 = 0; (uint)uVar5 < 4; uVar5 = (ulonglong)((uint)uVar5 + 1)) {
+          uVar6 = 0;
+          while (uVar4 = (uint)uVar6, uVar4 < *(uint *)param_2) {
+            if (((byte)local_58[uVar5][uVar6] & 1) != 0) {
+              DVar1 = local_58[uVar5][uVar6];
+              uVar3 = 0xffffffff;
+              uVar7 = 0;
+              if (*(int *)param_2 != 0) {
+                pDVar8 = param_1;
+                do {
+                  if ((((byte)*pDVar8 >> 1 & 3) == ((byte)DVar1 >> 1 & 3)) &&
+                     ((byte)*pDVar8 >> 3 == (byte)DVar1 >> 3)) {
+                    uVar3 = uVar7;
+                  }
+                  uVar7 = uVar7 + 1;
+                  pDVar8 = pDVar8 + 1;
+                } while (uVar7 < *(uint *)param_2);
+              }
+              if ((uVar3 < uVar4) && (uVar3 < 6)) goto LAB_180248caa;
+            }
+            uVar6 = (ulonglong)(uVar4 + 1);
+          }
+        }
+        bVar2 = CheckAndGetXorTableShiftsAndMasks
+                          ((D3DWDDM2_0DDI_SWIZZLE_BIT_ENTRY **)local_58,4,*(uint *)(param_2 + 0x4c),
+                           *(uint *)(param_2 + 0x54),(uint *)(param_2 + 0x88),
+                           (uint *)(param_2 + 0x90));
+        if (bVar2) {
+          local_58[0] = param_1 + 0xa0;
+          local_58[1] = param_1 + 0xc0;
+          bVar2 = CheckAndGetXorTableShiftsAndMasks
+                            ((D3DWDDM2_0DDI_SWIZZLE_BIT_ENTRY **)local_58,2,
+                             *(uint *)(param_2 + 0x4c),*(uint *)(param_2 + 0x54),
+                             (uint *)(param_2 + 0x98),(uint *)(param_2 + 0xa0));
+        }
+        else {
+LAB_180248caa:
+          bVar2 = false;
+        }
+      }
+      else {
+        bVar2 = true;
+      }
+      return bVar2;
+    }
+    if (((((((byte)param_1[uVar5 + 0x40] & 1) != 0) || (((byte)param_1[uVar5 + 0x60] & 1) != 0)) ||
+         (((byte)param_1[uVar5 + 0x80] & 1) != 0)) ||
+        ((((byte)param_1[uVar5 + 0xa0] & 1) != 0 || (((byte)param_1[uVar5 + 0xc0] & 1) != 0)))) ||
+       (*(int *)(param_1 + 0xe0) != 0)) {
+LAB_180248b7d:
+      *(undefined4 *)(param_2 + 0x7c) = 2;
+      goto LAB_180248b84;
+    }
+    if (((byte)param_1[uVar5 + 0x20] & 1) != 0) {
+      uVar3 = 0xffffffff;
+      uVar7 = 0;
+      if (*(int *)param_2 != 0) {
+        pDVar8 = param_1;
+        do {
+          if ((((byte)*pDVar8 >> 1 & 3) == ((byte)param_1[uVar5 + 0x20] >> 1 & 3)) &&
+             ((byte)*pDVar8 >> 3 == (byte)param_1[uVar5 + 0x20] >> 3)) {
+            uVar3 = uVar7;
+          }
+          uVar7 = uVar7 + 1;
+          pDVar8 = pDVar8 + 1;
+        } while (uVar7 < *(uint *)param_2);
+      }
+      if (((*(uint *)param_2 <= uVar3) || (uVar3 < uVar4)) ||
+         ((*(int *)(param_2 + 0x7c) == 1 && (uVar3 - uVar4 != *(int *)(param_2 + 0x84)))))
+      goto LAB_180248b7d;
+      *(uint *)(param_2 + 0x84) = uVar3 - uVar4;
+      *(uint *)(param_2 + 0x80) = *(uint *)(param_2 + 0x80) | 1 << ((byte)uVar3 & 0x1f);
+      *(undefined4 *)(param_2 + 0x7c) = 1;
+    }
+    uVar5 = (ulonglong)(uVar4 + 1);
+  } while( true );
+}
+
+
+
+===== SetChunkProperties @ 180248cdc =====
+
+/* private: static void __cdecl SwizzlePatternProcessor::SetChunkProperties(struct
+   D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC const & __ptr64,struct SwizzleProperties * __ptr64) */
+
+void __cdecl
+SwizzlePatternProcessor::SetChunkProperties
+          (D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *param_1,SwizzleProperties *param_2)
+
+{
+  D3DWDDM2_2DDI_SWIZZLE_PATTERN_DESC *pDVar1;
+  uint uVar2;
+  uint uVar3;
+  ulonglong uVar4;
+  SwizzleProperties SVar5;
+  uint uVar6;
+  
+  *(undefined4 *)(param_2 + 0x4c) = 0;
+  uVar6 = 0;
+  uVar2 = 0;
+  pDVar1 = param_1 + 0x40;
+  SVar5 = (SwizzleProperties)0x1;
+  do {
+    uVar4 = (ulonglong)uVar2;
+    if (((((4 < uVar2) || (((byte)pDVar1[-0x40] & 6) != 0)) || (((byte)pDVar1[-0x20] & 1) != 0)) ||
+        ((((byte)*pDVar1 & 1) != 0 || (((byte)pDVar1[0x20] & 1) != 0)))) ||
+       (((((byte)pDVar1[0x40] & 1) != 0 ||
+         ((((byte)pDVar1[0x60] & 1) != 0 || (((byte)pDVar1[0x80] & 1) != 0)))) ||
+        ((*(uint *)(param_1 + 0xe0) >> (uVar6 & 0x1f) & 1) != 0)))) break;
+    uVar2 = uVar2 + 1;
+    uVar6 = uVar6 + 1;
+    pDVar1 = pDVar1 + 1;
+    *(uint *)(param_2 + 0x4c) = uVar2;
+    uVar4 = (ulonglong)uVar2;
+  } while (uVar6 < 6);
+  *(undefined4 *)(param_2 + 0x54) = 0;
+  uVar6 = (uint)uVar4;
+  uVar2 = 0;
+  *(int *)(param_2 + 0x50) = (1 << ((byte)uVar4 & 0x1f)) + -1;
+  if ((uVar6 != 0) && (uVar6 < 6)) {
+    uVar2 = 0;
+    pDVar1 = param_1 + uVar4 + 0x40;
+    do {
+      if (((((1 < uVar2) || (((byte)pDVar1[-0x40] & 6) != 2)) || ((byte)pDVar1[-0x40] >> 3 != uVar2)
+           ) || (((((byte)pDVar1[-0x20] & 1) != 0 || (((byte)*pDVar1 & 1) != 0)) ||
+                 ((((byte)pDVar1[0x20] & 1) != 0 ||
+                  ((((byte)pDVar1[0x40] & 1) != 0 || (((byte)pDVar1[0x60] & 1) != 0)))))))) ||
+         ((((byte)pDVar1[0x80] & 1) != 0 ||
+          ((*(uint *)(param_1 + 0xe0) >> ((uint)uVar4 & 0x1f) & 1) != 0)))) break;
+      uVar2 = uVar2 + 1;
+      uVar3 = (uint)uVar4 + 1;
+      uVar4 = (ulonglong)uVar3;
+      pDVar1 = pDVar1 + 1;
+      *(uint *)(param_2 + 0x54) = uVar2;
+    } while (uVar3 < 6);
+  }
+  *(int *)(param_2 + 0x58) = (1 << ((byte)uVar2 & 0x1f)) + -1;
+  *(int *)(param_2 + 0x5c) = 1 << ((byte)(*(int *)(param_2 + 0x48) - uVar2) & 0x1f);
+  uVar3 = (1 << ((byte)(*(int *)(param_2 + 0x14) - uVar6) & 0x1f)) - 1;
+  *(uint *)(param_2 + 0x68) = uVar3;
+  *(uint *)(param_2 + 0x74) = ~uVar3;
+  *(int *)(param_2 + 0x6c) =
+       (1 << ((char)*(undefined4 *)(param_2 + 0x18) - (byte)uVar2 & 0x1f)) + -1;
+  *(uint *)(param_2 + 0x78) = *(int *)param_2 - (*(int *)(param_2 + 0x14) - uVar6);
+  if ((uVar6 != *(uint *)(param_2 + 0x3c)) || (uVar2 != *(uint *)(param_2 + 0x48))) {
+    SVar5 = (SwizzleProperties)0x0;
+  }
+  *(uint *)(param_2 + 100) = *(int *)(param_2 + 0x48) - uVar2;
+  *(uint *)(param_2 + 0x60) = *(uint *)(param_2 + 0x3c) - uVar6;
+  param_2[0x30] = SVar5;
+  return;
+}
+
+
+
+===== CheckAndGetXorTableShiftsAndMasks @ 180248e6c =====
+
+/* private: static bool __cdecl SwizzlePatternProcessor::CheckAndGetXorTableShiftsAndMasks(struct
+   D3DWDDM2_0DDI_SWIZZLE_BIT_ENTRY const * __ptr64 * __ptr64,unsigned int,unsigned int,unsigned
+   int,unsigned int * __ptr64,unsigned int * __ptr64) */
+
+bool __cdecl
+SwizzlePatternProcessor::CheckAndGetXorTableShiftsAndMasks
+          (D3DWDDM2_0DDI_SWIZZLE_BIT_ENTRY **param_1,uint param_2,uint param_3,uint param_4,
+          uint *param_5,uint *param_6)
+
+{
+  byte bVar1;
+  bool bVar2;
+  uint uVar3;
+  byte bVar4;
+  longlong lVar5;
+  ulonglong uVar6;
+  uint uVar7;
+  D3DWDDM2_0DDI_SWIZZLE_BIT_ENTRY *pDVar8;
+  byte local_res10 [8];
+  byte local_28 [16];
+  
+  local_res10[0] = 0xff;
+  local_res10[1] = 0xff;
+  local_28[0] = 0;
+  local_28[1] = 0;
+  bVar4 = 0xff;
+  bVar1 = 0xff;
+  if (param_2 != 0) {
+    uVar6 = (ulonglong)param_2;
+    do {
+      pDVar8 = *param_1;
+      lVar5 = 0x20;
+      do {
+        if ((((byte)*pDVar8 & 1) != 0) && (((byte)*pDVar8 & 6) < 4)) {
+          uVar3 = (byte)*pDVar8 >> 1 & 3;
+          bVar1 = (byte)*pDVar8 >> 3;
+          bVar4 = bVar1;
+          if (local_res10[uVar3] <= bVar1) {
+            bVar4 = local_res10[uVar3];
+          }
+          local_res10[uVar3] = bVar4;
+          if (bVar1 <= local_28[uVar3]) {
+            bVar1 = local_28[uVar3];
+          }
+          local_28[uVar3] = bVar1;
+        }
+        pDVar8 = pDVar8 + 1;
+        lVar5 = lVar5 + -1;
+      } while (lVar5 != 0);
+      param_1 = param_1 + 1;
+      uVar6 = uVar6 - 1;
+    } while (uVar6 != 0);
+    bVar4 = local_res10[1];
+    bVar1 = local_res10[0];
+  }
+  for (uVar6 = 0; (uint)uVar6 < 2; uVar6 = (ulonglong)((uint)uVar6 + 1)) {
+    if (local_res10[uVar6] == 0xff) {
+      uVar3 = 0;
+      uVar7 = 0;
+    }
+    else {
+      uVar7 = (uint)local_res10[uVar6];
+      uVar3 = (uint)local_28[uVar6] - (uint)local_res10[uVar6];
+      if (0x10 < uVar3) goto LAB_180248fa6;
+      uVar3 = (1 << ((char)uVar3 + 1U & 0x1f)) - 1;
+    }
+    param_5[uVar6] = uVar7;
+    param_6[uVar6] = uVar3;
+  }
+  if ((bVar1 < param_3) || (bVar4 < param_4)) {
+LAB_180248fa6:
+    bVar2 = false;
+  }
+  else {
+    *param_5 = *param_5 - param_3;
+    bVar2 = true;
+    param_5[1] = param_5[1] - param_4;
+  }
+  return bVar2;
+}
+
+
+
+===== CreateFastPathSwizzler<0,4,2> @ 180248fb4 =====
+
+/* class ISwizzler * __ptr64 __cdecl CreateFastPathSwizzler<0,4,2>(enum EXorType * __ptr64) */
+
+ISwizzler * __cdecl CreateFastPathSwizzler<0,4,2>(EXorType *param_1)
+
+{
+  FastPathSwizzlerBase *this;
+  
+  *param_1 = 0;
+  this = operator_new(0x200);
+  if (this == (FastPathSwizzlerBase *)0x0) {
+    this = (FastPathSwizzlerBase *)0x0;
+  }
+  else {
+    memset(this,0,0x200);
+    FastPathSwizzlerBase::FastPathSwizzlerBase(this);
+    *(undefined ***)this = &FastPathSwizzler<0,16,4>::_vftable_;
+  }
+  return (ISwizzler *)this;
+}
+
+
+
+===== FastPathSwizzler<2,8,2> @ 18024900c =====
+
+/* public: __cdecl FastPathSwizzler<2,8,2>::FastPathSwizzler<2,8,2>(void) __ptr64 */
+
+FastPathSwizzler<2,8,2> * __thiscall
+FastPathSwizzler<2,8,2>::FastPathSwizzler<2,8,2>(FastPathSwizzler<2,8,2> *this)
+
+{
+  FastPathSwizzlerBase::FastPathSwizzlerBase((FastPathSwizzlerBase *)this);
+  *(undefined ***)this = &_vftable_;
+  return this;
+}
+
+
+
+===== FastPathSwizzlerBase @ 180249034 =====
+
+/* public: __cdecl FastPathSwizzlerBase::FastPathSwizzlerBase(void) __ptr64 */
+
+FastPathSwizzlerBase * __thiscall
+FastPathSwizzlerBase::FastPathSwizzlerBase(FastPathSwizzlerBase *this)
+
+{
+  memset(this + 0x110,0,0xa8);
+  *(undefined ***)this = &_vftable_;
+  *(undefined8 *)(this + 0x1b8) = 0;
+  *(undefined8 *)(this + 0x1c0) = 0;
+  *(undefined8 *)(this + 0x1d0) = 0;
+  *(undefined8 *)(this + 0x1d8) = 0;
+  *(undefined8 *)(this + 0x1e0) = 0;
+  *(undefined8 *)(this + 0x1e8) = 0;
+  return this;
+}
+
+
+
+===== ~_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_> @ 180249098 =====
+
+/* public: __cdecl std::_Alloc_construct_ptr<class std::allocator<struct std::_List_node<struct
+   SSwapChainInfo * __ptr64,void * __ptr64> > >::~_Alloc_construct_ptr<class std::allocator<struct
+   std::_List_node<struct SSwapChainInfo * __ptr64,void * __ptr64> > >(void) __ptr64 */
+
+void __thiscall
+std::_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+::~_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+          (_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+           *this)
+
+{
+  if (*(void **)(this + 8) != (void *)0x0) {
+    operator_delete(*(void **)(this + 8),0x18);
+  }
+  return;
+}
+
+
+
+===== InitDDITileInfo @ 1802490bc =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Removing unreachable block (ram,0x000180249256) */
+/* public: void __cdecl CResource::InitDDITileInfo(void) __ptr64 */
+
+void __thiscall CResource::InitDDITileInfo(CResource *this)
+
+{
+  ushort uVar1;
+  CDevice *pCVar2;
+  CDevice *pCVar3;
+  __uint64 _Var4;
+  CResource *pCVar5;
+  D3D12_RESOURCE_DIMENSION DVar6;
+  uint uVar7;
+  uint uVar8;
+  D3D_FEATURE_LEVEL DVar9;
+  eExtendedFormatFeatures eVar10;
+  undefined1 local_178 [32];
+  uint local_f0 [2];
+  undefined8 local_e8;
+  undefined4 local_e0;
+  D3D12_SUBRESOURCE_TILING local_d8 [192];
+  ulonglong local_18;
+  
+  local_18 = __security_cookie ^ (ulonglong)local_178;
+  LOCK();
+  UNLOCK();
+  if ((this[0x130] == (CResource)0x0) &&
+     (((*(int *)(this + 0xf0) >> 0x1c) - 2U < 2 || (this[0x1b0] == (CResource)0x3)))) {
+    pCVar5 = this;
+    pCVar2 = CDeviceChild<ID3D12VideoEncoderHeap1>::Device
+                       ((CDeviceChild<ID3D12VideoEncoderHeap1> *)this);
+    pCVar3 = CDeviceChild<ID3D12VideoEncoderHeap1>::Device
+                       ((CDeviceChild<ID3D12VideoEncoderHeap1> *)pCVar5);
+    TableFunctionTraits<0>::Detail::
+    InvokerImpl<TableFunctionTraitsImpl<0>::FunctionTraits<78,2,void>,void,void,D3D10DDI_HDEVICE,D3D10DDI_HRESOURCE,unsigned_int*___ptr64,unsigned_int*___ptr64>
+    ::Call<CDevice>(pCVar2,pCVar3 + 0x1860);
+    DVar6 = (*(int *)(this + 0xf0) << 4) >> 0x1c;
+    if (DVar6 == D3D12_RESOURCE_DIMENSION_BUFFER) {
+      _Var4 = Width(this);
+      *(int *)(this + 0x140) = (int)(_Var4 - 1 >> 0x10) + 1;
+    }
+    else {
+      local_e8 = 0;
+      local_e0 = 0;
+      local_f0[0] = 0;
+      pCVar5 = this;
+      pCVar2 = CDeviceChild<ID3D12VideoEncoderHeap1>::Device
+                         ((CDeviceChild<ID3D12VideoEncoderHeap1> *)this);
+      eVar10 = *(eExtendedFormatFeatures *)(pCVar2 + 0x58c);
+      pCVar2 = CDeviceChild<ID3D12VideoEncoderHeap1>::Device
+                         ((CDeviceChild<ID3D12VideoEncoderHeap1> *)pCVar5);
+      DVar9 = *(D3D_FEATURE_LEVEL *)(pCVar2 + 0x588);
+      uVar1 = ArraySize(pCVar5);
+      uVar8 = (uint)uVar1;
+      uVar1 = Depth(pCVar5);
+      uVar7 = (uint)uVar1;
+      _Var4 = Width(pCVar5);
+      GenerateMipTiling((uint)_Var4,*(uint *)(this + 0xf4) & 0xffffff,uVar7,uVar8,
+                        *(uint *)(this + 0x100),(uchar)this[0xff],'\0',0,DVar6,
+                        (int)*(short *)(this + 0xfa),DVar9,eVar10,local_d8,
+                        (D3D12_TILE_SHAPE *)&local_e8,local_f0);
+      *(uint *)(this + 0x140) = local_f0[0];
+      this[0x134] = this[0xff];
+      this[0x135] = (CResource)0x0;
+      *(undefined4 *)(this + 0x138) = 0;
+      *(undefined4 *)(this + 0x13c) = 0;
+    }
+    LOCK();
+    UNLOCK();
+    this[0x130] = (CResource)0x1;
+  }
+  return;
+}
+
+
+
+===== clear @ 1802492b8 =====
+
+/* public: void __cdecl std::vector<struct
+   D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,class std::allocator<struct
+   D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS> >::clear(void) __ptr64 */
+
+void __thiscall
+std::
+vector<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+::clear(vector<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+        *this)
+
+{
+  if (*(longlong *)this == *(longlong *)(this + 8)) {
+    return;
+  }
+  *(longlong *)(this + 8) = *(longlong *)this;
+  return;
+}
+
+
+
+===== ProcessAlignedChunkRow @ 1802492d0 =====
+
+/* public: virtual void __cdecl FastPathSwizzler<0,16,4>::ProcessAlignedChunkRow(bool,bool,unsigned
+   char * __ptr64,unsigned int,unsigned char * __ptr64,unsigned int,unsigned int,unsigned int)
+   __ptr64 */
+
+void __thiscall
+FastPathSwizzler<0,16,4>::ProcessAlignedChunkRow
+          (FastPathSwizzler<0,16,4> *this,bool param_1,bool param_2,uchar *param_3,uint param_4,
+          uchar *param_5,uint param_6,uint param_7,uint param_8)
+
+{
+  if (param_1) {
+    if (param_2) {
+      ProcessAlignedChunkRow<1,1>(this,param_3,param_4,param_5,param_6,param_7,param_8);
+    }
+    else {
+      ProcessAlignedChunkRow<1,0>(this,param_3,param_4,param_5,param_6,param_7,param_8);
+    }
+  }
+  else if (param_2) {
+    ProcessAlignedChunkRow<0,1>(this,param_3,param_4,param_5,param_6,param_7,param_8);
+  }
+  else {
+    ProcessAlignedChunkRow<0,1>(this,param_3,param_4,param_5,param_6,param_7,param_8);
+  }
+  return;
+}
+
+
+
+===== ProcessAlignedChunkRow<1,1> @ 18024933c =====
+
+/* public: void __cdecl FastPathSwizzler<0,16,4>::ProcessAlignedChunkRow<1,1>(unsigned char *
+   __ptr64,unsigned int,unsigned char * __ptr64,unsigned int,unsigned int,unsigned int) __ptr64 */
+
+void __thiscall
+FastPathSwizzler<0,16,4>::ProcessAlignedChunkRow<1,1>
+          (FastPathSwizzler<0,16,4> *this,uchar *param_1,uint param_2,uchar *param_3,uint param_4,
+          uint param_5,uint param_6)
+
+{
+  ushort uVar1;
+  int iVar2;
+  ulonglong uVar3;
+  undefined8 uVar4;
+  undefined8 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
+  undefined8 uVar10;
+  uchar *puVar11;
+  ulonglong uVar12;
+  uint uVar13;
+  uchar *puVar14;
+  
+  uVar12 = (ulonglong)param_5;
+  uVar13 = (uint)*(ushort *)
+                  (*(longlong *)(this + 0x1b8) + (ulonglong)(*(uint *)(this + 0x178) & param_4) * 2)
+           + ((*(uint *)(this + 0x184) & param_4) << ((byte)*(undefined4 *)(this + 0x188) & 0x1f));
+  uVar1 = *(ushort *)
+           (*(longlong *)(this + 0x1c0) + (ulonglong)(*(uint *)(this + 0x17c) & param_6) * 2);
+  iVar2 = *(int *)(this + 0x1f0);
+  if (param_4 < param_4 + param_5) {
+    uVar3 = (ulonglong)param_2;
+    puVar14 = param_1 + uVar3 * 2;
+    do {
+      uVar4 = *(undefined8 *)(puVar14 + uVar3 * -2 + 8);
+      uVar5 = *(undefined8 *)(puVar14 + (ulonglong)param_2 + uVar3 * -2);
+      uVar6 = *(undefined8 *)(puVar14 + (ulonglong)param_2 + uVar3 * -2 + 8);
+      puVar11 = param_3 + ((uint)uVar1 + iVar2 + uVar13);
+      uVar7 = *(undefined8 *)puVar14;
+      uVar8 = *(undefined8 *)(puVar14 + 8);
+      uVar9 = *(undefined8 *)(puVar14 + uVar3);
+      uVar10 = *(undefined8 *)(puVar14 + uVar3 + 8);
+      *(undefined8 *)puVar11 = *(undefined8 *)(puVar14 + uVar3 * -2);
+      *(undefined8 *)(puVar11 + 8) = uVar4;
+      *(undefined8 *)(puVar11 + 0x10) = uVar5;
+      *(undefined8 *)(puVar11 + 0x18) = uVar6;
+      *(undefined8 *)(puVar11 + 0x20) = uVar7;
+      *(undefined8 *)(puVar11 + 0x28) = uVar8;
+      *(undefined8 *)(puVar11 + 0x30) = uVar9;
+      *(undefined8 *)(puVar11 + 0x38) = uVar10;
+      puVar14 = puVar14 + 0x10;
+      uVar13 = uVar13 - *(uint *)(this + 0x1c8) & *(uint *)(this + 0x1c8);
+      uVar12 = uVar12 - 1;
+    } while (uVar12 != 0);
+  }
+  return;
+}
+
+
+
+===== RenderPassBarriers @ 180249434 =====
+
+/* WARNING: Heritage AFTER dead removal. Example location: s0xffffffffffffffe8 : 0x0001802494a1 */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
+void RenderPassBarriers(CCastableCommandList<ID3D12VideoProcessCommandList3> *param_1,
+                       longlong *param_2,undefined8 param_3,undefined8 param_4)
+
+{
+  bool bVar1;
+  CEnhancedBarrierValidator *pCVar2;
+  D3D12_MESSAGE_ID DVar3;
+  uint uVar4;
+  D3D12_BUFFER_BARRIER *pDVar5;
+  D3D12_BUFFER_BARRIER *pDVar6;
+  ulonglong uVar7;
+  D3D12_GLOBAL_BARRIER *in_stack_ffffffffffffffd8;
+  D3D12_BUFFER_BARRIER *pDVar8;
+  D3D12_TEXTURE_BARRIER *pDVar9;
+  int local_18;
+  uint local_14;
+  D3D12_BUFFER_BARRIER *local_10;
+  
+  pDVar6 = (D3D12_BUFFER_BARRIER *)*param_2;
+  local_14 = (uint)(param_2[1] - (longlong)pDVar6 >> 6);
+  local_18 = 1;
+  local_10 = pDVar6;
+  bVar1 = CDevice::DriverSupportsEnhancedBarriers(*(CDevice **)(param_1 + 0xa0));
+  if (bVar1) {
+    if (local_18 == 0) {
+      uVar7 = 0;
+      pCVar2 = (CEnhancedBarrierValidator *)0x0;
+      if (local_14 != 0) {
+        do {
+          in_stack_ffffffffffffffd8 = (D3D12_GLOBAL_BARRIER *)(local_10 + uVar7 * 0x10);
+          bVar1 = CEnhancedBarrierValidator::ValidateGlobalBarrier
+                            (pCVar2,*(D3D12_COMMAND_LIST_TYPE *)(param_1 + 0x128),(uint)pDVar6,
+                             (uint)param_4,in_stack_ffffffffffffffd8);
+          if (!bVar1) {
+            DVar3 = D3D12_MESSAGE_ID_UNKNOWN;
+            goto LAB_180249486;
+          }
+          uVar4 = (int)uVar7 + 1;
+          uVar7 = (ulonglong)uVar4;
+        } while (uVar4 < local_14);
+      }
+    }
+    else if (local_18 == 1) {
+      if (local_14 != 0) {
+        uVar7 = (ulonglong)local_14;
+        pCVar2 = (CEnhancedBarrierValidator *)0x0;
+        pDVar5 = local_10;
+        do {
+          pDVar9 = (D3D12_TEXTURE_BARRIER *)pDVar5;
+          bVar1 = CEnhancedBarrierValidator::ValidateTextureBarrier
+                            (pCVar2,*(D3D12_COMMAND_LIST_TYPE *)(param_1 + 0x128),(uint)pDVar6,
+                             (uint)param_4,(D3D12_TEXTURE_BARRIER *)pDVar5);
+          if (!bVar1) {
+            param_4 = 0;
+            pDVar6 = (D3D12_BUFFER_BARRIER *)0x80070057;
+            pCVar2 = (CEnhancedBarrierValidator *)param_1;
+            CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                      (param_1,D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8ffa9,(char *)0x0,(__uint64)pDVar9);
+          }
+          pDVar5 = pDVar5 + 0x40;
+          uVar7 = uVar7 - 1;
+        } while (uVar7 != 0);
+      }
+    }
+    else if (local_18 == 2) {
+      if (local_14 != 0) {
+        uVar7 = (ulonglong)local_14;
+        pCVar2 = (CEnhancedBarrierValidator *)0x1;
+        pDVar5 = local_10;
+        do {
+          pDVar8 = pDVar5;
+          bVar1 = CEnhancedBarrierValidator::ValidateBufferBarrier
+                            (pCVar2,*(D3D12_COMMAND_LIST_TYPE *)(param_1 + 0x128),(uint)pDVar6,
+                             (uint)param_4,pDVar5,
+                             *(int *)(*(longlong *)(param_1 + 0xa0) + 0x1c8) != 0);
+          if (!bVar1) {
+            param_4 = 0;
+            pDVar6 = (D3D12_BUFFER_BARRIER *)0x80070057;
+            pCVar2 = (CEnhancedBarrierValidator *)param_1;
+            CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                      (param_1,D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8ffa9,(char *)0x0,(__uint64)pDVar8);
+          }
+          pDVar5 = pDVar5 + 0x28;
+          uVar7 = uVar7 - 1;
+        } while (uVar7 != 0);
+      }
+    }
+    else {
+      CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                (param_1,D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8ffa9,(char *)0x0,
+                 (__uint64)in_stack_ffffffffffffffd8);
+    }
+    CCommandList<ID3D12GraphicsCommandList10>::VersionedBarrier
+              ((CCommandList<ID3D12GraphicsCommandList10> *)param_1,1,
+               (D3D12_BARRIER_GROUP *)&local_18);
+  }
+  else {
+    DVar3 = D3D12_MESSAGE_ID_ENHANCED_BARRIERS_NOT_SUPPORTED;
+LAB_180249486:
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              (param_1,DVar3,-0x7ff8ffa9,(char *)0x0,(__uint64)in_stack_ffffffffffffffd8);
+  }
+  return;
+}
+
+
+
+===== ValidatePictureParameterSize @ 1802495e0 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* long __cdecl ValidatePictureParameterSize(struct TDebugOutputFunctor & __ptr64,struct
+   D3D12_VIDEO_DECODER_DESC const & __ptr64,struct D3D12_VIDEO_DECODE_FRAME_ARGUMENT const &
+   __ptr64) */
+
+long __cdecl
+ValidatePictureParameterSize
+          (TDebugOutputFunctor *param_1,D3D12_VIDEO_DECODER_DESC *param_2,
+          D3D12_VIDEO_DECODE_FRAME_ARGUMENT *param_3)
+
+{
+  ulonglong uVar1;
+  longlong lVar2;
+  uint uVar3;
+  
+  uVar3 = 0;
+  while( true ) {
+    if (0xe < uVar3) {
+      return 0;
+    }
+    uVar1 = (ulonglong)uVar3;
+    lVar2 = *(longlong *)
+             (&`long___cdecl_ValidatePictureParameterSize(TDebugOutputFunctor&___ptr64,D3D12_VIDEO_DECODER_DESC_const&___ptr64,D3D12_VIDEO_DECODE_FRAME_ARGUMENT_const&___ptr64)'
+               ::__l2::rgPicParamInfo)[uVar1 * 3] - *(longlong *)(param_2 + 4);
+    if (lVar2 == 0) {
+      lVar2 = *(longlong *)
+               ((longlong)
+                (&`long___cdecl_ValidatePictureParameterSize(TDebugOutputFunctor&___ptr64,D3D12_VIDEO_DECODER_DESC_const&___ptr64,D3D12_VIDEO_DECODE_FRAME_ARGUMENT_const&___ptr64)'
+                  ::__l2::rgPicParamInfo)[uVar1 * 3] + 8) - *(longlong *)(param_2 + 0xc);
+    }
+    if (lVar2 == 0) break;
+    uVar3 = uVar3 + 1;
+  }
+  if (*(uint *)(param_3 + 4) == *(uint *)(&DAT_180256758 + uVar1 * 0x18)) {
+    return 0;
+  }
+  TDebugOutputFunctor::operator()
+            (param_1,D3D12_MESSAGE_ID_VIDEO_DECODE_FRAME_INVALID_ARGUMENT,
+             "The D3D12_VIDEO_DECODE_FRAME_ARGUMENT::Size for D3D12_VIDEO_DECODE_ARGUMENT_TYPE_PICTURE_PARAMETERS is incorrect.  Actual: %d Expected: sizeof(%s)==%d."
+             ,(ulonglong)*(uint *)(param_3 + 4),(&PTR_s_DXVA_PictureParameters_180256760)[uVar1 * 3]
+             ,0x2c);
+  return -0x7ff8ffa9;
+}
+
+
+
+===== GuessResourceState @ 18024967c =====
+
+char GuessResourceState(int param_1,char param_2)
+
+{
+  if ((((param_1 != 0) && (param_1 != 1)) && (param_1 != 2)) && ((param_1 != 3 && (param_1 != 4))))
+  {
+    if (param_1 == 5) {
+      return -0x80;
+    }
+    if (param_1 == 6) {
+      return '\b';
+    }
+  }
+  return (-(param_2 != '\0') & 0xcU) + 4;
+}
+
+
+
+===== ContainsPostProcessingOptions @ 1802496bc =====
+
+/* bool __cdecl ContainsPostProcessingOptions(struct D3D12_VIDEO_DECODER_DESC const & __ptr64,void
+   const * __ptr64) */
+
+bool __cdecl ContainsPostProcessingOptions(D3D12_VIDEO_DECODER_DESC *param_1,void *param_2)
+
+{
+  longlong lVar1;
+  bool bVar2;
+  
+  bVar2 = false;
+  lVar1 = *(longlong *)(param_1 + 4) + -0x11d3a0c71b81bea3;
+  if (lVar1 == 0) {
+    lVar1 = *(longlong *)(param_1 + 0xc) + 0x3a8cd1b03fff7b47;
+  }
+  if (lVar1 != 0) {
+    lVar1 = *(longlong *)(param_1 + 4) + -0x11d3a0c71b81bea4;
+    if (lVar1 == 0) {
+      lVar1 = *(longlong *)(param_1 + 0xc) + 0x3a8cd1b03fff7b47;
+    }
+    if (lVar1 != 0) {
+      lVar1 = *(longlong *)(param_1 + 4) + -0x4e655e28ee27417f;
+      if (lVar1 == 0) {
+        lVar1 = *(longlong *)(param_1 + 0xc) + 0x3652f74ad9e21542;
+      }
+      if (lVar1 != 0) {
+        lVar1 = *(longlong *)(param_1 + 4) + -0x41d7c9e8efd64d74;
+        if (lVar1 == 0) {
+          lVar1 = *(longlong *)(param_1 + 0xc) + -0x19a39fe3b0e9e9a5;
+        }
+        if (lVar1 != 0) {
+          lVar1 = *(longlong *)(param_1 + 4) + -0x4eda010ded418a9f;
+          if (lVar1 == 0) {
+            lVar1 = *(longlong *)(param_1 + 0xc) + -0x2e8d8d35659ae39a;
+          }
+          if (lVar1 != 0) {
+            return false;
+          }
+        }
+        if ((*(short *)((longlong)param_2 + 5) == -1) &&
+           ((*(byte *)((longlong)param_2 + 0x1d) & 3) == 0)) {
+          return false;
+        }
+        return true;
+      }
+    }
+  }
+  if ((*(short *)((longlong)param_2 + 2) != -1) ||
+     ((*(byte *)((longlong)param_2 + 0x1f) & 0x2c) != 0)) {
+    bVar2 = true;
+  }
+  if (*(char *)((longlong)param_2 + 0x22) != '\0') {
+    bVar2 = true;
+  }
+  if (*(char *)((longlong)param_2 + 0x23) != '\0') {
+    bVar2 = true;
+  }
+  return bVar2;
+}
+
+
+
+===== ~_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_> @ 18024979c =====
+
+/* public: __cdecl std::_List_node_emplace_op2<class std::allocator<struct std::_List_node<struct
+   SSwapChainInfo * __ptr64,void * __ptr64> > >::~_List_node_emplace_op2<class std::allocator<struct
+   std::_List_node<struct SSwapChainInfo * __ptr64,void * __ptr64> > >(void) __ptr64 */
+
+void __thiscall
+std::
+_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>::
+~_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+          (_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+           *this)
+
+{
+  _Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>::
+  ~_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+            ((_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+              *)this);
+  return;
+}
+
+
+
+===== ProcessUnalignedBytes @ 1802497b0 =====
+
+/* public: virtual void __cdecl FastPathSwizzler<0,16,4>::ProcessUnalignedBytes(bool,unsigned char *
+   __ptr64,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned char * __ptr64)
+   __ptr64 */
+
+void __thiscall
+FastPathSwizzler<0,16,4>::ProcessUnalignedBytes
+          (FastPathSwizzler<0,16,4> *this,bool param_1,uchar *param_2,uint param_3,uint param_4,
+          uint param_5,uint param_6,uint param_7,uchar *param_8)
+
+{
+  if (param_1) {
+    FastPathSwizzler<0,8,1>::ProcessUnalignedBytes<1>
+              ((FastPathSwizzler<0,8,1> *)this,param_2,param_3,param_4,param_5,param_6,param_7,
+               param_8);
+  }
+  else {
+    FastPathSwizzler<0,16,1>::ProcessUnalignedBytes<0>
+              ((FastPathSwizzler<0,16,1> *)this,param_2,param_3,param_4,param_5,param_6,param_7,
+               param_8);
+  }
+  return;
+}
+
+
+
+===== ProcessUnalignedBytes<1> @ 18024980c =====
+
+/* public: void __cdecl FastPathSwizzler<0,8,1>::ProcessUnalignedBytes<1>(unsigned char *
+   __ptr64,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned char * __ptr64)
+   __ptr64 */
+
+void __thiscall
+FastPathSwizzler<0,8,1>::ProcessUnalignedBytes<1>
+          (FastPathSwizzler<0,8,1> *this,uchar *param_1,uint param_2,uint param_3,uint param_4,
+          uint param_5,uint param_6,uchar *param_7)
+
+{
+  uchar uVar1;
+  ushort uVar2;
+  undefined4 uVar3;
+  uint uVar4;
+  uint uVar5;
+  ulonglong uVar6;
+  uint uVar7;
+  ulonglong uVar8;
+  uchar *puVar9;
+  
+  uVar7 = param_5 + param_3;
+  if (param_3 < uVar7) {
+    uVar8 = (ulonglong)param_3;
+    do {
+      uVar3 = *(undefined4 *)(this + 0x15c);
+      uVar2 = *(ushort *)
+               (*(longlong *)(this + 0x1c0) +
+               (uVar8 >> ((byte)*(undefined4 *)(this + 0x164) & 0x3f) &
+               (ulonglong)*(uint *)(this + 0x17c)) * 2);
+      uVar4 = *(uint *)(this + 0x168);
+      uVar5 = param_2 >> ((byte)uVar3 & 0x1f);
+      uVar5 = (uint)*(ushort *)
+                     (*(longlong *)(this + 0x1b8) + (ulonglong)(uVar5 & *(uint *)(this + 0x178)) * 2
+                     ) +
+              ((*(uint *)(this + 0x184) & uVar5) << ((byte)*(undefined4 *)(this + 0x188) & 0x1f)) +
+              (*(uint *)(this + 0x160) & param_2);
+      if (param_2 < param_2 + param_4) {
+        uVar6 = (ulonglong)param_4;
+        puVar9 = param_1;
+        do {
+          uVar1 = *puVar9;
+          puVar9 = puVar9 + 1;
+          param_7[*(int *)(this + 0x1f0) + uVar5 +
+                  (uint)uVar2 + ((uVar4 & param_3) << ((byte)uVar3 & 0x1f))] = uVar1;
+          uVar5 = uVar5 - *(uint *)(this + 0x1cc) & *(uint *)(this + 0x1cc);
+          uVar6 = uVar6 - 1;
+        } while (uVar6 != 0);
+      }
+      param_1 = param_1 + param_6;
+      param_3 = param_3 + 1;
+      uVar8 = uVar8 + 1;
+    } while (param_3 < uVar7);
+  }
+  return;
+}
+
+
+
+===== ConvertReferenceFrames @ 18024993c =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* protected: void __cdecl CVideoProcessCommandList::ConvertReferenceFrames(unsigned char *
+   __ptr64,struct D3D10DDI_HRESOURCE * __ptr64 & __ptr64,struct ID3D12Resource * __ptr64 *
+   __ptr64,unsigned int) __ptr64 */
+
+void __thiscall
+CVideoProcessCommandList::ConvertReferenceFrames
+          (CVideoProcessCommandList *this,uchar *param_1,D3D10DDI_HRESOURCE **param_2,
+          ID3D12Resource **param_3,uint param_4)
+
+{
+  CResource *pCVar1;
+  ulonglong uVar2;
+  longlong lVar3;
+  D3D12_MESSAGE_ID DVar4;
+  
+  DVar4 = (D3D12_MESSAGE_ID)param_2;
+  lVar3 = 0;
+  *param_2 = (D3D10DDI_HRESOURCE *)param_1;
+  if (param_4 != 0) {
+    uVar2 = (ulonglong)param_4;
+    do {
+      pCVar1 = *(CResource **)(lVar3 + (longlong)param_3);
+      CCommandList<ID3D12VideoProcessCommandList3>::ValidateProtectedResourceSession<CResource>
+                ((CCommandList<ID3D12VideoProcessCommandList3> *)this,pCVar1,DVar4);
+      *(CResource **)(*param_2 + lVar3) = pCVar1 + 0x1c0;
+      lVar3 = lVar3 + 8;
+      uVar2 = uVar2 - 1;
+    } while (uVar2 != 0);
+  }
+  return;
+}
+
+
+
+===== ExecuteBundle @ 1802499b4 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* public: void __cdecl CGraphicsCommandList::ExecuteBundle(struct ID3D12GraphicsCommandList *
+   __ptr64) __ptr64 */
+
+void __thiscall
+CGraphicsCommandList::ExecuteBundle(CGraphicsCommandList *this,ID3D12GraphicsCommandList *param_1)
+
+{
+  bool bVar1;
+  CCommandList<struct_ID3D12GraphicsCommandList10> *this_00;
+  undefined8 *puVar2;
+  undefined8 uVar3;
+  longlong lVar4;
+  ulonglong uVar5;
+  __uint64 in_stack_ffffffffffffffd8;
+  
+  this_00 = CCommandList<ID3D12GraphicsCommandList10>::CastFrom((ID3D12CommandList *)param_1);
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::ValidateNodeMask
+            ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,*(uint *)(this_00 + 300),
+             "Node mask mismatch between bundle and command list.");
+  bVar1 = CCastableCommandList<ID3D12GraphicsCommandList10>::IsOpen
+                    ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this_00);
+  if (bVar1) {
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+               D3D12_MESSAGE_ID_EXECUTE_BUNDLE_OPEN_BUNDLE,-0x7ff8ffa9,(char *)0x0,
+               in_stack_ffffffffffffffd8);
+    ThrowFailure(-0x7ff8ffa9);
+  }
+  if (*(int *)(this_00 + 0x128) != 1) {
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+               D3D12_MESSAGE_ID_EXECUTE_BUNDLE_TYPE,-0x7ff8ffa9,(char *)0x0,
+               in_stack_ffffffffffffffd8);
+    ThrowFailure(-0x7ff8ffa9);
+  }
+  if (*(int *)(this + 0x128) != 0) {
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+               D3D12_MESSAGE_ID_EXECUTE_BUNDLE_TYPE,-0x7ff8ffa9,(char *)0x0,
+               in_stack_ffffffffffffffd8);
+    ThrowFailure(-0x7ff8ffa9);
+  }
+  for (uVar5 = 0; (uint)uVar5 < 2; uVar5 = (ulonglong)((uint)uVar5 + 1)) {
+    if ((*(longlong *)(this_00 + uVar5 * 8 + 0x2e8) != 0) &&
+       (*(longlong *)(this_00 + uVar5 * 8 + 0x2e8) != *(longlong *)(this + uVar5 * 8 + 0x2e8))) {
+      CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+                 D3D12_MESSAGE_ID_EXECUTE_BUNDLE_DESCRIPTOR_HEAP_MISMATCH,-0x7ff8ffa9,(char *)0x0,
+                 in_stack_ffffffffffffffd8);
+      ThrowFailure(-0x7ff8ffa9);
+    }
+  }
+  if (this[0x178] != (CGraphicsCommandList)0x0) {
+    while (puVar2 = *(undefined8 **)(this + 0x160),
+          (undefined8 *)(*(longlong *)(this + 0x170) + -4) < puVar2 + 1) {
+      CCastableCommandList<ID3D12GraphicsCommandList10>::FlushMarkerData
+                ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this);
+    }
+    if (this_00[0x178] == (CCommandList<struct_ID3D12GraphicsCommandList10>)0x0) {
+      *(undefined8 **)(this + 0x160) = puVar2 + 1;
+      *puVar2 = 0;
+    }
+    else {
+      uVar3 = *(undefined8 *)(this_00 + 0xb0);
+      *(undefined8 **)(this + 0x160) = puVar2 + 1;
+      *puVar2 = uVar3;
+      *(longlong *)(this + 0x150) = *(longlong *)(this + 0x150) + *(longlong *)(this_00 + 0x150);
+    }
+  }
+  puVar2 = (undefined8 *)
+           CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                     ((CCommandList<ID3D12GraphicsCommandList10> *)this_00);
+  uVar3 = *puVar2;
+  lVar4 = *(longlong *)(this + 0x180);
+  puVar2 = (undefined8 *)
+           CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                     ((CCommandList<ID3D12GraphicsCommandList10> *)this);
+  (**(code **)((lVar4 + 0x78U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+              (g_TableAndSize & 0xffffffffffff0000)))(*puVar2,uVar3);
+  return;
+}
+
+
+
+===== _Resize<std::_Value_init_tag> @ 180249b6c =====
+
+/* private: void __cdecl std::vector<struct
+   D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,class std::allocator<struct
+   D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS> >::_Resize<struct
+   std::_Value_init_tag>(unsigned __int64,struct std::_Value_init_tag const & __ptr64) __ptr64 */
+
+void __thiscall
+std::
+vector<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+::_Resize<std::_Value_init_tag>
+          (vector<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+           *this,__uint64 param_1,_Value_init_tag *param_2)
+
+{
+  D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS *pDVar1;
+  ulonglong uVar2;
+  
+  uVar2 = *(longlong *)(this + 8) - *(longlong *)this >> 5;
+  if (param_1 < uVar2) {
+    *(__uint64 *)(this + 8) = param_1 * 0x20 + *(longlong *)this;
+  }
+  else if (uVar2 < param_1) {
+    if ((ulonglong)(*(longlong *)(this + 0x10) - *(longlong *)this >> 5) < param_1) {
+      _Resize_reallocate<std::_Value_init_tag>(this,param_1,(_Value_init_tag *)this);
+      return;
+    }
+    pDVar1 = _Uninitialized_value_construct_n<std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+                       (*(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS **)
+                         (this + 8),param_1 - uVar2,
+                        (allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS> *
+                        )this);
+    *(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS **)(this + 8) = pDVar1;
+  }
+  return;
+}
+
+
+
+===== _Tidy @ 180249bbc =====
+
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* protected: void __cdecl std::_Func_class<void,char const * __ptr64>::_Tidy(void) __ptr64 */
+
+void __thiscall
+std::_Func_class<void,char_const*___ptr64>::_Tidy(_Func_class<void,char_const*___ptr64> *this)
+
+{
+  _Func_class<void,char_const*___ptr64> *p_Var1;
+  
+  p_Var1 = *(_Func_class<void,char_const*___ptr64> **)(this + 0x38);
+  if (p_Var1 != (_Func_class<void,char_const*___ptr64> *)0x0) {
+    (**(code **)(*(longlong *)p_Var1 + 0x20))(p_Var1,p_Var1 != this);
+    *(undefined8 *)(this + 0x38) = 0;
+  }
+  return;
+}
+
+
+
+===== IsValidRenderPassResume @ 180249bf4 =====
+
+/* public: bool __cdecl CGraphicsCommandList::IsValidRenderPassResume(unsigned int,struct
+   D3D12_RENDER_PASS_RENDER_TARGET_DESC const * __ptr64,struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC
+   const * __ptr64,enum D3D12_RENDER_PASS_FLAGS,class std::function<void __cdecl(char const *
+   __ptr64)> const & __ptr64) __ptr64 */
+
+bool __thiscall
+CGraphicsCommandList::IsValidRenderPassResume
+          (CGraphicsCommandList *this,uint param_1,D3D12_RENDER_PASS_RENDER_TARGET_DESC *param_2,
+          D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *param_3,D3D12_RENDER_PASS_FLAGS param_4,
+          function<void___cdecl(char_const*___ptr64)> *param_5)
+
+{
+  bool bVar1;
+  char *pcVar2;
+  
+  if ((param_4 & D3D12_RENDER_PASS_FLAG_RESUMING_PASS) == D3D12_RENDER_PASS_FLAG_NONE) {
+LAB_180249c32:
+    bVar1 = true;
+  }
+  else {
+    if (param_1 == *(uint *)(this + 0x3a8)) {
+      if (this[0x2f9] == (CGraphicsCommandList)0x0) {
+        if (param_3 == (D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *)0x0) {
+LAB_180249c22:
+          if (((param_4 ^ *(D3D12_RENDER_PASS_FLAGS *)(this + 0x688)) &
+              ~(D3D12_RENDER_PASS_FLAG_RESUMING_PASS|D3D12_RENDER_PASS_FLAG_SUSPENDING_PASS)) ==
+              D3D12_RENDER_PASS_FLAG_NONE) goto LAB_180249c32;
+          pcVar2 = "Mismatch between suspending and resuming Render Pass flags.";
+        }
+        else {
+          pcVar2 = 
+          "Resuming Render Pass contains depth buffer, but suspending Render Pass does not.";
+        }
+      }
+      else {
+        if (param_3 != (D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *)0x0) goto LAB_180249c22;
+        pcVar2 = "Suspending Render Pass contains depth buffer, but resuming Render Pass does not.";
+      }
+    }
+    else {
+      pcVar2 = "NumRenderTargets varies between the suspending and resuming render passes.";
+    }
+    std::_Func_class<void,char_const*___ptr64>::operator()
+              ((_Func_class<void,char_const*___ptr64> *)param_5,pcVar2);
+    bVar1 = false;
+  }
+  return bVar1;
+}
+
+
+
+===== EndEmulatedRenderPassHelper<D3D12_RESOURCE_BARRIER> @ 180249c6c =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* public: void __cdecl CGraphicsCommandList::EndEmulatedRenderPassHelper<struct
+   D3D12_RESOURCE_BARRIER>(void) __ptr64 */
+
+void __thiscall
+CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_RESOURCE_BARRIER>
+          (CGraphicsCommandList *this)
+
+{
+  int iVar1;
+  uint uVar2;
+  longlong lVar3;
+  bool bVar4;
+  undefined4 uVar5;
+  long lVar6;
+  uint *puVar7;
+  undefined8 *puVar8;
+  D3D12_MESSAGE_ID DVar9;
+  ulonglong uVar10;
+  longlong lVar11;
+  tagRECT *ptVar12;
+  undefined4 uVar13;
+  undefined4 *puVar14;
+  CGraphicsCommandList *pCVar15;
+  char *pcVar16;
+  ulonglong uVar17;
+  CResource *pCVar18;
+  uint uVar19;
+  undefined8 uVar20;
+  undefined1 auStackY_118 [32];
+  uint in_stack_ffffffffffffff08;
+  uint uVar21;
+  undefined4 in_stack_ffffffffffffff0c;
+  uint local_b8;
+  uint local_a8;
+  uint local_a4;
+  undefined4 local_a0;
+  undefined4 local_9c;
+  D3D12_RESOLVE_MODE local_98;
+  void *local_90;
+  undefined8 uStack_88;
+  longlong local_80;
+  void *local_78;
+  undefined8 uStack_70;
+  longlong local_68;
+  undefined4 local_58 [8];
+  ulonglong local_38;
+  
+  local_38 = __security_cookie ^ (ulonglong)auStackY_118;
+  if ((*(uint *)(this + 0x688) & 2) != 0) {
+    return;
+  }
+  local_78 = (void *)0x0;
+  uStack_70 = 0;
+  local_68 = 0;
+  local_90 = (void *)0x0;
+  uStack_88 = 0;
+  local_80 = 0;
+  iVar1 = *(int *)(this + 0x308);
+  uVar13 = 0x10;
+  if ((((iVar1 == 0) || (iVar1 == 1)) || (iVar1 == 2)) || ((iVar1 == 3 || (iVar1 == 4)))) {
+LAB_180249d01:
+    uVar20 = 0x10;
+  }
+  else if (iVar1 == 5) {
+    uVar20 = 0x80;
+  }
+  else {
+    if (iVar1 != 6) goto LAB_180249d01;
+    uVar20 = 8;
+  }
+  iVar1 = *(int *)(this + 800);
+  if (((iVar1 != 0) && (iVar1 != 1)) && ((iVar1 != 2 && ((iVar1 != 3 && (iVar1 != 4)))))) {
+    if (iVar1 == 5) {
+      uVar13 = 0x80;
+    }
+    else if (iVar1 == 6) {
+      uVar13 = 8;
+    }
+  }
+  if (*(uint *)(this + 0x3a8) != 0) {
+    puVar14 = local_58;
+    pCVar15 = this + 0x3b8;
+    uVar17 = (ulonglong)*(uint *)(this + 0x3a8);
+    do {
+      uVar5 = GuessResourceState(*(undefined4 *)pCVar15,0);
+      *puVar14 = uVar5;
+      pCVar15 = pCVar15 + 0x58;
+      puVar14 = puVar14 + 1;
+      uVar17 = uVar17 - 1;
+    } while (uVar17 != 0);
+    uVar17 = 0;
+    local_b8 = 0;
+    do {
+      uVar10 = 0;
+      lVar11 = uVar17 * 0x58;
+      uVar19 = (uint)uVar17;
+      if ((*(int *)(this + lVar11 + 0x3d0) == 2) && (*(int *)(this + lVar11 + 1000) != 0)) {
+        uVar5 = local_58[uVar17];
+        do {
+          EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + lVar11 + 0x3d8),uVar5,0x2000);
+          in_stack_ffffffffffffff08 =
+               *(uint *)(uVar10 * 0x20 + *(longlong *)(this + lVar11 + 0x3f0));
+          EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + lVar11 + 0x3d8),0x2000);
+          uVar19 = (int)uVar10 + 1;
+          uVar10 = (ulonglong)uVar19;
+        } while (uVar19 < *(uint *)(this + lVar11 + 1000));
+        uVar19 = local_b8;
+      }
+      local_b8 = uVar19 + 1;
+      uVar17 = (ulonglong)local_b8;
+    } while (local_b8 < *(uint *)(this + 0x3a8));
+  }
+  if (this[0x2f9] != (CGraphicsCommandList)0x0) {
+    if (*(int *)(this + 0x338) == 2) {
+      EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + 0x340),uVar20,0x2000);
+      in_stack_ffffffffffffff08 = 0;
+      EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + 0x340),0x2000);
+    }
+    if (*(int *)(this + 0x370) == 2) {
+      EmplaceRenderPassBarrier(&local_78,*(undefined8 *)(this + 0x378),uVar13,0x2000);
+      in_stack_ffffffffffffff08 = 1;
+      EmplaceRenderPassBarrier(&local_90,*(undefined8 *)(this + 0x378),0x2000);
+    }
+  }
+  RenderPassBarriers(this,&local_78);
+  uVar17 = 0;
+  local_a4 = 0;
+  if (*(int *)(this + 0x3a8) != 0) {
+    do {
+      lVar11 = uVar17 * 0x58;
+      uVar19 = (uint)uVar17;
+      if ((*(int *)(this + lVar11 + 0x3d0) == 2) && (*(int *)(this + lVar11 + 1000) != 0)) {
+        uVar17 = 0;
+        do {
+          puVar7 = (uint *)(uVar17 * 0x20 + *(longlong *)(this + lVar11 + 0x3f0));
+          if ((((puVar7[7] == 0) && (puVar7[4] == 0)) && (puVar7[6] == 0)) && (puVar7[5] == 0)) {
+            bVar4 = true;
+            if (((*(int *)(this + lVar11 + 0x3fc) != 3) || (puVar7[2] != 0)) ||
+               ((puVar7[3] != 0 || (bVar4 = true, 0 < *(int *)(*(longlong *)(this + 0xa0) + 0x188)))
+               )) goto LAB_18024a07e;
+            uVar19 = *puVar7;
+            lVar3 = *(longlong *)(this + lVar11 + 0x3d8);
+            uVar2 = puVar7[1];
+            pCVar18 = *(CResource **)(this + lVar11 + 0x3e0);
+            if (pCVar18 == (CResource *)0x0) goto LAB_18024a0d1;
+            if (lVar3 == 0) goto LAB_18024a0f1;
+            local_a0 = 0;
+            uVar21 = 0;
+            lVar6 = ValidateResolveSubresourceRegion
+                              ((TDebugOutputFunctor *)&local_a0,
+                               (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                               (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,0,0,
+                               (ResourceValidationInfo *)(lVar3 + 0xe8),uVar19,(tagRECT *)0x0,
+                               *(DXGI_FORMAT *)(this + lVar11 + 0x3f8),3);
+            if (lVar6 < 0) goto LAB_18024a14a;
+            if ((*(longlong *)(lVar3 + 0xd0) != 0) && (*(longlong *)(pCVar18 + 0xd0) == 0))
+            goto LAB_18024a168;
+            bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                              ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+            in_stack_ffffffffffffff08 = uVar21;
+            if (bVar4) {
+              (**(code **)((*(longlong *)(this + 0x180) + 0x70U &
+                           (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                          (g_TableAndSize & 0xffffffffffff0000)))
+                        (this + 0x940,pCVar18 + 0x1c0,uVar2);
+              in_stack_ffffffffffffff08 = uVar19;
+            }
+          }
+          else {
+            bVar4 = false;
+LAB_18024a07e:
+            local_98 = *(D3D12_RESOLVE_MODE *)(this + lVar11 + 0x3fc);
+            ptVar12 = (tagRECT *)0x0;
+            if (!bVar4) {
+              ptVar12 = (tagRECT *)(puVar7 + 4);
+            }
+            lVar3 = *(longlong *)(this + lVar11 + 0x3d8);
+            uVar19 = puVar7[3];
+            uVar21 = puVar7[2];
+            uVar2 = puVar7[1];
+            pCVar18 = *(CResource **)(this + lVar11 + 0x3e0);
+            local_a8 = uVar21;
+            if (pCVar18 == (CResource *)0x0) {
+LAB_18024a0d1:
+              pcVar16 = (char *)0x0;
+              DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_18024a0d6:
+              lVar6 = -0x7ff8ffa9;
+              uVar21 = in_stack_ffffffffffffff08;
+            }
+            else {
+              if (lVar3 == 0) {
+LAB_18024a0f1:
+                pcVar16 = (char *)0x0;
+                DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+                goto LAB_18024a0d6;
+              }
+              local_9c = 0;
+              lVar6 = ValidateResolveSubresourceRegion
+                                ((TDebugOutputFunctor *)&local_9c,
+                                 (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                                 (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,uVar21,uVar19,
+                                 (ResourceValidationInfo *)(lVar3 + 0xe8),*puVar7,ptVar12,
+                                 *(DXGI_FORMAT *)(this + lVar11 + 0x3f8),local_98);
+              if (-1 < lVar6) {
+                if ((*(longlong *)(lVar3 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+                  bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                                    ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,
+                                     pCVar18);
+                  in_stack_ffffffffffffff08 = uVar21;
+                  if (bVar4) {
+                    pCVar18 = pCVar18 + 0x1c0;
+                    lVar3 = *(longlong *)(this + 0x180);
+                    puVar8 = (undefined8 *)
+                             CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                                       ((CCommandList<ID3D12GraphicsCommandList10> *)this);
+                    (**(code **)((lVar3 + 0x1b0U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                                (g_TableAndSize & 0xffffffffffff0000)))(*puVar8,pCVar18,uVar2);
+                    in_stack_ffffffffffffff08 = uVar19;
+                  }
+                  goto LAB_18024a214;
+                }
+LAB_18024a168:
+                pcVar16 = 
+                "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+                ;
+                DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+                in_stack_ffffffffffffff08 = uVar21;
+                goto LAB_18024a0d6;
+              }
+LAB_18024a14a:
+              pcVar16 = (char *)0x0;
+              DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+            }
+            CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                      ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,
+                       pcVar16,CONCAT44(in_stack_ffffffffffffff0c,uVar21));
+            in_stack_ffffffffffffff08 = uVar21;
+          }
+LAB_18024a214:
+          uVar19 = (int)uVar17 + 1;
+          uVar17 = (ulonglong)uVar19;
+        } while (uVar19 < *(uint *)(this + lVar11 + 1000));
+        uVar19 = local_a4;
+      }
+      local_a4 = uVar19 + 1;
+      uVar17 = (ulonglong)local_a4;
+    } while (local_a4 < *(uint *)(this + 0x3a8));
+  }
+  bVar4 = false;
+  if (this[0x2f9] == (CGraphicsCommandList)0x0) goto LAB_18024a5b1;
+  if ((*(int *)(this + 0x338) == 2) && (*(longlong *)(this + 0x358) != 0)) {
+    puVar7 = *(uint **)(this + 0x358);
+    if ((puVar7[7] == 0) && (((puVar7[4] == 0 && (puVar7[6] == 0)) && (puVar7[5] == 0)))) {
+      bVar4 = true;
+    }
+    ptVar12 = (tagRECT *)0x0;
+    if (!bVar4) {
+      ptVar12 = (tagRECT *)(puVar7 + 4);
+    }
+    lVar11 = *(longlong *)(this + 0x340);
+    uVar19 = puVar7[3];
+    uVar21 = puVar7[2];
+    uVar2 = puVar7[1];
+    pCVar18 = *(CResource **)(this + 0x348);
+    if (pCVar18 == (CResource *)0x0) {
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_18024a2da:
+      pcVar16 = (char *)0x0;
+LAB_18024a2dd:
+      lVar6 = -0x7ff8ffa9;
+    }
+    else {
+      if (lVar11 == 0) {
+        DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+        goto LAB_18024a2da;
+      }
+      local_a8 = 0;
+      in_stack_ffffffffffffff08 = uVar21;
+      lVar6 = ValidateResolveSubresourceRegion
+                        ((TDebugOutputFunctor *)&local_a8,
+                         (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                         (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar2,uVar21,uVar19,
+                         (ResourceValidationInfo *)(lVar11 + 0xe8),*puVar7,ptVar12,
+                         *(DXGI_FORMAT *)(this + 0x360),*(D3D12_RESOLVE_MODE *)(this + 0x364));
+      if (-1 < lVar6) {
+        if ((*(longlong *)(lVar11 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+          bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                            ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+          if (bVar4) {
+            (**(code **)((*(longlong *)(this + 0x180) + 0x1b0U &
+                         (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                        (g_TableAndSize & 0xffffffffffff0000)))
+                      (this + 0x940,pCVar18 + 0x1c0,uVar2,uVar21);
+            in_stack_ffffffffffffff08 = uVar19;
+          }
+          goto LAB_18024a401;
+        }
+        pcVar16 = 
+        "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+        ;
+        DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+        goto LAB_18024a2dd;
+      }
+      pcVar16 = (char *)0x0;
+      DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+    }
+    CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+              ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,pcVar16,
+               CONCAT44(in_stack_ffffffffffffff0c,in_stack_ffffffffffffff08));
+  }
+LAB_18024a401:
+  if ((*(int *)(this + 0x370) != 2) || (*(longlong *)(this + 0x390) == 0)) goto LAB_18024a5b1;
+  puVar7 = *(uint **)(this + 0x390);
+  if ((puVar7[7] == 0) && (((puVar7[4] == 0 && (puVar7[6] == 0)) && (puVar7[5] == 0)))) {
+    bVar4 = true;
+  }
+  else {
+    bVar4 = false;
+  }
+  ptVar12 = (tagRECT *)0x0;
+  if (!bVar4) {
+    ptVar12 = (tagRECT *)(puVar7 + 4);
+  }
+  lVar11 = *(longlong *)(this + 0x378);
+  uVar19 = puVar7[2];
+  uVar21 = puVar7[1];
+  pCVar18 = *(CResource **)(this + 0x380);
+  if (pCVar18 == (CResource *)0x0) {
+    DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLDST;
+LAB_18024a48c:
+    pcVar16 = (char *)0x0;
+LAB_18024a48f:
+    lVar6 = -0x7ff8ffa9;
+  }
+  else {
+    if (lVar11 == 0) {
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_NULLSRC;
+      goto LAB_18024a48c;
+    }
+    local_a8 = 0;
+    in_stack_ffffffffffffff08 = uVar19;
+    lVar6 = ValidateResolveSubresourceRegion
+                      ((TDebugOutputFunctor *)&local_a8,
+                       (DeviceValidationInfo *)(*(longlong *)(this + 0xa0) + 0x2f8),
+                       (ResourceValidationInfo *)(pCVar18 + 0xe8),uVar21,uVar19,puVar7[3],
+                       (ResourceValidationInfo *)(lVar11 + 0xe8),*puVar7,ptVar12,
+                       *(DXGI_FORMAT *)(this + 0x398),*(D3D12_RESOLVE_MODE *)(this + 0x39c));
+    if (-1 < lVar6) {
+      if ((*(longlong *)(lVar11 + 0xd0) == 0) || (*(longlong *)(pCVar18 + 0xd0) != 0)) {
+        bVar4 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource
+                          ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,pCVar18);
+        if (bVar4) {
+          (**(code **)((*(longlong *)(this + 0x180) + 0x1b0U &
+                       (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                      (g_TableAndSize & 0xffffffffffff0000)))
+                    (this + 0x940,pCVar18 + 0x1c0,uVar21,uVar19);
+        }
+        goto LAB_18024a5b1;
+      }
+      pcVar16 = 
+      "If the source resource has a protected resource session, the destination resource must have a protected resource session."
+      ;
+      DVar9 = D3D12_MESSAGE_ID_RESOLVESUBRESOURCE_INVALIDDSTRESOURCE;
+      goto LAB_18024a48f;
+    }
+    pcVar16 = (char *)0x0;
+    DVar9 = D3D12_MESSAGE_ID_UNKNOWN;
+  }
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,DVar9,lVar6,pcVar16,
+             CONCAT44(in_stack_ffffffffffffff0c,in_stack_ffffffffffffff08));
+LAB_18024a5b1:
+  RenderPassBarriers(this,&local_90);
+  if (local_90 != (void *)0x0) {
+    std::_Deallocate<16,0>(local_90,local_80 - (longlong)local_90 & 0xffffffffffffffe0);
+  }
+  if (local_78 != (void *)0x0) {
+    std::_Deallocate<16,0>(local_78,local_68 - (longlong)local_78 & 0xffffffffffffffe0);
+  }
+  return;
+}
+
+
+
+===== ~vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_> @ 18024a628 =====
+
+/* public: __cdecl std::vector<struct D3D12_TEXTURE_BARRIER,class std::allocator<struct
+   D3D12_TEXTURE_BARRIER> >::~vector<struct D3D12_TEXTURE_BARRIER,class std::allocator<struct
+   D3D12_TEXTURE_BARRIER> >(void) __ptr64 */
+
+void __thiscall
+std::vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>::
+~vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>
+          (vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_> *this)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = *(void **)this;
+  if (pvVar1 != (void *)0x0) {
+    _Deallocate<16,0>(pvVar1,*(longlong *)(this + 0x10) - (longlong)pvVar1 & 0xffffffffffffffc0);
+    *(undefined8 *)this = 0;
+    *(undefined8 *)(this + 8) = 0;
+    *(undefined8 *)(this + 0x10) = 0;
+  }
+  return;
+}
+
+
+
+===== ~FastPathSwizzlerBase @ 18024a668 =====
+
+/* public: virtual __cdecl FastPathSwizzlerBase::~FastPathSwizzlerBase(void) __ptr64 */
+
+void __thiscall FastPathSwizzlerBase::~FastPathSwizzlerBase(FastPathSwizzlerBase *this)
+
+{
+  uint in_EDX;
+  
+  *(undefined ***)this = &_vftable_;
+  SmallDDIElLayout::operator_delete(*(void **)(this + 0x1b8),in_EDX);
+  SmallDDIElLayout::operator_delete(*(void **)(this + 0x1c0),in_EDX);
+  SmallDDIElLayout::operator_delete(*(void **)(this + 0x1e0),in_EDX);
+  SmallDDIElLayout::operator_delete(*(void **)(this + 0x1e8),in_EDX);
+  *(undefined ***)this = &ISwizzler::_vftable_;
+  return;
+}
+
+
+
+===== _Reset<<lambda_79c516b52db05f295842e3858ef5d16b>&___ptr64> @ 18024a6c4 =====
+
+/* protected: void __cdecl std::_Func_class<void,char const * __ptr64>::_Reset<class
+   <lambda_79c516b52db05f295842e3858ef5d16b> & __ptr64>(class
+   <lambda_79c516b52db05f295842e3858ef5d16b> & __ptr64) __ptr64 */
+
+void __thiscall
+std::_Func_class<void,char_const*___ptr64>::
+_Reset<<lambda_79c516b52db05f295842e3858ef5d16b>&___ptr64>
+          (_Func_class<void,char_const*___ptr64> *this,
+          <lambda_79c516b52db05f295842e3858ef5d16b> *param_1)
+
+{
+  *(undefined ***)this =
+       &_Func_impl_no_alloc<<lambda_79c516b52db05f295842e3858ef5d16b>,void,char_const*___ptr64>::
+        _vftable_;
+  *(undefined8 *)(this + 8) = *(undefined8 *)param_1;
+  *(_Func_class<void,char_const*___ptr64> **)(this + 0x38) = this;
+  return;
+}
+
+
+
+===== ProcessUnalignedBytes<0> @ 18024a6e4 =====
+
+/* public: void __cdecl FastPathSwizzler<0,16,1>::ProcessUnalignedBytes<0>(unsigned char *
+   __ptr64,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int,unsigned char * __ptr64)
+   __ptr64 */
+
+void __thiscall
+FastPathSwizzler<0,16,1>::ProcessUnalignedBytes<0>
+          (FastPathSwizzler<0,16,1> *this,uchar *param_1,uint param_2,uint param_3,uint param_4,
+          uint param_5,uint param_6,uchar *param_7)
+
+{
+  ushort uVar1;
+  undefined4 uVar2;
+  uint uVar3;
+  uint uVar4;
+  ulonglong uVar5;
+  uint uVar6;
+  ulonglong uVar7;
+  uchar *puVar8;
+  
+  uVar6 = param_5 + param_3;
+  if (param_3 < uVar6) {
+    uVar7 = (ulonglong)param_3;
+    do {
+      uVar2 = *(undefined4 *)(this + 0x15c);
+      uVar1 = *(ushort *)
+               (*(longlong *)(this + 0x1c0) +
+               (uVar7 >> ((byte)*(undefined4 *)(this + 0x164) & 0x3f) &
+               (ulonglong)*(uint *)(this + 0x17c)) * 2);
+      uVar3 = *(uint *)(this + 0x168);
+      uVar4 = param_2 >> ((byte)uVar2 & 0x1f);
+      uVar4 = (uint)*(ushort *)
+                     (*(longlong *)(this + 0x1b8) + (ulonglong)(uVar4 & *(uint *)(this + 0x178)) * 2
+                     ) +
+              ((*(uint *)(this + 0x184) & uVar4) << ((byte)*(undefined4 *)(this + 0x188) & 0x1f)) +
+              (*(uint *)(this + 0x160) & param_2);
+      if (param_2 < param_2 + param_4) {
+        uVar5 = (ulonglong)param_4;
+        puVar8 = param_1;
+        do {
+          *puVar8 = param_7[*(int *)(this + 0x1f0) + uVar4 +
+                            (uint)uVar1 + ((uVar3 & param_3) << ((byte)uVar2 & 0x1f))];
+          puVar8 = puVar8 + 1;
+          uVar4 = uVar4 - *(uint *)(this + 0x1cc) & *(uint *)(this + 0x1cc);
+          uVar5 = uVar5 - 1;
+        } while (uVar5 != 0);
+      }
+      param_1 = param_1 + param_6;
+      param_3 = param_3 + 1;
+      uVar7 = uVar7 + 1;
+    } while (param_3 < uVar6);
+  }
+  return;
+}
+
+
+
+===== SetMappedSubresource @ 18024a820 =====
+
+/* public: virtual void __cdecl SwizzlerCommon::SetMappedSubresource(struct D3D11_MAPPED_SUBRESOURCE
+   const & __ptr64) __ptr64 */
+
+void __thiscall
+SwizzlerCommon::SetMappedSubresource(SwizzlerCommon *this,D3D11_MAPPED_SUBRESOURCE *param_1)
+
+{
+  *(undefined8 *)(this + 0xf0) = *(undefined8 *)param_1;
+  *(undefined4 *)(this + 0xf8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xfc) = *(undefined4 *)(param_1 + 0xc);
+  return;
+}
+
+
+
+===== function<void___cdecl(void*___ptr64,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)> @ 18024a844 =====
+
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* public: __cdecl std::function<void __cdecl(void * __ptr64,struct
+   D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO const & __ptr64)>::function<void __cdecl(void *
+   __ptr64,struct D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO const & __ptr64)>(class
+   std::function<void __cdecl(void * __ptr64,struct D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO
+   const & __ptr64)> const & __ptr64) __ptr64 */
+
+function<void___cdecl(void*___ptr64,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)> *
+__thiscall
+std::
+function<void___cdecl(void*___ptr64,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)>::
+function<void___cdecl(void*___ptr64,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)>
+          (function<void___cdecl(void*___ptr64,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)>
+           *this,function<void___cdecl(void*___ptr64,struct_D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const&___ptr64)>
+                 *param_1)
+
+{
+  undefined8 *puVar1;
+  undefined8 uVar2;
+  
+  *(undefined8 *)(this + 0x38) = 0;
+  puVar1 = *(undefined8 **)(param_1 + 0x38);
+  if (puVar1 != (undefined8 *)0x0) {
+    uVar2 = (**(code **)*puVar1)(puVar1,this);
+    *(undefined8 *)(this + 0x38) = uVar2;
+  }
+  return this;
+}
+
+
+
+===== _Delete_this @ 18024a890 =====
+
+/* private: virtual void __cdecl std::_Func_impl_no_alloc<class
+   <lambda_79c516b52db05f295842e3858ef5d16b>,void,char const * __ptr64>::_Delete_this(bool) __ptr64
+    */
+
+void __thiscall
+std::_Func_impl_no_alloc<<lambda_79c516b52db05f295842e3858ef5d16b>,void,char_const*___ptr64>::
+_Delete_this(_Func_impl_no_alloc<<lambda_79c516b52db05f295842e3858ef5d16b>,void,char_const*___ptr64>
+             *this,bool param_1)
+
+{
+  if (param_1) {
+    operator_delete(this,0x10);
+    return;
+  }
+  return;
+}
+
+
+
+===== `dynamic_initializer_for_'c_DefaultValidationInfo'' @ 18024a8b0 =====
+
+void _dynamic_initializer_for__c_DefaultValidationInfo__(void)
+
+{
+  atexit(_dynamic_atexit_destructor_for__c_DefaultValidationInfo__);
+  return;
+}
+
+
+
+===== ~vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_> @ 18024a8c4 =====
+
+/* public: __cdecl std::vector<struct D3D12_RESOURCE_BARRIER,class std::allocator<struct
+   D3D12_RESOURCE_BARRIER> >::~vector<struct D3D12_RESOURCE_BARRIER,class std::allocator<struct
+   D3D12_RESOURCE_BARRIER> >(void) __ptr64 */
+
+void __thiscall
+std::vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>::
+~vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>
+          (vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_> *this)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = *(void **)this;
+  if (pvVar1 != (void *)0x0) {
+    _Deallocate<16,0>(pvVar1,*(longlong *)(this + 0x10) - (longlong)pvVar1 & 0xffffffffffffffe0);
+    *(undefined8 *)this = 0;
+    *(undefined8 *)(this + 8) = 0;
+    *(undefined8 *)(this + 0x10) = 0;
+  }
+  return;
+}
+
+
+
+===== `dynamic_atexit_destructor_for_'c_DefaultValidationInfo'' @ 18024a900 =====
+
+void _dynamic_atexit_destructor_for__c_DefaultValidationInfo__(void)
+
+{
+  std::_Func_class<bool>::_Tidy((_Func_class<bool> *)&DAT_1803148c0);
+  return;
+}
+
+
+
+===== McTemplateU0ppxq_EventWriteTransfer @ 18024a914 =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void McTemplateU0ppxq_EventWriteTransfer
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+               undefined1 param_5,undefined1 param_6)
+
+{
+  undefined8 local_res18;
+  undefined8 local_res20;
+  undefined1 auStack_98 [32];
+  undefined1 *local_78;
+  undefined1 local_68 [16];
+  undefined8 *local_58;
+  undefined8 local_50;
+  undefined8 *local_48;
+  undefined8 local_40;
+  undefined1 *local_38;
+  undefined8 local_30;
+  undefined1 *local_28;
+  undefined8 local_20;
+  ulonglong local_18;
+  
+  local_18 = __security_cookie ^ (ulonglong)auStack_98;
+  local_58 = &local_res18;
+  local_50 = 8;
+  local_48 = &local_res20;
+  local_40 = 8;
+  local_38 = &param_5;
+  local_30 = 8;
+  local_28 = &param_6;
+  local_78 = local_68;
+  local_20 = 4;
+  local_res18 = param_3;
+  local_res20 = param_4;
+  McGenEventWrite_EventWriteTransfer(param_1,&EventD3D12ResetCommandList,param_3,5);
+  return;
+}
+
+
+
+===== McTemplateU0pp_EventWriteTransfer @ 18024a9b0 =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void McTemplateU0pp_EventWriteTransfer
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+
+{
+  undefined8 local_res18;
+  undefined8 local_res20;
+  undefined1 auStack_78 [32];
+  undefined1 *local_58;
+  undefined1 local_48 [16];
+  undefined8 *local_38;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined8 *local_28;
+  undefined4 local_20;
+  undefined4 local_1c;
+  ulonglong local_18;
+  
+  local_18 = __security_cookie ^ (ulonglong)auStack_78;
+  local_38 = &local_res18;
+  local_2c = 0;
+  local_28 = &local_res20;
+  local_30 = 8;
+  local_1c = 0;
+  local_58 = local_48;
+  local_20 = 8;
+  local_res18 = param_3;
+  local_res20 = param_4;
+  McGenEventWrite_EventWriteTransfer(8,&EventD3D12TrackWrittenResource,param_3,3);
+  return;
+}
+
+
+
+===== VersionedBeginRenderPass @ 18024aa28 =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* private: void __cdecl CGraphicsCommandList::VersionedBeginRenderPass(unsigned int,struct
+   D3D12_RENDER_PASS_RENDER_TARGET_DESC const * __ptr64,struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC
+   const * __ptr64,enum D3D12_RENDER_PASS_FLAGS) __ptr64 */
+
+void __thiscall
+CGraphicsCommandList::VersionedBeginRenderPass
+          (CGraphicsCommandList *this,uint param_1,D3D12_RENDER_PASS_RENDER_TARGET_DESC *param_2,
+          D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *param_3,D3D12_RENDER_PASS_FLAGS param_4)
+
+{
+  longlong *plVar1;
+  ulong64 uVar2;
+  ulong64 uVar3;
+  ulong64 uVar4;
+  ulonglong uVar5;
+  ulonglong uVar6;
+  ulonglong uVar7;
+  bool bVar8;
+  ulonglong uVar9;
+  undefined8 *puVar10;
+  code *pcVar11;
+  ulonglong uVar12;
+  undefined8 uVar13;
+  uint uVar14;
+  undefined8 *puVar15;
+  ulonglong uVar16;
+  D3D12_RENDER_PASS_RENDER_TARGET_DESC *pDVar17;
+  undefined1 auStack_408 [32];
+  D3D12_RENDER_PASS_FLAGS local_3e8;
+  D3D12_RENDER_PASS_RENDER_TARGET_DESC *local_3d8;
+  undefined8 local_3c8;
+  undefined8 uStack_3c0;
+  undefined8 local_3b8;
+  undefined8 uStack_3b0;
+  undefined8 local_3a8;
+  undefined8 uStack_3a0;
+  undefined8 local_398;
+  undefined8 uStack_390;
+  ulonglong local_388;
+  ulonglong uStack_380;
+  undefined8 local_378;
+  undefined8 uStack_370;
+  undefined8 local_368;
+  undefined8 uStack_360;
+  ulonglong local_358;
+  ulonglong uStack_350;
+  ulonglong local_348;
+  undefined8 uStack_340;
+  undefined8 local_338;
+  undefined8 uStack_330;
+  undefined8 local_328;
+  D3D12_CPU_DESCRIPTOR_HANDLE local_318 [5];
+  ulonglong auStack_2f0 [83];
+  ulonglong local_58;
+  
+  local_58 = __security_cookie ^ (ulonglong)auStack_408;
+  puVar15 = (undefined8 *)0x0;
+  if (this[0x68e] == (CGraphicsCommandList)0x0) {
+    local_3d8 = param_2;
+    if (*(uint *)(*(longlong *)(this + 0xa0) + 0x784) < 2) {
+      if (*(int *)(*(longlong *)(this + 0xa0) + 0x784) == 0) {
+        return;
+      }
+      memset(local_318,0,0x280);
+      for (uVar14 = 0; uVar14 < param_1; uVar14 = uVar14 + 1) {
+        uVar12 = (ulonglong)uVar14;
+        pDVar17 = param_2 + uVar12 * 0x58;
+        uVar2 = *(ulong64 *)(pDVar17 + 8);
+        uVar3 = *(ulong64 *)(pDVar17 + 0x10);
+        uVar4 = *(ulong64 *)(pDVar17 + 0x18);
+        local_318[uVar12 * 10].ptr = *(ulong64 *)pDVar17;
+        local_318[uVar12 * 10 + 1].ptr = uVar2;
+        uVar2 = *(ulong64 *)(pDVar17 + 0x20);
+        uVar16 = *(ulonglong *)(pDVar17 + 0x28);
+        local_318[uVar12 * 10 + 2].ptr = uVar3;
+        local_318[uVar12 * 10 + 3].ptr = uVar4;
+        uVar5 = *(ulonglong *)(pDVar17 + 0x30);
+        uVar6 = *(ulonglong *)(pDVar17 + 0x38);
+        local_318[uVar12 * 10 + 4].ptr = uVar2;
+        auStack_2f0[uVar12 * 10] = uVar16;
+        uVar16 = *(ulonglong *)(pDVar17 + 0x40);
+        uVar7 = *(ulonglong *)(pDVar17 + 0x48);
+        auStack_2f0[uVar12 * 10 + 1] = uVar5;
+        auStack_2f0[uVar12 * 10 + 2] = uVar6;
+        auStack_2f0[uVar12 * 10 + 3] = uVar16;
+        auStack_2f0[uVar12 * 10 + 4] = uVar7;
+        bVar8 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenRTVDescriptors
+                          ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,
+                           (D3D12_CPU_DESCRIPTOR_HANDLE *)pDVar17,1,local_318 + uVar12 * 10);
+        if (!bVar8) {
+          return;
+        }
+        if (*(int *)(pDVar17 + 0x20) == 2) {
+          auStack_2f0[uVar12 * 10 + 1] =
+               -(ulonglong)(*(longlong *)(pDVar17 + 0x30) != 0) &
+               *(longlong *)(pDVar17 + 0x30) + 0x1c0U;
+          auStack_2f0[uVar12 * 10] =
+               -(ulonglong)(*(longlong *)(pDVar17 + 0x28) != 0) &
+               *(longlong *)(pDVar17 + 0x28) + 0x1c0U;
+        }
+        param_2 = local_3d8;
+      }
+      memset(&local_3c8,0,0x98);
+      if (param_3 != (D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *)0x0) {
+        local_3c8 = *(undefined8 *)param_3;
+        uStack_3c0 = *(undefined8 *)(param_3 + 8);
+        local_3b8 = *(undefined8 *)(param_3 + 0x10);
+        uStack_3b0 = *(undefined8 *)(param_3 + 0x18);
+        local_338 = *(undefined8 *)(param_3 + 0x90);
+        local_3a8 = *(undefined8 *)(param_3 + 0x20);
+        uStack_3a0 = *(undefined8 *)(param_3 + 0x28);
+        local_398 = *(undefined8 *)(param_3 + 0x30);
+        local_388 = *(ulonglong *)(param_3 + 0x40);
+        uStack_380 = *(ulonglong *)(param_3 + 0x48);
+        local_378 = *(undefined8 *)(param_3 + 0x50);
+        uStack_370 = *(undefined8 *)(param_3 + 0x58);
+        local_368 = *(undefined8 *)(param_3 + 0x60);
+        local_348 = *(ulonglong *)(param_3 + 0x80);
+        uStack_340 = *(undefined8 *)(param_3 + 0x88);
+        local_358 = *(ulonglong *)(param_3 + 0x70);
+        uStack_350 = *(ulonglong *)(param_3 + 0x78);
+        uStack_390 = CONCAT44((int)((ulonglong)*(undefined8 *)(param_3 + 0x38) >> 0x20),
+                              *(int *)(param_3 + 0x38));
+        uStack_360 = CONCAT44((int)((ulonglong)*(undefined8 *)(param_3 + 0x68) >> 0x20),
+                              *(int *)(param_3 + 0x70));
+        if (*(int *)(param_3 + 0x38) == 2) {
+          uStack_380 = -(ulonglong)(*(longlong *)(param_3 + 0x48) != 0) &
+                       *(longlong *)(param_3 + 0x48) + 0x1c0U;
+          local_388 = -(ulonglong)(*(longlong *)(param_3 + 0x40) != 0) &
+                      *(longlong *)(param_3 + 0x40) + 0x1c0U;
+        }
+        if (*(int *)(param_3 + 0x70) == 2) {
+          uStack_350 = -(ulonglong)(*(longlong *)(param_3 + 0x80) != 0) &
+                       *(longlong *)(param_3 + 0x80) + 0x1c0U;
+          local_358 = -(ulonglong)(*(longlong *)(param_3 + 0x78) != 0) &
+                      *(longlong *)(param_3 + 0x78) + 0x1c0U;
+        }
+        puVar15 = &local_3c8;
+      }
+      puVar10 = (undefined8 *)
+                CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                          ((CCommandList<ID3D12GraphicsCommandList10> *)this);
+      uVar13 = *puVar10;
+      plVar1 = *(longlong **)(*(longlong *)(this + 0xa0) + 0x17f8);
+      pcVar11 = (code *)(**(code **)(*plVar1 + 8))
+                                  (plVar1,*(undefined8 *)(*(longlong *)(this + 0xa0) + 0x17f0));
+      uVar16 = -(ulonglong)(param_2 != (D3D12_RENDER_PASS_RENDER_TARGET_DESC *)0x0) &
+               (ulonglong)local_318;
+    }
+    else {
+      memset(local_318,0,0x2c0);
+      for (uVar14 = 0; uVar14 < param_1; uVar14 = uVar14 + 1) {
+        uVar9 = (ulonglong)uVar14;
+        pDVar17 = param_2 + uVar9 * 0x58;
+        uVar2 = *(ulong64 *)(pDVar17 + 8);
+        uVar3 = *(ulong64 *)(pDVar17 + 0x10);
+        uVar4 = *(ulong64 *)(pDVar17 + 0x18);
+        local_318[uVar9 * 0xb].ptr = *(ulong64 *)pDVar17;
+        local_318[uVar9 * 0xb + 1].ptr = uVar2;
+        uVar2 = *(ulong64 *)(pDVar17 + 0x20);
+        uVar16 = *(ulonglong *)(pDVar17 + 0x28);
+        local_318[uVar9 * 0xb + 2].ptr = uVar3;
+        local_318[uVar9 * 0xb + 3].ptr = uVar4;
+        uVar5 = *(ulonglong *)(pDVar17 + 0x30);
+        uVar6 = *(ulonglong *)(pDVar17 + 0x38);
+        local_318[uVar9 * 0xb + 4].ptr = uVar2;
+        auStack_2f0[uVar9 * 0xb] = uVar16;
+        uVar7 = *(ulonglong *)(pDVar17 + 0x40);
+        uVar12 = *(ulonglong *)(pDVar17 + 0x48);
+        auStack_2f0[uVar9 * 0xb + 1] = uVar5;
+        auStack_2f0[uVar9 * 0xb + 2] = uVar6;
+        uVar16 = *(ulonglong *)(pDVar17 + 0x50);
+        auStack_2f0[uVar9 * 0xb + 3] = uVar7;
+        auStack_2f0[uVar9 * 0xb + 4] = uVar12;
+        auStack_2f0[uVar9 * 0xb + 5] = uVar16;
+        bVar8 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenRTVDescriptors
+                          ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,
+                           (D3D12_CPU_DESCRIPTOR_HANDLE *)pDVar17,1,local_318 + uVar9 * 0xb);
+        if (!bVar8) {
+          return;
+        }
+        if (*(int *)(pDVar17 + 0x20) == 2) {
+          auStack_2f0[uVar9 * 0xb + 1] =
+               -(ulonglong)(*(longlong *)(pDVar17 + 0x30) != 0) &
+               *(longlong *)(pDVar17 + 0x30) + 0x1c0U;
+          auStack_2f0[uVar9 * 0xb] =
+               -(ulonglong)(*(longlong *)(pDVar17 + 0x28) != 0) &
+               *(longlong *)(pDVar17 + 0x28) + 0x1c0U;
+        }
+        param_2 = local_3d8;
+      }
+      memset(&local_3c8,0,0xa8);
+      if (param_3 != (D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *)0x0) {
+        local_3c8 = *(undefined8 *)param_3;
+        uStack_3c0 = *(undefined8 *)(param_3 + 8);
+        local_3b8 = *(undefined8 *)(param_3 + 0x10);
+        uStack_3b0 = *(undefined8 *)(param_3 + 0x18);
+        local_328 = *(undefined8 *)(param_3 + 0xa0);
+        local_3a8 = *(undefined8 *)(param_3 + 0x20);
+        uStack_3a0 = *(undefined8 *)(param_3 + 0x28);
+        local_398 = *(undefined8 *)(param_3 + 0x30);
+        uStack_390 = *(undefined8 *)(param_3 + 0x38);
+        local_388 = *(ulonglong *)(param_3 + 0x40);
+        uStack_380 = *(ulonglong *)(param_3 + 0x48);
+        local_378 = *(undefined8 *)(param_3 + 0x50);
+        uStack_370 = *(undefined8 *)(param_3 + 0x58);
+        local_368 = *(undefined8 *)(param_3 + 0x60);
+        uStack_360 = *(undefined8 *)(param_3 + 0x68);
+        local_348 = *(ulonglong *)(param_3 + 0x80);
+        uStack_340 = *(undefined8 *)(param_3 + 0x88);
+        local_358 = *(ulonglong *)(param_3 + 0x70);
+        uStack_350 = *(ulonglong *)(param_3 + 0x78);
+        local_338 = *(undefined8 *)(param_3 + 0x90);
+        uStack_330 = *(undefined8 *)(param_3 + 0x98);
+        if (*(int *)(param_3 + 0x38) == 2) {
+          uStack_380 = -(ulonglong)(*(longlong *)(param_3 + 0x48) != 0) &
+                       *(longlong *)(param_3 + 0x48) + 0x1c0U;
+          local_388 = -(ulonglong)(*(longlong *)(param_3 + 0x40) != 0) &
+                      *(longlong *)(param_3 + 0x40) + 0x1c0U;
+        }
+        if (*(int *)(param_3 + 0x70) == 2) {
+          local_348 = -(ulonglong)(*(longlong *)(param_3 + 0x80) != 0) &
+                      *(longlong *)(param_3 + 0x80) + 0x1c0U;
+          uStack_350 = -(ulonglong)(*(longlong *)(param_3 + 0x78) != 0) &
+                       *(longlong *)(param_3 + 0x78) + 0x1c0U;
+        }
+        puVar15 = &local_3c8;
+      }
+      puVar10 = (undefined8 *)
+                CCommandList<ID3D12GraphicsCommandList10>::DDIHandle
+                          ((CCommandList<ID3D12GraphicsCommandList10> *)this);
+      uVar13 = *puVar10;
+      plVar1 = *(longlong **)(*(longlong *)(this + 0xa0) + 0x17f8);
+      pcVar11 = (code *)(**(code **)(*plVar1 + 8))
+                                  (plVar1,*(undefined8 *)(*(longlong *)(this + 0xa0) + 0x17f0));
+      uVar16 = -(ulonglong)(param_2 != (D3D12_RENDER_PASS_RENDER_TARGET_DESC *)0x0) &
+               (ulonglong)local_318;
+    }
+    local_3e8 = param_4;
+    (*pcVar11)(uVar13,param_1,uVar16,puVar15);
+  }
+  return;
+}
+
+
+
+===== _Uninitialized_move<std::vector<unsigned_char,std::allocator<unsigned_char>_>*___ptr64,std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_> @ 18024aed8 =====
+
+/* class std::vector<unsigned char,class std::allocator<unsigned char> > * __ptr64 __cdecl
+   std::_Uninitialized_move<class std::vector<unsigned char,class std::allocator<unsigned char> > *
+   __ptr64,class std::allocator<class std::vector<unsigned char,class std::allocator<unsigned char>
+   > > >(class std::vector<unsigned char,class std::allocator<unsigned char> > * __ptr64 const,class
+   std::vector<unsigned char,class std::allocator<unsigned char> > * __ptr64 const,class
+   std::vector<unsigned char,class std::allocator<unsigned char> > * __ptr64,class
+   std::allocator<class std::vector<unsigned char,class std::allocator<unsigned char> > > & __ptr64)
+    */
+
+vector<unsigned_char,std::allocator<unsigned_char>_> * __cdecl
+std::
+_Uninitialized_move<std::vector<unsigned_char,std::allocator<unsigned_char>_>*___ptr64,std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+          (vector<unsigned_char,class_std::allocator<unsigned_char>_> *param_1,
+          vector<unsigned_char,class_std::allocator<unsigned_char>_> *param_2,
+          vector<unsigned_char,class_std::allocator<unsigned_char>_> *param_3,
+          allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_> *param_4)
+
+{
+  vector<unsigned_char,class_std::allocator<unsigned_char>_> *pvVar1;
+  
+  pvVar1 = param_1;
+  if (param_1 != param_2) {
+    do {
+      _Default_allocator_traits<std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+      ::
+      construct<std::vector<unsigned_char,std::allocator<unsigned_char>_>,std::vector<unsigned_char,class_std::allocator<unsigned_char>_>_>
+                ((allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_> *)param_1,
+                 (vector<unsigned_char,std::allocator<unsigned_char>_> *)param_3,pvVar1);
+      param_3 = param_3 + 0x18;
+      pvVar1 = pvVar1 + 0x18;
+    } while (pvVar1 != param_2);
+  }
+  _Destroy_range<std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+            ((vector<unsigned_char,std::allocator<unsigned_char>_> *)param_3,param_3,
+             (allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_> *)pvVar1);
+  return (vector<unsigned_char,std::allocator<unsigned_char>_> *)param_3;
+}
+
+
+
+===== ConvertAliasingBarrierDesc<D3D12DDIARG_BARRIER_0088> @ 18024af1c =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* void __cdecl ConvertAliasingBarrierDesc<struct D3D12DDIARG_BARRIER_0088>(struct
+   D3D12_RESOURCE_ALIASING_BARRIER const & __ptr64,struct D3D12DDIARG_BARRIER_0088 *
+   __ptr64,unsigned int & __ptr64,enum D3D12_COMMAND_LIST_TYPE) */
+
+void __cdecl
+ConvertAliasingBarrierDesc<D3D12DDIARG_BARRIER_0088>
+          (D3D12_RESOURCE_ALIASING_BARRIER *param_1,D3D12DDIARG_BARRIER_0088 *param_2,uint *param_3,
+          D3D12_COMMAND_LIST_TYPE param_4)
+
+{
+  ID3D12Resource *pIVar1;
+  ID3D12Resource *pIVar2;
+  undefined8 uVar3;
+  undefined8 uVar4;
+  undefined8 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
+  undefined8 uVar10;
+  undefined8 uVar11;
+  bool bVar12;
+  undefined8 *puVar13;
+  uint uVar14;
+  D3D12_RESOURCE_FLAGS DVar15;
+  D3D12_RESOURCE_FLAGS DVar16;
+  undefined1 auStack_128 [32];
+  D3D12_RESOURCE_FLAGS local_108;
+  undefined8 local_f8;
+  ulonglong uStack_f0;
+  D3D12_RESOURCE_ALIASING_BARRIER local_e8;
+  ID3D12Resource *local_d8;
+  undefined8 uStack_d0;
+  undefined8 local_c8;
+  undefined8 local_98;
+  undefined8 uStack_90;
+  ID3D12Resource *local_88;
+  undefined8 uStack_80;
+  undefined8 local_78;
+  undefined8 uStack_70;
+  undefined8 local_68;
+  undefined8 uStack_60;
+  undefined8 local_58;
+  undefined8 uStack_50;
+  ulonglong local_48;
+  
+  local_48 = __security_cookie ^ (ulonglong)auStack_128;
+  pIVar1 = param_1->pResourceBefore;
+  pIVar2 = param_1->pResourceAfter;
+  if (pIVar1 == (ID3D12Resource *)0x0) {
+    DVar15 = D3D12_RESOURCE_FLAG_NONE;
+  }
+  else {
+    DVar15 = *(D3D12_RESOURCE_FLAGS *)(pIVar1 + 0x21);
+  }
+  if (pIVar2 == (ID3D12Resource *)0x0) {
+    DVar16 = D3D12_RESOURCE_FLAG_NONE;
+  }
+  else {
+    DVar16 = *(D3D12_RESOURCE_FLAGS *)(pIVar2 + 0x21);
+  }
+  if ((pIVar1 == (ID3D12Resource *)0x0) ||
+     (uVar14 = (uint)((*(uint *)(pIVar1 + 0x1e) & 0xf000000) == 0x1000000), uVar14 == 0xffffffff)) {
+    *(undefined4 *)param_2 = 0;
+    local_f8 = 0x100000001;
+    uStack_f0 = 0;
+    memset(&local_98,0,0x50);
+    uStack_90 = CONCAT44((int)((ulonglong)local_f8 >> 0x20),1);
+    *(undefined8 *)param_2 = local_98;
+    *(undefined8 *)(param_2 + 8) = uStack_90;
+    local_88 = (ID3D12Resource *)(uStack_f0 & 0xffffffff00000000);
+    *(ID3D12Resource **)(param_2 + 0x10) = local_88;
+    *(undefined8 *)(param_2 + 0x18) = uStack_80;
+    *(undefined8 *)(param_2 + 0x20) = local_78;
+    *(undefined8 *)(param_2 + 0x28) = uStack_70;
+    *(undefined8 *)(param_2 + 0x30) = local_68;
+    *(undefined8 *)(param_2 + 0x38) = uStack_60;
+    *(undefined8 *)(param_2 + 0x40) = local_58;
+    *(undefined8 *)(param_2 + 0x48) = uStack_50;
+  }
+  else {
+    if (uVar14 == 0) {
+      *(undefined4 *)param_2 = 1;
+      local_108 = DVar16;
+      puVar13 = (undefined8 *)
+                CD3DX12BarriersHelper::AliasingBarrierToTextureBarrier
+                          (&local_e8,(D3D12_COMMAND_LIST_TYPE)param_1,param_4,DVar15);
+      local_98 = *puVar13;
+      uStack_90 = puVar13[1];
+      local_88 = (ID3D12Resource *)puVar13[2];
+      uStack_80 = puVar13[3];
+      local_78 = puVar13[4];
+      uStack_70 = puVar13[5];
+      local_68 = puVar13[6];
+      uStack_60 = puVar13[7];
+      if (((pIVar2 != (ID3D12Resource *)0x0) &&
+          ((DVar16 & DVar15 & D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL) != D3D12_RESOURCE_FLAG_NONE))
+         && ((bVar12 = CD3D11FormatHelper::HasStencilPlane((int)*(short *)&pIVar1[0x1f].field_0x2),
+             bVar12 || (bVar12 = CD3D11FormatHelper::HasStencilPlane
+                                           ((int)*(short *)&pIVar2[0x1f].field_0x2), bVar12)))) {
+        uStack_90 = 0;
+      }
+      puVar13 = (undefined8 *)TextureBarrierApiToDdi<D3D12DDIARG_BARRIER_0088>(&local_e8,&local_98);
+    }
+    else {
+      if (uVar14 != 1) {
+        return;
+      }
+      local_c8 = 0xffffffffffffffff;
+      local_e8.pResourceBefore._4_4_ = 1;
+      local_e8.pResourceAfter._4_4_ = 0;
+      local_e8.pResourceBefore._0_4_ = 1;
+      local_e8.pResourceAfter._0_4_ = 0;
+      uStack_d0 = 0;
+      *(undefined4 *)param_2 = 2;
+      local_d8 = param_1->pResourceBefore;
+      local_98 = 0x100000001;
+      uStack_90 = 0;
+      uStack_80 = 0;
+      local_78 = 0xffffffffffffffff;
+      local_88 = local_d8;
+      puVar13 = (undefined8 *)BufferBarrierApiToDdi<D3D12DDIARG_BARRIER_0088>(&local_e8,&local_98);
+    }
+    uVar3 = puVar13[1];
+    uVar4 = puVar13[2];
+    uVar5 = puVar13[3];
+    uVar6 = puVar13[4];
+    uVar7 = puVar13[5];
+    uVar8 = puVar13[6];
+    uVar9 = puVar13[7];
+    uVar10 = puVar13[8];
+    uVar11 = puVar13[9];
+    *(undefined8 *)param_2 = *puVar13;
+    *(undefined8 *)(param_2 + 8) = uVar3;
+    *(undefined8 *)(param_2 + 0x10) = uVar4;
+    *(undefined8 *)(param_2 + 0x18) = uVar5;
+    *(undefined8 *)(param_2 + 0x20) = uVar6;
+    *(undefined8 *)(param_2 + 0x28) = uVar7;
+    *(undefined8 *)(param_2 + 0x30) = uVar8;
+    *(undefined8 *)(param_2 + 0x38) = uVar9;
+    *(undefined8 *)(param_2 + 0x40) = uVar10;
+    *(undefined8 *)(param_2 + 0x48) = uVar11;
+  }
+  return;
+}
+
+
+
+===== ValidateSetPredicationForGenericDevice @ 18024b150 =====
+
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* long __cdecl ValidateSetPredicationForGenericDevice(struct TDebugOutputFunctor & __ptr64,struct
+   DeviceValidationInfo const & __ptr64) */
+
+long __cdecl
+ValidateSetPredicationForGenericDevice(TDebugOutputFunctor *param_1,DeviceValidationInfo *param_2)
+
+{
+  int iVar1;
+  long lVar2;
+  int local_res10 [6];
+  
+  local_res10[0] = 0;
+  iVar1 = (**(code **)(**(longlong **)(param_2 + 0x298) + 0x68))
+                    (*(longlong **)(param_2 + 0x298),0x32,local_res10);
+  if ((iVar1 < 0) || (local_res10[0] == 0)) {
+    TDebugOutputFunctor::operator()
+              (param_1,D3D12_MESSAGE_ID_GENERIC_DEVICE_OPERATION_UNSUPPORTED,
+               "Predication not supported on GENERIC devices.");
+    lVar2 = -0x7ff8ffa9;
+  }
+  else {
+    lVar2 = 0;
+  }
+  return lVar2;
+}
+
+
+
+===== construct<std::vector<unsigned_char,std::allocator<unsigned_char>_>,std::vector<unsigned_char,class_std::allocator<unsigned_char>_>_> @ 18024b1b8 =====
+
+/* public: static void __cdecl std::_Default_allocator_traits<class std::allocator<class
+   std::vector<unsigned char,class std::allocator<unsigned char> > > >::construct<class
+   std::vector<unsigned char,class std::allocator<unsigned char> >,class std::vector<unsigned
+   char,class std::allocator<unsigned char> > >(class std::allocator<class std::vector<unsigned
+   char,class std::allocator<unsigned char> > > & __ptr64,class std::vector<unsigned char,class
+   std::allocator<unsigned char> > * __ptr64 const,class std::vector<unsigned char,class
+   std::allocator<unsigned char> > && __ptr64) */
+
+void __cdecl
+std::
+_Default_allocator_traits<std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+::
+construct<std::vector<unsigned_char,std::allocator<unsigned_char>_>,std::vector<unsigned_char,class_std::allocator<unsigned_char>_>_>
+          (allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_> *param_1,
+          vector<unsigned_char,std::allocator<unsigned_char>_> *param_2,
+          vector<unsigned_char,class_std::allocator<unsigned_char>_> *param_3)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  undefined8 uVar3;
+  
+  uVar1 = *(undefined8 *)(param_3 + 0x10);
+  uVar2 = *(undefined8 *)(param_3 + 8);
+  uVar3 = *(undefined8 *)param_3;
+  *(undefined8 *)(param_3 + 0x10) = 0;
+  *(undefined8 *)(param_3 + 8) = 0;
+  *(undefined8 *)param_3 = 0;
+  *(undefined8 *)param_2 = uVar3;
+  *(undefined8 *)(param_2 + 8) = uVar2;
+  *(undefined8 *)(param_2 + 0x10) = uVar1;
+  return;
+}
+
+
+
+===== ResetState @ 18024b1f0 =====
+
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* private: virtual void __cdecl CGraphicsCommandList::ResetState(void) __ptr64 */
+
+void __thiscall CGraphicsCommandList::ResetState(CGraphicsCommandList *this)
+
+{
+  int iVar1;
+  bool bVar2;
+  bool bVar3;
+  undefined1 auStackY_d8 [32];
+  __uint64 in_stack_ffffffffffffff48;
+  undefined8 local_a8 [2];
+  D3D12_CPU_DESCRIPTOR_HANDLE local_98 [8];
+  D3D12_CPU_DESCRIPTOR_HANDLE local_58 [8];
+  ulonglong local_18;
+  
+  local_18 = __security_cookie ^ (ulonglong)auStackY_d8;
+  iVar1 = *(int *)(this + 0x128);
+  if ((iVar1 == 0) || (iVar1 == 2)) {
+    bVar2 = true;
+  }
+  else {
+    bVar2 = false;
+  }
+  if (iVar1 == 3) {
+    bVar3 = false;
+LAB_18024b24a:
+    if (!bVar3) goto LAB_18024b29b;
+    (**(code **)((*(longlong *)(this + 0x180) + 0xc0U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120));
+  }
+  else {
+    bVar3 = true;
+    if (iVar1 != 2) goto LAB_18024b24a;
+  }
+  SetDescriptorHeapsInternal(this,0,(ID3D12DescriptorHeap **)0x0);
+LAB_18024b29b:
+  if (*(int *)(this + 0x128) == 0) {
+    (**(code **)((*(longlong *)(this + 0x180) + 0x170U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))
+              (*(undefined8 *)(this + 0x120),0,0x20,&DAT_1802df1c0);
+    (**(code **)((*(longlong *)(this + 0x180) + 0x168U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0);
+    (**(code **)((*(longlong *)(this + 0x180) + 0x178U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))
+              (*(undefined8 *)(this + 0x120),0,4,&DAT_1802df050);
+    bVar3 = CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenRTVDescriptors
+                      ((CCastableCommandList<ID3D12GraphicsCommandList10> *)this,local_58,0,local_98
+                      );
+    if (bVar3) {
+      in_stack_ffffffffffffff48 = 0;
+      (**(code **)((*(longlong *)(this + 0x180) + 0x180U &
+                   (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                  (g_TableAndSize & 0xffffffffffff0000)))
+                (*(undefined8 *)(this + 0x120),0,local_98,1);
+    }
+    (**(code **)((*(longlong *)(this + 0x180) + 200U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0,0);
+    (**(code **)((*(longlong *)(this + 0x180) + 0xd0U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0,0);
+    (**(code **)((*(longlong *)(this + 0x180) + 0xd8U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))
+              (*(undefined8 *)(this + 0x120),&DAT_1802df1b0);
+    if (*(byte *)(*(longlong *)(this + 0xa0) + 0x128) < 0x37) {
+      (**(code **)((*(longlong *)(this + 0x180) + 0xe0U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U
+                   ) + (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0);
+    }
+    else {
+      (**(code **)((*(longlong *)(this + 0x180) + 0x230U &
+                   (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                  (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0,0);
+    }
+    if (*(int *)(*(longlong *)(this + 0xa0) + 0x184) != 0) {
+      (**(code **)((*(longlong *)(this + 0x180) + 0x1a0U &
+                   (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                  (g_TableAndSize & 0xffffffffffff0000)))
+                (*(undefined8 *)(this + 0x120),0,0x3f800000);
+    }
+    if (*(int *)(*(longlong *)(this + 0xa0) + 0x1b0) != 0) {
+      local_a8[0] = 0;
+      *(ulonglong *)(this + 0x2a0) = *(ulonglong *)(this + 0x2a0) | 1;
+      (**(code **)((*(longlong *)(this + 0x180) + 0x208U &
+                   (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                  (g_TableAndSize & 0xffffffffffff0000)))(*(undefined8 *)(this + 0x120),0,local_a8);
+      if (*(int *)(*(longlong *)(this + 0xa0) + 0x1b0) == 2) {
+        *(ulonglong *)(this + 0x2a0) = *(ulonglong *)(this + 0x2a0) | 2;
+        (**(code **)((*(longlong *)(this + 0x180) + 0x210U &
+                     (1L << ((byte)g_TableAndSize & 0x3f)) - 1U) +
+                    (g_TableAndSize & 0xffffffffffff0000)))(this + 0x940,0);
+      }
+    }
+  }
+  if (bVar2) {
+    if (this[0x1c8] == (CGraphicsCommandList)0x0) {
+      CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+                 D3D12_MESSAGE_ID_SET_PREDICATION_INVALID_PARAMETERS,-0x7ff8ffa9,
+                 "Predication is not supported by this command list type.",in_stack_ffffffffffffff48
+                );
+    }
+    (**(code **)((*(longlong *)(this + 0x180) + 0xb8U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))(this + 0x940,0,0,0);
+    if (*(int *)(*(longlong *)(this + 0xa0) + 0x588) != 0x100) {
+      (**(code **)((*(longlong *)(this + 0x180) + 400U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                  + (g_TableAndSize & 0xffffffffffff0000)))(this + 0x940);
+    }
+  }
+  if (this[0x138] != (CGraphicsCommandList)0x0) {
+    if (*(int *)(this + 0x1b0) != 0) {
+      CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+                ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)this,
+                 D3D12_MESSAGE_ID_CLOSE_COMMAND_LIST_OPEN_QUERY,-0x7fffbffb,
+                 "It is invalid to call SetProtectedResourceSession on a command list when the command list has outstanding BeginQuery.  Call EndQuery before SetProtectedResourceSession."
+                 ,in_stack_ffffffffffffff48);
+    }
+    if (*(longlong *)(this + 0x2d0) != 0) {
+      (**(code **)(**(longlong **)(*(longlong *)(this + 0x2d0) + 0x98) + 0x20))();
+      *(undefined8 *)(this + 0x2d0) = 0;
+    }
+    (**(code **)((*(longlong *)(this + 0x180) + 0x1b8U & (1L << ((byte)g_TableAndSize & 0x3f)) - 1U)
+                + (g_TableAndSize & 0xffffffffffff0000)))(this + 0x940,0);
+  }
+  *(undefined8 *)(this + 0x2a0) = 0;
+  return;
+}
+
+
+
+===== dtor$0 @ 18024b7f0 =====
+
+void `std::
+     _Hash<std::_Uset_traits<SSaferDescriptorData,std::_Uhash_compare<SSaferDescriptorData,std::hash<SSaferDescriptorData>,std::equal_to<SSaferDescriptorData>_>,std::allocator<SSaferDescriptorData>,0>_>
+     ::emplace<SSaferDescriptorData_const_&>'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::_List_node_emplace_op2<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>
+  ::~_List_node_emplace_op2<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>
+            ((_List_node_emplace_op2<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024b810 =====
+
+void `std::
+     _Hash<std::_Uset_traits<SSaferDescriptorData,std::_Uhash_compare<SSaferDescriptorData,std::hash<SSaferDescriptorData>,std::equal_to<SSaferDescriptorData>_>,std::allocator<SSaferDescriptorData>,0>_>
+     ::emplace<SSaferDescriptorData_const_&>'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  std::_Alloc_construct_ptr<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>::
+  ~_Alloc_construct_ptr<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>
+            ((_Alloc_construct_ptr<std::allocator<std::_List_node<SSaferDescriptorData,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024b830 =====
+
+void `CHeap::Map'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CHeap::CPointerCacheLock::CMapCall::~CMapCall((CMapCall *)(param_2 + 0x48));
+  return;
+}
+
+
+
+===== catch$5 @ 18024b850 =====
+
+undefined8 `CHeap::Map'::__l1::catch_5(undefined8 param_1,longlong param_2)
+
+{
+  **(undefined8 **)(param_2 + 0x98) = 0;
+  *(undefined4 *)(param_2 + 0x90) = *(undefined4 *)(*(longlong *)(param_2 + 0x20) + 8);
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024b890 =====
+
+void `CGraphicsCommandList::Present'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::AutoMarker::~AutoMarker((AutoMarker *)(param_2 + 0x48))
+  ;
+  return;
+}
+
+
+
+===== dtor$1 @ 18024b8b0 =====
+
+void `CGraphicsCommandList::Present'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  std::vector<unsigned_char,std::allocator<unsigned_char>_>::
+  ~vector<unsigned_char,std::allocator<unsigned_char>_>
+            ((vector<unsigned_char,std::allocator<unsigned_char>_> *)(param_2 + 200));
+  return;
+}
+
+
+
+===== catch$3 @ 18024b8d0 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8 `CGraphicsCommandList::Present'::__l1::catch_3(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            ((CCastableCommandList<ID3D12VideoProcessCommandList3> *)
+             (*(longlong *)(param_2 + 0xb0) + -0x2d8),D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8fff2,
+             (char *)0x0,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024b920 =====
+
+void `std::
+     _Hash<std::_Uset_traits<CResource_*,std::_Uhash_compare<CResource_*,std::hash<CResource_*>,std::equal_to<CResource_*>_>,std::allocator<CResource_*>,0>_>
+     ::emplace<CResource_*_const_&>'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::_List_node_emplace_op2<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>::
+  ~_List_node_emplace_op2<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>
+            ((_List_node_emplace_op2<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024b940 =====
+
+void `std::
+     _Hash<std::_Uset_traits<CResource_*,std::_Uhash_compare<CResource_*,std::hash<CResource_*>,std::equal_to<CResource_*>_>,std::allocator<CResource_*>,0>_>
+     ::emplace<CResource_*_const_&>'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  std::_Alloc_construct_ptr<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>::
+  ~_Alloc_construct_ptr<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>
+            ((_Alloc_construct_ptr<std::allocator<std::_List_node<CResource*___ptr64,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024b960 =====
+
+void `std::
+     _Hash<std::_Uset_traits<SSwapChainInfo_*,std::_Uhash_compare<SSwapChainInfo_*,std::hash<SSwapChainInfo_*>,std::equal_to<SSwapChainInfo_*>_>,std::allocator<SSwapChainInfo_*>,0>_>
+     ::emplace<SSwapChainInfo_*_const_&>'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  _List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>::
+  ~_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+            ((_List_node_emplace_op2<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024b980 =====
+
+void `std::
+     _Hash<std::_Uset_traits<SSwapChainInfo_*,std::_Uhash_compare<SSwapChainInfo_*,std::hash<SSwapChainInfo_*>,std::equal_to<SSwapChainInfo_*>_>,std::allocator<SSwapChainInfo_*>,0>_>
+     ::emplace<SSwapChainInfo_*_const_&>'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  _Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>::
+  ~_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+            ((_Alloc_construct_ptr<std::allocator<std::_List_node<SSwapChainInfo*___ptr64,void*___ptr64>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== catch$0 @ 18024b992 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoDecodeCommandList::DecodeFrameImpl'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x38),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024b9d2 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoDecodeCommandList::DecodeFrameImpl'::__l1::catch_1(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x38),
+             D3D12_MESSAGE_ID_DECODE_FRAME_INVALID_PARAMETERS,
+             *(long *)(*(longlong *)(param_2 + 0x68) + 8),
+             "ID3D12VideoDecodeCommandList::DecodeFrame encountered an invalid argument.",
+             in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024ba14 =====
+
+undefined8 `FastPathSwizzlerBase::Initialize'::__l1::catch_0(void)
+
+{
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024ba38 =====
+
+undefined8 `FastPathSwizzlerBase::Initialize'::__l1::catch_1(void)
+
+{
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024ba5c =====
+
+void `CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_TEXTURE_BARRIER>'::__l1::dtor_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>::
+  ~vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>
+            ((vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_> *)
+             (param_2 + 0xa0));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024ba6e =====
+
+void `CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_TEXTURE_BARRIER>'::__l1::dtor_1
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>::
+  ~vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>
+            ((vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_> *)
+             (param_2 + 0x88));
+  return;
+}
+
+
+
+===== catch$65 @ 18024ba80 =====
+
+undefined8 `ISwizzler::Create'::__l1::catch_65(void)
+
+{
+  return 0;
+}
+
+
+
+===== catch$66 @ 18024baa4 =====
+
+undefined8 `ISwizzler::Create'::__l1::catch_66(undefined8 param_1,longlong param_2)
+
+{
+  *(undefined4 *)(param_2 + 0x30) = 0x8007000e;
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bacf =====
+
+undefined8 `CGraphicsCommandList::ExecuteBundle'::__l1::catch_0(void)
+
+{
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024baf3 =====
+
+void `CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_RESOURCE_BARRIER>'::__l1::dtor_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>::
+  ~vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>
+            ((vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_> *)
+             (param_2 + 0xa0));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024bb05 =====
+
+void `CGraphicsCommandList::EndEmulatedRenderPassHelper<D3D12_RESOURCE_BARRIER>'::__l1::dtor_1
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>::
+  ~vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>
+            ((vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_> *)
+             (param_2 + 0x88));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024bb17 =====
+
+void `std::function<void___cdecl(void_*,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const_&)>::
+     function<void___cdecl(void_*,D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO_const_&)>'::__l1::
+     dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::function<void___cdecl(unsigned_int,_D3DKMT_DEVICE_IDS*___ptr64)>::
+  ~function<void___cdecl(unsigned_int,_D3DKMT_DEVICE_IDS*___ptr64)>
+            (*(function<void___cdecl(unsigned_int,_D3DKMT_DEVICE_IDS*___ptr64)> **)(param_2 + 0x30))
+  ;
+  return;
+}
+
+
+
+===== catch$0 @ 18024bb29 =====
+
+undefined8 `CResource::CreateCachedSwizzlerTable'::__l1::catch_0(void)
+
+{
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bb4d =====
+
+void `std::vector<D3D12_RESOURCE_BARRIER,std::allocator<D3D12_RESOURCE_BARRIER>_>::
+     _Emplace_reallocate<CD3DX12_RESOURCE_BARRIER>'::__l1::catch_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x58),*(longlong *)(param_2 + 0x50) << 5);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bb7b =====
+
+void `std::vector<TrackedWorkloadEndpoint,std::allocator<TrackedWorkloadEndpoint>_>::
+     _Emplace_reallocate<TrackedWorkloadEndpoint>'::__l1::catch_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x58),*(longlong *)(param_2 + 0x50) * 0x18);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bbad =====
+
+void `std::
+     vector<std::vector<unsigned_char,std::allocator<unsigned_char>_>,std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+     ::_Emplace_reallocate<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>'::__l1::
+     catch_0(undefined8 param_1,longlong param_2,
+            allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_> *param_3)
+
+{
+  std::_Destroy_range<std::allocator<std::vector<unsigned_char,std::allocator<unsigned_char>_>_>_>
+            (*(vector<unsigned_char,std::allocator<unsigned_char>_> **)(param_2 + 0x70),
+             *(vector<unsigned_char,class_std::allocator<unsigned_char>_> **)(param_2 + 0x88),
+             param_3);
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x20),*(longlong *)(param_2 + 0x78) * 0x18);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bbef =====
+
+void `std::vector<D3D12_TEXTURE_BARRIER,std::allocator<D3D12_TEXTURE_BARRIER>_>::
+     _Emplace_reallocate<CD3DX12_TEXTURE_BARRIER>'::__l1::catch_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x58),*(longlong *)(param_2 + 0x50) << 6);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bc1d =====
+
+void `std::
+     vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032>_>
+     ::_Resize_reallocate<std::_Value_init_tag>'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x58),*(longlong *)(param_2 + 0x60) * 0x138);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bc4b =====
+
+void `std::
+     vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043>_>
+     ::_Resize_reallocate<std::_Value_init_tag>'::__l1::catch_0
+               (allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043> *param_1,
+               longlong param_2)
+
+{
+  std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043>::deallocate
+            (param_1,*(D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043 **)(param_2 + 0x48),
+             *(__uint64 *)(param_2 + 0x50));
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bc75 =====
+
+void `std::
+     vector<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1,std::allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1>_>
+     ::_Resize_reallocate<std::_Value_init_tag>'::__l1::catch_0
+               (allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1> *param_1,
+               longlong param_2)
+
+{
+  std::allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1>::deallocate
+            (param_1,*(D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1 **)
+                      (param_2 + 0x48),*(__uint64 *)(param_2 + 0x50));
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bc9f =====
+
+void `std::
+     vector<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,std::allocator<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS>_>
+     ::_Resize_reallocate<std::_Value_init_tag>'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  std::_Deallocate<16,0>(*(void **)(param_2 + 0x48),*(longlong *)(param_2 + 0x50) << 5);
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bccd =====
+
+void `std::
+     vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2>_>
+     ::_Resize_reallocate<std::_Value_init_tag>'::__l1::catch_0
+               (allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2> *param_1,longlong param_2)
+
+{
+  std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2>::deallocate
+            (param_1,*(D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2 **)(param_2 + 0x48),
+             *(__uint64 *)(param_2 + 0x50));
+                    /* WARNING: Subroutine does not return */
+  _CxxThrowException((void *)0x0,(ThrowInfo *)0x0);
+}
+
+
+
+===== catch$0 @ 18024bcf7 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CCommandList<ID3D12GraphicsCommandList10>::AddTrackedWorkloadEndpoint'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x60),
+             D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8fff2,(char *)0x0,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bd30 =====
+
+undefined8 `CGraphicsCommandList::AtomicCopyBufferUINTImpl'::__l1::catch_0(void)
+
+{
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024bd54 =====
+
+void `CalculateNumberOfDistinctL0L1EncodeReferences'::__l1::dtor_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_>::
+  ~vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_>
+            ((vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_> *)
+             (param_2 + 0x38));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024bd66 =====
+
+void `CCommandList<ID3D12GraphicsCommandList10>::Close'::__l1::dtor_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::shared_lock<std::shared_mutex>::~shared_lock<std::shared_mutex>
+            ((shared_lock<std::shared_mutex> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== catch$2 @ 18024bd78 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CCommandList<ID3D12GraphicsCommandList10>::Close'::__l1::catch_2
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x60),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list closing ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bdb8 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::EncodeFrameImpl'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffd8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x450),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffd8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024bdfb =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::EncodeFrameImpl'::__l1::catch_1(undefined8 param_1,longlong param_2)
+
+{
+  D3D12_MESSAGE_ID DVar1;
+  char *pcVar2;
+  __uint64 in_stack_ffffffffffffffd8;
+  
+  if (*(int *)(*(longlong *)(param_2 + 0x78) + 8) == -0x7ff8ffa9) {
+    pcVar2 = "ID3D12VideoEncodeCommandList::EncodeFrame was passed invalid arguments.";
+    DVar1 = D3D12_MESSAGE_ID_ENCODE_FRAME_INVALID_PARAMETERS;
+  }
+  else {
+    pcVar2 = "ID3D12VideoEncodeCommandList::EncodeFrame encountered an error.";
+    DVar1 = D3D12_MESSAGE_ID_UNKNOWN;
+  }
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x450),DVar1,
+             *(long *)(*(longlong *)(param_2 + 0x78) + 8),pcVar2,in_stack_ffffffffffffffd8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024be55 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::EstimateMotion'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0xa0),
+             D3D12_MESSAGE_ID_PROCESS_FRAME_INVALID_PARAMETERS,
+             *(long *)(*(longlong *)(param_2 + 0x40) + 8),
+             "ID3D12VideoEncodeCommandList::EstimateMotion encountered and invalid argument.",
+             in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024be9a =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoCommandList<ID3D12VideoDecodeCommandList3>::ExecuteExtensionCommandImpl'::__l1::catch_1
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffd8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0xc0),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list out of memory translating arguments.",in_stack_ffffffffffffffd8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bedd =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CCommandList<ID3D12GraphicsCommandList10>::InvalidResourceBarrierCall'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x50),
+             D3D12_MESSAGE_ID_UNKNOWN,-0x7ff8fff2,(char *)0x0,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024bf16 =====
+
+undefined8
+`CCommandList<ID3D12GraphicsCommandList10>::InvalidResourceBarrierCall'::__l1::catch_1(void)
+
+{
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024bf3a =====
+
+void `CVideoProcessCommandList::ProcessFrames'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2>_>
+  ::
+  ~vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2>_>
+            ((vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS2>_>
+              *)(param_2 + 0x48));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024bf4c =====
+
+void `CVideoProcessCommandList::ProcessFrames'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  ATL::CComPtr<ID3D12VideoProcessor3DLUT>::~CComPtr<ID3D12VideoProcessor3DLUT>
+            ((CComPtr<ID3D12VideoProcessor3DLUT> *)(param_2 + 0xa8));
+  return;
+}
+
+
+
+===== catch$4 @ 18024bf5e =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoProcessCommandList::ProcessFrames'::__l1::catch_4(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0xa0),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024bfa1 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoProcessCommandList::ProcessFramesImpl'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x58),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024bfe1 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoProcessCommandList::ProcessFramesImpl'::__l1::catch_1(undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x58),
+             D3D12_MESSAGE_ID_PROCESS_FRAME_INVALID_PARAMETERS,
+             *(long *)(*(longlong *)(param_2 + 0x70) + 8),
+             "ID3D12VideoProcessCommandList::ProcessFrame encountered and invalid argument.",
+             in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024c023 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::ResolveEncoderOutputMetadataImpl'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x130),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024c066 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::ResolveEncoderOutputMetadataImpl'::__l1::catch_1
+          (undefined8 param_1,longlong param_2)
+
+{
+  D3D12_MESSAGE_ID DVar1;
+  char *pcVar2;
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  if (*(int *)(*(longlong *)(param_2 + 0xf0) + 8) == -0x7ff8ffa9) {
+    pcVar2 = 
+    "ID3D12VideoEncodeCommandList::ResolveEncoderOutputMetadata was passed invalid arguments.";
+    DVar1 = D3D12_MESSAGE_ID_RESOLVE_ENCODER_OUTPUT_METADATA_INVALID_PARAMETERS;
+  }
+  else {
+    pcVar2 = "ID3D12VideoEncodeCommandList::ResolveEncoderOutputMetadata encountered an error.";
+    DVar1 = D3D12_MESSAGE_ID_UNKNOWN;
+  }
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x130),DVar1,
+             *(long *)(*(longlong *)(param_2 + 0xf0) + 8),pcVar2,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$1 @ 18024c0c3 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::ResolveInputParamLayout'::__l1::catch_1
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 400),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$2 @ 18024c106 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::ResolveInputParamLayout'::__l1::catch_2
+          (undefined8 param_1,longlong param_2)
+
+{
+  D3D12_MESSAGE_ID DVar1;
+  char *pcVar2;
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  if (*(int *)(*(longlong *)(param_2 + 0x40) + 8) == -0x7ff8ffa9) {
+    pcVar2 = "ID3D12VideoEncodeCommandList::ResolveInputParamLayout was passed invalid arguments.";
+    DVar1 = D3D12_MESSAGE_ID_RESOLVE_ENCODER_INPUT_PARAM_LAYOUT_INVALID_PARAMETERS;
+  }
+  else {
+    pcVar2 = "ID3D12VideoEncodeCommandList::ResolveInputParamLayout encountered an error.";
+    DVar1 = D3D12_MESSAGE_ID_UNKNOWN;
+  }
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 400),DVar1,
+             *(long *)(*(longlong *)(param_2 + 0x40) + 8),pcVar2,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024c160 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CVideoEncodeCommandList::ResolveMotionVectorHeap'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x50),
+             D3D12_MESSAGE_ID_PROCESS_FRAME_INVALID_PARAMETERS,
+             *(long *)(*(longlong *)(param_2 + 0x68) + 8),
+             "ID3D12VideoEncodeCommandList::ResolveMotionVectorHeap encountered and invalid argument."
+             ,in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024c1a2 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenRTVDescriptors'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x70),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024c1e2 =====
+
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+
+undefined8
+`CCastableCommandList<ID3D12GraphicsCommandList10>::TrackWrittenResource'::__l1::catch_0
+          (undefined8 param_1,longlong param_2)
+
+{
+  __uint64 in_stack_ffffffffffffffe8;
+  
+  CCastableCommandList<ID3D12VideoProcessCommandList3>::RemoveCommandList
+            (*(CCastableCommandList<ID3D12VideoProcessCommandList3> **)(param_2 + 0x40),
+             D3D12_MESSAGE_ID_COMMAND_LIST_OUTOFMEMORY,-0x7ff8fff2,
+             "Command list recording ran out of memory.",in_stack_ffffffffffffffe8);
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024c222 =====
+
+void `ValidateEncodeFrame'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_>::
+  ~vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_>
+            ((vector<D3D12DDI_SHADER_MODEL,std::allocator<D3D12DDI_SHADER_MODEL>_> *)
+             (param_2 + 0xe0));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024c234 =====
+
+void `ValidateEncodeFrame'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  _Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+  ::
+  ~_Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+            ((_Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+              *)(param_2 + 0x128));
+  return;
+}
+
+
+
+===== dtor$2 @ 18024c246 =====
+
+void `ValidateEncodeFrame'::__l1::dtor_2(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  vector<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1,std::allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1>_>
+  ::
+  ~vector<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1,std::allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1>_>
+            ((vector<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1,std::allocator<D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS1>_>
+              *)(param_2 + 0x160));
+  return;
+}
+
+
+
+===== catch$6 @ 18024c258 =====
+
+undefined8 `ValidateEncodeFrame'::__l1::catch_6(undefined8 param_1,longlong param_2)
+
+{
+  *(undefined4 *)(param_2 + 0x120) = *(undefined4 *)(*(longlong *)(param_2 + 0x230) + 8);
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024c28c =====
+
+void `ValidateResolutionPresentInEncoderHeap'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  _Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+  ::
+  ~_Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+            ((_Hash_vec<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<SmallDepthStencilStateDesc_const*___ptr64_const,CDepthStencilState*___ptr64>_>_>_>_>_>
+              *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== catch$0 @ 18024c29e =====
+
+undefined8
+`ValidateResolveEncoderOutputMetadata'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  *(undefined4 *)(param_2 + 0x58) = *(undefined4 *)(*(longlong *)(param_2 + 0x120) + 8);
+  return 0;
+}
+
+
+
+===== catch$0 @ 18024c2cf =====
+
+undefined8 `ValidateResolveInputParamLayout'::__l1::catch_0(undefined8 param_1,longlong param_2)
+
+{
+  *(undefined4 *)(param_2 + 0x140) = *(undefined4 *)(*(longlong *)(param_2 + 0xe0) + 8);
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024c303 =====
+
+void `ValidateVideoProcessFrames'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  std::
+  vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1>_>
+  ::
+  ~vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1>_>
+            ((vector<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1,std::allocator<D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC1>_>
+              *)(param_2 + 0x80));
+  return;
+}
+
+
+
+===== catch$1 @ 18024c315 =====
+
+undefined8 `ValidateVideoProcessFrames'::__l1::catch_1(void)
+
+{
+  return 0;
+}
+
+
+
+===== dtor$0 @ 18024c339 =====
+
+void `CGraphicsCommandList::
+     ClearDepthStencilView_VariadicHelper<void_(__cdecl*)(D3D12_CPU_DESCRIPTOR_HANDLE,enum_D3D12_CLEAR_FLAGS,float,unsigned_char,unsigned_int,tagRECT_const_*),1,0,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,14>::~OptAutoBreadcrumb<1,14>
+            ((OptAutoBreadcrumb<1,14> *)(param_2 + 0x78));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024c34b =====
+
+void `CGraphicsCommandList::
+     ClearDepthStencilView_VariadicHelper<void_(__cdecl*)(D3D12_CPU_DESCRIPTOR_HANDLE,enum_D3D12_CLEAR_FLAGS,float,unsigned_char,unsigned_int,tagRECT_const_*),1,0,0,1>
+     ::Variadic_Thk'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x70));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c35d =====
+
+void `CGraphicsCommandList::
+     ClearDepthStencilView_VariadicHelper<void_(__cdecl*)(D3D12_CPU_DESCRIPTOR_HANDLE,enum_D3D12_CLEAR_FLAGS,float,unsigned_char,unsigned_int,tagRECT_const_*),1,0,0,0>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x60));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c36f =====
+
+void `CGraphicsCommandList::
+     ClearDepthStencilView_VariadicHelper<void_(__cdecl*)(D3D12_CPU_DESCRIPTOR_HANDLE,enum_D3D12_CLEAR_FLAGS,float,unsigned_char,unsigned_int,tagRECT_const_*),0,0,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,14>::~OptAutoBreadcrumb<1,14>
+            ((OptAutoBreadcrumb<1,14> *)(param_2 + 0x50));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c381 =====
+
+void `CGraphicsCommandList::
+     ClearUnorderedAccessViewFloat_VariadicHelper<void_(__cdecl*)(D3D12_GPU_DESCRIPTOR_HANDLE,D3D12_CPU_DESCRIPTOR_HANDLE,ID3D12Resource_*,float_const_*,unsigned_int,tagRECT_const_*),1,2,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,13>::~OptAutoBreadcrumb<1,13>
+            ((OptAutoBreadcrumb<1,13> *)(param_2 + 0x68));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c393 =====
+
+void `CGraphicsCommandList::
+     ClearUnorderedAccessViewFloat_VariadicHelper<void_(__cdecl*)(D3D12_GPU_DESCRIPTOR_HANDLE,D3D12_CPU_DESCRIPTOR_HANDLE,ID3D12Resource_*,float_const_*,unsigned_int,tagRECT_const_*),1,2,0,0>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x50));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c3a5 =====
+
+void `CGraphicsCommandList::
+     ClearUnorderedAccessViewFloat_VariadicHelper<void_(__cdecl*)(D3D12_GPU_DESCRIPTOR_HANDLE,D3D12_CPU_DESCRIPTOR_HANDLE,ID3D12Resource_*,float_const_*,unsigned_int,tagRECT_const_*),0,2,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,13>::~OptAutoBreadcrumb<1,13>
+            ((OptAutoBreadcrumb<1,13> *)(param_2 + 0x50));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c3b7 =====
+
+void `CGraphicsCommandList::
+     DispatchGraph_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_GRAPH_DESC_const_*),1,1,0,0>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c3c9 =====
+
+void `CGraphicsCommandList::
+     DispatchGraph_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_GRAPH_DESC_const_*),1,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,47>::~OptAutoBreadcrumb<1,47>
+            ((OptAutoBreadcrumb<1,47> *)(param_2 + 0x38));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c3db =====
+
+void `CGraphicsCommandList::
+     DispatchGraph_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_GRAPH_DESC_const_*),0,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,47>::~OptAutoBreadcrumb<1,47>
+            ((OptAutoBreadcrumb<1,47> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c3ed =====
+
+void `CGraphicsCommandList::
+     DispatchMesh_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int),1,0,1,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,42>::~OptAutoBreadcrumb<1,42>
+            ((OptAutoBreadcrumb<1,42> *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024c3ff =====
+
+void `CGraphicsCommandList::
+     DispatchMesh_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int),1,0,1,1>::
+     Variadic_Thk'::__l1::dtor_1(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x40));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c411 =====
+
+void `CGraphicsCommandList::
+     DispatchMesh_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int),0,0,1,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,42>::~OptAutoBreadcrumb<1,42>
+            ((OptAutoBreadcrumb<1,42> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c423 =====
+
+void `CGraphicsCommandList::
+     DispatchRays_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_RAYS_DESC_const_*),1,1,0,0>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoMarker<1,13>::~OptAutoMarker<1,13>
+            ((OptAutoMarker<1,13> *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c435 =====
+
+void `CGraphicsCommandList::
+     DispatchRays_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_RAYS_DESC_const_*),1,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,34>::~OptAutoBreadcrumb<1,34>
+            ((OptAutoBreadcrumb<1,34> *)(param_2 + 0x28));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c447 =====
+
+void `CGraphicsCommandList::
+     DispatchRays_VariadicHelper<void_(__cdecl*)(D3D12_DISPATCH_RAYS_DESC_const_*),0,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,34>::~OptAutoBreadcrumb<1,34>
+            ((OptAutoBreadcrumb<1,34> *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c459 =====
+
+void `CGraphicsCommandList::
+     Dispatch_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int),1,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,6>::~OptAutoBreadcrumb<1,6>
+            ((OptAutoBreadcrumb<1,6> *)(param_2 + 0x20));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c46b =====
+
+void `CGraphicsCommandList::
+     Dispatch_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int),0,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,6>::~OptAutoBreadcrumb<1,6>
+            ((OptAutoBreadcrumb<1,6> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c47d =====
+
+void `CGraphicsCommandList::
+     DrawIndexedInstanced_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int,int,unsigned_int),1,0,1,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,4>::~OptAutoBreadcrumb<1,4>
+            ((OptAutoBreadcrumb<1,4> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c48f =====
+
+void `CGraphicsCommandList::
+     DrawIndexedInstanced_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int,int,unsigned_int),0,0,1,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,4>::~OptAutoBreadcrumb<1,4>
+            ((OptAutoBreadcrumb<1,4> *)(param_2 + 0x40));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4a1 =====
+
+void `CGraphicsCommandList::
+     DrawInstanced_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int,unsigned_int),1,0,1,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,3>::~OptAutoBreadcrumb<1,3>
+            ((OptAutoBreadcrumb<1,3> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4b3 =====
+
+void `CGraphicsCommandList::
+     DrawInstanced_VariadicHelper<void_(__cdecl*)(unsigned_int,unsigned_int,unsigned_int,unsigned_int),0,0,1,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,3>::~OptAutoBreadcrumb<1,3>
+            ((OptAutoBreadcrumb<1,3> *)(param_2 + 0x40));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4c5 =====
+
+void `CGraphicsCommandList::
+     SetProgram_VariadicHelper<void_(__cdecl*)(D3D12_SET_PROGRAM_DESC_const_*),1,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,48>::~OptAutoBreadcrumb<1,48>
+            ((OptAutoBreadcrumb<1,48> *)(param_2 + 0x40));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4d7 =====
+
+void `CGraphicsCommandList::
+     SetProgram_VariadicHelper<void_(__cdecl*)(D3D12_SET_PROGRAM_DESC_const_*),0,2,0,1>::
+     Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,48>::~OptAutoBreadcrumb<1,48>
+            ((OptAutoBreadcrumb<1,48> *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4e9 =====
+
+void `CCommandList<ID3D12GraphicsCommandList10>::
+     WriteBufferImmediate_VariadicHelper<void_(__cdecl*)(unsigned_int,D3D12_WRITEBUFFERIMMEDIATE_PARAMETER_const_*,enum_D3D12_WRITEBUFFERIMMEDIATE_MODE_const_*),1,2,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,26>::~OptAutoBreadcrumb<1,26>
+            ((OptAutoBreadcrumb<1,26> *)(param_2 + 0x60));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c4fb =====
+
+void `CCommandList<ID3D12VideoDecodeCommandList3>::
+     WriteBufferImmediate_VariadicHelper<void_(__cdecl*)(unsigned_int,D3D12_WRITEBUFFERIMMEDIATE_PARAMETER_const_*,enum_D3D12_WRITEBUFFERIMMEDIATE_MODE_const_*),1,4,0,0>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12VideoDecodeCommandList3>::OptAutoMarker<1,26>::~OptAutoMarker<1,26>
+            ((OptAutoMarker<1,26> *)(param_2 + 0x70));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c50d =====
+
+void `CCommandList<ID3D12GraphicsCommandList10>::
+     WriteBufferImmediate_VariadicHelper<void_(__cdecl*)(unsigned_int,D3D12_WRITEBUFFERIMMEDIATE_PARAMETER_const_*,enum_D3D12_WRITEBUFFERIMMEDIATE_MODE_const_*),0,2,0,1>
+     ::Variadic_Thk'::__l1::dtor_0(undefined8 param_1,longlong param_2)
+
+{
+  CCommandList<ID3D12GraphicsCommandList10>::OptAutoBreadcrumb<1,26>::~OptAutoBreadcrumb<1,26>
+            ((OptAutoBreadcrumb<1,26> *)(param_2 + 0x40));
+  return;
+}
+
+
+
+===== dtor$0 @ 18024c51f =====
+
+void `CVideoProcessCommandList::VersionedProcessFrames'::__l1::dtor_0
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::
+  vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043>_>
+  ::
+  ~vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043>_>
+            ((vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0043>_>
+              *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== dtor$1 @ 18024c531 =====
+
+void `CVideoProcessCommandList::VersionedProcessFrames'::__l1::dtor_1
+               (undefined8 param_1,longlong param_2)
+
+{
+  std::
+  vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032>_>
+  ::
+  ~vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032>_>
+            ((vector<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032,std::allocator<D3D12DDIARG_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS_0032>_>
+              *)(param_2 + 0x30));
+  return;
+}
+
+
+
+===== FUN_18024c6e0 @ 18024c6e0 =====
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Function: _guard_dispatch_icall$thunk$10345483385596137414 replaced with injection:
+   guard_dispatch_icall */
+/* WARNING: Enum "D3D12_MESSAGE_ID": Some values do not have unique names */
+/* PDB: Separated code (from the compiler): 18024c6e0 - 18024cac7 for parent address: 180242660 */
+
+undefined8 FUN_18024c6e0(undefined8 param_1,uint param_2,longlong param_3,ulonglong param_4)
+
+{
+  uint *puVar1;
+  uint uVar2;
+  uint uVar3;
+  uint uVar4;
+  longlong lVar5;
+  ulonglong uVar6;
+  undefined8 uVar7;
+  ulonglong uVar8;
+  longlong lVar9;
+  uint unaff_EBX;
+  ulonglong uVar10;
+  longlong unaff_RBP;
+  char *pcVar11;
+  ulonglong in_R10;
+  longlong *in_R11;
+  longlong unaff_R12;
+  int iVar12;
+  longlong unaff_R13;
+  ulonglong unaff_R14;
+  TDebugOutputFunctor *unaff_R15;
+  undefined4 uVar13;
+  undefined8 in_stack_00000020;
+  
+  for (; ((uint)in_R10 < 0x20 && (param_2 <= unaff_EBX)); param_2 = param_2 * 2) {
+    if (((unaff_EBX & param_2) != 0) && (*(int *)(unaff_R13 + in_R10 * 0x14) == 0)) {
+      TDebugOutputFunctor::operator()
+                (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_ARCHITECTURE,
+                 "AtomicCopyBufferUINT64 can only be used on UMA architectures.");
+      return 0x80070057;
+    }
+    in_R10 = (ulonglong)((uint)in_R10 + 1);
+  }
+  if ((param_3 - 1U & (unaff_R14 | param_4)) == 0) {
+    lVar9 = *(longlong *)(unaff_RBP + -0x31);
+    for (uVar10 = 0; (uint)uVar10 < *(uint *)(unaff_RBP + 0x7f);
+        uVar10 = (ulonglong)((uint)uVar10 + 1)) {
+      lVar5 = *(longlong *)(unaff_R12 + uVar10 * 8);
+      if (lVar5 == 0) {
+        pcVar11 = "The dependent resource is NULL at index %u.";
+LAB_18024caae:
+        TDebugOutputFunctor::operator()
+                  (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_RESOURCE,pcVar11,
+                   uVar10);
+        return 0x80070057;
+      }
+      puVar1 = (uint *)(lVar9 + uVar10 * 0x18);
+      uVar2 = *puVar1;
+      uVar8 = *(ulonglong *)(puVar1 + 2);
+      uVar13 = (undefined4)((ulonglong)in_stack_00000020 >> 0x20);
+      if (uVar2 == 0xffffffff) {
+        if ((uVar8 != 0) || (*(longlong *)(puVar1 + 4) != -1)) {
+          TDebugOutputFunctor::operator()
+                    (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_SUBRESOURCE_RANGE
+                     ,
+                     "The subresource range at index %u is invalid. The Range must be from 0 to UINT64_MAX when Subresource is D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES. Subresource is %u, Range.Begin is %I64u, and Range.End is %I64u."
+                     ,uVar10,CONCAT44(uVar13,0xffffffff));
+          return 0x80070057;
+        }
+      }
+      else {
+        uVar6 = *(ulonglong *)(puVar1 + 4);
+        if (uVar6 <= uVar8) {
+          TDebugOutputFunctor::operator()
+                    (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_SUBRESOURCE_RANGE
+                     ,
+                     "The subresource range at index %u is invalid. Range.Begin must be less than Range.End. Range.Begin is %I64u, and Range.End is %I64u."
+                     ,uVar10,uVar8);
+          return 0x80070057;
+        }
+        uVar3 = *(uint *)(lVar5 + 0xf0);
+        if ((uVar3 & 0xf000000) == 0x1000000) {
+          if (uVar2 != 0) {
+            TDebugOutputFunctor::operator()
+                      (unaff_R15,
+                       D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_DEPENDENT_SUBRESOURCE_OUT_OF_BOUNDS,
+                       "The subresource range at index %u is invalid. Subresource must be 0 for buffers. Subresource is %u."
+                       ,uVar10,CONCAT44(uVar13,uVar2));
+            return 0x80070057;
+          }
+          if ((*(ulonglong *)(lVar5 + 0xe8) < uVar6) && (uVar6 != 0xffffffffffffffff)) {
+            TDebugOutputFunctor::operator()
+                      (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_DEPENDENT_RANGE_OUT_OF_BOUNDS,
+                       "The subresource range at index %u is invalid. Range.Begin must be less than Range.End. Range.End must be either UINT64_MAX or between Range.Begin+1 and the end of the resource, %I64u. Subresource is %u, Range.Begin is %I64u, and Range.End is %I64u."
+                       ,uVar10,*(ulonglong *)(lVar5 + 0xe8));
+            return 0x80070057;
+          }
+        }
+        else {
+          uVar4 = *(uint *)(lVar5 + 0xfc);
+          *(uint *)(unaff_RBP + -0x39) = uVar4 >> 0x18;
+          if ((uVar4 & 0xffffff) <= uVar2) {
+            TDebugOutputFunctor::operator()
+                      (unaff_R15,
+                       D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_DEPENDENT_SUBRESOURCE_OUT_OF_BOUNDS,
+                       "The subresource range at index %u is invalid. Subresource must be between 0 and the number of subresources, %u. Subresource is %u."
+                       ,uVar10,CONCAT44(uVar13,uVar4) & 0xffffffff00ffffff);
+            return 0x80070057;
+          }
+          iVar12 = (int)uVar3 >> 0x1c;
+          if (((iVar12 == 0) || (iVar12 == 1)) || ((iVar12 != 2 && (iVar12 != 3)))) {
+            if ((uVar8 != 0) || (uVar6 != 0xffffffffffffffff)) {
+              *(int *)(unaff_RBP + -0x39) = iVar12;
+              pcVar11 = D3D12ToStr((D3D12_TEXTURE_LAYOUT *)(unaff_RBP + -0x39));
+              TDebugOutputFunctor::operator()
+                        (unaff_R15,
+                         D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_SUBRESOURCE_RANGE,
+                         "The subresource range at index %u is invalid. The Range must be from 0 to UINT64_MAX for textures with the following layouts: D3D12_TEXTURE_LAYOUT_ROW_MAJOR, D3D12_TEXTURE_LAYOUT_UNKNOWN. Layout is %s, Range.Begin is %I64u, and Range.End is %I64u."
+                         ,uVar10,pcVar11);
+              return 0x80070057;
+            }
+          }
+          else {
+            uVar3 = *(uint *)(unaff_RBP + -0x39);
+            *(undefined4 *)(unaff_RBP + -0x39) = 1;
+            *(undefined8 *)(unaff_RBP + -0x11) = 0;
+            *(undefined4 *)(unaff_RBP + -9) = 0;
+            *(undefined8 *)(unaff_RBP + -0x21) = 0;
+            *(undefined4 *)(unaff_RBP + -0x19) = 0;
+            in_stack_00000020 = 0;
+            (**(code **)(*in_R11 + 0x150))(in_R11,lVar5,0,unaff_RBP + -0x11,0);
+            if ((*(int *)(unaff_RBP + -0x39) == 0) ||
+               (*(char *)(unaff_RBP + -0x10) == '\0' && *(byte *)(unaff_RBP + -0x11) == 0)) {
+              pcVar11 = 
+              "The subresource range at index %u is invalid. GetResourceTiling failed when called on it. "
+              ;
+              goto LAB_18024caae;
+            }
+            if (uVar2 % uVar3 < (uint)*(byte *)(unaff_RBP + -0x11)) {
+              if (((*(uint *)(lVar5 + 0xf0) & 0xf0000000) == 0x20000000) &&
+                 (((short)*(undefined8 *)(puVar1 + 2) != 0 ||
+                  (((short)*(longlong *)(puVar1 + 4) != 0 && (*(longlong *)(puVar1 + 4) != -1))))))
+              {
+                TDebugOutputFunctor::operator()
+                          (unaff_R15,
+                           D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_SUBRESOURCE_RANGE,
+                           "The subresource range at index %u is invalid. For textures with D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE, both Range coordinates must commonly be aligned to tile size. However, Range.End may be set to UINT64_MAX in order to specify the last subresource tile.Range.Begin is %I64u, and Range.End is %I64u."
+                           ,uVar10,*(undefined8 *)(puVar1 + 2));
+                return 0x80070057;
+              }
+              uVar8 = (ulonglong)*(ushort *)(unaff_RBP + -0x1b) *
+                      (ulonglong)*(ushort *)(unaff_RBP + -0x1d) *
+                      (ulonglong)*(uint *)(unaff_RBP + -0x21) * 0x10000;
+              if ((uVar8 < *(ulonglong *)(puVar1 + 4)) &&
+                 (*(ulonglong *)(puVar1 + 4) != 0xffffffffffffffff)) {
+                TDebugOutputFunctor::operator()
+                          (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_DEPENDENT_RANGE_OUT_OF_BOUNDS
+                           ,
+                           "The subresource range at index %u is invalid. Range.Begin must be less than Range.End. Range.End must be either UINT64_MAX or between Range.Begin+1 and the end of the subresource, %I64u. Subresource is %u, Range.Begin is %I64u, and Range.End is %I64u."
+                           ,uVar10,uVar8);
+                return 0x80070057;
+              }
+            }
+            else if ((*(longlong *)(puVar1 + 2) != 0) || (*(longlong *)(puVar1 + 4) != -1)) {
+              TDebugOutputFunctor::operator()
+                        (unaff_R15,
+                         D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_DEPENDENT_SUBRESOURCE_RANGE,
+                         "The subresource range at index %u is invalid. The Range must be from 0 to UINT64_MAX for subresources that are within the packed mips. Subresource is %u, which is mip level %u. The resource has %u mip levels which are not packed. Range.Begin is %I64u, and Range.End is %I64u."
+                         ,uVar10,CONCAT44((int)((ulonglong)in_stack_00000020 >> 0x20),*puVar1));
+              return 0x80070057;
+            }
+            lVar9 = *(longlong *)(unaff_RBP + -0x31);
+            in_R11 = *(longlong **)(unaff_RBP + -0x29);
+          }
+        }
+      }
+    }
+    uVar7 = 0;
+  }
+  else {
+    TDebugOutputFunctor::operator()
+              (unaff_R15,D3D12_MESSAGE_ID_ATOMICCOPYBUFFER_INVALID_OFFSET_ALIGNMENT,
+               "Both DstOffset and SrcOffset must be naturally aligned to guarentee atomic memory operations. DstOffset = %I64u, SrcOffset = %I64u."
+              );
+    uVar7 = 0x80070057;
+  }
+  return uVar7;
+}
+
+
+
+===== FUN_18024d474 @ 18024d474 =====
+
+/* PDB: Separated code (from the compiler): 18024d474 - 18024d4a0 for parent address: 180246c30 */
+
+undefined8 *
+FUN_18024d474(longlong param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4)
+
+{
+  undefined8 uVar1;
+  undefined8 *in_RAX;
+  
+  while( true ) {
+    if (param_1 == param_4[2]) {
+      uVar1 = *param_4;
+      param_2[1] = param_4;
+      *param_2 = uVar1;
+      return param_2;
+    }
+    if (param_4 == in_RAX) break;
+    param_4 = (undefined8 *)param_4[1];
+  }
+  *param_2 = param_4;
+  param_2[1] = 0;
+  return param_2;
+}
+
+
+
+===== _guard_check_icall$thunk$15021643654165956172 @ 18024e010 =====
+
+void _guard_check_icall_thunk_15021643654165956172(void)
+
+{
+  _guard_check_icall();
+  return;
+}
+
+
+
+===== _guard_dispatch_icall$thunk$10345483385596137414 @ 18024e020 =====
+
+/* WARNING: This is an inlined function */
+/* WARNING: Function: _guard_dispatch_icall replaced with injection: guard_dispatch_icall */
+
+void _guard_dispatch_icall_thunk_10345483385596137414(void)
+
+{
+  code *in_RAX;
+  
+  (*in_RAX)();
+  return;
+}
+
+
