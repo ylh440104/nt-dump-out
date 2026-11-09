@@ -31,6 +31,14 @@ static void ObpPushStackInfo(POBJECT_HEADER Header, int A, LONG_PTR B, ULONG Tag
     (void)Tag;
 }
 
+static void ObpTraceObjectReferenceIfActive(POBJECT_HEADER Header, ULONG Tag)
+{
+    if (ObpTraceFlags == 0)
+        return;
+
+    ObpPushStackInfo(Header, 1, 1, Tag);
+}
+
 static void ObpDeferObjectDeletion(POBJECT_HEADER Header)
 {
     ObpDeferCount++;
@@ -45,6 +53,17 @@ static void KeBugCheckEx(ULONG Code, ULONG_PTR P1, ULONG_PTR P2, ULONG_PTR P3, U
     (void)P4;
     ObpBugCheckHit++;
     ObpLastBugCode = Code;
+}
+
+void *ObGetObjectType(void *Object)
+{
+    POBJECT_HEADER Header;
+    UCHAR Idx;
+
+    Header = OBJECT_TO_OBJECT_HEADER(Object);
+    Idx = (UCHAR)(((ULONG_PTR)Header >> 8) ^ Header->TypeIndex ^ ObHeaderCookie);
+
+    return ObTypeIndexTable[Idx];
 }
 
 static POBJECT_TYPE ObpGetTypeByHeader(POBJECT_HEADER Header)
@@ -87,4 +106,29 @@ LONG_PTR ObDereferenceObjectEx(void *Object, LONG_PTR Count)
     }
 
     return Old;
+}
+
+LONG_PTR ObReferenceObjectExWithTag(void *Object, LONG_PTR Count, ULONG Tag)
+{
+    POBJECT_HEADER Header;
+    LONG_PTR Old;
+
+    Header = OBJECT_TO_OBJECT_HEADER(Object);
+
+    ObpTraceObjectReferenceIfActive(Header, Tag);
+
+    Old = __atomic_fetch_add(&Header->PointerCount, Count, __ATOMIC_SEQ_CST);
+
+    if (Old < 1)
+    {
+        KeBugCheckEx(OBJECT_HEADER_CORRUPTION, 0, (ULONG_PTR)Object,
+                     0x10, (ULONG_PTR)(Count + Old));
+    }
+
+    return Old + Count;
+}
+
+LONG_PTR ObReferenceObjectByPointer(void *Object, ULONG Tag)
+{
+    return ObReferenceObjectExWithTag(Object, 1, Tag);
 }
