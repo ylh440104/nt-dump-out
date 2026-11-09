@@ -73801,12 +73801,13 @@ void __tailMerge_ext_ms_win_gui_uxinit_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0f18,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014006568d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -73904,11 +73905,13 @@ void __tailMerge_ext_ms_win_gui_uxinit_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0f38,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065784. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -73934,14 +73937,13 @@ void __tailMerge_naturalauthclient_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0f58,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014006580f. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -74072,15 +74074,12 @@ void __tailMerge_sspicli_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0f78,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065918. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -74208,11 +74207,13 @@ void __tailMerge_samcli_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0f98,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065a27. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -74263,11 +74264,13 @@ void __tailMerge_api_ms_win_security_sddl_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0fb8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065ad0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -74358,13 +74361,12 @@ void __tailMerge_netutils_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0fd8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065baf. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -74390,15 +74392,13 @@ void __tailMerge_wkscli_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d0ff8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065c3a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -74436,15 +74436,12 @@ void __tailMerge_userenv_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1018,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065cd7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -74482,15 +74479,12 @@ void __tailMerge_authz_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1038,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065d74. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -74652,14 +74646,12 @@ void __tailMerge_api_ms_win_security_lsalookup_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1058,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065ec5. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -74793,11 +74785,12 @@ void __tailMerge_api_ms_win_security_lsalookup_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1078,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140065ff2. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -74836,13 +74829,13 @@ void __tailMerge_profapi_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1098,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066089. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -74892,11 +74885,12 @@ void __tailMerge_api_ms_win_rtcore_ntuser_private_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d10b8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066138. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -74991,12 +74985,13 @@ void __tailMerge_ext_ms_win_session_winlogon_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d10d8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400662c1. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75022,11 +75017,13 @@ void __tailMerge_ext_ms_win_session_winlogon_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d10f8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014006634c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75064,12 +75061,13 @@ void __tailMerge_ext_ms_win_session_winlogon_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1118,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400663e9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -75118,13 +75116,12 @@ void __tailMerge_ext_ms_win_session_winlogon_notify_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1138,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400664c9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -75173,12 +75170,13 @@ void __tailMerge_ext_ms_win_advapi32_eventlog_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1158,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400665a9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75239,14 +75237,12 @@ void __tailMerge_ext_ms_win_advapi32_shutdown_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1178,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014006669d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -75272,14 +75268,12 @@ void __tailMerge_ext_ms_win_devmgmt_policy_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1198,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066728. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -75305,15 +75299,12 @@ void __tailMerge_ext_ms_win_devmgmt_policy_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d11b8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400667b3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -75374,13 +75365,13 @@ void __tailMerge_ext_ms_win_ntuser_dialogbox_l1_1_3_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d11d8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400668a7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75406,14 +75397,13 @@ void __tailMerge_ext_ms_win_ntuser_dialogbox_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d11f8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066932. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75439,12 +75429,12 @@ void __tailMerge_ext_ms_win_ntuser_keyboard_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1218,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400669bd. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -75494,14 +75484,12 @@ void __tailMerge_ext_ms_win_ntuser_misc_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1238,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066a6c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -75550,13 +75538,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_usersecurity_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1258,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066b4d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75582,13 +75570,13 @@ void __tailMerge_ext_ms_win_ntuser_private_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
+  undefined8 in_RCX;
   undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1278,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066bd8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -75614,11 +75602,13 @@ void __tailMerge_ext_ms_win_ntuser_private_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1298,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066c63. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75750,13 +75740,13 @@ void __tailMerge_ext_ms_win_ntuser_windowclass_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d12b8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066df3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75782,11 +75772,13 @@ void __tailMerge_ext_ms_win_ntuser_windowclass_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d12d8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066e7e. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -75812,14 +75804,12 @@ void __tailMerge_ext_ms_win_ntuser_window_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d12f8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066f09. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -75869,12 +75859,13 @@ void __tailMerge_ext_ms_win_ntuser_windowstation_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1318,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140066fb8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -75912,12 +75903,13 @@ void __tailMerge_ext_ms_win_ntuser_windowstation_l1_1_1_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1338,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067055. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -76038,12 +76030,13 @@ void __tailMerge_ext_ms_win_rtcore_ntuser_sysparams_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1358,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400671a3. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76104,11 +76097,13 @@ void __tailMerge_ext_ms_win_session_usermgr_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1378,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067295. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -76217,15 +76212,12 @@ void __tailMerge_ext_ms_win_session_candidateaccountmgr_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1398,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400673d1. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -76356,13 +76348,13 @@ void __tailMerge_ext_ms_win_session_winsta_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d13b8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067591. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76412,15 +76404,12 @@ void __tailMerge_ext_ms_win_session_winsta_l1_1_3_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
   undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d13d8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067640. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,in_XMM2_Qa,param_4);
   return;
 }
 
@@ -76470,14 +76459,13 @@ void __tailMerge_ext_ms_win_session_winsta_l1_1_2_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
+  undefined8 in_RCX;
   undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d13f8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400676ef. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -76551,11 +76539,13 @@ void __tailMerge_ext_ms_win_session_winsta_l1_1_5_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1418,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400677c2. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76581,14 +76571,12 @@ void __tailMerge_ext_ms_win_session_winsta_l1_1_4_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1438,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x00014006784d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -76758,12 +76746,13 @@ void __tailMerge_ext_ms_win_session_wtsapi32_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1458,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400679b0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76871,13 +76860,13 @@ void __tailMerge_ext_ms_win_winlogon_mincreds_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1478,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067b1d. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76915,13 +76904,13 @@ void __tailMerge_ext_ms_win_sysmain_pfapi_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1498,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067bba. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -76970,12 +76959,13 @@ void __tailMerge_ext_ms_win_security_crosscontainerauthhelper_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d14b8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067c99. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -77025,13 +77015,12 @@ void __tailMerge_ext_ms_win_composition_init_l1_1_0_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d14d8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067d79. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
@@ -77117,14 +77106,13 @@ void __tailMerge_mpr_dll(undefined8 param_1,undefined8 param_2,undefined8 param_
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d14f8,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067e5e. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -77162,12 +77150,13 @@ void __tailMerge_credui_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1518,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067efb. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -77205,14 +77194,13 @@ void __tailMerge_wtsapi32_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
+  undefined8 in_XMM3_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1538,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140067f98. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,in_XMM3_Qa);
   return;
 }
 
@@ -77238,11 +77226,13 @@ void __tailMerge_dsreg_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
+  undefined8 in_RCX;
+  undefined8 in_XMM1_Qa;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1558,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x000140068023. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(param_1,param_2,param_3,param_4);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,in_XMM1_Qa,param_3,param_4);
   return;
 }
 
@@ -77268,15 +77258,12 @@ void __tailMerge_faultrep_dll
 {
   undefined8 in_RAX;
   code *UNRECOVERED_JUMPTABLE;
-  undefined8 in_R9;
-  undefined8 in_XMM0_Qa;
-  undefined8 in_XMM1_Qa;
-  undefined8 in_XMM2_Qa;
+  undefined8 in_RCX;
   
   UNRECOVERED_JUMPTABLE = (code *)__delayLoadHelper2(&ImgDelayDescr_1400d1578,in_RAX);
                     /* WARNING: Could not recover jumptable at 0x0001400680ae. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(in_XMM0_Qa,in_XMM1_Qa,in_XMM2_Qa,in_R9);
+  (*UNRECOVERED_JUMPTABLE)(in_RCX,param_2,param_3,param_4);
   return;
 }
 
